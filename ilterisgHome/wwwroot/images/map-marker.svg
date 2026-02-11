@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="42" height="50" viewBox="0 0 42 50">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #377ef9;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="Map_Marker" data-name="Map Marker" class="cls-1" d="M21-.007a21,21,0,0,1,21,21c0,16-21,29-21,29s-21-13-21-29A21,21,0,0,1,21-.007Z"/>
+</svg>

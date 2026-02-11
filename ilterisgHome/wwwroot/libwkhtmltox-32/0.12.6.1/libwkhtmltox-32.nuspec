@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>LibWkHtmlToX-32</id>
+    <version>0.12.6.1</version>
+    <authors>Ashish Kulkarni, Jakob Truelsen</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://github.com/wkhtmltopdf/wkhtmltopdf/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://wkhtmltopdf.org/</projectUrl>
+    <description>Native library for rendering HTML into PDF and various image formats</description>
+    <copyright>2020</copyright>
+    <tags>native html pdf</tags>
+    <contentFiles>
+      <files include="any/any/libwkhtmltox.dll" buildAction="None" copyToOutput="true" flatten="true" />
+    </contentFiles>
+  </metadata>
+</package>

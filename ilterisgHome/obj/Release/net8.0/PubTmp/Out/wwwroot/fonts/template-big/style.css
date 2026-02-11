@@ -1,0 +1,131 @@
+@font-face {
+  font-family: 'template-big';
+  src:  url('fonts/template-big.eot');
+  src:  url('fonts/template-big.eot#iefix') format('embedded-opentype'),
+    url('fonts/template-big.ttf') format('truetype'),
+    url('fonts/template-big.woff') format('woff'),
+    url('fonts/template-big.svg#template-big') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="template-big-"]::before, [class*=" template-big-"]::before,
+[class^="template-big-"]::after, [class*=" template-big-"]::after {
+	/* use !important to prevent issues with browser extensions that change fonts */
+	font-family: 'template-big';
+	speak: never;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	vertical-align: middle;
+	line-height: 1;
+	direction: ltr;
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.template-big-cart::before {
+  content: "\68";
+}
+.template-big-clock::before {
+  content: "\6e";
+}
+.template-big-error::before {
+  content: "\6b";
+}
+.template-big-date::before {
+  content: "\6f";
+}
+.template-big-documents::before {
+  content: "\46";
+}
+.template-big-note::before {
+  content: "\47";
+}
+.template-big-faq::before {
+  content: "\6c";
+}
+.template-big-flag::before {
+  content: "\78";
+}
+.template-big-info::before {
+  content: "\69";
+}
+.template-big-link::before {
+  content: "\44";
+}
+.template-big-time::before {
+  content: "\79";
+}
+.template-big-lock::before {
+  content: "\45";
+}
+.template-big-mail::before {
+  content: "\71";
+}
+.template-big-address::before {
+  content: "\70";
+}
+.template-big-mobile::before {
+  content: "\72";
+}
+.template-big-phone::before {
+  content: "\73";
+}
+.template-big-pin::before {
+  content: "\42";
+}
+.template-big-video::before {
+  content: "\75";
+}
+.template-big-quote::before {
+  content: "\74";
+}
+.template-big-quote-after::after {
+  content: "\74";
+}
+.template-big-repetition::before {
+  content: "\43";
+}
+.template-big-arrow-horizontal-lg::before {
+  content: "\62";
+}
+.template-big-arrow-horizontal-sm::before {
+  content: "\61";
+}
+.template-big-success::before {
+  content: "\6a";
+}
+.template-big-arrow-vertical::before {
+  content: "\63";
+}
+.template-big-warning::before {
+  content: "\6d";
+}
+.template-big-check::before {
+  content: "\66";
+}
+.template-big-chevron-horizontal::before {
+  content: "\64";
+}
+.template-big-chevron-vertical::before {
+  content: "\65";
+}
+.template-big-close::before {
+  content: "\67";
+}
+.template-big-group::before {
+  content: "\76";
+}
+.template-big-menu::before {
+  content: "\77";
+}
+.template-big-search::before {
+  content: "\41";
+}
+.template-big-security::before {
+  content: "\7a";
+}

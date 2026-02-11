@@ -1,0 +1,812 @@
+@inject Microsoft.Extensions.Localization.IStringLocalizer<SharedResource> Localizer
+@using System.Text.Encodings.Web
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="@System.Globalization.CultureInfo.CurrentUICulture.Name">
+<head>
+    <title>@Localizer["HomePageTitle"]</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.2" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="@Localizer["Keywords"]" />
+    <meta name="description" content="@Localizer["Description"]" />
+    <link rel="stylesheet" type="text/css" href="/rs-plugin/css/settings.css">
+    <link href='//fonts.googleapis.com/css?family=Nunito+Sans:300,400,600&subset=latin-ext' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Montserrat:500,600&subset=latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/style/reset.css">
+    <link rel="stylesheet" type="text/css" href="/style/superfish.css">
+    <link rel="stylesheet" type="text/css" href="/style/prettyPhoto.css">
+    <link rel="stylesheet" type="text/css" href="/style/jquery.qtip.css">
+    <link rel="stylesheet" type="text/css" href="/style/style.css">
+    <link rel="stylesheet" type="text/css" href="/style/animations.css">
+    <link rel="stylesheet" type="text/css" href="/style/responsive.css">
+    <link rel="stylesheet" type="text/css" href="/style/odometer-theme-default.css">
+    <link rel="stylesheet" type="text/css" href="/fonts/features/style.css">
+    <link rel="stylesheet" type="text/css" href="/fonts/template/style.css">
+    <link rel="stylesheet" type="text/css" href="/fonts/template-big/style.css">
+    <link rel="stylesheet" type="text/css" href="/fonts/social/style.css">
+    <link rel="shortcut icon" href="/assets/images/favicon.ico">
+    <!-- SweetAlert2 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Material Design Icons (MDI) CDN (Header ikonları için) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdi/font@7.4.47/css/materialdesignicons.min.css" integrity="sha256-euJ8V0D1E6M6nSLG8KAcvFPjR4Un7RNjXLs3C0yVCFI=" crossorigin="anonymous" />
+    <!-- Özel Stil (Yalnızca dropdown ve menü başlıkları için) -->
+    <style>
+        /* Header'a dropdown eklerken eski tasarımı koruma */
+        .header-icons-container {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 10px; /* Mevcut menü ile uyumlu */
+        }
+
+        .custom-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .custom-dropdown-btn {
+            display: flex;
+            align-items: center;
+            background: none;
+            border: none;
+            padding: 5px;
+            cursor: pointer;
+            color: #000;
+            font-size: 12px;
+            line-height: 1;
+        }
+
+            .custom-dropdown-btn img {
+                margin-right: 5px;
+                height: 12px;
+                vertical-align: middle;
+            }
+
+            .custom-dropdown-btn .mdi {
+                font-size: 12px;
+                vertical-align: middle;
+            }
+
+        .custom-dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%; /* Dropdown'un butonun hemen altına konumlandırılması */
+            right: 0;
+            background-color: #fff;
+            min-width: 120px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border-radius: 6px;
+            z-index: 1000;
+            padding: 5px 0;
+        }
+
+            .custom-dropdown-content button {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                padding: 5px 10px;
+                background: none;
+                border: none;
+                text-align: left;
+                font-size: 12px;
+                cursor: pointer;
+            }
+
+                .custom-dropdown-content button img {
+                    margin-right: 5px;
+                    height: 10px;
+                    vertical-align: middle;
+                }
+
+                .custom-dropdown-content button:hover {
+                    background-color: #f1f1f1;
+                }
+
+        .custom-dropdown.active .custom-dropdown-content {
+            display: block; /* Aktifken görünür */
+        }
+        /* MDI ikonlarının görünürlüğünü sağlama */
+        .mdi:before {
+            font-family: 'Material Design Icons' !important;
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        /* Menü öğeleri arasındaki boşluğu artırma */
+        .sf-menu li {
+            margin-right: 15px; /* Yazılar arasındaki boşluğu artırır */
+        }
+
+            .sf-menu li:last-child {
+                margin-right: 0; /* Son öğenin sağ boşluğunu sıfırla */
+            }
+            /* Menü başlıklarının boyutunu ayarlama */
+            .sf-menu li a {
+                font-size: 15px; /* Başlık boyutunu ayarlar */
+            }
+        /* Mobil için dropdown iyileştirmesi */
+        @@media (max-width: 767px) {
+            .header-icons-container
+
+        {
+            overflow: visible; /* Dropdown'un dışarı taşmasını sağlar */
+        }
+
+        .custom-dropdown-content {
+            position: fixed; /* Mobil'de header'dan bağımsız */
+            z-index: 1001; /* Main content üstüne getirir */
+            right: 10px; /* Sağ kenara hizala */
+        }
+
+        .header {
+            overflow: visible !important; /* Dropdown gizlenmesin */
+        }
+
+        }
+        /* Form gönderimi için özel spinner overlay */
+        .custom-spinner-overlay {
+            position: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Saydam gri arka plan */
+            z-index: 9999998; /* Orijinal preloader'dan bir düşük */
+            transition: background 0.5s ease;
+        }
+    </style>
+</head>
+<body class="fp-site-preloader">
+    <div style="position: fixed; display: flex; align-items: center; justify-content: center; transition: background 0.5s ease 0s; left: 0; top: 0; width: 100%; height: 100%; background: #FFF; z-index: 9999999;" class="fp-site-preloader-overlay"><div class="fp-preloader-spinner"></div></div>
+    <div class="site-container">
+        <div class="header-container sticky">
+            <div class="header clearfix">
+                <div class="logo">
+                    <h1>
+                        <a href="@Url.Action("Index", "Home")" title="@Localizer["Home"]">
+                            <img src="/images/1-01.svg" srcset="/images/1-01.svg" class="primary-logo" alt="@Localizer["LogoAlt"]">
+                            <img src="/images/1-01.svg" srcset="/images/1-01.svg" class="secondary-logo" alt="@Localizer["LogoAlt"]">
+                            <span class="logo-text">İLTER-İSG</span>
+                        </a>
+                    </h1>
+                </div>
+                <div class="menu-container clearfix">
+                    <nav>
+                        <ul class="sf-menu">
+                            <li class="">
+                                <a href="@Url.Action("Index", "Home")" title="@Localizer["Home"]">@Localizer["Home"]</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Services", "Home")" title="@Localizer["Services"]">@Localizer["Services"]</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Services", "Home")" title="@Localizer["About"]">@Localizer["About"]</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Contact", "Home")" title="@Localizer["Contact"]">@Localizer["Contact"]</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Index", "Blog")" title="@Localizer["Blog"]">@Localizer["Blog"]</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Login", "Account")" title="@Localizer["Login"]">@Localizer["Login"]</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="mobile-menu-container">
+                        <nav>
+                            <ul class="mobile-menu collapsible-mobile-submenus">
+                                <li><a class="template-big-arrow-horizontal-sm" href="#"> </a></li>
+                                <li class="selected">
+                                    <a href="@Url.Action("Index", "Home")" title="@Localizer["Home"]">@Localizer["Home"]</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Services", "Home")" title="@Localizer["Services"]">@Localizer["Services"]</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Services", "Home")" title="@Localizer["About"]">@Localizer["About"]</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Contact", "Home")" title="@Localizer["Contact"]">@Localizer["Contact"]</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Index", "Blog")" title="@Localizer["Blog"]">@Localizer["Blog"]</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Login", "Account")" title="@Localizer["Login"]">@Localizer["Login"]</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="header-icons-container">
+                    <!-- Dil Değiştirme Dropdown -->
+                    <div class="custom-dropdown">
+                        <button type="button" class="custom-dropdown-btn">
+                            <img src="/assets/images/flags/@(CultureInfo.CurrentUICulture.Name.Split('-')[0] == "tr" ? "turkey_flag.png" : CultureInfo.CurrentUICulture.Name.Split('-')[0] == "en" ? "us_flag.jpg" : "germany_flag.jpg")" alt="@Localizer["LanguageFlagAlt"]" height="12">
+                            @Localizer[CultureInfo.CurrentUICulture.Name.Split('-')[0] == "tr" ? "Turkish" : CultureInfo.CurrentUICulture.Name.Split('-')[0] == "en" ? "English" : "German"]
+                            <span class="mdi mdi-chevron-down"></span>
+                        </button>
+                        <div class="custom-dropdown-content">
+                            <form asp-controller="Language" asp-action="SetLanguage" method="post" id="languageForm">
+                                <input type="hidden" name="returnUrl" value="@Context.Request.Path@Context.Request.QueryString" />
+                                @Html.AntiForgeryToken()
+                                <button type="submit" name="culture" value="tr-TR" class="dropdown-item notify-item">
+                                    <img src="/assets/images/flags/turkey_flag.png" alt="@Localizer["Turkish"]" class="me-1" height="10">
+                                    <span class="align-middle">@Localizer["Turkish"]</span>
+                                </button>
+                                <button type="submit" name="culture" value="en-US" class="dropdown-item notify-item">
+                                    <img src="/assets/images/flags/us_flag.jpg" alt="@Localizer["English"]" class="me-1" height="10">
+                                    <span class="align-middle">@Localizer["English"]</span>
+                                </button>
+                                <button type="submit" name="culture" value="de-DE" class="dropdown-item notify-item">
+                                    <img src="/assets/images/flags/germany_flag.jpg" alt="@Localizer["German"]" class="me-1" height="10">
+                                    <span class="align-middle">@Localizer["German"]</span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="mobile-menu-switch">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </a>
+            </div>
+        </div>
+        <div class="revolution-slider-container">
+            <div class="revolution-slider overflow-hidden" data-version="5.4.8"
+                 data-height="770" data-heightresponsive1="650" data-heightresponsive2="600"
+                 data-heightresponsive3="500" data-heightresponsive4="500"
+                 data-autoplay="1" data-onhoverstop="0" data-bulletsoffset="86">
+                <ul>
+                    <li data-transition="fade" data-masterspeed="500" data-slotamount="1" data-delay="6000">
+                        <img src="/images/slider/2000x800/mia_kalite_cevre_ve_is_sagligi_guvenligi-1024x576.jpg" alt="@Localizer["Slide1Alt"]"
+                             data-bgfit="cover" data-bgposition="center center"
+                             data-kenburns="on" data-duration="9000" data-scalestart="100"
+                             data-scaleend="106" data-ease="Linear.easeNone"
+                             data-offsetstart="0 0" data-offsetend="0 0" data-rotatestart="0" data-rotateend="0">
+                        <div class="tp-caption"
+                             data-frames='[{"delay":500,"split":"words","splitdelay":0.10,"speed":2100,"from":"y:50;z:-50;o:0;","ease":"easeInOutQuint"},{"delay":"wait","split":"words","splitdelay":0.10,"speed":1900,"to":"y:50;z:-50;o:0;","ease":"easeInOutQuint"}]'
+                             data-x="center"
+                             data-y="['390', '336', '316', '290', '281']"
+                             data-textalign="center"
+                             data-width="full">
+                            <h2>@Localizer["Slide1Title"]</h2>
+                        </div>
+                        <div class="tp-caption"
+                             data-frames='[{"delay":1000,"split":"words","splitdelay":0.05,"speed":2100,"from":"y:50;z:-50;o:0;","ease":"easeInOutQuint"},{"delay":"wait","split":"words","splitdelay":0.05,"speed":1900,"to":"y:50;z:-50;o:0;","ease":"easeInOutQuint"}]'
+                             data-x="center"
+                             data-y="['474', '470', '424', '379', '353']"
+                             data-textalign="center"
+                             data-width="full">
+                            <h4>@Localizer["HealthOneClickAway"]</h4>
+                        </div>
+                    </li>
+                    <li data-transition="fade" data-masterspeed="500" data-slotamount="1" data-delay="6000">
+                        <img src="/images/slider/2000x800/is-guvenligi-uzmanliginin-amaclari.png" alt="@Localizer["Slide2Alt"]"
+                             data-bgfit="cover" data-bgposition="center center"
+                             data-kenburns="on" data-duration="9000" data-scalestart="100"
+                             data-scaleend="106" data-ease="Linear.easeNone"
+                             data-offsetstart="0 0" data-offsetend="0 0" data-rotatestart="0" data-rotateend="0">
+                        <div class="tp-caption"
+                             data-frames='[{"delay":500,"split":"words","splitdelay":0.10,"speed":2100,"from":"y:50;z:-50;o:0;","ease":"easeInOutQuint"},{"delay":"wait","split":"words","splitdelay":0.10,"speed":1900,"to":"y:50;z:-50;o:0;","ease":"easeInOutQuint"}]'
+                             data-x="center"
+                             data-y="['390', '336', '316', '290', '281']"
+                             data-textalign="center"
+                             data-width="full">
+                            <h2>@Localizer["Slide2Title"]</h2>
+                        </div>
+                        <div class="tp-caption"
+                             data-frames='[{"delay":1000,"split":"words","splitdelay":0.05,"speed":2100,"from":"y:50;z:-50;o:0;","ease":"easeInOutQuint"},{"delay":"wait","split":"words","splitdelay":0.05,"speed":1900,"to":"y:50;z:-50;o:0;","ease":"easeInOutQuint"}]'
+                             data-x="center"
+                             data-y="['474', '470', '424', '379', '353']"
+                             data-textalign="center"
+                             data-width="full">
+                            <h4>@Localizer["Slide2Subtitle"]</h4>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="theme-page">
+            <div class="clearfix">
+                <div class="row full-width gray">
+                    <div class="row slider-row small-margin">
+                        <form class="contact-form style-simple" id="contact-form" method="post" action="/Home/SendContactForm">
+                            @Html.AntiForgeryToken()
+                            <div class="row flex-box">
+                                <fieldset>
+                                    <label>@Localizer["NameSurname"]</label>
+                                    <input class="text-input" name="name" type="text" value="" placeholder="@Localizer["NameSurnamePlaceholder"]" data-required="1">
+                                </fieldset>
+                                <fieldset>
+                                    <label>@Localizer["PhoneNumber"]</label>
+                                    <input class="text-input" name="phone" type="tel" value="" placeholder="@Localizer["PhonePlaceholder"]" data-required="1" maxlength="11" pattern="^(0?\\d{10})$" oninput="this.value = this.value.replace(/[^0-9]/g, '');" title="@Localizer["InvalidPhoneNumber"].Value" required>
+                                </fieldset>
+                                <fieldset>
+                                    <label>@Localizer["Subject"]</label>
+                                    <select name="subject" id="subject" class="cost-dropdown" data-required="1">
+                                        <option value="" selected="selected">@Localizer["SelectSubject"]</option>
+                                        <option value="Bilgi Alma">@Localizer["Information"]</option>
+                                        <option value="İletişim">@Localizer["Contact"]</option>
+                                        <option value="Destek">@Localizer["Support"]</option>
+                                    </select>
+                                </fieldset>
+                                <fieldset class="submit-container column">
+                                    <input type="hidden" name="action" value="contact_form" />
+                                    <div class="row align-center">
+                                        <button type="submit" class="more submit-contact-form" title="@Localizer["CallMeBack"]">@Localizer["CallMeBack"]</button>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row gray full-width padding-top-100 padding-bottom-100">
+                    <div class="row">
+                        <div class="column column-1-2 padding-right-50">
+                            <label class="box-header">@Localizer["Services"]</label>
+                            <h2 class="box-header margin-top-15">@Localizer["DiscoverManageSolutions"]</h2>
+                            <div class="timeline-item margin-top-47">
+                                <div class="timeline-number-container">
+                                    <h5 class="number white">01.</h5>
+                                </div>
+                                <div class="timeline-content">
+                                    <h5>@Localizer["RegisterApply"]</h5>
+                                    <p>@Localizer["RegisterApplyDesc"]</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-number-container">
+                                    <h5 class="number white">02.</h5>
+                                </div>
+                                <div class="timeline-content">
+                                    <h5>@Localizer["PartnerWithOSGB"]</h5>
+                                    <p>@Localizer["PartnerWithOSGBDesc"]</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item last">
+                                <div class="timeline-number-container">
+                                    <h5 class="number white">03.</h5>
+                                </div>
+                                <div class="timeline-content">
+                                    <h5>@Localizer["ManageServicesOnePlace"]</h5>
+                                    <p>@Localizer["ManageServicesOnePlaceDesc"]</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column column-1-2 margin-bottom-95">
+                            <div class="single-image fp-preload radius-bottom float-right">
+                                <img src="/images/samples/440x484/car.png" alt="@Localizer["ServiceImageAlt"]">
+                            </div>
+                            <ul class="features-list type-big spacings-small side-image side-zindex-2 side-top-100 clearfix">
+                                <li class="column column-1-4 align-center">
+                                    <div class="content-box">
+                                        <h5 class="colored">01.</h5>
+                                        <h5>@Localizer["RegisterApply"]</h5>
+                                        <div class="progress-bar type-step clearfix">
+                                            <div class="single-bar">
+                                                <span data-step="1" data-steps="3" class="bar animated-element"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="features-list type-big spacings-small side-image side-zindex-2 side-bottom-minus-15 clearfix">
+                                <li class="column column-1-4 align-center">
+                                    <div class="content-box">
+                                        <h5 class="colored">02.</h5>
+                                        <h5>@Localizer["PartnerWithOSGB"]</h5>
+                                        <div class="progress-bar type-step clearfix">
+                                            <div class="single-bar">
+                                                <span data-step="2" data-steps="3" class="bar animated-element"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="features-list type-big spacings-small side-image side-zindex-2 side-bottom-minus-95 side-right-0 clearfix">
+                                <li class="column column-1-4 align-center">
+                                    <div class="content-box">
+                                        <h5 class="colored">03.</h5>
+                                        <h5>@Localizer["ManageServicesOnePlace"]</h5>
+                                        <div class="progress-bar type-step clearfix">
+                                            <div class="single-bar">
+                                                <span data-step="3" data-steps="3" class="bar animated-element"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row padding-top-95 padding-bottom-95">
+                    <label class="box-header align-center">@Localizer["MeetOurServices"]</label>
+                    <h2 class="box-header align-center margin-top-15">@Localizer["Services"]</h2>
+                    <div class="carousel-container margin-top-67 clearfix">
+                        <ul class="services-list horizontal-carousel clearfix">
+                            <li class="column column-1-3">
+                                <a href="@Url.Action("Services", "Home")" title="@Localizer["ManageOHS"]">
+                                    <img src="/images/samples/480x320/is-sagligi-ve-guvenligi-filmi-02.jpg" alt="@Localizer["ManageOHSImageAlt"]">
+                                </a>
+                                <div class="service-details">
+                                    <ul class=""></ul>
+                                    <h3><a href="@Url.Action("Services", "Home")" title="@Localizer["ManageOHS"]">@Localizer["ManageOHS"]</a></h3>
+                                    <ul class="simple-list">
+                                        <li>@Localizer["ManageOHSPoint"]</li>
+                                        <li>@Localizer["CompletePayments"]</li>
+                                        <li>@Localizer["AccessReports"]</li>
+                                    </ul>
+                                    <a class="more" href="@Url.Action("Services", "Home")" title="@Localizer["More"]">@Localizer["More"]</a>
+                                </div>
+                            </li>
+                            <li class="column column-1-3">
+                                <a href="@Url.Action("Services", "Home")" title="@Localizer["FastOSGB"]">
+                                    <img src="/images/samples/480x320/IS-GUVENLIGI-EGITIMI.png" alt="@Localizer["FastOSGBImageAlt"]">
+                                </a>
+                                <div class="service-details">
+                                    <ul class=""></ul>
+                                    <h3><a href="@Url.Action("Services", "Home")" title="@Localizer["FastOSGB"]">@Localizer["FastOSGB"]</a></h3>
+                                    <ul class="simple-list">
+                                        <li>@Localizer["SelectOSGB"]</li>
+                                        <li>@Localizer["EasyPayments"]</li>
+                                        <li>@Localizer["TrackAgreements"]</li>
+                                    </ul>
+                                    <a class="more" href="@Url.Action("Services", "Home")" title="@Localizer["More"]">@Localizer["More"]</a>
+                                </div>
+                            </li>
+                            <li class="column column-1-3">
+                                <a href="@Url.Action("Services", "Home")" title="@Localizer["OHSManagement"]">
+                                    <img src="/images/samples/480x320/resim.png" alt="@Localizer["OHSManagementImageAlt"]">
+                                </a>
+                                <div class="service-details">
+                                    <ul class=""></ul>
+                                    <h3><a href="@Url.Action("Services", "Home")" title="@Localizer["OHSManagement"]">@Localizer["OHSManagement"]</a></h3>
+                                    <ul class="simple-list">
+                                        <li>@Localizer["RiskAnalysis"]</li>
+                                        <li>@Localizer["HealthScreenings"]</li>
+                                        <li>@Localizer["ComplianceReports"]</li>
+                                    </ul>
+                                    <a class="more" href="@Url.Action("Services", "Home")" title="@Localizer["More"]">@Localizer["More"]</a>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="fp-carousel-pagination"></div>
+                    </div>
+                </div>
+                <div class="row full-width dark custom-section padding-top-50 padding-bottom-50">
+                    <div class="row align-center">
+                        <img src="/images/logo_band_white.svg" alt="@Localizer["FooterLogoAlt"]" class="custom-logo" />
+                    </div>
+                </div>
+                <div class="row full-width dark page-margin-top-section padding-top-95 padding-bottom-70 background-1">
+                    <div class="row">
+                        <label class="box-header align-center">@Localizer["ContactUs"]</label>
+                        <h3 class="box-header align-center white margin-top-23">@Localizer["MeetProfessionals"]</h3>
+                        <div class="align-center margin-top-44">
+                            <a class="more style-2" href="@Url.Action("Contact", "Home")" title="@Localizer["Contact"]">@Localizer["Contact"]</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row dark footer-row full-width padding-top-100">
+            <div class="row row-4-4">
+                <div class="column column-1-4"></div>
+                <div class="column column-1-4">
+                    <ul class="features-list">
+                        <li class="dark">
+                            <div class="icon template-email2"></div>
+                            <div class="item-content">
+                                <p>@Localizer["EmailAddresses"]</p>
+                                <h5><a href="mailto:info@ilterisg.com">info@ilterisg.com</a></h5>
+                                <h5><a href="mailto:umutolcer@ilterisg.com">umutolcer@ilterisg.com</a></h5>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="column column-1-4"></div>
+                <div class="column column-1-4">
+                    <ul class="features-list">
+                        <li class="dark">
+                            <div class=""></div>
+                            <div class="item-content">
+                                <p></p>
+                                <h5><a href=""></a></h5>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row dark footer-row full-width padding-top-63 padding-bottom-67">
+            <div class="row row-4-4">
+                <div class="column column-1-4">
+                    <h5>@Localizer["AppName"]</h5>
+                    <p class="margin-top-13">
+                        @Localizer["ManageOHSProcesses"]
+                    </p>
+                    <div class="margin-top-30">
+                        <a class="more style-3" href="@Url.Action("Contact", "Home")" title="@Localizer["ContactUs"]">@Localizer["ContactUs"]</a>
+                    </div>
+                </div>
+                <div class="column column-1-4"></div>
+                <div class="column column-1-4">
+                    <h5>@Localizer["Resources"]</h5>
+                    <ul class="list simple margin-top-22">
+                        <li class="template-right3"><a href="@Url.Action("About", "Home")" title="@Localizer["About"]">@Localizer["About"]</a></li>
+                        <li class="template-right3"><a href="@Url.Action("Services", "Home")" title="@Localizer["Services"]">@Localizer["Services"]</a></li>
+                        <li class="template-right3"><a href="@Url.Action("Contact", "Home")" title="@Localizer["Contact"]">@Localizer["Contact"]</a></li>
+                        <li class="template-right3"><a href="@Url.Action("Faq", "Home")" title="@Localizer["DeliveryReturn"]">@Localizer["DeliveryReturn"]</a></li>
+                        <li class="template-right3"><a href="@Url.Action("Faq", "Home")" title="@Localizer["PrivacyPolicy"]">@Localizer["PrivacyPolicy"]</a></li>
+                        <li class="template-right3"><a href="@Url.Action("Faq", "Home")" title="@Localizer["DistanceSale"]">@Localizer["DistanceSale"]</a></li>
+                    </ul>
+                </div>
+                <div class="column column-1-4">
+                    <h5>@Localizer["ForYou"]</h5>
+                    <ul class="latest-post margin-top-29">
+                        <li>
+                            <title="@Localizer["SafeLegalSolutions"]">
+                                @Localizer["SafeLegalSolutionsDesc"]
+                            </>
+                            <abbr title="@Localizer["TrustPeaceDate"]">@Localizer["TrustPeace"]</abbr>
+                        </li>
+                        <li>
+                            <title="@Localizer["EasyOHSManagement"]">
+                                @Localizer["EasyOHSManagementDesc"]
+                            </a>
+                            <abbr title="@Localizer["TimeResourceSaving"]">@Localizer["ComfortConvenience"]</abbr>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row page-padding-top">
+                <ul class="social-icons align-center">
+                    <li>
+                        <a target="_blank" href="mailto:info@ilterisg.com" class="social-email" title="@Localizer["Email"]">
+                            <i class="fa fa-envelope"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="row align-center padding-top-34">
+                <span class="copyright">@Localizer["PoweredBy"] <a href="" title="@Localizer["AppName"]" target="_blank">@Localizer["AppName"]</a></span>
+            </div>
+        </div>
+    </div>
+    <a href="#top" class="scroll-top animated-element template-up1" title="@Localizer["ScrollToTop"]"></a>
+    <div class="background-overlay"></div>
+    <script src="/js/jquery-3.6.0.min.js"></script>
+    <script src="/js/jquery.ba-bbq.min.js"></script>
+    <script src="/js/jquery-ui-1.13.1.custom.min.js"></script>
+    <script src="/js/jquery.ui.touch-punch.min.js"></script>
+    <script src="/js/jquery.isotope-packed.js"></script>
+    <script src="/js/jquery.easing.1.4.1.min.js"></script>
+    <script src="/js/jquery.carouFredSel-6.2.1-packed.js"></script>
+    <script src="/js/jquery.touchSwipe.min.js"></script>
+    <script src="/js/jquery.transit.min.js"></script>
+    <script src="/js/jquery.costCalculator.min.js"></script>
+    <script src="/js/jquery.parallax.min.js"></script>
+    <script src="/js/jquery.prettyPhoto.js"></script>
+    <script src="/js/jquery.qtip.min.js"></script>
+    <script src="/js/jquery.blockUI.min.js"></script>
+    <script src="/js/jquery.imagesloaded-packed.js"></script>
+    <script src="/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+    <script src="/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/odometer.min.js"></script>
+    <script>
+              $(document).ready(function () {
+            // Localizer değerlerini JavaScript değişkenlerine ata
+            const successMessage = '@Html.Raw(JavaScriptEncoder.Default.Encode(Localizer["Success"]?.Value ?? "Başarılı"))';
+            const errorMessage = '@Html.Raw(JavaScriptEncoder.Default.Encode(Localizer["Error"]?.Value ?? "Hata"))';
+            const errorOccurredMessage = '@Html.Raw(JavaScriptEncoder.Default.Encode(Localizer["ErrorOccurred"]?.Value ?? "Bir hata oluştu"))';
+            const okButtonText = '@Html.Raw(JavaScriptEncoder.Default.Encode(Localizer["OK"]?.Value ?? "Tamam"))';
+            const languageChangeErrorMessage = '@Html.Raw(JavaScriptEncoder.Default.Encode(Localizer["LanguageChangeError"]?.Value ?? "Dil değiştirme sırasında bir hata oluştu"))';
+            const formSuccessMessage = '@Html.Raw(JavaScriptEncoder.Default.Encode(Localizer["MessageSentSuccessfully"]?.Value ?? "Mesaj başarıyla gönderildi"))';
+            const formErrorMessage = '@Html.Raw(JavaScriptEncoder.Default.Encode(Localizer["AllFieldsRequired"]?.Value ?? "Tüm alanlar doldurulmalıdır"))';
+
+            // Pencere boyutuna göre menü düğmesini kontrol et
+            function toggleMobileMenuSwitch() {
+                if ($(window).width() <= 767) {
+                    $('.mobile-menu-switch').css({
+                        'display': 'block',
+                        'visibility': 'visible',
+                        'opacity': '1'
+                    });
+                } else {
+                    $('.mobile-menu-switch').css({
+                        'display': 'none',
+                        'visibility': 'hidden',
+                        'opacity': '0'
+                    });
+                }
+            }
+
+            // Dropdown pozisyonunu güncelle
+            function updateDropdownPosition() {
+                const $dropdown = $('.custom-dropdown');
+                const $dropdownContent = $('.custom-dropdown-content');
+                const $dropdownBtn = $('.custom-dropdown-btn');
+                if ($(window).width() <= 767 && $dropdown.hasClass('active')) {
+                    const btnOffset = $dropdownBtn.offset().top + $dropdownBtn.outerHeight();
+                    const windowScrollTop = $(window).scrollTop();
+                    const topPosition = btnOffset - windowScrollTop;
+                    $dropdownContent.css({
+                        'top': topPosition + 'px',
+                        'right': '10px'
+                    });
+                } else {
+                    $dropdownContent.css({
+                        'top': '100%',
+                        'right': '0'
+                    });
+                }
+            }
+
+            // Dropdown açma/kapama için tıklama kontrolü
+            function toggleDropdown() {
+                const $dropdown = $('.custom-dropdown');
+                const $dropdownContent = $('.custom-dropdown-content');
+                const $dropdownBtn = $('.custom-dropdown-btn');
+                $dropdownBtn.on('click', function (e) {
+                    e.stopPropagation(); // Olayın bubbling yapmasını engelle
+                    const isActive = $dropdown.hasClass('active');
+                    $dropdown.toggleClass('active', !isActive);
+                    updateDropdownPosition(); // Dropdown pozisyonunu güncelle
+                });
+                // Dropdown dışına tıklayınca kapat
+                $(document).on('click', function (e) {
+                    if (!$(e.target).closest('.custom-dropdown').length) {
+                        $dropdown.removeClass('active');
+                    }
+                });
+            }
+
+            // Sayfa yüklendiğinde kontrol et
+            toggleMobileMenuSwitch();
+            toggleDropdown();
+            updateDropdownPosition();
+
+            // Pencere boyutu değiştiğinde kontrol et
+            $(window).resize(function () {
+                toggleMobileMenuSwitch();
+                if ($(window).width() > 767) {
+                    $('.custom-dropdown').removeClass('active'); // Masaüstünde dropdown'ı kapat
+                    $('.custom-dropdown-content').css('top', '100%'); // Top değerini sıfırla
+                }
+                updateDropdownPosition();
+            });
+
+            // Kaydırma olayında dropdown pozisyonunu güncelle
+            $(window).on('scroll', function () {
+                updateDropdownPosition();
+            });
+
+            // İletişim formu gönderimi
+            $("#contact-form").on("submit", function (e) {
+                e.preventDefault();
+
+                // Form gönderimi sırasında spinner göster
+                const $spinnerOverlay = $('<div class="custom-spinner-overlay"></div>');
+                const $spinner = $('<div class="fp-preloader-spinner"></div>');
+                $spinnerOverlay.append($spinner);
+                $('body').append($spinnerOverlay);
+
+                var formData = {
+                    name: $("input[name='name']").val(),
+                    phone: $("input[name='phone']").val(),
+                    subject: $("#subject").val(),
+                    __RequestVerificationToken: $("input[name='__RequestVerificationToken']").val()
+                };
+
+                $.ajax({
+                    url: "/Home/SendContactForm",
+                    type: "POST",
+                    data: formData,
+                    success: function (response) {
+                        // Spinner'ı kaldır
+                        $spinnerOverlay.remove();
+
+                        console.log('Response:', response);
+                        if (response.success) {
+                            Swal.fire({
+                                icon: 'success',
+                                title: successMessage,
+                                text: response.message || formSuccessMessage,
+                                confirmButtonText: okButtonText,
+                                confirmButtonColor: '#377EF9'
+                            }).then(() => {
+                                $("#contact-form")[0].reset();
+                            });
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: errorMessage,
+                                text: response.message || formErrorMessage,
+                                confirmButtonText: okButtonText,
+                                confirmButtonColor: '#377EF9'
+                            });
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        // Spinner'ı kaldır
+                        $spinnerOverlay.remove();
+
+                        console.log('Error:', xhr.responseText);
+                        Swal.fire({
+                            icon: 'error',
+                            title: errorMessage,
+                            text: xhr.responseText || errorOccurredMessage, // Hata mesajını direkt responseText ile göster, ekstra prefix/':' olmadan
+                            confirmButtonText: okButtonText,
+                            confirmButtonColor: '#377EF9'
+                        });
+                    }
+                });
+            });
+
+            // Dil değiştirme için AJAX işlemi
+            $('#languageForm button').on('click', function (e) {
+                e.preventDefault();
+                const culture = $(this).val();
+                const returnUrl = $('#languageForm input[name="returnUrl"]').val();
+                const token = $('#languageForm input[name="__RequestVerificationToken"]').val();
+                $.ajax({
+                    url: '@Url.Action("SetLanguage", "Language")',
+                    method: 'POST',
+                    data: {
+                        culture: culture,
+                        returnUrl: returnUrl,
+                        __RequestVerificationToken: token
+                    },
+                    success: function () {
+                        window.location.href = returnUrl;
+                    },
+                    error: function (err) {
+                        console.error('Dil değiştirme hatası:', err);
+                        Swal.fire({
+                            icon: 'error',
+                            title: errorMessage,
+                            text: languageChangeErrorMessage,
+                            confirmButtonText: okButtonText
+                        });
+                    }
+                });
+                // Dil seçimi sonrası dropdown'u kapat
+                $('.custom-dropdown').removeClass('active');
+            });
+
+            // Dropdown ikonlarının yüklendiğini kontrol et
+            $('.dropdown-item.notify-item img').on('error', function () {
+                console.error('Bayrak ikonu yüklenemedi: ' + $(this).attr('src'));
+                $(this).attr('src', '/assets/images/flags/fallback_flag.png');
+            });
+
+            $('.mdi-chevron-down').each(function () {
+                if (!$(this).is(':visible')) {
+                    console.warn('MDI chevron-down ikonu görünmüyor');
+                }
+            });
+
+            // Hata ayıklama için sayfa hizasını kontrol et
+            console.log('Site Container Margin:', $('.site-container').css('margin'));
+            console.log('Header Container Margin:', $('.header-container').css('margin'));
+            console.log('Header Width:', $('.header').width());
+            console.log('Header Icons Container Width:', $('.header-icons-container').width());
+        });
+    </script>
+</body>
+</html>

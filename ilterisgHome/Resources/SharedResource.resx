@@ -1,0 +1,1014 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="About" xml:space="preserve">
+    <value>Hakkımızda</value>
+  </data>
+  <data name="AboutUs" xml:space="preserve">
+    <value>Hakkımızda</value>
+  </data>
+  <data name="AboutUsDescription1" xml:space="preserve">
+    <value>Firmamız, Çalışma ve Sosyal Güvenlik Bakanlığı tarafından yetkilendirilmiş bir Ortak Sağlık ve Güvenlik Birimi (OSGB) olarak, iş dünyasına yenilikçi ve güvenilir çözümler sunmak amacıyla kurulmuştur.</value>
+  </data>
+  <data name="AboutUsDescription2" xml:space="preserve">
+    <value>OSGB hizmetlerini firmalarla birleştiren öncü bir kuruluş olarak, iş sağlığı ve güvenliği alanında uzmanlaşmış ekibimizle, işletmelerin ve çalışanların ihtiyaçlarını tek çatı altında buluşturuyoruz.</value>
+  </data>
+  <data name="AboutUsDescription3" xml:space="preserve">
+    <value>Biz, OSGB hizmetlerini bir adım öteye taşıyarak firmalarla iş birliği yapan bir köprü olmayı hedefliyoruz. Her bir müşterimizin ihtiyaçlarına özel çözümler üretiyor, iş süreçlerini kolaylaştırıyor ve sürdürülebilir bir güvenlik kültürü inşa ediyoruz. Çalışan sağlığı ve müşteri memnuniyeti, faaliyetlerimizin temel taşlarıdır. Bu bilinçle, teknolojinin sunduğu en güncel imkanları kullanarak, yenilikçi yaklaşımlar geliştiriyor ve sektörde öncü bir rol üstleniyoruz.</value>
+  </data>
+  <data name="AboutUsDescription4" xml:space="preserve">
+    <value>Firmamız, sizinle birlikte büyümeyi ve iş dünyasına değer katmayı amaçlıyor. İş sağlığı ve güvenliği konusundaki tüm ihtiyaçlarınızda yanınızda olmaktan gurur duyuyor, profesyonel ekibimizle her zaman en iyisini sunmak için çalışıyoruz. Bize güvenen işletmelerle kurduğumuz güçlü bağlar, başarımızın en büyük kanıtıdır.</value>
+  </data>
+  <data name="AccessReports" xml:space="preserve">
+    <value>Eğitimler, sağlık kontrolleri ve iş güvenliği raporlarına tek ekrandan erişin.</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Adres</value>
+  </data>
+  <data name="AddressDynamic" xml:space="preserve">
+    <value>Müşterinin teslimat veya fatura adresi</value>
+  </data>
+  <data name="AdminNotificationSubject" xml:space="preserve">
+    <value>AdminNotificationSubject</value>
+  </data>
+  <data name="AllFieldsRequired" xml:space="preserve">
+    <value>Tüm alanlar doldurulmalıdır.</value>
+  </data>
+  <data name="AppName" xml:space="preserve">
+    <value>İLTERİSG Admin Paneli</value>
+  </data>
+  <data name="Blog" xml:space="preserve">
+    <value>Blog</value>
+  </data>
+  <data name="Buyer" xml:space="preserve">
+    <value>Alıcı</value>
+  </data>
+  <data name="BuyerObligation" xml:space="preserve">
+    <value>Alıcı, satın alma işlemi sırasında yukarıdaki bilgilerini doğru ve eksiksiz olarak beyan etmekle yükümlüdür.</value>
+  </data>
+  <data name="BuyerObligation1" xml:space="preserve">
+    <value>Ödeme yükümlülüğünü zamanında yerine getirmek</value>
+  </data>
+  <data name="BuyerObligation2" xml:space="preserve">
+    <value>Doğru ve eksiksiz bilgi sağlamak</value>
+  </data>
+  <data name="BuyerObligation3" xml:space="preserve">
+    <value>Hizmetin sunulması için gerekli iş birliğini göstermek</value>
+  </data>
+  <data name="BuyerObligations" xml:space="preserve">
+    <value>Alıcı’nın Yükümlülükleri</value>
+  </data>
+  <data name="CallMeBack" xml:space="preserve">
+    <value>Size Ulaşalım!</value>
+  </data>
+  <data name="CancellationChange" xml:space="preserve">
+    <value>İptal ve Değişiklik Talepleri</value>
+  </data>
+  <data name="CancellationChangeItem1" xml:space="preserve">
+    <value>Hizmet başlamadan önce yapılacak iptal veya değişiklik talepleri, hizmetin başlangıç tarihinden en az beş (5) iş günü önce yazılı olarak (e-posta veya resmi yazı ile) firmamıza iletilmelidir.</value>
+  </data>
+  <data name="CancellationChangeItem2" xml:space="preserve">
+    <value>Bu süre içinde bildirilen iptal talepleri geçerli kabul edilir ve ödenen hizmet bedelinin tamamı, masrafsız olarak 7 iş günü içinde müşteriye iade edilir.</value>
+  </data>
+  <data name="CancellationChangeItem3" xml:space="preserve">
+    <value>Hizmetin başlangıç tarihinden 5 iş gününden daha kısa bir süre kala yapılan iptal talepleri değerlendirilmez ve ödenen bedel iade edilmez. Ancak, müşteri talebi doğrultusunda hizmetin kapsamı değiştirilebilir.</value>
+  </data>
+  <data name="CancellationChangeItem4" xml:space="preserve">
+    <value>Değişiklik talepleri (örneğin, hizmet süresinin uzatılması veya ek personel talebi) için firmamız, ek bir planlama yaparak en geç 3 iş günü içinde müşteriye geri dönüş sağlar.</value>
+  </data>
+  <data name="CollectedDataPurpose1" xml:space="preserve">
+    <value>Hizmetlerimizin eksiksiz ve zamanında sunulabilmesi</value>
+  </data>
+  <data name="CollectedDataPurpose2" xml:space="preserve">
+    <value>Müşteri taleplerinizin karşılanması ve hizmet süreçlerinin planlanması</value>
+  </data>
+  <data name="CollectedDataPurpose3" xml:space="preserve">
+    <value>Müşteri memnuniyetinin ölçülmesi ve hizmet kalitesinin artırılması</value>
+  </data>
+  <data name="CollectedDataPurpose4" xml:space="preserve">
+    <value>Yasal yükümlülüklerin yerine getirilmesi</value>
+  </data>
+  <data name="CollectedDataPurpose5" xml:space="preserve">
+    <value>Gerektiğinde sizinle iletişim kurulması ve bilgilendirme yapılması</value>
+  </data>
+  <data name="CollectedDataPurposes" xml:space="preserve">
+    <value>Toplanan Kişisel Veriler ve Amaçları</value>
+  </data>
+  <data name="CollectedDataPurposesText" xml:space="preserve">
+    <value>Kişisel verileriniz, hizmet talebiniz sırasında doldurduğunuz formlar, e-posta yazışmaları, telefon görüşmeleri, ödeme işlemleri ve iş yerinizde yapılan yerinde incelemeler yoluyla toplanmaktadır.</value>
+  </data>
+  <data name="CollectedDataRestriction" xml:space="preserve">
+    <value>Kişisel verileriniz, yukarıda belirtilen amaçlar dışında asla kullanılmaz ve bu amaçlara uygun olmayan hiçbir işlem için işlenmez.</value>
+  </data>
+  <data name="ComfortConvenience" xml:space="preserve">
+    <value>Konfor ve Kolaylık</value>
+  </data>
+  <data name="CompletePayments" xml:space="preserve">
+    <value>Ödemelerinizi güvenli sistemimiz üzerinden hızlıca tamamlayın.</value>
+  </data>
+  <data name="ComplianceReports" xml:space="preserve">
+    <value>İSG uyumluluğunuzu anlık raporlarla kontrol edin.</value>
+  </data>
+  <data name="ComplianceWithRegulations" xml:space="preserve">
+    <value>İSG yönetmeliklerine uygun hizmetlerle işletmelerin yasal zorunluluklarını yerine getirmesini sağlamak.</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>İletişim</value>
+  </data>
+  <data name="ContactComplaint" xml:space="preserve">
+    <value>İletişim ve Şikayet</value>
+  </data>
+  <data name="ContactComplaintText" xml:space="preserve">
+    <value>Kişisel verilerinizin işlenmesiyle ilgili herhangi bir sorunuz, talebiniz veya şikayetiniz olduğunda, bizimle iletişime geçmekten çekinmeyin.</value>
+  </data>
+  <data name="ContactFormSubject" xml:space="preserve">
+    <value>ContactFormSubject</value>
+  </data>
+  <data name="ContactNow" xml:space="preserve">
+    <value>Hemen Bize Ulaşın!</value>
+  </data>
+  <data name="ContactText" xml:space="preserve">
+    <value>Sözleşme ile ilgili sorularınız için info@ilterisg.com adresinden veya +90 541 710 3373 numaralı telefondan bize ulaşabilirsiniz.</value>
+  </data>
+  <data name="ContactUs" xml:space="preserve">
+    <value>Bize Ulaşın!</value>
+  </data>
+  <data name="CostAdvantage" xml:space="preserve">
+    <value>Uygun OSGB seçimleri ile işletmelere maliyet avantajı sağlamak.</value>
+  </data>
+  <data name="CustomerRightsFeedback" xml:space="preserve">
+    <value>Müşteri Hakları ve Geri Bildirim</value>
+  </data>
+  <data name="CustomerRightsFeedbackItem1" xml:space="preserve">
+    <value>Müşterilerimiz, hizmet sürecinde karşılaştıkları her türlü sorunu veya memnuniyetsizliği, 7/24 ulaşılabilir müşteri hizmetleri ekibimize bildirebilir.</value>
+  </data>
+  <data name="CustomerRightsFeedbackItem2" xml:space="preserve">
+    <value>Geri bildirimler, en geç 2 iş günü içinde detaylı bir şekilde incelenir ve çözüm önerileri müşteriye sunulur.</value>
+  </data>
+  <data name="CustomerRightsFeedbackItem3" xml:space="preserve">
+    <value>Müşteri memnuniyeti, firmamızın öncelikli hedefidir.</value>
+  </data>
+  <data name="DataCollectionMethod" xml:space="preserve">
+    <value>Verilerin Toplanma Yöntemi</value>
+  </data>
+  <data name="DataCollectionMethodText" xml:space="preserve">
+    <value>Kişisel verileriniz, hizmet talebiniz sırasında doldurduğunuz formlar, e-posta yazışmaları, telefon görüşmeleri, ödeme işlemleri ve iş yerinizde yapılan yerinde incelemeler yoluyla toplanmaktadır. Verileriniz, açık rızanıza dayalı olarak veya yasal zorunluluklar çerçevesinde işlenmektedir. Verilerinizin toplanması sırasında, hangi bilgilerin neden toplandığı size açıkça bildirilir ve isteğe bağlı alanlar için onayınız alınır.</value>
+  </data>
+  <data name="DataRetentionPeriod" xml:space="preserve">
+    <value>Veri Saklama Süresi</value>
+  </data>
+  <data name="DataRetentionPeriodText" xml:space="preserve">
+    <value>Kişisel verileriniz, hizmetin sunulduğu süre boyunca ve yasal saklama süreleri dikkate alınarak muhafaza edilir.</value>
+  </data>
+  <data name="DataSecurityDesign" xml:space="preserve">
+    <value>Bu önlemler, verilerinizin kaybolması, çalınması veya yetkisiz kişilerce kullanılması riskini en aza indirmek için tasarlanmıştır.</value>
+  </data>
+  <data name="DataSecurityMeasure1" xml:space="preserve">
+    <value>Elektronik ortamda toplanan veriler, gelişmiş şifreleme yöntemleri (örneğin, SSL sertifikası ve AES-256 şifreleme) ile korunmakta ve yalnızca yetkili personel tarafından erişilebilmektedir.</value>
+  </data>
+  <data name="DataSecurityMeasure2" xml:space="preserve">
+    <value>Fiziksel belgeler, kilitli dolaplarda ve güvenli arşiv odalarında saklanmakta; bu alanlara giriş-çıkışlar sıkı bir şekilde denetlenmektedir.</value>
+  </data>
+  <data name="DataSecurityMeasure3" xml:space="preserve">
+    <value>Veri tabanlarımız, yetkisiz erişimlere karşı sürekli izlenmekte ve güvenlik duvarları ile korunmaktadır.</value>
+  </data>
+  <data name="DataSecurityMeasure4" xml:space="preserve">
+    <value>Olası veri ihlallerine karşı acil durum planlarımız mevcut olup, böyle bir durumda KVKK uyarınca 72 saat içinde sizi ve ilgili mercileri bilgilendirme taahhüdümüz bulunmaktadır.</value>
+  </data>
+  <data name="DataSecurityMeasure5" xml:space="preserve">
+    <value>Personelimiz, gizlilik politikalarımız ve KVKK kapsamında düzenli olarak eğitilmekte ve veri güvenliği konusunda bilinçlendirilmektedir.</value>
+  </data>
+  <data name="DataSecurityMeasures" xml:space="preserve">
+    <value>Veri Güvenliği ve Koruma Önlemleri</value>
+  </data>
+  <data name="DataSecurityMeasuresIntro" xml:space="preserve">
+    <value>Firmamız, kişisel verilerinizin güvenliğini sağlamak için en güncel teknolojik ve fiziksel önlemleri almaktadır:</value>
+  </data>
+  <data name="DataSharingException1" xml:space="preserve">
+    <value>Hukuki yükümlülüklerin yerine getirilmesi için resmi makamlarla (örneğin, mahkeme kararı veya Bakanlık talebi)</value>
+  </data>
+  <data name="DataSharingException2" xml:space="preserve">
+    <value>Hizmetin bir kısmının yürütülmesi için iş birliği yapılan OSGB uzmanlarıyla (bu durumda, uzmanlar da KVKK’ya uygun gizlilik sözleşmeleri ile bağlıdır)</value>
+  </data>
+  <data name="DataSharingIntro" xml:space="preserve">
+    <value>Firmamız, kişisel verilerinizi yasal zorunluluklar dışında hiçbir şekilde üçüncü kişilerle paylaşmamaktadır. Ancak, aşağıdaki istisnai durumlarda veri paylaşımı gerçekleşebilir:</value>
+  </data>
+  <data name="DataSharingRestriction" xml:space="preserve">
+    <value>Üçüncü taraflarla veri paylaşımı gerektiğinde, yalnızca gerekli minimum veri aktarılır ve bu tarafların da aynı güvenlik standartlarına uyması zorunlu kılınır.</value>
+  </data>
+  <data name="DataSharingThirdParties" xml:space="preserve">
+    <value>Verilerin Paylaşımı ve Üçüncü Taraflarla İlişkiler</value>
+  </data>
+  <data name="DeliveryCondition1" xml:space="preserve">
+    <value>Hizmet başlangıç tarihi ve takvimi, Alıcı’ya e-posta veya telefon yoluyla bildirilir.</value>
+  </data>
+  <data name="DeliveryCondition2" xml:space="preserve">
+    <value>Olası gecikmelerde, Satıcı 24 saat içinde Alıcı’yı bilgilendirir ve alternatif çözümler sunar.</value>
+  </data>
+  <data name="DeliveryCondition3" xml:space="preserve">
+    <value>Hizmetin kesintisiz devam etmesi için Satıcı, gerekli personel ve teknik altyapıyı sağlar.</value>
+  </data>
+  <data name="DeliveryConditions" xml:space="preserve">
+    <value>Teslimat Koşulları</value>
+  </data>
+  <data name="DeliveryConditionsText" xml:space="preserve">
+    <value>Satıcı, hizmetin teslimatını, ödeme onaylandıktan ve Sözleşme kurulduktan sonra en geç 5 (beş) iş günü içinde başlatır.</value>
+  </data>
+  <data name="DeliveryProcess" xml:space="preserve">
+    <value>Teslimat Süreci</value>
+  </data>
+  <data name="DeliveryProcessItem1" xml:space="preserve">
+    <value>Firmamız, Ortak Sağlık ve Güvenlik Birimi (OSGB) hizmetlerini, müşteri ile yapılan detaylı yazılı sözleşmede belirtilen tarihler ve koşullar çerçevesinde sunar.</value>
+  </data>
+  <data name="DeliveryProcessItem2" xml:space="preserve">
+    <value>Hizmetin başlangıç tarihi, ödeme onaylandıktan ve sözleşme (her iki tarafça) imzalandıktan sonra, en geç iki (2) iş günü içinde müşteriye yazılı olarak bildirilir. Ayrıca, hizmetin uygulama takvimi ve aşamaları detaylı bir şekilde paylaşılır.</value>
+  </data>
+  <data name="DeliveryProcessItem3" xml:space="preserve">
+    <value>Ödeme, hizmetin başlamasından önce tam veya taksitli olarak yapılabilir. Ödeme planı, sözleşmede açıkça belirtilir ve müşteri onayı alınır.</value>
+  </data>
+  <data name="DeliveryProcessItem4" xml:space="preserve">
+    <value>Hizmet teslimatı, OSGB tarafından atanacak uzman ekiplerce, iş sağlığı ve güvenliği (İSG) projeleri kapsamında düzenli denetimler, eğitimler ve raporlamalarla gerçekleştirilir.</value>
+  </data>
+  <data name="DeliveryProcessItem5" xml:space="preserve">
+    <value>Teslimat sürecinde, teknik aksaklıklar, personel eksikliği veya beklenmedik durumlar gibi olası gecikmeler yaşanması halinde, firmamız 24 saat içinde çözüm üretir ve müşteriyi bilgilendirir. Hizmetin kesintisiz devam etmesi için yedek planlar devreye alınır.</value>
+  </data>
+  <data name="DeliveryProcessItem6" xml:space="preserve">
+    <value>Müşterinin iş yeri koşullarında değişiklik (örneğin, çalışan sayısı artışı veya yeni bir risk tespiti) olması durumunda, hizmet kapsamı ek bir ücret talep edilmeden gözden geçirilir ve güncellenir.</value>
+  </data>
+  <data name="DeliveryProcessItem7" xml:space="preserve">
+    <value>Hizmetin her aşamasında, müşteriye düzenli ilerleme raporları (aylık veya proje bazlı) sunulur. Bu raporlar, yapılan çalışmaları, tespit edilen riskleri ve çözüm önerilerini içerir.</value>
+  </data>
+  <data name="DeliveryReturn" xml:space="preserve">
+    <value>Teslimat ve İade Şartları</value>
+  </data>
+  <data name="DeliveryReturnTerms" xml:space="preserve">
+    <value>Teslimat ve İade Şartları</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Açıklama</value>
+  </data>
+  <data name="DiscoverManageSolutions" xml:space="preserve">
+    <value>Firmanız için en uygun İSG çözümlerini tek platformda keşfedin ve yönetin.</value>
+  </data>
+  <data name="DisputeResolution" xml:space="preserve">
+    <value>Uyuşmazlıkların Çözümü</value>
+  </data>
+  <data name="DisputeResolutionText" xml:space="preserve">
+    <value>Sözleşme’den kaynaklanan uyuşmazlıklarda, öncelikle taraflar iyi niyetle çözüm arar. Çözüm sağlanamazsa, Alıcı’nın ikametgahında bulunan Tüketici Hakem Heyeti veya Tüketici Mahkemeleri yetkilidir.</value>
+  </data>
+  <data name="DistanceSale" xml:space="preserve">
+    <value>Mesafeli Satış Sözleşmesi</value>
+  </data>
+  <data name="DistanceSaleContract" xml:space="preserve">
+    <value>Mesafeli Satış Sözleşmesi</value>
+  </data>
+  <data name="DistanceSaleContractDescription" xml:space="preserve">
+    <value>İşbu Mesafeli Satış Sözleşmesi (\"Sözleşme\"), aşağıda belirtilen taraflar arasında, Firmamızın web sitesi üzerinden gerçekleştirilen OSGB ve firmanız arasında online satın alma işlemleri için düzenlenmiştir. 6502 sayılı Tüketicinin Korunması Hakkında Kanun ve Mesafeli Sözleşmeler Yönetmeliği hükümlerine uygun olarak hazırlanmış olup, alıcı ve satıcının hak ve yükümlülüklerini açıkça düzenler. Sözleşme, hizmetin satın alınmasıyla birlikte taraflar arasında bağlayıcı hale gelir.</value>
+  </data>
+  <data name="EasiestService" xml:space="preserve">
+    <value>Size en zahmetsiz hizmeti sunuyoruz!</value>
+  </data>
+  <data name="EasyOHSManagement" xml:space="preserve">
+    <value>Kolay ve Hızlı İSG Yönetimi</value>
+  </data>
+  <data name="EasyOHSManagementDesc" xml:space="preserve">
+    <value>İSG hizmetlerinizi online yönetin, saha operasyonlarınızı hızlandırın. Anlaşma, raporlama, eğitim süreçleri ve sağlık muayenelerini tek platformdan takip edin</value>
+  </data>
+  <data name="EasyPayments" xml:space="preserve">
+    <value>Kolay ödeme seçenekleriyle işlemleri hızlandırın.</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>E-posta</value>
+  </data>
+  <data name="EmailAddresses" xml:space="preserve">
+    <value>Mail Adreslerimiz</value>
+  </data>
+  <data name="EmailDynamic" xml:space="preserve">
+    <value>Müşterinin e-posta adresi</value>
+  </data>
+  <data name="EmailPlaceholder" xml:space="preserve">
+    <value>ornek@domain.com</value>
+  </data>
+  <data name="English" xml:space="preserve">
+    <value>İngilizce</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Hata</value>
+  </data>
+  <data name="ErrorOccurred" xml:space="preserve">
+    <value>Hata oluştu:</value>
+  </data>
+  <data name="ExpertManagement" xml:space="preserve">
+    <value>İş güvenliği süreçlerini uzman ellerde yönetmenize yardımcı olmak.</value>
+  </data>
+  <data name="FacilitateCompliance" xml:space="preserve">
+    <value>yasal yükümlülüklerinizi yerine getirmenizi kolaylaştırıyoruz.</value>
+  </data>
+  <data name="FastestSafestOHS" xml:space="preserve">
+    <value>İLTER-İSG olarak, iş sağlığı ve güvenliği (İSG) hizmetlerinizi en hızlı ve en güvenli şekilde alabilmeniz için çalışıyoruz. Firmanızın ihtiyacına en uygun OSGB (Ortak Sağlık Güvenlik Birimi) hizmetini sunuyor, yasal yükümlülüklerinizi yerine getirmenizi kolaylaştırıyoruz.</value>
+  </data>
+  <data name="FastOSGB" xml:space="preserve">
+    <value>OSGB ile Hızlı Anlaşma ve Ödeme</value>
+  </data>
+  <data name="FastOSGBImageAlt" xml:space="preserve">
+    <value>Hızlı OSGB Görseli</value>
+  </data>
+  <data name="FastReliableSolutions" xml:space="preserve">
+    <value>OSGB seçimi ve eğitim süreçlerinde hızlı, kolay ve güvenilir çözümler sunmak.</value>
+  </data>
+  <data name="FastSecureAgreements" xml:space="preserve">
+    <value>Hızlı ve güvenli anlaşma süreçleri.</value>
+  </data>
+  <data name="FillFormContact" xml:space="preserve">
+    <value>Formu doldurun, en kısa sürede size her türlü isteğiniz için ulaşalım</value>
+  </data>
+  <data name="FooterLogoAlt" xml:space="preserve">
+    <value>Footer Logosu</value>
+  </data>
+  <data name="ForYou" xml:space="preserve">
+    <value>Sizin İçin</value>
+  </data>
+  <data name="German" xml:space="preserve">
+    <value>Almanca</value>
+  </data>
+  <data name="GetInTouch" xml:space="preserve">
+    <value>BİZE ULAŞIN!</value>
+  </data>
+  <data name="HealthOneClickAway" xml:space="preserve">
+    <value>Sağlığınız Bir Tık Uzağınızda!</value>
+  </data>
+  <data name="HealthScreenings" xml:space="preserve">
+    <value>Çalışanlarınız için gerekli sağlık taramalarını planlayın.</value>
+  </data>
+  <data name="HealthScreeningsPeriodic" xml:space="preserve">
+    <value>Sağlık taramaları, periyodik muayeneler ve risk analizleri.</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Yardım Almak</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Ana Sayfa</value>
+  </data>
+  <data name="HomePageTitle" xml:space="preserve">
+    <value>İLTER-İSG - ANA SAYFA</value>
+  </data>
+  <data name="IDTaxNumber" xml:space="preserve">
+    <value>T.C. Kimlik No / Vergi No</value>
+  </data>
+  <data name="IDTaxNumberDynamic" xml:space="preserve">
+    <value>Müşteriden alınan kimlik veya vergi numarası</value>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>Bilgi Alma</value>
+  </data>
+  <data name="InnovativeEfficient" xml:space="preserve">
+    <value>Yenilikçi teknolojilerle süreçleri daha verimli, daha hızlı ve güvenilir hale getirmek.</value>
+  </data>
+  <data name="InternationalStandards" xml:space="preserve">
+    <value>Uluslararası standartlara uygun İSG hizmetleri sunmak.</value>
+  </data>
+  <data name="InvalidPhoneNumber" xml:space="preserve">
+    <value>Geçersiz telefon numarası formatı. Lütfen 10 veya 11 haneli bir numara girin (başı sıfırlı veya sıfırsız, + işareti kullanmayın).</value>
+  </data>
+  <data name="InvoiceInfo" xml:space="preserve">
+    <value>Fatura Bilgisi</value>
+  </data>
+  <data name="InvoiceInfoText" xml:space="preserve">
+    <value>Hizmet bedeli faturası, ödeme tamamlandıktan sonra Alıcı’nın belirttiği adrese veya e-posta adresine gönderilir.</value>
+  </data>
+  <data name="Keywords" xml:space="preserve">
+    <value>İSG, OSGB, İşyeri Hekimi, Risk Analizi, Ortak Sağlık ve Güvenlik, İLTER, İlteriş, İlterisg, Tehlike Sınıfı, İlter, İlter-isg, ilteriş, Blog, Giriş Yap</value>
+  </data>
+  <data name="LanguageChangeError" xml:space="preserve">
+    <value>Dil değiştirme işlemi başarısız oldu.</value>
+  </data>
+  <data name="LanguageFlagAlt" xml:space="preserve">
+    <value>Dil Bayrağı</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Giriş</value>
+  </data>
+  <data name="LogoAlt" xml:space="preserve">
+    <value>logo</value>
+  </data>
+  <data name="ManageOHS" xml:space="preserve">
+    <value>İSG Hizmetlerinizi Kolayca Yönetin</value>
+  </data>
+  <data name="ManageOHSImageAlt" xml:space="preserve">
+    <value>İSG Yönetimi Görseli</value>
+  </data>
+  <data name="ManageOHSPoint" xml:space="preserve">
+    <value>İş sağlığı ve güvenliği hizmetlerinizi tek noktadan yönetin.</value>
+  </data>
+  <data name="ManageOHSProcesses" xml:space="preserve">
+    <value>İşletmenizin iş sağlığı ve güvenliği süreçlerini profesyonel bir şekilde yönetin. İSG danışmanlığı, risk analizi, sağlık taramaları ve yasal uyumluluk hizmetlerimizle iş yerinizi güvenli hale getirin.</value>
+  </data>
+  <data name="ManageOSGBAgreements" xml:space="preserve">
+    <value>tek noktadan OSGB anlaşmaları, sağlık taramaları, eğitimler ve risk analizlerini yönetmenizi sağlıyoruz.</value>
+  </data>
+  <data name="ManageServicesOnePlace" xml:space="preserve">
+    <value>Tüm Hizmetleri Tek Noktadan Yönetin</value>
+  </data>
+  <data name="ManageServicesOnePlaceDesc" xml:space="preserve">
+    <value>Alacağınız her hizmeti ve diğer süreçlerinizi tek noktadan yönetin.</value>
+  </data>
+  <data name="MeetOurServices" xml:space="preserve">
+    <value>Hizmetlerimizle Tanışın</value>
+  </data>
+  <data name="MeetProfessionals" xml:space="preserve">
+    <value>İstediğiniz vakit danışıp hizmet alabileceğiniz profesyonellerimizle tanışın!</value>
+  </data>
+  <data name="MessageSentSuccessfully" xml:space="preserve">
+    <value>Mesajınız başarıyla gönderildi!</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>Daha Fazla</value>
+  </data>
+  <data name="MostTrustedPartner" xml:space="preserve">
+    <value>İSG hizmetlerinde en güvenilir ve en hızlı çözüm ortağı olmak.</value>
+  </data>
+  <data name="NameSurname" xml:space="preserve">
+    <value>Ad Soyad</value>
+  </data>
+  <data name="NameSurnameDynamic" xml:space="preserve">
+    <value>Müşterinin web sitesinde doldurduğu isim veya firma unvanı</value>
+  </data>
+  <data name="NameSurnamePlaceholder" xml:space="preserve">
+    <value>İsim-Soyisim</value>
+  </data>
+  <data name="NameSurnameTitle" xml:space="preserve">
+    <value>Ad Soyad / Unvan</value>
+  </data>
+  <data name="NoNeedToSearch" xml:space="preserve">
+    <value>Kapı kapı hizmet aramanıza gerek kalmadan</value>
+  </data>
+  <data name="NoNeedToSearchManually" xml:space="preserve">
+    <value>Kapı kapı hizmet aramanıza gerek kalmadan,</value>
+  </data>
+  <data name="OHSManagement" xml:space="preserve">
+    <value>İş Sağlığı ve Güvenliği Yönetimi</value>
+  </data>
+  <data name="OHSManagementImageAlt" xml:space="preserve">
+    <value>İş Sağlığı ve Güvenliği Yönetimi Görseli</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>Tamam</value>
+  </data>
+  <data name="OneStepAway" xml:space="preserve">
+    <value>Değişimden bir adım uzaktasınız!</value>
+  </data>
+  <data name="OSGBStandardsPolicies" xml:space="preserve">
+    <value>OSGB Hizmet Standartlarımız ve Politikalarımız</value>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>Diğer</value>
+  </data>
+  <data name="OurGoals" xml:space="preserve">
+    <value>Neleri Amaçlıyoruz?</value>
+  </data>
+  <data name="OurMission" xml:space="preserve">
+    <value>Misyonumuz</value>
+  </data>
+  <data name="OurServiceProcess" xml:space="preserve">
+    <value>Hizmet Sürecimiz</value>
+  </data>
+  <data name="OurVision" xml:space="preserve">
+    <value>Vizyonumuz</value>
+  </data>
+  <data name="Parties" xml:space="preserve">
+    <value>Taraflar</value>
+  </data>
+  <data name="PartiesRightsObligations" xml:space="preserve">
+    <value>Tarafların Hak ve Yükümlülükleri</value>
+  </data>
+  <data name="PartnerWithOSGB" xml:space="preserve">
+    <value>Partner with Your OSGB</value>
+  </data>
+  <data name="PartnerWithOSGBDesc" xml:space="preserve">
+    <value>Alanında uzman Ortak Sağlık ve Güvenlik Birimi (OSGB) ile eşleşerek hizmet sürecinizi başlatın.</value>
+  </data>
+  <data name="PaymentMethod" xml:space="preserve">
+    <value>Ödeme Yöntemi</value>
+  </data>
+  <data name="PaymentMethodValue" xml:space="preserve">
+    <value>Kredi Kartı Tek Çekim / İban</value>
+  </data>
+  <data name="PayWithIyzico" xml:space="preserve">
+    <value>iyzico ile Öde</value>
+  </data>
+  <data name="PayWithIyzicoText" xml:space="preserve">
+    <value>Tüm online ödemeleriniz iyzico altyapısıyla güvence altına alınmaktadır.</value>
+  </data>
+  <data name="PayWithVisaMasterCard" xml:space="preserve">
+    <value>Visa ve MasterCard ile öde</value>
+  </data>
+  <data name="PayWithVisaMasterCardText" xml:space="preserve">
+    <value>Visa ve MasterCard kredi kartları ile güvenli ödeme imkanı sunuyoruz.</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Telefon</value>
+  </data>
+  <data name="PhoneDynamic" xml:space="preserve">
+    <value>Müşterinin iletişim numarası</value>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>Telefon Numarası</value>
+  </data>
+  <data name="PhoneNumbers" xml:space="preserve">
+    <value>Telefon Numaralarımız</value>
+  </data>
+  <data name="PhonePlaceholder" xml:space="preserve">
+    <value>(538) 123</value>
+  </data>
+  <data name="PoweredBy" xml:space="preserve">
+    <value>Powered by </value>
+  </data>
+  <data name="PriceInfo" xml:space="preserve">
+    <value>Ücret, satın alma işlemi sırasında Alıcı’ya açıkça bildirilir ve tüm vergiler dahil edilerek toplam tutar olarak sunulur.</value>
+  </data>
+  <data name="PrivacyPolicy" xml:space="preserve">
+    <value>Gizlilik Sözleşmesi</value>
+  </data>
+  <data name="PrivacyPolicyDescription1" xml:space="preserve">
+    <value>Firmamız, 6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) uyarınca, müşterilerimizin kişisel verilerinin güvenliğini ve gizliliğini en üst düzeyde korumayı taahhüt eder.</value>
+  </data>
+  <data name="RegisterApply" xml:space="preserve">
+    <value>Kaydol ve Başvur</value>
+  </data>
+  <data name="RegisterApplyDesc" xml:space="preserve">
+    <value>Firmanızı güvenle kaydedin, ihtiyaç duyduğunuz iş sağlığı ve güvenliği (İSG) hizmetlerini belirleyin.</value>
+  </data>
+  <data name="Resources" xml:space="preserve">
+    <value>Kaynaklar</value>
+  </data>
+  <data name="ReturnCancellation" xml:space="preserve">
+    <value>İade ve İptal Koşulları</value>
+  </data>
+  <data name="ReturnCancellationItem1" xml:space="preserve">
+    <value>Alıcı, durumu belgeleyerek Satıcı’ya bildirir.</value>
+  </data>
+  <data name="ReturnCancellationItem2" xml:space="preserve">
+    <value>Satıcı, 48 saat içinde eksikliği giderir veya telafi hizmeti sunar.</value>
+  </data>
+  <data name="ReturnCancellationItem3" xml:space="preserve">
+    <value>Eksiklik giderilemezse, ödenen bedelin tamamı veya eksik kalan kısma karşılık gelen tutar 7 iş günü içinde iade edilir.</value>
+  </data>
+  <data name="ReturnCancellationText" xml:space="preserve">
+    <value>Hizmetin başlamasından sonra iade mümkün değildir.</value>
+  </data>
+  <data name="ReturnGuarantee" xml:space="preserve">
+    <value>Hizmet İadesi ve Güvence</value>
+  </data>
+  <data name="ReturnGuaranteeItem1" xml:space="preserve">
+    <value>Hizmetin niteliği gereği, başladıktan sonra iade edilmesi mümkün değildir. Ancak, firmamızın sunduğu hizmetin eksik veya yetersiz olduğu durumlarda, müşteri bu durumu belgeleyerek firmamıza bildirebilir.</value>
+  </data>
+  <data name="ReturnGuaranteeItem2" xml:space="preserve">
+    <value>Eksikliklerin tespiti halinde, firmamız 48 saat içinde ek destek sağlar veya ücretsiz telafi hizmeti sunar. Bu süreçte müşteri hiçbir ek maliyetle karşılaşmaz.</value>
+  </data>
+  <data name="ReturnGuaranteeItem3" xml:space="preserve">
+    <value>Eksikliklerin tespiti halinde, firmamız 48 saat içinde ek destek sağlar veya ücretsiz telafi hizmeti sunar.</value>
+  </data>
+  <data name="RightOfWithdrawal" xml:space="preserve">
+    <value>Cayma Hakkı</value>
+  </data>
+  <data name="RightOfWithdrawalItem1" xml:space="preserve">
+    <value>Alıcı, cayma talebini yazılı olarak (e-posta veya iadeli taahhütlü mektup ile) Satıcı’ya bildirir.</value>
+  </data>
+  <data name="RightOfWithdrawalItem2" xml:space="preserve">
+    <value>Cayma bildiriminden itibaren 10 (on) iş günü içinde ödenen bedel, Alıcı’ya kesintisiz olarak iade edilir.</value>
+  </data>
+  <data name="RightOfWithdrawalItem3" xml:space="preserve">
+    <value>Hizmetin başlamasından sonra cayma hakkı kullanılamaz; bu durumda iade ve iptal koşulları geçerlidir.</value>
+  </data>
+  <data name="RightOfWithdrawalNote" xml:space="preserve">
+    <value>Cayma hakkı, Alıcı’nın açık rızasıyla hizmetin erken başlaması durumunda geçersiz hale gelebilir.</value>
+  </data>
+  <data name="RightOfWithdrawalText" xml:space="preserve">
+    <value>Alıcı, hizmetin niteliği gereği cayma hakkını, hizmetin başlamasından önceki 14 (ondört) gün içinde kullanabilir.</value>
+  </data>
+  <data name="RiskAnalysis" xml:space="preserve">
+    <value>Risk Analizi</value>
+  </data>
+  <data name="SafeLegalSolutions" xml:space="preserve">
+    <value>Güvenli ve Yasal Çözümler</value>
+  </data>
+  <data name="SafeLegalSolutionsDesc" xml:space="preserve">
+    <value>Tüm İSG süreçlerinizi tek noktadan yönetin, iş sağlığı ve güvenliğiyle ilgili tüm yasal gereklilikleri kolayca yerine getirin. OSGB hizmetlerimizle çalışanlarınızı koruyun, iş yerinizi denetimlere hazır hale getirin.</value>
+  </data>
+  <data name="SafeWorkEnvironment" xml:space="preserve">
+    <value>Güvenli Çalışma Ortamı: Çalışanların sağlığını korumak ve güvenli ortamlar oluşturmak.</value>
+  </data>
+  <data name="SaveTimeCost" xml:space="preserve">
+    <value>zaman ve maliyet tasarrufu yapmanıza yardımcı oluyoruz.</value>
+  </data>
+  <data name="ScrollToTop" xml:space="preserve">
+    <value>Yukarı çık</value>
+  </data>
+  <data name="SelectOSGB" xml:space="preserve">
+    <value>Size en uygun OSGB’yi seçin ve anında teklif alın.</value>
+  </data>
+  <data name="SelectSubject" xml:space="preserve">
+    <value>Seçin...</value>
+  </data>
+  <data name="Seller" xml:space="preserve">
+    <value>Satıcı</value>
+  </data>
+  <data name="SellerAddress" xml:space="preserve">
+    <value>Atatürk Mah. Cumhuriyet Cad. No: 123, 34750 İstanbul, Türkiye</value>
+  </data>
+  <data name="SellerObligation1" xml:space="preserve">
+    <value>Hizmeti, Sözleşme’de belirtilen nitelikte ve sürede sunmak</value>
+  </data>
+  <data name="SellerObligation2" xml:space="preserve">
+    <value>Alıcı’yı tüm süreçler hakkında bilgilendirmek</value>
+  </data>
+  <data name="SellerObligation3" xml:space="preserve">
+    <value>KVKK kapsamında kişisel verileri korumak</value>
+  </data>
+  <data name="SellerObligations" xml:space="preserve">
+    <value>Satıcı’nın Yükümlülükleri</value>
+  </data>
+  <data name="SellerTax" xml:space="preserve">
+    <value>Beyoğlu Vergi Dairesi - 1234567890</value>
+  </data>
+  <data name="SellerTitle" xml:space="preserve">
+    <value>İLTER İş Sağlığı ve Güvenliği Hizmetleri Ltd. Şti.</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Gönder</value>
+  </data>
+  <data name="ServiceDuration" xml:space="preserve">
+    <value>Hizmet Süresi</value>
+  </data>
+  <data name="ServiceDurationValue" xml:space="preserve">
+    <value>12 Ay</value>
+  </data>
+  <data name="ServiceFeaturesPrice" xml:space="preserve">
+    <value>Hizmetin Özellikleri ve Ücret Bilgileri</value>
+  </data>
+  <data name="ServiceImageAlt" xml:space="preserve">
+    <value>Hizmet Görseli</value>
+  </data>
+  <data name="Services" xml:space="preserve">
+    <value>Hizmetlerimiz</value>
+  </data>
+  <data name="ServiceType" xml:space="preserve">
+    <value>Hizmet Türü</value>
+  </data>
+  <data name="ServiceTypeValue" xml:space="preserve">
+    <value>İş Sağlığı ve Güvenliği Denetimi ve Eğitimi</value>
+  </data>
+  <data name="Slide1Alt" xml:space="preserve">
+    <value>slidebg1</value>
+  </data>
+  <data name="Slide1Title" xml:space="preserve">
+    <value>Slide1Title</value>
+  </data>
+  <data name="Slide2Alt" xml:space="preserve">
+    <value>İş Güvenliği Uzmanlığı Görseli</value>
+  </data>
+  <data name="Slide2Subtitle" xml:space="preserve">
+    <value>İSG Uzmanlığı ile Güvenli Çalışma Ortamları</value>
+  </data>
+  <data name="Slide2Title" xml:space="preserve">
+    <value>Slide2Title</value>
+  </data>
+  <data name="SpecialCasesContact" xml:space="preserve">
+    <value>Özel Durumlar ve İletişim</value>
+  </data>
+  <data name="SpecialCasesContactItem1" xml:space="preserve">
+    <value>Teslimat süreci, iade koşulları veya ödeme planlarıyla ilgili herhangi bir özel durumunuzu değerlendirmemiz için lütfen müşteri hizmetleri ekibimizle iletişime geçin.</value>
+  </data>
+  <data name="SpecialCasesContactItem2" xml:space="preserve">
+    <value>Acil durumlarda, OSGB hizmetlerinin kesintiye uğramaması için ivedilikle müdahale edilir ve müşteriye alternatif çözümler sunulur.</value>
+  </data>
+  <data name="SpecialCasesContactItem3" xml:space="preserve">
+    <value>Detaylı bilgi, destek veya özel talepleriniz için info@ilterisg.com adresine e-posta gönderebilir ya da +90 541 710 3373 numaralı telefondan bize ulaşabilirsiniz.</value>
+  </data>
+  <data name="Subject" xml:space="preserve">
+    <value>Konu Başlığı</value>
+  </data>
+  <data name="SubjectDescription" xml:space="preserve">
+    <value>İşbu Sözleşme’nin konusu, Alıcı’nın Satıcı’ya ait www.ilterisg.com web sitesi üzerinden satın aldığı Ortak Sağlık ve Güvenlik Birimi (OSGB) hizmetlerinin nitelikleri, ücreti, ödeme şekli, teslimat koşulları, cayma hakkı, iade ve iptal prosedürlerini düzenlemektir.</value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>Başarılı!</value>
+  </data>
+  <data name="SuitableOSGBSelection" xml:space="preserve">
+    <value>Sektörünüze uygun OSGB seçimi.</value>
+  </data>
+  <data name="Support" xml:space="preserve">
+    <value>Destek</value>
+  </data>
+  <data name="SustainableSolutions" xml:space="preserve">
+    <value>Sürdürülebilir, çevre dostu İSG çözümleri geliştirerek herkese kolaylık sağlamak.</value>
+  </data>
+  <data name="TaxOfficeNumber" xml:space="preserve">
+    <value>Vergi Dairesi ve No</value>
+  </data>
+  <data name="ThusWeAccelerate" xml:space="preserve">
+    <value>Böylece İSG süreçlerinizi hızlandırıyor</value>
+  </data>
+  <data name="TimeResourceSaving" xml:space="preserve">
+    <value>Zamandan ve Kaynaktan Tasarruf</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Başlık</value>
+  </data>
+  <data name="TotalPrice" xml:space="preserve">
+    <value>Toplam Ücret</value>
+  </data>
+  <data name="TrackAgreements" xml:space="preserve">
+    <value>Anlaşmalarınızı dijital ortamda takip edin, gereksiz evrak işlerinden kurtulun.</value>
+  </data>
+  <data name="TrainingConsultingCompliance" xml:space="preserve">
+    <value>Eğitim ve danışmanlık hizmetleriyle tam uyumluluk.</value>
+  </data>
+  <data name="TrustPeace" xml:space="preserve">
+    <value>Güven ve Huzur</value>
+  </data>
+  <data name="TrustPeaceDate" xml:space="preserve">
+    <value>10 Nisan 2022</value>
+  </data>
+  <data name="Turkish" xml:space="preserve">
+    <value>Türkçe</value>
+  </data>
+  <data name="ValidityApproval" xml:space="preserve">
+    <value>Yürürlük ve Onay</value>
+  </data>
+  <data name="ValidityApprovalText" xml:space="preserve">
+    <value>İşbu Sözleşme, Alıcı’nın web sitesinde satın alma işlemini tamamlaması ve \"Sözleşmeyi Okudum ve Kabul Ediyorum\" kutucuğunu işaretlemesiyle yürürlüğe girer.</value>
+  </data>
+  <data name="WeAreWithYou" xml:space="preserve">
+    <value>İşiniz ve güvenliğinizde her zaman yanınızdayız.</value>
+  </data>
+  <data name="Website" xml:space="preserve">
+    <value>Web Sitesi</value>
+  </data>
+  <data name="WebsiteCriteriaPolicies" xml:space="preserve">
+    <value>Web Sitesi Kriterleri ve Politikalarımız</value>
+  </data>
+  <data name="WeHandleForYou" xml:space="preserve">
+    <value>biz sizin yerinize bu işlemleri yapıyor ve size sunuyoruz.</value>
+  </data>
+  <data name="WeOfferSuitableOSGB" xml:space="preserve">
+    <value>Firmanızın ihtiyacına en uygun OSGB (Ortak Sağlık Güvenlik Birimi) hizmetini sunuyor</value>
+  </data>
+  <data name="WhyChooseUs" xml:space="preserve">
+    <value>Neden bizi seçmelisiniz?</value>
+  </data>
+  <data name="YourMessage" xml:space="preserve">
+    <value>Mesajınız</value>
+  </data>
+  <data name="YourMessagePlaceholder" xml:space="preserve">
+    <value>Mesajınızı buraya yazın...</value>
+  </data>
+  <data name="YourRight1" xml:space="preserve">
+    <value>Verilerinizin işlenip işlenmediğini öğrenme</value>
+  </data>
+  <data name="YourRight2" xml:space="preserve">
+    <value>İşlenmişse buna ilişkin bilgi talep etme</value>
+  </data>
+  <data name="YourRight3" xml:space="preserve">
+    <value>Verilerinizin işlenme amacını ve bu amaca uygun kullanılıp kullanılmadığını öğrenme</value>
+  </data>
+  <data name="YourRight4" xml:space="preserve">
+    <value>Verilerinizin aktarıldığı üçüncü kişileri bilme</value>
+  </data>
+  <data name="YourRight5" xml:space="preserve">
+    <value>Eksik veya yanlış işlenmiş verilerin düzeltilmesini isteme</value>
+  </data>
+  <data name="YourRight6" xml:space="preserve">
+    <value>İşlenen verilerin otomatik sistemlerle analiz edilmesi durumunda aleyhinize bir sonucun ortaya çıkmasına itiraz etme</value>
+  </data>
+  <data name="YourRightsContact" xml:space="preserve">
+    <value>Bu haklarınızı kullanmak için destek@ilterisg.com adresine yazılı olarak başvurabilir veya +90 541 710 3373 numaralı telefondan bizimle iletişime geçebilirsiniz.</value>
+  </data>
+  <data name="YourRightsKVKK" xml:space="preserve">
+    <value>KVKK Kapsamındaki Haklarınız</value>
+  </data>
+  <data name="YourRightsKVKKIntro" xml:space="preserve">
+    <value>6698 sayılı Kanun uyarınca, kişisel verilerinizle ilgili aşağıdaki haklara sahipsiniz:</value>
+  </data>
+  <data name="ZeroAccidentVision" xml:space="preserve">
+    <value>Sıfır iş kazası vizyonuyla temiz, hızlı ve güvenli çalışma alanları oluşturmak.</value>
+  </data>
+  <data name="RateLimitExceeded" xml:space="preserve">
+    <value>RateLimitExceeded</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Ekle</value>
+  </data>
+  <data name="AddNewPost" xml:space="preserve">
+    <value>Yeni Yazı Ekle</value>
+  </data>
+  <data name="AddYouTubeVideo" xml:space="preserve">
+    <value>YouTube Videosu Ekle</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Geri</value>
+  </data>
+  <data name="BlogHomePage" xml:space="preserve">
+    <value>Blog Anasayfa</value>
+  </data>
+  <data name="BlogManagement" xml:space="preserve">
+    <value>Blog Yönetimi</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>İptal Et</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Yorumlar</value>
+  </data>
+  <data name="ConfirmDeleteMessage" xml:space="preserve">
+    <value>Şunu silmek istediğinize emin misiniz?</value>
+  </data>
+  <data name="ConfirmDeletePost" xml:space="preserve">
+    <value>başlıklı yazıyı</value>
+  </data>
+  <data name="ContainerNotFoundError" xml:space="preserve">
+    <value>İlgili bölüm bulunamadı. Lütfen sayfayı yenileyin.</value>
+  </data>
+  <data name="Content" xml:space="preserve">
+    <value>İçerik</value>
+  </data>
+  <data name="CreationDate" xml:space="preserve">
+    <value>Oluşturulma Tarihi</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Sil</value>
+  </data>
+  <data name="DeleteError" xml:space="preserve">
+    <value>Silme işlemi sırasında bir hata oluştu: </value>
+  </data>
+  <data name="DeleteFailed" xml:space="preserve">
+    <value>Silme işlemi başarısız.</value>
+  </data>
+  <data name="DeletePost" xml:space="preserve">
+    <value>Yazıyı Sil</value>
+  </data>
+  <data name="Draft" xml:space="preserve">
+    <value>Taslak</value>
+  </data>
+  <data name="DragOrClickToUpload" xml:space="preserve">
+    <value>Görseli buraya sürükleyin veya tıklayın</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Düzenle</value>
+  </data>
+  <data name="EditPost" xml:space="preserve">
+    <value>Yazıyı Düzenle</value>
+  </data>
+  <data name="EnterImageUrlOrUpload" xml:space="preserve">
+    <value>Enter image URL or upload</value>
+  </data>
+  <data name="EnterPostSummary" xml:space="preserve">
+    <value>Yazınızın kısa özetini girin</value>
+  </data>
+  <data name="EnterPostTitle" xml:space="preserve">
+    <value>Yazınızın başlığını girin</value>
+  </data>
+  <data name="EnterYouTubeUrl" xml:space="preserve">
+    <value>YouTube video bağlantısını girin:</value>
+  </data>
+  <data name="Featured" xml:space="preserve">
+    <value>Öne Çıkanlar</value>
+  </data>
+  <data name="FeaturedContentRemoved" xml:space="preserve">
+    <value>Öne çıkan içerik kaldırıldı.</value>
+  </data>
+  <data name="FeaturedContentUpdated" xml:space="preserve">
+    <value>Öne çıkan içerik güncellendi.</value>
+  </data>
+  <data name="FeaturedImage" xml:space="preserve">
+    <value>Öne Çıkan Görsel</value>
+  </data>
+  <data name="FollowUs" xml:space="preserve">
+    <value>Bizi Takip Edin</value>
+  </data>
+  <data name="GridView" xml:space="preserve">
+    <value>Izgara</value>
+  </data>
+  <data name="HidePreview" xml:space="preserve">
+    <value>Önizlemeyi Gizle</value>
+  </data>
+  <data name="ImageUploadError" xml:space="preserve">
+    <value>Görsel yüklenirken bir hata oluştu.</value>
+  </data>
+  <data name="InvalidBlogPostError" xml:space="preserve">
+    <value>Lütfen geçerli bir blog yazısı seçin.</value>
+  </data>
+  <data name="InvalidBlogPostsError" xml:space="preserve">
+    <value>Blog yazıları seçenekleri oluşturulamadı.</value>
+  </data>
+  <data name="InvalidElementsError" xml:space="preserve">
+    <value>Seçim veya sıralama alanı bulunamadı. Lütfen sayfayı yenileyin.</value>
+  </data>
+  <data name="InvalidItemError" xml:space="preserve">
+    <value>Geçersiz öğe. Lütfen sayfayı yenileyin.</value>
+  </data>
+  <data name="InvalidOrderError" xml:space="preserve">
+    <value>Lütfen geçerli bir sıralama numarası girin (1 veya daha büyük).</value>
+  </data>
+  <data name="LatestPosts" xml:space="preserve">
+    <value>Son Yazılar</value>
+  </data>
+  <data name="ListView" xml:space="preserve">
+    <value>Liste</value>
+  </data>
+  <data name="NewBlogPost" xml:space="preserve">
+    <value>Yeni Blog Yazısı</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>Hayır</value>
+  </data>
+  <data name="NoBlogPostsError" xml:space="preserve">
+    <value>Blog yazıları yüklenemedi. Lütfen sayfayı yenileyin.</value>
+  </data>
+  <data name="NoBlogPostsYet" xml:space="preserve">
+    <value>Henüz blog yazısı bulunmamaktadır.</value>
+  </data>
+  <data name="NoCommentsYet" xml:space="preserve">
+    <value>Henüz yorum yok. İlk yorumu siz yapın!</value>
+  </data>
+  <data name="NoPostsAvailable" xml:space="preserve">
+    <value>Kayıtlı blog yazısı yok.</value>
+  </data>
+  <data name="OnlyImageFilesAllowed" xml:space="preserve">
+    <value>Sadece görsel dosyaları yükleyebilirsiniz.</value>
+  </data>
+  <data name="PopularTopics" xml:space="preserve">
+    <value>Popüler Konular</value>
+  </data>
+  <data name="Posts" xml:space="preserve">
+    <value>Yazılar</value>
+  </data>
+  <data name="PostStream" xml:space="preserve">
+    <value>Yayın Akışı</value>
+  </data>
+  <data name="Preview" xml:space="preserve">
+    <value>Önizle</value>
+  </data>
+  <data name="PreviewContent" xml:space="preserve">
+    <value>İçeriği Önizle</value>
+  </data>
+  <data name="PreviewImage" xml:space="preserve">
+    <value>Önizleme Görseli</value>
+  </data>
+  <data name="Publish" xml:space="preserve">
+    <value>Yayınla</value>
+  </data>
+  <data name="Published" xml:space="preserve">
+    <value>Yayınlandı</value>
+  </data>
+  <data name="PublishStatus" xml:space="preserve">
+    <value>Yayın Durumu</value>
+  </data>
+  <data name="ReadMore" xml:space="preserve">
+    <value>Devamını Oku</value>
+  </data>
+  <data name="RecommendedPosts" xml:space="preserve">
+    <value>Şunlara Göz Atın</value>
+  </data>
+  <data name="RemoveImage" xml:space="preserve">
+    <value>Görseli Kaldır</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Kaydet</value>
+  </data>
+  <data name="SectionNotFoundError" xml:space="preserve">
+    <value>Bölüm bilgisi bulunamadı. Lütfen sayfayı yenileyin.</value>
+  </data>
+  <data name="SubmitComment" xml:space="preserve">
+    <value>Yorum Gönder</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>Kısa Açıklama</value>
+  </data>
+  <data name="Unpublish" xml:space="preserve">
+    <value>Yayından Kaldır</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Güncelle</value>
+  </data>
+  <data name="UpdateError" xml:space="preserve">
+    <value>Güncelleme işlemi sırasında bir hata oluştu: </value>
+  </data>
+  <data name="UpdateFailed" xml:space="preserve">
+    <value>Güncelleme işlemi başarısız: </value>
+  </data>
+  <data name="ValidationErrors" xml:space="preserve">
+    <value>Doğrulama hataları mevcut.</value>
+  </data>
+  <data name="WriteContentHere" xml:space="preserve">
+    <value>İçeriğinizi buraya yazın...</value>
+  </data>
+  <data name="YesDelete" xml:space="preserve">
+    <value>Evet, Sil</value>
+  </data>
+  <data name="YourComment" xml:space="preserve">
+    <value>Yorumunuz</value>
+  </data>
+  <data name="YourName" xml:space="preserve">
+    <value>Adınız</value>
+  </data>
+</root>

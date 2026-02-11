@@ -1,0 +1,17 @@
+C:\Users\umut3\Desktop\ilterisgHome\ilterisgHome\obj\Release\net8.0\PubTmp\Out\ilterisgHome.exe
+C:\Users\umut3\Desktop\ilterisgHome\ilterisgHome\obj\Release\net8.0\PubTmp\Out\appsettings.Development.json
+C:\Users\umut3\Desktop\ilterisgHome\ilterisgHome\obj\Release\net8.0\PubTmp\Out\appsettings.json
+C:\Users\umut3\Desktop\ilterisgHome\ilterisgHome\obj\Release\net8.0\PubTmp\Out\appsettings.Production.json
+C:\Users\umut3\Desktop\ilterisgHome\ilterisgHome\obj\Release\net8.0\PubTmp\Out\ilterisgHome.dll
+C:\Users\umut3\Desktop\ilterisgHome\ilterisgHome\obj\Release\net8.0\PubTmp\Out\ilterisgHome.deps.json
+C:\Users\umut3\Desktop\ilterisgHome\ilterisgHome\obj\Release\net8.0\PubTmp\Out\ilterisgHome.runtimeconfig.json
+C:\Users\umut3\Desktop\ilterisgHome\ilterisgHome\obj\Release\net8.0\PubTmp\Out\ilterisgHome.pdb
+C:\Users\umut3\Desktop\ilterisgHome\ilterisgHome\obj\Release\net8.0\PubTmp\Out\de-DE\ilterisgHome.resources.dll
+C:\Users\umut3\Desktop\ilterisgHome\ilterisgHome\obj\Release\net8.0\PubTmp\Out\en-US\ilterisgHome.resources.dll
+C:\Users\umut3\Desktop\ilterisgHome\ilterisgHome\obj\Release\net8.0\PubTmp\Out\tr-TR\ilterisgHome.resources.dll
+C:\Users\umut3\Desktop\ilterisgHome\ilterisgHome\obj\Release\net8.0\PubTmp\Out\BouncyCastle.Cryptography.dll
+C:\Users\umut3\Desktop\ilterisgHome\ilterisgHome\obj\Release\net8.0\PubTmp\Out\MailKit.dll
+C:\Users\umut3\Desktop\ilterisgHome\ilterisgHome\obj\Release\net8.0\PubTmp\Out\MimeKit.dll
+C:\Users\umut3\Desktop\ilterisgHome\ilterisgHome\obj\Release\net8.0\PubTmp\Out\Serilog.dll
+C:\Users\umut3\Desktop\ilterisgHome\ilterisgHome\obj\Release\net8.0\PubTmp\Out\System.Security.Cryptography.Pkcs.dll
+C:\Users\umut3\Desktop\ilterisgHome\ilterisgHome\obj\Release\net8.0\PubTmp\Out\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll

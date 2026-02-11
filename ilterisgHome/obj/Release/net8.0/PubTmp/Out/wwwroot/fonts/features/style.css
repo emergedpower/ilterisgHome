@@ -1,0 +1,400 @@
+@font-face {
+	font-family: 'features';
+	src:  url('fonts/features.eot');
+	src:  url('fonts/features.eot#iefix') format('embedded-opentype'),
+		url('fonts/features.ttf') format('truetype'),
+		url('fonts/features.woff') format('woff'),
+		url('fonts/features.svg#features') format('svg');
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
+}
+
+[class^="features-"]::before, [class*=" features-"]::before {
+	font-family: 'features';
+	speak: never;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	direction: ltr;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.features-idea::before {
+	content: "\7e";
+}
+.features-law::before {
+	content: "\2d";
+}
+.features-computers::before {
+	content: "\33";
+}
+.features-optimization::before {
+	content: "\32";
+}
+.features-employee-list::before {
+	content: "\48";
+}
+.features-employee-search::before {
+	content: "\49";
+}
+.features-employee-payroll::before {
+	content: "\4a";
+}
+.features-employee-check::before {
+	content: "\4b";
+}
+.features-knowledge-1::before {
+	content: "\28";
+}
+.features-employee-details::before {
+	content: "\4c";
+}
+.features-employees::before {
+	content: "\46";
+}
+.features-protection::before {
+	content: "\4d";
+}
+.features-business-hierarchy::before {
+	content: "\4e";
+}
+.features-business-increase::before {
+	content: "\4f";
+}
+.features-business-management::before {
+	content: "\50";
+}
+.features-business-chat::before {
+	content: "\51";
+}
+.features-business-statistics::before {
+	content: "\52";
+}
+.features-business-strategy::before {
+	content: "\53";
+}
+.features-business-time::before {
+	content: "\54";
+}
+.features-consulting-1::before {
+	content: "\55";
+}
+.features-consulting-2::before {
+	content: "\56";
+}
+.features-consulting-3::before {
+	content: "\57";
+}
+.features-id-card::before {
+	content: "\74";
+}
+.features-id-cards::before {
+	content: "\75";
+}
+.features-mail-merge::before {
+	content: "\77";
+}
+.features-security::before {
+	content: "\34";
+}
+.features-growth::before {
+	content: "\35";
+}
+.features-facebook::before {
+	content: "\e905";
+}
+.features-linkedin::before {
+	content: "\e906";
+}
+.features-cloud::before {
+	content: "\60";
+}
+.features-paypal::before {
+	content: "\e907";
+}
+.features-skype::before {
+	content: "\e908";
+}
+.features-twitter::before {
+	content: "\e909";
+}
+.features-whatsapp::before {
+	content: "\e910";
+}
+.features-youtube::before {
+	content: "\e911";
+}
+.features-folder::before {
+	content: "\36";
+}
+.features-folder-money::before {
+	content: "\39";
+}
+.features-folder-check::before {
+	content: "\38";
+}
+.features-invoices::before {
+	content: "\30";
+}
+.features-folder-network::before {
+	content: "\37";
+}
+.features-documents-1::before {
+	content: "\61";
+}
+.features-document-money::before {
+	content: "\65";
+}
+.features-document-check::before {
+	content: "\64";
+}
+.features-agreement::before {
+	content: "\70";
+}
+.features-notarial-act::before {
+	content: "\71";
+}
+.features-document-security::before {
+	content: "\66";
+}
+.features-documents-2::before {
+	content: "\62";
+}
+.features-documents-3::before {
+	content: "\63";
+}
+.features-document-share::before {
+	content: "\6a";
+}
+.features-document-workflow::before {
+	content: "\67";
+}
+.features-document-sync::before {
+	content: "\68";
+}
+.features-document-search::before {
+	content: "\69";
+}
+.features-quote::before {
+	content: "\3d";
+}
+.features-flow-chart-1::before {
+	content: "\e900";
+}
+.features-flow-chart-2::before {
+	content: "\e901";
+}
+.features-hierarchy::before {
+	content: "\e902";
+}
+.features-network::before {
+	content: "\e904";
+}
+.features-hand-bag::before {
+	content: "\e903";
+}
+.features-consulting-4::before {
+	content: "\58";
+}
+.features-processes::before {
+	content: "\5a";
+}
+.features-customization::before {
+	content: "\31";
+}
+.features-document-graph::before {
+	content: "\6b";
+}
+.features-checklist::before {
+	content: "\73";
+}
+.features-document-pdf::before {
+	content: "\6c";
+}
+.features-document-stamp::before {
+	content: "\6d";
+}
+.features-sheet::before {
+	content: "\6f";
+}
+.features-report::before {
+	content: "\6e";
+}
+.features-video-meeting::before {
+	content: "\5b";
+}
+.features-abacus::before {
+	content: "\3b";
+}
+.features-bank::before {
+	content: "\5d";
+}
+.features-graph-bar-1::before {
+	content: "\27";
+}
+.features-graph-bar-2::before {
+	content: "\5c";
+}
+.features-graph-bar-3::before {
+	content: "\2c";
+}
+.features-graph-bar-4::before {
+	content: "\2e";
+}
+.features-graph-line-1::before {
+	content: "\2f";
+}
+.features-graph-line-2::before {
+	content: "\3c";
+}
+.features-graph-pie::before {
+	content: "\3e";
+}
+.features-network-people::before {
+	content: "\3f";
+}
+.features-percent::before {
+	content: "\7b";
+}
+.features-percent-increase::before {
+	content: "\7d";
+}
+.features-presentation::before {
+	content: "\3a";
+}
+.features-income::before {
+	content: "\22";
+}
+.features-receipt::before {
+	content: "\7c";
+}
+.features-expenses::before {
+	content: "\21";
+}
+.features-bitcoin::before {
+	content: "\40";
+}
+.features-bitcoin-exchange::before {
+	content: "\23";
+}
+.features-banknotes-1::before {
+	content: "\24";
+}
+.features-banknotes-2::before {
+	content: "\25";
+}
+.features-loan::before {
+	content: "\5e";
+}
+.features-savings::before {
+	content: "\26";
+}
+.features-wallet::before {
+	content: "\2a";
+}
+.features-knowledge-2::before {
+	content: "\29";
+}
+.features-calendar-check::before {
+	content: "\76";
+}
+.features-timer::before {
+	content: "\47";
+}
+.features-mobile::before {
+	content: "\59";
+}
+.features-tablet::before {
+	content: "\72";
+}
+.features-layers::before {
+	content: "\e925";
+}
+.features-book::before {
+	content: "\e926";
+}
+.features-car-park::before {
+	content: "\e927";
+}
+.features-task::before {
+	content: "\e928";
+}
+.features-leaf::before {
+	content: "\e929";
+}
+.features-location-1::before {
+	content: "\5f";
+}
+.features-location-2::before {
+	content: "\2b";
+}
+.features-credit-card::before {
+	content: "\e930";
+}
+.features-calc::before {
+	content: "\e912";
+}
+.features-picture::before {
+	content: "\e913";
+}
+.features-error::before {
+	content: "\e914";
+}
+.features-timetable::before {
+	content: "\e915";
+}
+.features-certificate::before {
+	content: "\e916";
+}
+.features-fax::before {
+	content: "\e917";
+}
+.features-phone-2::before {
+	content: "\e919";
+}
+.features-phone-1::before {
+	content: "\e918";
+}
+.features-chat-2::before {
+	content: "\42";
+}
+.features-chat-1::before {
+	content: "\41";
+}
+.features-chat-3::before {
+	content: "\43";
+}
+.features-person::before {
+	content: "\44";
+}
+.features-account::before {
+	content: "\7a";
+}
+.features-people::before {
+	content: "\45";
+}
+.features-email-1::before {
+	content: "\78";
+}
+.features-email-2::before {
+	content: "\79";
+}
+.features-calendar::before {
+	content: "\e920";
+}
+.features-clock::before {
+	content: "\e921";
+}
+.features-time-share::before {
+	content: "\e922";
+}
+.features-check::before {
+	content: "\e923";
+}
+.features-pen::before {
+	content: "\e924";
+}

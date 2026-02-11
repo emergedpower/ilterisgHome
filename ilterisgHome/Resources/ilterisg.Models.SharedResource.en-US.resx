@@ -1,0 +1,798 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="About" xml:space="preserve">
+    <value>About Us</value>
+  </data>
+  <data name="AboutUs" xml:space="preserve">
+    <value>About Us</value>
+  </data>
+  <data name="AboutUsDescription1" xml:space="preserve">
+    <value>Our company, authorized by the Ministry of Labor and Social Security as a Joint Health and Safety Unit (OSGB), was established to provide innovative and reliable solutions to the business world.</value>
+  </data>
+  <data name="AboutUsDescription2" xml:space="preserve">
+    <value>Our mission is to create a healthy and safe working environment in workplaces, supporting businesses in fully meeting their legal obligations. Since our establishment, we have earned our customers’ trust through services in areas such as risk assessments, comprehensive occupational health and safety training, environmental measurements, emergency planning, periodic health screenings, and more. By ensuring full compliance with regulations, we enable businesses to prioritize not only their legal obligations but also the health and well-being of their employees.</value>
+  </data>
+  <data name="AboutUsDescription3" xml:space="preserve">
+    <value>We aim to take OSGB services a step further by acting as a bridge collaborating with companies. We provide tailored solutions for each customer’s needs, streamline business processes, and build a sustainable safety culture. Employee health and customer satisfaction are the cornerstones of our operations. With this awareness, we leverage the latest technological opportunities to develop innovative approaches and take a leading role in the industry.</value>
+  </data>
+  <data name="AboutUsDescription4" xml:space="preserve">
+    <value>Our company aims to grow with you and add value to the business world. We take pride in being by your side for all your occupational health and safety needs, always striving to offer the best with our professional team. The strong bonds we have built with the businesses that trust us are the greatest proof of our success.</value>
+  </data>
+  <data name="AccessReports" xml:space="preserve">
+    <value>Access training, health checks, and safety reports from a single screen.</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="AddressDynamic" xml:space="preserve">
+    <value>Customer’s delivery or billing address</value>
+  </data>
+  <data name="AdminNotificationSubject" xml:space="preserve">
+    <value>AdminNotificationSubject</value>
+  </data>
+  <data name="AllFieldsRequired" xml:space="preserve">
+    <value>All fields are required.</value>
+  </data>
+  <data name="AppName" xml:space="preserve">
+    <value>İLTERİSG Admin Panel</value>
+  </data>
+  <data name="Blog" xml:space="preserve">
+    <value>Blog</value>
+  </data>
+  <data name="Buyer" xml:space="preserve">
+    <value>Buyer</value>
+  </data>
+  <data name="BuyerObligation" xml:space="preserve">
+    <value>The Buyer is obliged to declare the above information correctly and completely during the purchase process.</value>
+  </data>
+  <data name="BuyerObligation1" xml:space="preserve">
+    <value>To fulfill the payment obligation on time</value>
+  </data>
+  <data name="BuyerObligation2" xml:space="preserve">
+    <value>To provide accurate and complete information</value>
+  </data>
+  <data name="BuyerObligation3" xml:space="preserve">
+    <value>To demonstrate the necessary cooperation for the provision of the service</value>
+  </data>
+  <data name="BuyerObligations" xml:space="preserve">
+    <value>Buyer’s Obligations</value>
+  </data>
+  <data name="CallMeBack" xml:space="preserve">
+    <value>Let Us Reach You!</value>
+  </data>
+  <data name="CancellationChange" xml:space="preserve">
+    <value>Cancellation and Change Requests</value>
+  </data>
+  <data name="CancellationChangeItem1" xml:space="preserve">
+    <value>Cancellation or change requests before the service begins must be communicated to our company in writing (via email or official letter) at least five (5) business days before the service start date.</value>
+  </data>
+  <data name="CancellationChangeItem2" xml:space="preserve">
+    <value>Cancellation requests reported within this period are considered valid, and the full service fee paid is refunded to the customer without deductions within 7 business days.</value>
+  </data>
+  <data name="CancellationChangeItem3" xml:space="preserve">
+    <value>Cancellation requests made less than 5 business days before the service start date will not be considered, and the paid fee will not be refunded. However, the service scope can be modified upon the customer’s request.</value>
+  </data>
+  <data name="CancellationChangeItem4" xml:space="preserve">
+    <value>For change requests (e.g., extending the service duration or requesting additional staff), our company will make additional planning and respond to the customer within a maximum of 3 business days.</value>
+  </data>
+  <data name="CollectedDataPurpose1" xml:space="preserve">
+    <value>To ensure our services are provided completely and on time</value>
+  </data>
+  <data name="CollectedDataPurpose2" xml:space="preserve">
+    <value>To meet customer requests and plan service processes</value>
+  </data>
+  <data name="CollectedDataPurpose3" xml:space="preserve">
+    <value>To measure customer satisfaction and improve service quality</value>
+  </data>
+  <data name="CollectedDataPurpose4" xml:space="preserve">
+    <value>To fulfill legal obligations</value>
+  </data>
+  <data name="CollectedDataPurpose5" xml:space="preserve">
+    <value>To communicate with you and provide information when necessary</value>
+  </data>
+  <data name="CollectedDataPurposes" xml:space="preserve">
+    <value>Collected Personal Data and Purposes</value>
+  </data>
+  <data name="CollectedDataPurposesText" xml:space="preserve">
+    <value>Your personal data is collected through forms filled out during your service request, email correspondence, phone calls, payment transactions, and on-site inspections at your workplace.</value>
+  </data>
+  <data name="CollectedDataRestriction" xml:space="preserve">
+    <value>Your personal data is never used for purposes other than those specified above and is not processed for any transactions not aligned with these purposes.</value>
+  </data>
+  <data name="ComfortConvenience" xml:space="preserve">
+    <value>Comfort and Convenience</value>
+  </data>
+  <data name="CompletePayments" xml:space="preserve">
+    <value>Complete your payments quickly through our secure system.</value>
+  </data>
+  <data name="ComplianceReports" xml:space="preserve">
+    <value>Monitor your OHS compliance with real-time reports.</value>
+  </data>
+  <data name="ComplianceWithRegulations" xml:space="preserve">
+    <value>Ensuring businesses meet their legal obligations with services compliant with OHS regulations.</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="ContactComplaint" xml:space="preserve">
+    <value>Contact and Complaint</value>
+  </data>
+  <data name="ContactComplaintText" xml:space="preserve">
+    <value>Do not hesitate to contact us if you have any questions, requests, or complaints regarding the processing of your personal data.</value>
+  </data>
+  <data name="ContactFormSubject" xml:space="preserve">
+    <value>ContactFormSubject</value>
+  </data>
+  <data name="ContactNow" xml:space="preserve">
+    <value>Contact Us Now!</value>
+  </data>
+  <data name="ContactText" xml:space="preserve">
+    <value>For any questions regarding the Contract, you can reach us at info@ilterisg.com or by phone at +90 541 710 3373.</value>
+  </data>
+  <data name="ContactUs" xml:space="preserve">
+    <value>Contact Us!</value>
+  </data>
+  <data name="CostAdvantage" xml:space="preserve">
+    <value>Providing cost advantages to businesses with suitable OSGB selections.</value>
+  </data>
+  <data name="CustomerRightsFeedback" xml:space="preserve">
+    <value>Customer Rights and Feedback</value>
+  </data>
+  <data name="CustomerRightsFeedbackItem1" xml:space="preserve">
+    <value>Our customers can report any issues or dissatisfaction encountered during the service process to our 24/7 accessible customer service team.</value>
+  </data>
+  <data name="CustomerRightsFeedbackItem2" xml:space="preserve">
+    <value>Feedback is thoroughly reviewed within a maximum of 2 business days, and solution proposals are presented to the customer.</value>
+  </data>
+  <data name="CustomerRightsFeedbackItem3" xml:space="preserve">
+    <value>Customer satisfaction is our company’s top priority.</value>
+  </data>
+  <data name="DataCollectionMethod" xml:space="preserve">
+    <value>Data Collection Method</value>
+  </data>
+  <data name="DataCollectionMethodText" xml:space="preserve">
+    <value>Your personal data is collected through forms filled out during your service request, email correspondence, phone calls, payment transactions, and on-site inspections at your workplace. Your data is processed based on your explicit consent or within the framework of legal obligations. During data collection, you are clearly informed about which information is collected and why, and your consent is obtained for optional fields.</value>
+  </data>
+  <data name="DataRetentionPeriod" xml:space="preserve">
+    <value>Data Retention Period</value>
+  </data>
+  <data name="DataRetentionPeriodText" xml:space="preserve">
+    <value>Your personal data is retained for the duration of the service and in accordance with legal retention periods.</value>
+  </data>
+  <data name="DataSecurityDesign" xml:space="preserve">
+    <value>These measures are designed to minimize the risk of your data being lost, stolen, or used by unauthorized individuals.</value>
+  </data>
+  <data name="DataSecurityMeasure1" xml:space="preserve">
+    <value>Data collected electronically is protected with advanced encryption methods (e.g., SSL certificate and AES-256 encryption) and can only be accessed by authorized personnel.</value>
+  </data>
+  <data name="DataSecurityMeasure2" xml:space="preserve">
+    <value>Physical documents are stored in locked cabinets and secure archive rooms, with strict monitoring of access and exits.</value>
+  </data>
+  <data name="DataSecurityMeasure3" xml:space="preserve">
+    <value>Our databases are continuously monitored against unauthorized access and protected by firewalls.</value>
+  </data>
+  <data name="DataSecurityMeasure4" xml:space="preserve">
+    <value>We have emergency plans in place for potential data breaches, and in such cases, we are committed to notifying you and the relevant authorities within 72 hours as per KVKK regulations.</value>
+  </data>
+  <data name="DataSecurityMeasure5" xml:space="preserve">
+    <value>Our staff is regularly trained on our privacy policies and KVKK regulations, and they are made aware of data security.</value>
+  </data>
+  <data name="DataSecurityMeasures" xml:space="preserve">
+    <value>Data Security and Protection Measures</value>
+  </data>
+  <data name="DataSecurityMeasuresIntro" xml:space="preserve">
+    <value>Our company takes the latest technological and physical measures to ensure the security of your personal data:</value>
+  </data>
+  <data name="DataSharingException1" xml:space="preserve">
+    <value>With official authorities for fulfilling legal obligations (e.g., court order or ministry request)</value>
+  </data>
+  <data name="DataSharingException2" xml:space="preserve">
+    <value>With OSGB experts collaborating on a part of the service (in which case, the experts are also bound by KVKK-compliant confidentiality agreements)</value>
+  </data>
+  <data name="DataSharingIntro" xml:space="preserve">
+    <value>Our company does not share your personal data with third parties except for legal obligations. However, data sharing may occur in the following exceptional cases:</value>
+  </data>
+  <data name="DataSharingRestriction" xml:space="preserve">
+    <value>When data sharing with third parties is necessary, only the minimum required data is transferred, and these parties are required to adhere to the same security standards.</value>
+  </data>
+  <data name="DataSharingThirdParties" xml:space="preserve">
+    <value>Data Sharing and Relations with Third Parties</value>
+  </data>
+  <data name="DeliveryCondition1" xml:space="preserve">
+    <value>The service start date and schedule are notified to the Buyer via email or phone.</value>
+  </data>
+  <data name="DeliveryCondition2" xml:space="preserve">
+    <value>In case of possible delays, the Seller informs the Buyer within 24 hours and offers alternative solutions.</value>
+  </data>
+  <data name="DeliveryCondition3" xml:space="preserve">
+    <value>The Seller provides the necessary personnel and technical infrastructure to ensure uninterrupted service continuation.</value>
+  </data>
+  <data name="DeliveryConditions" xml:space="preserve">
+    <value>Delivery Conditions</value>
+  </data>
+  <data name="DeliveryConditionsText" xml:space="preserve">
+    <value>The Seller initiates the service delivery within a maximum of 5 (five) business days after payment approval and contract establishment.</value>
+  </data>
+  <data name="DeliveryProcess" xml:space="preserve">
+    <value>Delivery Process</value>
+  </data>
+  <data name="DeliveryProcessItem1" xml:space="preserve">
+    <value>Our company provides Common Health and Safety Unit (OSGB) services within the dates and conditions specified in the detailed written contract with the customer.</value>
+  </data>
+  <data name="DeliveryProcessItem2" xml:space="preserve">
+    <value>The service start date is communicated to the customer in writing within a maximum of two (2) business days after payment confirmation and contract signing by both parties. Additionally, the service implementation schedule and stages are shared in detail.</value>
+  </data>
+  <data name="DeliveryProcessItem3" xml:space="preserve">
+    <value>Payment can be made in full or in installments before the service begins. The payment plan is clearly specified in the contract and approved by the customer.</value>
+  </data>
+  <data name="DeliveryProcessItem4" xml:space="preserve">
+    <value>Service delivery is carried out by expert teams assigned by OSGB, including regular inspections, trainings, and reports within the scope of occupational health and safety (OHS) projects.</value>
+  </data>
+  <data name="DeliveryProcessItem5" xml:space="preserve">
+    <value>In case of potential delays due to technical issues, staff shortages, or unforeseen circumstances during the delivery process, our company provides solutions within 24 hours and informs the customer. Backup plans are activated to ensure uninterrupted service.</value>
+  </data>
+  <data name="DeliveryProcessItem6" xml:space="preserve">
+    <value>In case of changes in the customer’s workplace conditions (e.g., an increase in the number of employees or identification of a new risk), the service scope is reviewed and updated without additional fees.</value>
+  </data>
+  <data name="DeliveryProcessItem7" xml:space="preserve">
+    <value>At every stage of the service, regular progress reports (monthly or project-based) are provided to the customer. These reports include the work performed, identified risks, and solution recommendations.</value>
+  </data>
+  <data name="DeliveryReturn" xml:space="preserve">
+    <value>Delivery and Return Terms</value>
+  </data>
+  <data name="DeliveryReturnTerms" xml:space="preserve">
+    <value>Delivery and Return Terms</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="DiscoverManageSolutions" xml:space="preserve">
+    <value>Discover and manage the most suitable OHS solutions for your company on a single platform.</value>
+  </data>
+  <data name="DisputeResolution" xml:space="preserve">
+    <value>Dispute Resolution</value>
+  </data>
+  <data name="DisputeResolutionText" xml:space="preserve">
+    <value>In disputes arising from the Contract, the parties first seek a solution in good faith. If no solution is reached, the Consumer Arbitration Committee or Consumer Courts at the Buyer’s place of residence are authorized.</value>
+  </data>
+  <data name="DistanceSale" xml:space="preserve">
+    <value>Distance Sale Contract</value>
+  </data>
+  <data name="DistanceSaleContract" xml:space="preserve">
+    <value>Distance Sale Contract</value>
+  </data>
+  <data name="DistanceSaleContractDescription" xml:space="preserve">
+    <value>This Distance Sale Contract (\"Contract\") is drawn up between the parties specified below for online purchase transactions between our company’s website and your company for OSGB services. It is prepared in accordance with Law No. 6502 on Consumer Protection and the Distance Contracts Regulation, clearly regulating the rights and obligations of the buyer and seller. The contract becomes binding between the parties upon the purchase of the service.</value>
+  </data>
+  <data name="EasiestService" xml:space="preserve">
+    <value>We offer you the most effortless service!</value>
+  </data>
+  <data name="EasyOHSManagement" xml:space="preserve">
+    <value>Easy and Fast OHS Management</value>
+  </data>
+  <data name="EasyOHSManagementDesc" xml:space="preserve">
+    <value>Manage your OHS services online and accelerate your field operations. Track agreements, reporting, training processes, and health checks from a single platform.</value>
+  </data>
+  <data name="EasyPayments" xml:space="preserve">
+    <value>Speed up transactions with easy payment options.</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="EmailAddresses" xml:space="preserve">
+    <value>Our Email Addresses</value>
+  </data>
+  <data name="EmailDynamic" xml:space="preserve">
+    <value>Customer’s email address</value>
+  </data>
+  <data name="EmailPlaceholder" xml:space="preserve">
+    <value>example@domain.com</value>
+  </data>
+  <data name="English" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="ErrorOccurred" xml:space="preserve">
+    <value>An error occurred:</value>
+  </data>
+  <data name="ExpertManagement" xml:space="preserve">
+    <value>Helping you manage occupational safety processes with expert hands.</value>
+  </data>
+  <data name="FacilitateCompliance" xml:space="preserve">
+    <value>we facilitate your compliance with legal obligations.</value>
+  </data>
+  <data name="FastestSafestOHS" xml:space="preserve">
+    <value>As ILTER-OSGB, we strive to provide you with the fastest and safest occupational health and safety (OHS) services. We offer the most suitable Common Health and Safety Unit (OSGB) services tailored to your company’s needs, making it easier for you to meet your legal obligations.</value>
+  </data>
+  <data name="FastOSGB" xml:space="preserve">
+    <value>Fast Agreement and Payment with OSGB</value>
+  </data>
+  <data name="FastOSGBImageAlt" xml:space="preserve">
+    <value>Fast OSGB Image</value>
+  </data>
+  <data name="FastReliableSolutions" xml:space="preserve">
+    <value>Providing fast, easy, and reliable solutions in OSGB selection and training processes.</value>
+  </data>
+  <data name="FastSecureAgreements" xml:space="preserve">
+    <value>Fast and secure agreement processes.</value>
+  </data>
+  <data name="FillFormContact" xml:space="preserve">
+    <value>Fill out the form, and we will reach out to you for any request as soon as possible.</value>
+  </data>
+  <data name="FooterLogoAlt" xml:space="preserve">
+    <value>Footer Logo</value>
+  </data>
+  <data name="ForYou" xml:space="preserve">
+    <value>For You</value>
+  </data>
+  <data name="German" xml:space="preserve">
+    <value>German</value>
+  </data>
+  <data name="GetInTouch" xml:space="preserve">
+    <value>GET IN TOUCH!</value>
+  </data>
+  <data name="HealthOneClickAway" xml:space="preserve">
+    <value>Your Health is One Click Away!</value>
+  </data>
+  <data name="HealthScreenings" xml:space="preserve">
+    <value>Plan necessary health screenings for your employees.</value>
+  </data>
+  <data name="HealthScreeningsPeriodic" xml:space="preserve">
+    <value>Health screenings, periodic examinations, and risk analyses.</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Get Help</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="HomePageTitle" xml:space="preserve">
+    <value>İLTER-İSG - HOME</value>
+  </data>
+  <data name="IDTaxNumber" xml:space="preserve">
+    <value>T.C. ID Number / Tax Number</value>
+  </data>
+  <data name="IDTaxNumberDynamic" xml:space="preserve">
+    <value>ID or tax number obtained from the customer</value>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="InnovativeEfficient" xml:space="preserve">
+    <value>Making processes more efficient, faster, and reliable with innovative technologies.</value>
+  </data>
+  <data name="InternationalStandards" xml:space="preserve">
+    <value>Offering OHS services compliant with international standards.</value>
+  </data>
+  <data name="InvalidPhoneNumber" xml:space="preserve">
+    <value>Invalid phone number format. Please enter a 10 or 11 digit number (with or without leading zero, no + sign).</value>
+  </data>
+  <data name="InvoiceInfo" xml:space="preserve">
+    <value>Invoice Information</value>
+  </data>
+  <data name="InvoiceInfoText" xml:space="preserve">
+    <value>The service fee invoice is sent to the Buyer’s specified address or email address after payment is completed.</value>
+  </data>
+  <data name="Keywords" xml:space="preserve">
+    <value>OHS, OSGB, Occupational Physician, Risk Analysis, Common Health and Safety, ILTER, Ilteris, Ilterisg, Hazard Class, Ilter, Ilter-osgb, ilteris, Blog, Login</value>
+  </data>
+  <data name="LanguageChangeError" xml:space="preserve">
+    <value>Language change failed.</value>
+  </data>
+  <data name="LanguageFlagAlt" xml:space="preserve">
+    <value>Language Flag</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="LogoAlt" xml:space="preserve">
+    <value>logo</value>
+  </data>
+  <data name="ManageOHS" xml:space="preserve">
+    <value>Easily Manage Your OHS Services</value>
+  </data>
+  <data name="ManageOHSImageAlt" xml:space="preserve">
+    <value>OHS Management Image</value>
+  </data>
+  <data name="ManageOHSPoint" xml:space="preserve">
+    <value>Manage occupational health and safety services from a single point.</value>
+  </data>
+  <data name="ManageOHSProcesses" xml:space="preserve">
+    <value>Manage your company’s occupational health and safety processes professionally. Ensure workplace safety with our OHS consultancy, risk analysis, health screenings, and legal compliance services.</value>
+  </data>
+  <data name="ManageOSGBAgreements" xml:space="preserve">
+    <value>we enable you to manage OSGB agreements, health screenings, trainings, and risk analyses from a single point.</value>
+  </data>
+  <data name="ManageServicesOnePlace" xml:space="preserve">
+    <value>Manage All Services from One Place</value>
+  </data>
+  <data name="ManageServicesOnePlaceDesc" xml:space="preserve">
+    <value>Manage all your services and other processes from a single point.</value>
+  </data>
+  <data name="MeetOurServices" xml:space="preserve">
+    <value>Meet Our Services</value>
+  </data>
+  <data name="MeetProfessionals" xml:space="preserve">
+    <value>Meet our professionals who you can consult and receive services from anytime!</value>
+  </data>
+  <data name="MessageSentSuccessfully" xml:space="preserve">
+    <value>Your message has been sent successfully!</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>More</value>
+  </data>
+  <data name="MostTrustedPartner" xml:space="preserve">
+    <value>Being the most reliable and fastest solution partner in OHS services.</value>
+  </data>
+  <data name="NameSurname" xml:space="preserve">
+    <value>Name Surname</value>
+  </data>
+  <data name="NameSurnameDynamic" xml:space="preserve">
+    <value>Name or company title entered by the customer on the website</value>
+  </data>
+  <data name="NameSurnamePlaceholder" xml:space="preserve">
+    <value>Name-Surname</value>
+  </data>
+  <data name="NameSurnameTitle" xml:space="preserve">
+    <value>Name Surname / Title</value>
+  </data>
+  <data name="NoNeedToSearch" xml:space="preserve">
+    <value>Without the need to search door to door</value>
+  </data>
+  <data name="NoNeedToSearchManually" xml:space="preserve">
+    <value>No need to search manually door-to-door,</value>
+  </data>
+  <data name="OHSManagement" xml:space="preserve">
+    <value>Occupational Health and Safety Management</value>
+  </data>
+  <data name="OHSManagementImageAlt" xml:space="preserve">
+    <value>Occupational Health and Safety Management Image</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="OneStepAway" xml:space="preserve">
+    <value>You are one step away from change!</value>
+  </data>
+  <data name="OSGBStandardsPolicies" xml:space="preserve">
+    <value>OSGB Service Standards and Policies</value>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="OurGoals" xml:space="preserve">
+    <value>What Are Our Goals?</value>
+  </data>
+  <data name="OurMission" xml:space="preserve">
+    <value>Our Mission</value>
+  </data>
+  <data name="OurServiceProcess" xml:space="preserve">
+    <value>Our Service Process</value>
+  </data>
+  <data name="OurVision" xml:space="preserve">
+    <value>Our Vision</value>
+  </data>
+  <data name="Parties" xml:space="preserve">
+    <value>Parties</value>
+  </data>
+  <data name="PartiesRightsObligations" xml:space="preserve">
+    <value>Parties’ Rights and Obligations</value>
+  </data>
+  <data name="PartnerWithOSGB" xml:space="preserve">
+    <value>OSGB'niz ile anlaşın</value>
+  </data>
+  <data name="PartnerWithOSGBDesc" xml:space="preserve">
+    <value>Start your service process by partnering with an expert Common Health and Safety Unit (OSGB).</value>
+  </data>
+  <data name="PaymentMethod" xml:space="preserve">
+    <value>Payment Method</value>
+  </data>
+  <data name="PaymentMethodValue" xml:space="preserve">
+    <value>Credit Card Single Payment / IBAN</value>
+  </data>
+  <data name="PayWithIyzico" xml:space="preserve">
+    <value>Pay with iyzico</value>
+  </data>
+  <data name="PayWithIyzicoText" xml:space="preserve">
+    <value>All your online payments are secured with the iyzico infrastructure.</value>
+  </data>
+  <data name="PayWithVisaMasterCard" xml:space="preserve">
+    <value>Pay with Visa and MasterCard</value>
+  </data>
+  <data name="PayWithVisaMasterCardText" xml:space="preserve">
+    <value>We offer secure payment options with Visa and MasterCard credit cards.</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="PhoneDynamic" xml:space="preserve">
+    <value>Customer’s contact number</value>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>Phone Number</value>
+  </data>
+  <data name="PhoneNumbers" xml:space="preserve">
+    <value>Our Phone Numbers</value>
+  </data>
+  <data name="PhonePlaceholder" xml:space="preserve">
+    <value>(538) 123</value>
+  </data>
+  <data name="PoweredBy" xml:space="preserve">
+    <value>Powered by </value>
+  </data>
+  <data name="PriceInfo" xml:space="preserve">
+    <value>The fee is clearly notified to the Buyer during the purchase process and presented as the total amount including all taxes.</value>
+  </data>
+  <data name="PrivacyPolicy" xml:space="preserve">
+    <value>Privacy Policy</value>
+  </data>
+  <data name="PrivacyPolicyDescription1" xml:space="preserve">
+    <value>Our company is committed to protecting the security and privacy of our customers’ personal data to the highest degree in accordance with Law No. 6698 on the Protection of Personal Data (KVKK).</value>
+  </data>
+  <data name="RegisterApply" xml:space="preserve">
+    <value>Register and Apply</value>
+  </data>
+  <data name="RegisterApplyDesc" xml:space="preserve">
+    <value>Securely register your company and specify the occupational health and safety (OHS) services you need.</value>
+  </data>
+  <data name="Resources" xml:space="preserve">
+    <value>Resources</value>
+  </data>
+  <data name="ReturnCancellation" xml:space="preserve">
+    <value>Return and Cancellation Conditions</value>
+  </data>
+  <data name="ReturnCancellationItem1" xml:space="preserve">
+    <value>The Buyer notifies the Seller by providing documentation.</value>
+  </data>
+  <data name="ReturnCancellationItem2" xml:space="preserve">
+    <value>The Seller addresses the deficiency within 48 hours or provides compensation services.</value>
+  </data>
+  <data name="ReturnCancellationItem3" xml:space="preserve">
+    <value>If the deficiency cannot be resolved, the full paid amount or the amount corresponding to the deficiency is refunded within 7 business days.</value>
+  </data>
+  <data name="ReturnCancellationText" xml:space="preserve">
+    <value>Return is not possible after the service has started.</value>
+  </data>
+  <data name="ReturnGuarantee" xml:space="preserve">
+    <value>Service Refund and Guarantee</value>
+  </data>
+  <data name="ReturnGuaranteeItem1" xml:space="preserve">
+    <value>Due to the nature of the service, a refund is not possible after it has started. However, if the service provided by our company is incomplete or inadequate, the customer can report this to our company with documentation.</value>
+  </data>
+  <data name="ReturnGuaranteeItem2" xml:space="preserve">
+    <value>In case deficiencies are identified, our company provides additional support or free compensatory service within 48 hours. The customer incurs no additional costs during this process.</value>
+  </data>
+  <data name="ReturnGuaranteeItem3" xml:space="preserve">
+    <value>Upon detection of deficiencies, our company provides additional support within 48 hours or offers free compensation services.</value>
+  </data>
+  <data name="RightOfWithdrawal" xml:space="preserve">
+    <value>Right of Withdrawal</value>
+  </data>
+  <data name="RightOfWithdrawalItem1" xml:space="preserve">
+    <value>The Buyer notifies the Seller of the withdrawal request in writing (via email or registered letter).</value>
+  </data>
+  <data name="RightOfWithdrawalItem2" xml:space="preserve">
+    <value>The paid amount is refunded to the Buyer without interruption within 10 (ten) business days from the withdrawal notification.</value>
+  </data>
+  <data name="RightOfWithdrawalItem3" xml:space="preserve">
+    <value>The right of withdrawal cannot be exercised after the service has started; in this case, return and cancellation conditions apply.</value>
+  </data>
+  <data name="RightOfWithdrawalNote" xml:space="preserve">
+    <value>The right of withdrawal may become invalid if the Buyer explicitly consents to the early start of the service.</value>
+  </data>
+  <data name="RightOfWithdrawalText" xml:space="preserve">
+    <value>The Buyer may exercise the right of withdrawal within 14 (fourteen) days before the service starts, due to the nature of the service.</value>
+  </data>
+  <data name="RiskAnalysis" xml:space="preserve">
+    <value>Risk Analysis</value>
+  </data>
+  <data name="SafeLegalSolutions" xml:space="preserve">
+    <value>Safe and Legal Solutions</value>
+  </data>
+  <data name="SafeLegalSolutionsDesc" xml:space="preserve">
+    <value>Manage all your OHS processes from a single point, easily meet all legal requirements related to occupational health and safety. Protect your employees with our OSGB services and prepare your workplace for inspections.</value>
+  </data>
+  <data name="SafeWorkEnvironment" xml:space="preserve">
+    <value>Safe Work Environment: Protecting employee health and creating safe environments.</value>
+  </data>
+  <data name="SaveTimeCost" xml:space="preserve">
+    <value>helping you save time and cost.</value>
+  </data>
+  <data name="ScrollToTop" xml:space="preserve">
+    <value>Scroll to top</value>
+  </data>
+  <data name="SelectOSGB" xml:space="preserve">
+    <value>Choose the most suitable OSGB and get an instant offer.</value>
+  </data>
+  <data name="SelectSubject" xml:space="preserve">
+    <value>Select...</value>
+  </data>
+  <data name="Seller" xml:space="preserve">
+    <value>Seller</value>
+  </data>
+  <data name="SellerAddress" xml:space="preserve">
+    <value>Atatürk Mah. Cumhuriyet Cad. No: 123, 34750 Istanbul, Turkey</value>
+  </data>
+  <data name="SellerObligation1" xml:space="preserve">
+    <value>To provide the service in the quality and within the timeframe specified in the Contract</value>
+  </data>
+  <data name="SellerObligation2" xml:space="preserve">
+    <value>To inform the Buyer about all processes</value>
+  </data>
+  <data name="SellerObligation3" xml:space="preserve">
+    <value>To protect personal data under KVKK regulations</value>
+  </data>
+  <data name="SellerObligations" xml:space="preserve">
+    <value>Seller’s Obligations</value>
+  </data>
+  <data name="SellerTax" xml:space="preserve">
+    <value>Beyoğlu Tax Office - 1234567890</value>
+  </data>
+  <data name="SellerTitle" xml:space="preserve">
+    <value>İLTER Occupational Health and Safety Services Ltd. Co.</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Send</value>
+  </data>
+  <data name="ServiceDuration" xml:space="preserve">
+    <value>Service Duration</value>
+  </data>
+  <data name="ServiceDurationValue" xml:space="preserve">
+    <value>12 Months</value>
+  </data>
+  <data name="ServiceFeaturesPrice" xml:space="preserve">
+    <value>Service Features and Price Information</value>
+  </data>
+  <data name="ServiceImageAlt" xml:space="preserve">
+    <value>Service Image</value>
+  </data>
+  <data name="Services" xml:space="preserve">
+    <value>Our Services</value>
+  </data>
+  <data name="ServiceType" xml:space="preserve">
+    <value>Service Type</value>
+  </data>
+  <data name="ServiceTypeValue" xml:space="preserve">
+    <value>Occupational Health and Safety Inspection and Training</value>
+  </data>
+  <data name="Slide1Alt" xml:space="preserve">
+    <value>slidebg1</value>
+  </data>
+  <data name="Slide1Title" xml:space="preserve">
+    <value>Sağlığınız Bir Tık Uzağınızda!</value>
+  </data>
+  <data name="Slide2Alt" xml:space="preserve">
+    <value>Occupational Safety Expertise Image</value>
+  </data>
+  <data name="Slide2Subtitle" xml:space="preserve">
+    <value>Safe Work Environments with OHS Expertise</value>
+  </data>
+  <data name="Slide2Title" xml:space="preserve">
+    <value>İSG Uzmanlığı ile Güvenli Çalışma Ortamları</value>
+  </data>
+  <data name="SpecialCasesContact" xml:space="preserve">
+    <value>Special Cases and Contact</value>
+  </data>
+  <data name="SpecialCasesContactItem1" xml:space="preserve">
+    <value>Please contact our customer service team to evaluate any special circumstances related to the delivery process, return conditions, or payment plans.</value>
+  </data>
+  <data name="SpecialCasesContactItem2" xml:space="preserve">
+    <value>In emergencies, immediate action is taken to prevent disruptions to OSGB services, and alternative solutions are offered to the customer.</value>
+  </data>
+  <data name="SpecialCasesContactItem3" xml:space="preserve">
+    <value>For detailed information, support, or special requests, you can email info@ilterisg.com or reach us at +90 541 710 3373.</value>
+  </data>
+  <data name="Subject" xml:space="preserve">
+    <value>Subject</value>
+  </data>
+  <data name="SubjectDescription" xml:space="preserve">
+    <value>The subject of this Contract is to regulate the qualities, fees, payment methods, delivery conditions, right of withdrawal, return, and cancellation procedures of the OSGB (Joint Health and Safety Unit) services purchased by the Buyer through the Seller’s www.ilterisg.com website.</value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>Success!</value>
+  </data>
+  <data name="SuitableOSGBSelection" xml:space="preserve">
+    <value>OSGB selection suitable for your industry.</value>
+  </data>
+  <data name="Support" xml:space="preserve">
+    <value>Support</value>
+  </data>
+  <data name="SustainableSolutions" xml:space="preserve">
+    <value>Providing convenience to everyone by developing sustainable, eco-friendly OHS solutions.</value>
+  </data>
+  <data name="TaxOfficeNumber" xml:space="preserve">
+    <value>Tax Office and Number</value>
+  </data>
+  <data name="ThusWeAccelerate" xml:space="preserve">
+    <value>Thus, we accelerate your OHS processes</value>
+  </data>
+  <data name="TimeResourceSaving" xml:space="preserve">
+    <value>Time and Resource Saving</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="TotalPrice" xml:space="preserve">
+    <value>Total Price</value>
+  </data>
+  <data name="TrackAgreements" xml:space="preserve">
+    <value>Track your agreements digitally, eliminate unnecessary paperwork.</value>
+  </data>
+  <data name="TrainingConsultingCompliance" xml:space="preserve">
+    <value>Full compliance with training and consulting services.</value>
+  </data>
+  <data name="TrustPeace" xml:space="preserve">
+    <value>Trust and Peace</value>
+  </data>
+  <data name="TrustPeaceDate" xml:space="preserve">
+    <value>April 10, 2022</value>
+  </data>
+  <data name="Turkish" xml:space="preserve">
+    <value>Turkish</value>
+  </data>
+  <data name="ValidityApproval" xml:space="preserve">
+    <value>Validity and Approval</value>
+  </data>
+  <data name="ValidityApprovalText" xml:space="preserve">
+    <value>This Contract enters into force when the Buyer completes the purchase process on the website and checks the \"I have read and accept the Contract\" box.</value>
+  </data>
+  <data name="WeAreWithYou" xml:space="preserve">
+    <value>We are always with you in your work and safety.</value>
+  </data>
+  <data name="Website" xml:space="preserve">
+    <value>Website</value>
+  </data>
+  <data name="WebsiteCriteriaPolicies" xml:space="preserve">
+    <value>Website Criteria and Policies</value>
+  </data>
+  <data name="WeHandleForYou" xml:space="preserve">
+    <value>we handle these processes for you and provide them to you.</value>
+  </data>
+  <data name="WeOfferSuitableOSGB" xml:space="preserve">
+    <value>we offer the most suitable OSGB (Joint Health and Safety Unit) service for your company</value>
+  </data>
+  <data name="WhyChooseUs" xml:space="preserve">
+    <value>Why Choose Us?</value>
+  </data>
+  <data name="YourMessage" xml:space="preserve">
+    <value>Your Message</value>
+  </data>
+  <data name="YourMessagePlaceholder" xml:space="preserve">
+    <value>Enter your message here...</value>
+  </data>
+  <data name="YourRight1" xml:space="preserve">
+    <value>To learn whether your data is being processed</value>
+  </data>
+  <data name="YourRight2" xml:space="preserve">
+    <value>To request information if your data has been processed</value>
+  </data>
+  <data name="YourRight3" xml:space="preserve">
+    <value>To learn the purpose of the processing of your data and whether it is used in accordance with that purpose</value>
+  </data>
+  <data name="YourRight4" xml:space="preserve">
+    <value>To know the third parties to whom your data has been transferred</value>
+  </data>
+  <data name="YourRight5" xml:space="preserve">
+    <value>To request the correction of incomplete or inaccurately processed data</value>
+  </data>
+  <data name="YourRight6" xml:space="preserve">
+    <value>To object to the emergence of a result against you in case your processed data is analyzed with automated systems</value>
+  </data>
+  <data name="YourRightsContact" xml:space="preserve">
+    <value>You can exercise these rights by submitting a written application to destek@ilterisg.com or by contacting us at +90 541 710 3373.</value>
+  </data>
+  <data name="YourRightsKVKK" xml:space="preserve">
+    <value>Your Rights Under KVKK</value>
+  </data>
+  <data name="YourRightsKVKKIntro" xml:space="preserve">
+    <value>Under Law No. 6698, you have the following rights regarding your personal data:</value>
+  </data>
+  <data name="ZeroAccidentVision" xml:space="preserve">
+    <value>Creating clean, fast, and safe working environments with a zero-accident vision.</value>
+  </data>
+  <data name="RateLimitExceeded" xml:space="preserve">
+    <value>RateLimitExceeded</value>
+  </data>
+</root>

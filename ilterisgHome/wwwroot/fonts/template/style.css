@@ -1,0 +1,314 @@
+@font-face {
+	font-family: 'template';
+	src:  url('fonts/template.eot');
+	src:  url('fonts/template.eot#iefix') format('embedded-opentype'),
+		url('fonts/template.ttf') format('truetype'),
+		url('fonts/template.woff') format('woff'),
+		url('fonts/template.svg#template') format('svg');
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
+}
+
+[class^="template-"]::before, [class*=" template-"]::before,
+[class^="template-"]::after, [class*=" template-"]::after {
+	/* use !important to prevent issues with browser extensions that change fonts */
+	font-family: 'template';
+	speak: never;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	vertical-align: middle;
+	line-height: 1;
+	direction: ltr;
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.template-author::before {
+	content: "\44";
+}
+.template-close::before {
+	content: "\2b";
+}
+.template-check6::before {
+	content: "\5f";
+}
+.template-search4::before {
+	content: "\69";
+}
+.template-search3::before {
+	content: "\68";
+}
+.template-cart::before {
+	content: "\4f";
+}
+.template-chev-down2::before {
+	content: "\22";
+}
+.template-chev-down3::before {
+	content: "\3f";
+}
+.template-chev-up3::before {
+	content: "\3e";
+}
+.template-chev-up2::before {
+	content: "\3a";
+}
+.template-right3::before {
+	content: "\55";
+}
+.template-left3::before {
+	content: "\56";
+}
+.template-plus3::before {
+	content: "\6e";
+}
+.template-minus3::before {
+	content: "\6f";
+}
+.template-plus1::before {
+	content: "\6a";
+}
+.template-minus1::before {
+	content: "\6b";
+}
+.template-plus2::before {
+	content: "\6c";
+}
+.template-minus2::before {
+	content: "\6d";
+}
+.template-check5::before {
+	content: "\65";
+}
+.template-feature::before {
+	content: "\40";
+}
+.template-right2::before {
+	content: "\53";
+}
+.template-right2-after::after {
+	content: "\53";
+}
+.template-left2::before {
+	content: "\54";
+}
+.template-baggage::before {
+	content: "\60";
+}
+.template-calendar::before {
+	content: "\2d";
+}
+.template-cam::before {
+	content: "\3d";
+}
+.template-card::before {
+	content: "\7e";
+}
+.template-layers2::before {
+	content: "\32";
+}
+.template-data3::before {
+	content: "\2a";
+}
+.template-data2::before {
+	content: "\24";
+}
+.template-data1::before {
+	content: "\7c";
+}
+.template-download::before {
+	content: "\2f";
+}
+.template-exclamation::before {
+	content: "\4a";
+}
+.template-eye::before {
+	content: "\2e";
+}
+.template-tag::before {
+	content: "\70";
+}
+.template-folder::before {
+	content: "\21";
+}
+.template-category::before {
+	content: "\71";
+}
+.template-support::before {
+	content: "\73";
+}
+.template-home::before {
+	content: "\72";
+}
+.template-info::before {
+	content: "\49";
+}
+.template-layers1::before {
+	content: "\31";
+}
+.template-location1::before {
+	content: "\33";
+}
+.template-location2::before {
+	content: "\34";
+}
+.template-location3::before {
+	content: "\23";
+}
+.template-lock1::before {
+	content: "\74";
+}
+.template-lock2::before {
+	content: "\75";
+}
+.template-map::before {
+	content: "\50";
+}
+.template-calc::before {
+	content: "\76";
+}
+.template-email1::before {
+	content: "\35";
+}
+.template-message2::before {
+	content: "\4d";
+}
+.template-email2::before {
+	content: "\36";
+}
+.template-message1::before {
+	content: "\4c";
+}
+.template-email3::before {
+	content: "\37";
+}
+.template-email4::before {
+	content: "\38";
+}
+.template-message3::before {
+	content: "\4e";
+}
+.template-money::before {
+	content: "\26";
+}
+.template-error::before {
+	content: "\48";
+}
+.template-document1::before {
+	content: "\77";
+}
+.template-document2::before {
+	content: "\39";
+}
+.template-document3::before {
+	content: "\28";
+}
+.template-edit::before {
+	content: "\30";
+}
+.template-pic::before {
+	content: "\79";
+}
+.template-pin::before {
+	content: "\78";
+}
+.template-video1::before {
+	content: "\41";
+}
+.template-video2::before {
+	content: "\42";
+}
+.template-print::before {
+	content: "\7a";
+}
+.template-user::before {
+	content: "\43";
+}
+.template-user3::before {
+	content: "\45";
+}
+.template-users::before {
+	content: "\29";
+}
+.template-question::before {
+	content: "\4b";
+}
+.template-refresh::before {
+	content: "\46";
+}
+.template-search2::before {
+	content: "\67";
+}
+.template-settings::before {
+	content: "\5b";
+}
+.template-share1::before {
+	content: "\3b";
+}
+.template-share2::before {
+	content: "\27";
+}
+.template-shield::before {
+	content: "\5e";
+}
+.template-site::before {
+	content: "\5d";
+}
+.template-phone::before {
+	content: "\3c";
+}
+.template-tea::before {
+	content: "\5c";
+}
+.template-thumb::before {
+	content: "\25";
+}
+.template-time::before {
+	content: "\47";
+}
+.template-wallet::before {
+	content: "\2c";
+}
+.template-down1::before {
+	content: "\58";
+}
+.template-left1::before {
+	content: "\52";
+}
+.template-right1::before {
+	content: "\51";
+}
+.template-up1::before {
+	content: "\57";
+}
+.template-chev-down1::before {
+	content: "\5a";
+}
+.template-chev-left1::before {
+	content: "\7d";
+}
+.template-chev-right1::before {
+	content: "\7b";
+}
+.template-chev-up1::before {
+	content: "\59";
+}
+.template-search1::before {
+	content: "\66";
+}
+.template-check4::before {
+	content: "\64";
+}
+.template-check2::before {
+	content: "\62";
+}
+.template-check3::before {
+	content: "\63";
+}
+.template-check1::before {
+	content: "\61";
+}
