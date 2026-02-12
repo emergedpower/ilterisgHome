@@ -54,4 +54,5 @@ C:\Users\umut3\Desktop\ilterisgHome\ilterisgHome\obj\Debug\net8.0\refint\ilteris
 C:\Users\umut3\Desktop\ilterisgHome\ilterisgHome\obj\Debug\net8.0\ilterisgHome.pdb
 C:\Users\umut3\Desktop\ilterisgHome\ilterisgHome\obj\Debug\net8.0\ilterisgHome.genruntimeconfig.cache
 C:\Users\umut3\Desktop\ilterisgHome\ilterisgHome\obj\Debug\net8.0\ref\ilterisgHome.dll
+C:\Users\umut3\Desktop\ilterisgHome\ilterisgHome\obj\Debug\net8.0\ilterisgHome.sourcelink.json
 C:\Users\umut3\Desktop\ilterisgHome\ilterisgHome\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

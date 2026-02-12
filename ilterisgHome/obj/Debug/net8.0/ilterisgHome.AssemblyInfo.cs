@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ilterisgHome")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5387131ea3cb55f7b8e0102a213167aa2c318982")]
 [assembly: System.Reflection.AssemblyProductAttribute("ilterisgHome")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ilterisgHome")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

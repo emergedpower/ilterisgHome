@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{8DC69AC7-B510-4A37-8455-72F48A759E0C}|ilterisgHome\\ilterisgHome.csproj|solutionrelative:ilterisghome\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8DC69AC7-B510-4A37-8455-72F48A759E0C}|ilterisgHome\\ilterisgHome.csproj|c:\\users\\umut3\\desktop\\ilterisghome\\ilterisghome\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8DC69AC7-B510-4A37-8455-72F48A759E0C}|ilterisgHome\\ilterisgHome.csproj|solutionrelative:ilterisghome\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{8DC69AC7-B510-4A37-8455-72F48A759E0C}|ilterisgHome\\ilterisgHome.csproj|c:\\users\\umut3\\desktop\\ilterisghome\\ilterisghome\\resources\\sharedresource.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
+      "RelativeMoniker": "D:0:0:{8DC69AC7-B510-4A37-8455-72F48A759E0C}|ilterisgHome\\ilterisgHome.csproj|solutionrelative:ilterisghome\\resources\\sharedresource.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8DC69AC7-B510-4A37-8455-72F48A759E0C}|ilterisgHome\\ilterisgHome.csproj|c:\\users\\umut3\\desktop\\ilterisghome\\ilterisghome\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{8DC69AC7-B510-4A37-8455-72F48A759E0C}|ilterisgHome\\ilterisgHome.csproj|solutionrelative:ilterisghome\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{8DC69AC7-B510-4A37-8455-72F48A759E0C}|ilterisgHome\\ilterisgHome.csproj|c:\\users\\umut3\\desktop\\ilterisghome\\ilterisghome\\resources\\ilterisg.models.sharedresource.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
+      "RelativeMoniker": "D:0:0:{8DC69AC7-B510-4A37-8455-72F48A759E0C}|ilterisgHome\\ilterisgHome.csproj|solutionrelative:ilterisghome\\resources\\ilterisg.models.sharedresource.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8DC69AC7-B510-4A37-8455-72F48A759E0C}|ilterisgHome\\ilterisgHome.csproj|c:\\users\\umut3\\desktop\\ilterisghome\\ilterisghome\\appsettings.production.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -23,12 +23,32 @@
       "RelativeMoniker": "D:0:0:{8DC69AC7-B510-4A37-8455-72F48A759E0C}|ilterisgHome\\ilterisgHome.csproj|solutionrelative:ilterisghome\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8DC69AC7-B510-4A37-8455-72F48A759E0C}|ilterisgHome\\ilterisgHome.csproj|c:\\users\\umut3\\desktop\\ilterisghome\\ilterisghome\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8DC69AC7-B510-4A37-8455-72F48A759E0C}|ilterisgHome\\ilterisgHome.csproj|solutionrelative:ilterisghome\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{8DC69AC7-B510-4A37-8455-72F48A759E0C}|ilterisgHome\\ilterisgHome.csproj|c:\\users\\umut3\\desktop\\ilterisghome\\ilterisghome\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{8DC69AC7-B510-4A37-8455-72F48A759E0C}|ilterisgHome\\ilterisgHome.csproj|solutionrelative:ilterisghome\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8DC69AC7-B510-4A37-8455-72F48A759E0C}|ilterisgHome\\ilterisgHome.csproj|c:\\users\\umut3\\desktop\\ilterisghome\\ilterisghome\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{8DC69AC7-B510-4A37-8455-72F48A759E0C}|ilterisgHome\\ilterisgHome.csproj|solutionrelative:ilterisghome\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DC69AC7-B510-4A37-8455-72F48A759E0C}|ilterisgHome\\ilterisgHome.csproj|c:\\users\\umut3\\desktop\\ilterisghome\\ilterisghome\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{8DC69AC7-B510-4A37-8455-72F48A759E0C}|ilterisgHome\\ilterisgHome.csproj|solutionrelative:ilterisghome\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DC69AC7-B510-4A37-8455-72F48A759E0C}|ilterisgHome\\ilterisgHome.csproj|c:\\users\\umut3\\desktop\\ilterisghome\\ilterisghome\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8DC69AC7-B510-4A37-8455-72F48A759E0C}|ilterisgHome\\ilterisgHome.csproj|solutionrelative:ilterisghome\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DC69AC7-B510-4A37-8455-72F48A759E0C}|ilterisgHome\\ilterisgHome.csproj|c:\\users\\umut3\\desktop\\ilterisghome\\ilterisghome\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8DC69AC7-B510-4A37-8455-72F48A759E0C}|ilterisgHome\\ilterisgHome.csproj|solutionrelative:ilterisghome\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DC69AC7-B510-4A37-8455-72F48A759E0C}|ilterisgHome\\ilterisgHome.csproj|c:\\users\\umut3\\desktop\\ilterisghome\\ilterisghome\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8DC69AC7-B510-4A37-8455-72F48A759E0C}|ilterisgHome\\ilterisgHome.csproj|solutionrelative:ilterisghome\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DC69AC7-B510-4A37-8455-72F48A759E0C}|ilterisgHome\\ilterisgHome.csproj|c:\\users\\umut3\\desktop\\ilterisghome\\ilterisghome\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8DC69AC7-B510-4A37-8455-72F48A759E0C}|ilterisgHome\\ilterisgHome.csproj|solutionrelative:ilterisghome\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8DC69AC7-B510-4A37-8455-72F48A759E0C}|ilterisgHome\\ilterisgHome.csproj|c:\\users\\umut3\\desktop\\ilterisghome\\ilterisghome\\models\\sharedresource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -54,17 +74,76 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SharedResource.resx",
+              "DocumentMoniker": "C:\\Users\\umut3\\Desktop\\ilterisgHome\\ilterisgHome\\Resources\\SharedResource.resx",
+              "RelativeDocumentMoniker": "ilterisgHome\\Resources\\SharedResource.resx",
+              "ToolTip": "C:\\Users\\umut3\\Desktop\\ilterisgHome\\ilterisgHome\\Resources\\SharedResource.resx",
+              "RelativeToolTip": "ilterisgHome\\Resources\\SharedResource.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2026-02-12T06:33:19.122Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ilterisg.Models.SharedResource.resx",
+              "DocumentMoniker": "C:\\Users\\umut3\\Desktop\\ilterisgHome\\ilterisgHome\\Resources\\ilterisg.Models.SharedResource.resx",
+              "RelativeDocumentMoniker": "ilterisgHome\\Resources\\ilterisg.Models.SharedResource.resx",
+              "ToolTip": "C:\\Users\\umut3\\Desktop\\ilterisgHome\\ilterisgHome\\Resources\\ilterisg.Models.SharedResource.resx",
+              "RelativeToolTip": "ilterisgHome\\Resources\\ilterisg.Models.SharedResource.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2026-02-12T06:33:12.33Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\umut3\\Desktop\\ilterisgHome\\ilterisgHome\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "ilterisgHome\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\umut3\\Desktop\\ilterisgHome\\ilterisgHome\\Properties\\launchSettings.json",
+              "RelativeToolTip": "ilterisgHome\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-02-11T17:25:09.229Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Users\\umut3\\Desktop\\ilterisgHome\\ilterisgHome\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "ilterisgHome\\Views\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Users\\umut3\\Desktop\\ilterisgHome\\ilterisgHome\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "ilterisgHome\\Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-11T17:24:05.699Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Privacy.cshtml",
+              "DocumentMoniker": "C:\\Users\\umut3\\Desktop\\ilterisgHome\\ilterisgHome\\Views\\Home\\Privacy.cshtml",
+              "RelativeDocumentMoniker": "ilterisgHome\\Views\\Home\\Privacy.cshtml",
+              "ToolTip": "C:\\Users\\umut3\\Desktop\\ilterisgHome\\ilterisgHome\\Views\\Home\\Privacy.cshtml",
+              "RelativeToolTip": "ilterisgHome\\Views\\Home\\Privacy.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-11T17:24:03.62Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "About.cshtml",
               "DocumentMoniker": "C:\\Users\\umut3\\Desktop\\ilterisgHome\\ilterisgHome\\Views\\Home\\About.cshtml",
               "RelativeDocumentMoniker": "ilterisgHome\\Views\\Home\\About.cshtml",
               "ToolTip": "C:\\Users\\umut3\\Desktop\\ilterisgHome\\ilterisgHome\\Views\\Home\\About.cshtml",
               "RelativeToolTip": "ilterisgHome\\Views\\Home\\About.cshtml",
-              "ViewState": "AgIAAG4CAAAAAAAAAAAAAIYCAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAALUAAAAAAAAAAAArwL8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-02-07T16:39:36.429Z"
             },
@@ -76,14 +155,13 @@
               "RelativeDocumentMoniker": "ilterisgHome\\appsettings.Production.json",
               "ToolTip": "C:\\Users\\umut3\\Desktop\\ilterisgHome\\ilterisgHome\\appsettings.Production.json",
               "RelativeToolTip": "ilterisgHome\\appsettings.Production.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-02-07T18:55:04.726Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-07T18:55:04.726Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Users\\umut3\\Desktop\\ilterisgHome\\ilterisgHome\\appsettings.Development.json",
               "RelativeDocumentMoniker": "ilterisgHome\\appsettings.Development.json",
@@ -91,12 +169,11 @@
               "RelativeToolTip": "ilterisgHome\\appsettings.Development.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-02-07T18:54:48.373Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-07T18:54:48.373Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 12,
               "Title": "SharedResource.cs",
               "DocumentMoniker": "C:\\Users\\umut3\\Desktop\\ilterisgHome\\ilterisgHome\\Models\\SharedResource.cs",
               "RelativeDocumentMoniker": "ilterisgHome\\Models\\SharedResource.cs",
@@ -108,7 +185,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 13,
               "Title": "LanguageController.cs",
               "DocumentMoniker": "C:\\Users\\umut3\\Desktop\\ilterisgHome\\ilterisgHome\\Controllers\\LanguageController.cs",
               "RelativeDocumentMoniker": "ilterisgHome\\Controllers\\LanguageController.cs",
@@ -120,7 +197,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 15,
               "Title": "IEmailService.cs",
               "DocumentMoniker": "C:\\Users\\umut3\\Desktop\\ilterisgHome\\ilterisgHome\\Helpers\\IEmailService.cs",
               "RelativeDocumentMoniker": "ilterisgHome\\Helpers\\IEmailService.cs",
@@ -150,14 +227,14 @@
               "RelativeDocumentMoniker": "ilterisgHome\\Program.cs",
               "ToolTip": "C:\\Users\\umut3\\Desktop\\ilterisgHome\\ilterisgHome\\Program.cs",
               "RelativeToolTip": "ilterisgHome\\Program.cs",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAmwHIAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAE8AAAAAAAAAAADwv4UAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-07T16:38:00.224Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 14,
               "Title": "EmailService.cs",
               "DocumentMoniker": "C:\\Users\\umut3\\Desktop\\ilterisgHome\\ilterisgHome\\Helpers\\EmailService.cs",
               "RelativeDocumentMoniker": "ilterisgHome\\Helpers\\EmailService.cs",
@@ -169,16 +246,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 11,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\umut3\\Desktop\\ilterisgHome\\ilterisgHome\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "ilterisgHome\\Views\\Home\\Index.cshtml",
               "ToolTip": "C:\\Users\\umut3\\Desktop\\ilterisgHome\\ilterisgHome\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "ilterisgHome\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAcDAAAAAAAAAAAgwB4DAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAALwAAAAAAAAAAAApwMwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-08T08:17:56.979Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-08T08:17:56.979Z"
             },
             {
               "$type": "Document",
@@ -188,10 +264,9 @@
               "RelativeDocumentMoniker": "ilterisgHome\\Controllers\\HomeController.cs",
               "ToolTip": "C:\\Users\\umut3\\Desktop\\ilterisgHome\\ilterisgHome\\Controllers\\HomeController.cs",
               "RelativeToolTip": "ilterisgHome\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAAwD8AAABOAAAAAAAAAA==",
+              "ViewState": "AgIAACUAAAAAAAAAAAAAAEIAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-08T07:51:51.58Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-08T07:51:51.58Z"
             }
           ]
         }

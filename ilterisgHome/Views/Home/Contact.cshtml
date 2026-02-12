@@ -1,7 +1,12 @@
-ï»¿@inject Microsoft.Extensions.Localization.IStringLocalizer<SharedResource> Localizer
+@inject Microsoft.Extensions.Localization.IStringLocalizer<SharedResource> Localizer
 @using System.Text.Encodings.Web
 @{
     Layout = null;
+    var appBase = (Config["ExternalLinks:AppBaseUrl"] ?? "https://app.ilterisg.com").TrimEnd('/');
+    var blogPath = "/Blog/Index";
+    var loginPath = Url.Action("Login", "Account") ?? "/Account/Login";
+    var blogUrl = $"{appBase}{blogPath}";
+    var loginUrl = $"{appBase}{loginPath}";
 }
 <!DOCTYPE html>
 <html lang="@System.Globalization.CultureInfo.CurrentUICulture.Name">
@@ -32,9 +37,9 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Material Design Icons (MDI) CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdi/font@7.4.47/css/materialdesignicons.min.css" integrity="sha256-euJ8V0D1E6M6nSLG8KAcvFPjR4Un7RNjXLs3C0yVCFI=" crossorigin="anonymous" />
-    <!-- Ã–zel Stil -->
+    <!-- Özel Stil -->
     <style>
-        /* Header'a dropdown eklerken eski tasarÄ±mÄ± koruma */
+        /* Header'a dropdown eklerken eski tasarýmý koruma */
         .header-icons-container {
             position: relative;
             display: inline-block;
@@ -57,7 +62,7 @@
             color: #000;
             font-size: 12px;
             line-height: 1;
-            z-index: 1002; /* Mobil cihazlarda tÄ±klanabilirliÄŸi artÄ±rmak iÃ§in */
+            z-index: 1002; /* Mobil cihazlarda týklanabilirliði artýrmak için */
         }
 
             .custom-dropdown-btn img {
@@ -74,7 +79,7 @@
         .custom-dropdown-content {
             display: none;
             position: absolute;
-            top: 100%; /* Dropdown'un butonun hemen altÄ±na konumlandÄ±rÄ±lmasÄ± */
+            top: 100%; /* Dropdown'un butonun hemen altýna konumlandýrýlmasý */
             right: 0;
             background-color: #fff;
             min-width: 120px;
@@ -107,9 +112,9 @@
                 }
 
         .custom-dropdown.active .custom-dropdown-content {
-            display: block; /* Aktifken gÃ¶rÃ¼nÃ¼r */
+            display: block; /* Aktifken görünür */
         }
-        /* MDI ikonlarÄ±nÄ±n gÃ¶rÃ¼nÃ¼rlÃ¼ÄŸÃ¼nÃ¼ saÄŸlama */
+        /* MDI ikonlarýnýn görünürlüðünü saðlama */
         .mdi:before {
             font-family: 'Material Design Icons' !important;
             speak: none;
@@ -121,7 +126,7 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
-        /* MenÃ¼ Ã¶ÄŸeleri arasÄ±ndaki boÅŸluÄŸu artÄ±rma */
+        /* Menü öðeleri arasýndaki boþluðu artýrma */
         .sf-menu li {
             margin-right: 15px;
         }
@@ -133,18 +138,18 @@
             .sf-menu li a {
                 font-size: 15px;
             }
-        /* Mobil iÃ§in dropdown iyileÅŸtirmesi */
+        /* Mobil için dropdown iyileþtirmesi */
         @@media (max-width: 767px) {
             .header-icons-container
 
         {
-            overflow: visible; /* Dropdown'un dÄ±ÅŸarÄ± taÅŸmasÄ±nÄ± saÄŸlar */
+            overflow: visible; /* Dropdown'un dýþarý taþmasýný saðlar */
         }
 
         .custom-dropdown-content {
-            position: fixed; /* Mobil'de header'dan baÄŸÄ±msÄ±z */
-            z-index: 1001; /* Main content Ã¼stÃ¼ne getirir */
-            right: 10px; /* SaÄŸ kenara hizala */
+            position: fixed; /* Mobil'de header'dan baðýmsýz */
+            z-index: 1001; /* Main content üstüne getirir */
+            right: 10px; /* Sað kenara hizala */
         }
 
         .header {
@@ -152,7 +157,7 @@
         }
 
         }
-        /* Form gÃ¶nderimi iÃ§in Ã¶zel spinner overlay */
+        /* Form gönderimi için özel spinner overlay */
         .custom-spinner-overlay {
             position: fixed;
             display: flex;
@@ -163,23 +168,23 @@
             width: 100%;
             height: 100%;
             background: rgba(0, 0, 0, 0.5); /* Saydam gri arka plan */
-            z-index: 9999998; /* Orijinal preloader'dan bir dÃ¼ÅŸÃ¼k */
+            z-index: 9999998; /* Orijinal preloader'dan bir düþük */
             transition: background 0.5s ease;
         }
-        /* Send butonunun mobil cihazlarda tÄ±klanabilirliÄŸini artÄ±rma */
+        /* Send butonunun mobil cihazlarda týklanabilirliðini artýrma */
         .submit-contact-form {
             position: relative;
-            z-index: 1002; /* Ãœstte gÃ¶rÃ¼nmesini saÄŸlar */
-            padding: 10px 20px; /* TÄ±klama alanÄ±nÄ± bÃ¼yÃ¼tÃ¼r */
+            z-index: 1002; /* Üstte görünmesini saðlar */
+            padding: 10px 20px; /* Týklama alanýný büyütür */
             cursor: pointer;
-            pointer-events: auto; /* TÄ±klanabilirliÄŸi garantiler */
+            pointer-events: auto; /* Týklanabilirliði garantiler */
         }
         @@media (max-width: 767px) {
             .submit-contact-form
 
         {
-            min-height: 44px; /* Mobil cihazlar iÃ§in minimum tÄ±klama yÃ¼ksekliÄŸi */
-            width: 100%; /* Daha geniÅŸ tÄ±klama alanÄ± */
+            min-height: 44px; /* Mobil cihazlar için minimum týklama yüksekliði */
+            width: 100%; /* Daha geniþ týklama alaný */
             font-size: 16px; /* Daha okunabilir */
             line-height: 1.5; /* Daha iyi hizalama */
         }
@@ -199,7 +204,7 @@
                         <a href="@Url.Action("Index", "Home")" title="@Localizer["Home"]">
                             <img src="/images/1-01.svg" srcset="/images/1-01.svg" class="primary-logo" alt="@Localizer["LogoAlt"]">
                             <img src="/images/1-01.svg" srcset="/images/1-01.svg" class="secondary-logo" alt="@Localizer["LogoAlt"]">
-                            <span class="logo-text">Ä°LTER-Ä°SG</span>
+                            <span class="logo-text">ÝLTER-ÝSG</span>
                         </a>
                     </h1>
                 </div>
@@ -219,10 +224,10 @@
                                 <a href="@Url.Action("Contact", "Home")" title="@Localizer["Contact"]">@Localizer["Contact"]</a>
                             </li>
                             <li>
-                                <a href="@Url.Action("Index", "Blog")" title="@Localizer["Blog"]">@Localizer["Blog"]</a>
+                                <a href="@blogUrl" title="@Localizer["Blog"]">@Localizer["Blog"]</a>
                             </li>
                             <li>
-                                <a href="@Url.Action("Login", "Account")" title="@Localizer["Login"]">@Localizer["Login"]</a>
+                                <a href="@loginUrl" title="@Localizer["Login"]">@Localizer["Login"]</a>
                             </li>
                         </ul>
                     </nav>
@@ -243,10 +248,10 @@
                                     <a href="@Url.Action("Contact", "Home")" title="@Localizer["Contact"]">@Localizer["Contact"]</a>
                                 </li>
                                 <li>
-                                    <a href="@Url.Action("Index", "Blog")" title="@Localizer["Blog"]">@Localizer["Blog"]</a>
+                                    <a href="@blogUrl" title="@Localizer["Blog"]">@Localizer["Blog"]</a>
                                 </li>
                                 <li>
-                                    <a href="@Url.Action("Login", "Account")" title="@Localizer["Login"]">@Localizer["Login"]</a>
+                                    <a href="@loginUrl" title="@Localizer["Login"]">@Localizer["Login"]</a>
                                 </li>
                             </ul>
                         </nav>
@@ -292,7 +297,7 @@
                     <div class="bread-crumb-container">
                         <ul class="bread-crumb">
                             <li><a title="@Localizer["Home"]" href="@Url.Action("Index", "Home")">@Localizer["Home"]</a></li>
-                            <li class="separator">Â·</li>
+                            <li class="separator">·</li>
                             <li>@Localizer["Contact"]</li>
                         </ul>
                     </div>
@@ -458,8 +463,8 @@
                                                 <select name="subject" id="subject" class="cost-dropdown">
                                                     <option value="" selected="selected">@Localizer["SelectSubject"]</option>
                                                     <option value="Bilgi Alma">@Localizer["Information"]</option>
-                                                    <option value="YardÄ±m Almak">@Localizer["Help"]</option>
-                                                    <option value="DiÄŸer">@Localizer["Other"]</option>
+                                                    <option value="Yardým Almak">@Localizer["Help"]</option>
+                                                    <option value="Diðer">@Localizer["Other"]</option>
                                                 </select>
                                             </div>
                                         </fieldset>
@@ -573,16 +578,16 @@
         <script src="/js/odometer.min.js"></script>
         <script>
                     $(document).ready(function () {
-                // Localizer deÄŸerlerini JavaScript deÄŸiÅŸkenlerine ata
-                const successMessage = '@Html.Raw(JavaScriptEncoder.Default.Encode(Localizer["Success"]?.Value ?? "BaÅŸarÄ±lÄ±"))';
+                // Localizer deðerlerini JavaScript deðiþkenlerine ata
+                const successMessage = '@Html.Raw(JavaScriptEncoder.Default.Encode(Localizer["Success"]?.Value ?? "Baþarýlý"))';
                 const errorMessage = '@Html.Raw(JavaScriptEncoder.Default.Encode(Localizer["Error"]?.Value ?? "Hata"))';
-                const errorOccurredMessage = '@Html.Raw(JavaScriptEncoder.Default.Encode(Localizer["ErrorOccurred"]?.Value ?? "Bir hata oluÅŸtu"))';
+                const errorOccurredMessage = '@Html.Raw(JavaScriptEncoder.Default.Encode(Localizer["ErrorOccurred"]?.Value ?? "Bir hata oluþtu"))';
                 const okButtonText = '@Html.Raw(JavaScriptEncoder.Default.Encode(Localizer["OK"]?.Value ?? "Tamam"))';
-                const languageChangeErrorMessage = '@Html.Raw(JavaScriptEncoder.Default.Encode(Localizer["LanguageChangeError"]?.Value ?? "Dil deÄŸiÅŸtirme sÄ±rasÄ±nda bir hata oluÅŸtu"))';
-                const formSuccessMessage = '@Html.Raw(JavaScriptEncoder.Default.Encode(Localizer["MessageSentSuccessfully"]?.Value ?? "Mesaj baÅŸarÄ±yla gÃ¶nderildi"))';
-                const formErrorMessage = '@Html.Raw(JavaScriptEncoder.Default.Encode(Localizer["AllFieldsRequired"]?.Value ?? "TÃ¼m alanlar doldurulmalÄ±dÄ±r"))';
+                const languageChangeErrorMessage = '@Html.Raw(JavaScriptEncoder.Default.Encode(Localizer["LanguageChangeError"]?.Value ?? "Dil deðiþtirme sýrasýnda bir hata oluþtu"))';
+                const formSuccessMessage = '@Html.Raw(JavaScriptEncoder.Default.Encode(Localizer["MessageSentSuccessfully"]?.Value ?? "Mesaj baþarýyla gönderildi"))';
+                const formErrorMessage = '@Html.Raw(JavaScriptEncoder.Default.Encode(Localizer["AllFieldsRequired"]?.Value ?? "Tüm alanlar doldurulmalýdýr"))';
 
-                // Pencere boyutuna gÃ¶re menÃ¼ dÃ¼ÄŸmesini kontrol et
+                // Pencere boyutuna göre menü düðmesini kontrol et
                 function toggleMobileMenuSwitch() {
                     if ($(window).width() <= 767) {
                         $('.mobile-menu-switch').css({
@@ -599,7 +604,7 @@
                     }
                 }
 
-                // Dropdown pozisyonunu gÃ¼ncelle
+                // Dropdown pozisyonunu güncelle
                 function updateDropdownPosition() {
                     const $dropdown = $('.custom-dropdown');
                     const $dropdownContent = $('.custom-dropdown-content');
@@ -620,19 +625,19 @@
                     }
                 }
 
-                // Dropdown aÃ§ma/kapama iÃ§in tÄ±klama kontrolÃ¼
+                // Dropdown açma/kapama için týklama kontrolü
                 function toggleDropdown() {
                     const $dropdown = $('.custom-dropdown');
                     const $dropdownContent = $('.custom-dropdown-content');
                     const $dropdownBtn = $('.custom-dropdown-btn');
                     $dropdownBtn.on('click touchstart', function (e) {
-                        e.preventDefault(); // VarsayÄ±lan davranÄ±ÅŸÄ± engelle
-                        e.stopPropagation(); // OlayÄ±n bubbling yapmasÄ±nÄ± engelle
+                        e.preventDefault(); // Varsayýlan davranýþý engelle
+                        e.stopPropagation(); // Olayýn bubbling yapmasýný engelle
                         const isActive = $dropdown.hasClass('active');
                         $dropdown.toggleClass('active', !isActive);
-                        updateDropdownPosition(); // Dropdown pozisyonunu gÃ¼ncelle
+                        updateDropdownPosition(); // Dropdown pozisyonunu güncelle
                     });
-                    // Dropdown dÄ±ÅŸÄ±na tÄ±klayÄ±nca kapat
+                    // Dropdown dýþýna týklayýnca kapat
                     $(document).on('click touchstart', function (e) {
                         if (!$(e.target).closest('.custom-dropdown').length) {
                             $dropdown.removeClass('active');
@@ -640,40 +645,40 @@
                     });
                 }
 
-                // Sayfa yÃ¼klendiÄŸinde kontrol et
+                // Sayfa yüklendiðinde kontrol et
                 toggleMobileMenuSwitch();
                 toggleDropdown();
                 updateDropdownPosition();
 
-                // Pencere boyutu deÄŸiÅŸtiÄŸinde kontrol et
+                // Pencere boyutu deðiþtiðinde kontrol et
                 $(window).resize(function () {
                     toggleMobileMenuSwitch();
                     if ($(window).width() > 767) {
-                        $('.custom-dropdown').removeClass('active'); // MasaÃ¼stÃ¼nde dropdown'Ä± kapat
-                        $('.custom-dropdown-content').css('top', '100%'); // Top deÄŸerini sÄ±fÄ±rla
+                        $('.custom-dropdown').removeClass('active'); // Masaüstünde dropdown'ý kapat
+                        $('.custom-dropdown-content').css('top', '100%'); // Top deðerini sýfýrla
                     }
                     updateDropdownPosition();
                 });
 
-                // KaydÄ±rma olayÄ±nda dropdown pozisyonunu gÃ¼ncelle
+                // Kaydýrma olayýnda dropdown pozisyonunu güncelle
                 $(window).on('scroll', function () {
                     updateDropdownPosition();
                 });
 
-                // Ä°letiÅŸim formu gÃ¶nderimi (Multiple submit'i Ã¶nlemek iÃ§in flag ekle)
-                let isSubmitting = false; // Flag: Form gÃ¶nderimde mi?
+                // Ýletiþim formu gönderimi (Multiple submit'i önlemek için flag ekle)
+                let isSubmitting = false; // Flag: Form gönderimde mi?
                 $("#contact-form").on("submit", function (e) {
                     e.preventDefault();
-                    if (isSubmitting) return; // EÄŸer zaten gÃ¶nderimdeyse, Ã§Ä±k
+                    if (isSubmitting) return; // Eðer zaten gönderimdeyse, çýk
                     isSubmitting = true; // Flag'i set et
 
-                    // Form gÃ¶nderim sÄ±rasÄ±nda spinner gÃ¶ster
+                    // Form gönderim sýrasýnda spinner göster
                     const $spinnerOverlay = $('<div class="custom-spinner-overlay"></div>');
                     const $spinner = $('<div class="fp-preloader-spinner"></div>');
                     $spinnerOverlay.append($spinner);
                     $('body').append($spinnerOverlay);
 
-                    // Submit button'Ä± disable et (multiple tÄ±klama Ã¶nle)
+                    // Submit button'ý disable et (multiple týklama önle)
                     const $submitButton = $('.submit-contact-form');
                     $submitButton.prop('disabled', true);
 
@@ -691,7 +696,7 @@
                         type: "POST",
                         data: formData,
                         success: function (response) {
-                            // Spinner'Ä± kaldÄ±r
+                            // Spinner'ý kaldýr
                             $spinnerOverlay.remove();
 
                             console.log('Response:', response);
@@ -716,35 +721,35 @@
                             }
                         },
                         error: function (xhr, status, error) {
-                            // Spinner'Ä± kaldÄ±r
+                            // Spinner'ý kaldýr
                             $spinnerOverlay.remove();
 
                             console.log('Error:', xhr.responseText);
                             Swal.fire({
                                 icon: 'error',
                                 title: errorMessage,
-                                text: xhr.responseText || errorOccurredMessage, // ':' kaldÄ±rÄ±larak direkt mesaj gÃ¶ster
+                                text: xhr.responseText || errorOccurredMessage, // ':' kaldýrýlarak direkt mesaj göster
                                 confirmButtonText: okButtonText,
                                 confirmButtonColor: '#377EF9'
                             });
                         },
                         complete: function () {
                             isSubmitting = false; // Flag'i reset et
-                            $submitButton.prop('disabled', false); // Button'Ä± enable et
+                            $submitButton.prop('disabled', false); // Button'ý enable et
                         }
                     });
                 });
 
-                // Send butonuna mobil cihazlarda tÄ±klama olayÄ±nÄ± garanti altÄ±na alma
+                // Send butonuna mobil cihazlarda týklama olayýný garanti altýna alma
                 $('.submit-contact-form').on('click touchstart', function (e) {
-                    e.preventDefault(); // VarsayÄ±lan davranÄ±ÅŸÄ± engelle
-                    e.stopPropagation(); // OlayÄ±n bubbling yapmasÄ±nÄ± engelle
-                    if (!isSubmitting) { // Flag kontrolÃ¼
-                        $(this).closest('form').trigger('submit'); // Formu gÃ¶nder
+                    e.preventDefault(); // Varsayýlan davranýþý engelle
+                    e.stopPropagation(); // Olayýn bubbling yapmasýný engelle
+                    if (!isSubmitting) { // Flag kontrolü
+                        $(this).closest('form').trigger('submit'); // Formu gönder
                     }
                 });
 
-                // Dil deÄŸiÅŸtirme iÃ§in AJAX iÅŸlemi
+                // Dil deðiþtirme için AJAX iþlemi
                 $('#languageForm button').on('click', function (e) {
                     e.preventDefault();
                     const culture = $(this).val();
@@ -762,7 +767,7 @@
                             window.location.href = returnUrl;
                         },
                         error: function (err) {
-                            console.error('Dil deÄŸiÅŸtirme hatasÄ±:', err);
+                            console.error('Dil deðiþtirme hatasý:', err);
                             Swal.fire({
                                 icon: 'error',
                                 title: errorMessage,
@@ -772,23 +777,23 @@
                             });
                         }
                     });
-                    // Dil seÃ§imi sonrasÄ± dropdown'u kapat
+                    // Dil seçimi sonrasý dropdown'u kapat
                     $('.custom-dropdown').removeClass('active');
                 });
 
-                // Dropdown ikonlarÄ±nÄ±n yÃ¼klendiÄŸini kontrol et
+                // Dropdown ikonlarýnýn yüklendiðini kontrol et
                 $('.dropdown-item.notify-item img').on('error', function () {
-                    console.error('Bayrak ikonu yÃ¼klenemedi: ' + $(this).attr('src'));
+                    console.error('Bayrak ikonu yüklenemedi: ' + $(this).attr('src'));
                     $(this).attr('src', '/assets/images/flags/fallback_flag.png');
                 });
 
                 $('.mdi-chevron-down').each(function () {
                     if (!$(this).is(':visible')) {
-                        console.warn('MDI chevron-down ikonu gÃ¶rÃ¼nmÃ¼yor');
+                        console.warn('MDI chevron-down ikonu görünmüyor');
                     }
                 });
 
-                // Hata ayÄ±klama iÃ§in sayfa hizasÄ±nÄ± kontrol et
+                // Hata ayýklama için sayfa hizasýný kontrol et
                 console.log('Site Container Margin:', $('.site-container').css('margin'));
                 console.log('Header Container Margin:', $('.header-container').css('margin'));
                 console.log('Header Width:', $('.header').width());
@@ -797,3 +802,4 @@
         </script>
 </body>
 </html>
+

@@ -2,6 +2,11 @@
 @using System.Text.Encodings.Web
 @{
     Layout = null;
+    var appBase = (Config["ExternalLinks:AppBaseUrl"] ?? "https://app.ilterisg.com").TrimEnd('/');
+    var blogPath = "/Blog/Index";
+    var loginPath = Url.Action("Login", "Account") ?? "/Account/Login";
+    var blogUrl = $"{appBase}{blogPath}";
+    var loginUrl = $"{appBase}{loginPath}";
 }
 <!DOCTYPE html>
 <html lang="@System.Globalization.CultureInfo.CurrentUICulture.Name">
@@ -197,10 +202,10 @@
                                 <a href="@Url.Action("Contact", "Home")" title="@Localizer["Contact"]">@Localizer["Contact"]</a>
                             </li>
                             <li>
-                                <a href="@Url.Action("Index", "Blog")" title="@Localizer["Blog"]">@Localizer["Blog"]</a>
+                                <a href="@blogUrl" title="@Localizer["Blog"]">@Localizer["Blog"]</a>
                             </li>
                             <li>
-                                <a href="@Url.Action("Login", "Account")" title="@Localizer["Login"]">@Localizer["Login"]</a>
+                                <a href="@loginUrl" title="@Localizer["Login"]">@Localizer["Login"]</a>
                             </li>
                         </ul>
                     </nav>
@@ -221,10 +226,10 @@
                                     <a href="@Url.Action("Contact", "Home")" title="@Localizer["Contact"]">@Localizer["Contact"]</a>
                                 </li>
                                 <li>
-                                    <a href="@Url.Action("Index", "Blog")" title="@Localizer["Blog"]">@Localizer["Blog"]</a>
+                                    <a href="@blogUrl" title="@Localizer["Blog"]">@Localizer["Blog"]</a>
                                 </li>
                                 <li>
-                                    <a href="@Url.Action("Login", "Account")" title="@Localizer["Login"]">@Localizer["Login"]</a>
+                                    <a href="@loginUrl" title="@Localizer["Login"]">@Localizer["Login"]</a>
                                 </li>
                             </ul>
                         </nav>

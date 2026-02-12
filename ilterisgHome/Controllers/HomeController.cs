@@ -35,12 +35,7 @@ namespace ilterisg.Controllers
 
         public IActionResult Faq() => View();
 
-        public IActionResult Post() => View();
 
-        public IActionResult Search(string s)
-        {
-            return View(new SearchViewModel { Query = s ?? string.Empty });
-        }
 
         [HttpPost]
         [ValidateAntiForgeryToken]

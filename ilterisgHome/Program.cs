@@ -92,6 +92,22 @@ builder.Services.AddTransient<IEmailService, EmailService>();
 
 var app = builder.Build();
 
+app.Lifetime.ApplicationStarted.Register(() =>
+{
+    var startupLogger = app.Services.GetRequiredService<ILoggerFactory>().CreateLogger("StartupUrls");
+
+    if (app.Urls.Count == 0)
+    {
+        startupLogger.LogWarning("No bound URLs were found.");
+        return;
+    }
+
+    foreach (var url in app.Urls)
+    {
+        startupLogger.LogInformation("Listening on: {Url}", url);
+    }
+});
+
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
