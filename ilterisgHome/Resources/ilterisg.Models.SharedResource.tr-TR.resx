@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <data name="About" xml:space="preserve">
     <value>Hakkımızda</value>
@@ -661,7 +661,7 @@
     <value>slidebg1</value>
   </data>
   <data name="Slide1Title" xml:space="preserve">
-    <value>Sağlığınız Bir Tık Uzağınızda!</value>
+    <value>İSG Uzmanlığı ile Güvenli Çalışma Ortamları</value>
   </data>
   <data name="Slide2Alt" xml:space="preserve">
     <value>İş Güvenliği Uzmanlığı Görseli</value>
@@ -794,5 +794,299 @@
   </data>
   <data name="RateLimitExceeded" xml:space="preserve">
     <value>RateLimitExceeded</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Ekle</value>
+  </data>
+  <data name="AddNewPost" xml:space="preserve">
+    <value>Yeni Yazı Ekle</value>
+  </data>
+  <data name="AddYouTubeVideo" xml:space="preserve">
+    <value>YouTube Videosu Ekle</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Geri</value>
+  </data>
+  <data name="BlogHomePage" xml:space="preserve">
+    <value>Blog Anasayfa</value>
+  </data>
+  <data name="BlogManagement" xml:space="preserve">
+    <value>Blog Yönetimi</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>İptal Et</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Yorumlar</value>
+  </data>
+  <data name="ConfirmDeleteMessage" xml:space="preserve">
+    <value>Şunu silmek istediğinize emin misiniz?</value>
+  </data>
+  <data name="ConfirmDeletePost" xml:space="preserve">
+    <value>başlıklı yazıyı</value>
+  </data>
+  <data name="ContainerNotFoundError" xml:space="preserve">
+    <value>İlgili bölüm bulunamadı. Lütfen sayfayı yenileyin.</value>
+  </data>
+  <data name="Content" xml:space="preserve">
+    <value>İçerik</value>
+  </data>
+  <data name="CreationDate" xml:space="preserve">
+    <value>Oluşturulma Tarihi</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Sil</value>
+  </data>
+  <data name="DeleteError" xml:space="preserve">
+    <value>Silme işlemi sırasında bir hata oluştu: </value>
+  </data>
+  <data name="DeleteFailed" xml:space="preserve">
+    <value>Silme işlemi başarısız.</value>
+  </data>
+  <data name="DeletePost" xml:space="preserve">
+    <value>Yazıyı Sil</value>
+  </data>
+  <data name="Draft" xml:space="preserve">
+    <value>Taslak</value>
+  </data>
+  <data name="DragOrClickToUpload" xml:space="preserve">
+    <value>Görseli buraya sürükleyin veya tıklayın</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Düzenle</value>
+  </data>
+  <data name="EditPost" xml:space="preserve">
+    <value>Yazıyı Düzenle</value>
+  </data>
+  <data name="EnterImageUrlOrUpload" xml:space="preserve">
+    <value>EnterImageUrlOrUpload</value>
+  </data>
+  <data name="EnterPostSummary" xml:space="preserve">
+    <value>Yazınızın kısa özetini girin</value>
+  </data>
+  <data name="EnterPostTitle" xml:space="preserve">
+    <value>Yazınızın başlığını girin</value>
+  </data>
+  <data name="EnterYouTubeUrl" xml:space="preserve">
+    <value>YouTube video bağlantısını girin:</value>
+  </data>
+  <data name="Featured" xml:space="preserve">
+    <value>Öne Çıkanlar</value>
+  </data>
+  <data name="FeaturedContentRemoved" xml:space="preserve">
+    <value>Öne çıkan içerik kaldırıldı.</value>
+  </data>
+  <data name="FeaturedContentUpdated" xml:space="preserve">
+    <value>Öne çıkan içerik güncellendi.</value>
+  </data>
+  <data name="FeaturedImage" xml:space="preserve">
+    <value>Öne Çıkan Görsel</value>
+  </data>
+  <data name="FollowUs" xml:space="preserve">
+    <value>Bizi Takip Edin</value>
+  </data>
+  <data name="GridView" xml:space="preserve">
+    <value>Izgara</value>
+  </data>
+  <data name="HidePreview" xml:space="preserve">
+    <value>Önizlemeyi Gizle</value>
+  </data>
+  <data name="ImageUploadError" xml:space="preserve">
+    <value>Görsel yüklenirken bir hata oluştu.</value>
+  </data>
+  <data name="InvalidBlogPostError" xml:space="preserve">
+    <value>Lütfen geçerli bir blog yazısı seçin.</value>
+  </data>
+  <data name="InvalidBlogPostsError" xml:space="preserve">
+    <value>Blog yazıları seçenekleri oluşturulamadı.</value>
+  </data>
+  <data name="InvalidElementsError" xml:space="preserve">
+    <value>Seçim veya sıralama alanı bulunamadı. Lütfen sayfayı yenileyin.</value>
+  </data>
+  <data name="InvalidItemError" xml:space="preserve">
+    <value>Geçersiz öğe. Lütfen sayfayı yenileyin.</value>
+  </data>
+  <data name="InvalidOrderError" xml:space="preserve">
+    <value>Lütfen geçerli bir sıralama numarası girin (1 veya daha büyük).</value>
+  </data>
+  <data name="LatestPosts" xml:space="preserve">
+    <value>Son Yazılar</value>
+  </data>
+  <data name="ListView" xml:space="preserve">
+    <value>Liste</value>
+  </data>
+  <data name="NewBlogPost" xml:space="preserve">
+    <value>Yeni Blog Yazısı</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>Hayır</value>
+  </data>
+  <data name="NoBlogPostsError" xml:space="preserve">
+    <value>Blog yazıları yüklenemedi. Lütfen sayfayı yenileyin.</value>
+  </data>
+  <data name="NoBlogPostsYet" xml:space="preserve">
+    <value>Henüz blog yazısı bulunmamaktadır.</value>
+  </data>
+  <data name="NoCommentsYet" xml:space="preserve">
+    <value>Henüz yorum yok. İlk yorumu siz yapın!</value>
+  </data>
+  <data name="NoPostsAvailable" xml:space="preserve">
+    <value>Kayıtlı blog yazısı yok.</value>
+  </data>
+  <data name="OnlyImageFilesAllowed" xml:space="preserve">
+    <value>Sadece görsel dosyaları yükleyebilirsiniz.</value>
+  </data>
+  <data name="PopularTopics" xml:space="preserve">
+    <value>Popüler Konular</value>
+  </data>
+  <data name="Posts" xml:space="preserve">
+    <value>Yazılar</value>
+  </data>
+  <data name="PostStream" xml:space="preserve">
+    <value>Yayın Akışı</value>
+  </data>
+  <data name="Preview" xml:space="preserve">
+    <value>Önizle</value>
+  </data>
+  <data name="PreviewContent" xml:space="preserve">
+    <value>İçeriği Önizle</value>
+  </data>
+  <data name="PreviewImage" xml:space="preserve">
+    <value>Önizleme Görseli</value>
+  </data>
+  <data name="Publish" xml:space="preserve">
+    <value>Yayınla</value>
+  </data>
+  <data name="Published" xml:space="preserve">
+    <value>Yayınlandı</value>
+  </data>
+  <data name="PublishStatus" xml:space="preserve">
+    <value>Yayın Durumu</value>
+  </data>
+  <data name="ReadMore" xml:space="preserve">
+    <value>Devamını Oku</value>
+  </data>
+  <data name="RecommendedPosts" xml:space="preserve">
+    <value>Şunlara Göz Atın</value>
+  </data>
+  <data name="RemoveImage" xml:space="preserve">
+    <value>Görseli Kaldır</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Kaydet</value>
+  </data>
+  <data name="SectionNotFoundError" xml:space="preserve">
+    <value>Bölüm bilgisi bulunamadı. Lütfen sayfayı yenileyin.</value>
+  </data>
+  <data name="SubmitComment" xml:space="preserve">
+    <value>Yorum Gönder</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>Kısa Açıklama</value>
+  </data>
+  <data name="Unpublish" xml:space="preserve">
+    <value>Yayından Kaldır</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Güncelle</value>
+  </data>
+  <data name="UpdateError" xml:space="preserve">
+    <value>Güncelleme işlemi sırasında bir hata oluştu: </value>
+  </data>
+  <data name="UpdateFailed" xml:space="preserve">
+    <value>Güncelleme işlemi başarısız: </value>
+  </data>
+  <data name="ValidationErrors" xml:space="preserve">
+    <value>Doğrulama hataları mevcut.</value>
+  </data>
+  <data name="WriteContentHere" xml:space="preserve">
+    <value>İçeriğinizi buraya yazın...</value>
+  </data>
+  <data name="YesDelete" xml:space="preserve">
+    <value>Evet, Sil</value>
+  </data>
+  <data name="YourComment" xml:space="preserve">
+    <value>Yorumunuz</value>
+  </data>
+  <data name="YourName" xml:space="preserve">
+    <value>Adınız</value>
+  </data>
+  <data name="EditorAccountCreated" xml:space="preserve">
+    <value>Editör hesabı oluşturuldu.</value>
+  </data>
+  <data name="CompleteProfile" xml:space="preserve">
+    <value>Profili Tamamla</value>
+  </data>
+  <data name="UserAlreadyExists" xml:space="preserve">
+    <value>Bu e-posta ile kayıtlı kullanıcı zaten var.</value>
+  </data>
+  <data name="SignIn" xml:space="preserve">
+    <value>Giriş Yap</value>
+  </data>
+  <data name="SaveAndContinue" xml:space="preserve">
+    <value>Kaydet ve Devam Et</value>
+  </data>
+  <data name="RegisterEditorHeading" xml:space="preserve">
+    <value>Yeni Editör Tanımla</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Şifre</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>Ad</value>
+  </data>
+  <data name="AccountLockedOut" xml:space="preserve">
+    <value>Hesabınız kilitlendi. Lütfen daha sonra tekrar deneyin.</value>
+  </data>
+  <data name="AccessDenied" xml:space="preserve">
+    <value>Erişim Engellendi</value>
+  </data>
+  <data name="CreateEditor" xml:space="preserve">
+    <value>Editör Oluştur</value>
+  </data>
+  <data name="ReturnToHome" xml:space="preserve">
+    <value>Ana Sayfaya Dön</value>
+  </data>
+  <data name="RegisterEditorTitle" xml:space="preserve">
+    <value>Editör Kaydı</value>
+  </data>
+  <data name="EditorAdminLogin" xml:space="preserve">
+    <value>Editör/Admin Girişi</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Şifre Tekrar</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Beni hatırla</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Soyad</value>
+  </data>
+  <data name="CompleteProfileDescription" xml:space="preserve">
+    <value>Blog yönetimi için ad ve soyad bilgilerinizi tamamlayın.</value>
+  </data>
+  <data name="AccessDeniedMessage" xml:space="preserve">
+    <value>Bu sayfaya erişim yetkiniz yok.</value>
+  </data>
+  <data name="InvalidEmailOrPassword" xml:space="preserve">
+    <value>E-posta veya şifre hatalı.</value>
+  </data>
+  <data name="Account" xml:space="preserve">
+    <value>Hesap</value>
+  </data>
+  <data name="Management" xml:space="preserve">
+    <value>Yönetim</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Çıkış</value>
+  </data>
+  <data name="AddEditor" xml:space="preserve">
+    <value>Editör Ekle</value>
+  </data>
+  <data name="BlogMenuTitle" xml:space="preserve">
+    <value>Blog Menü</value>
+  </data>
+  <data name="BlogLayoutAdd" xml:space="preserve">
+    <value>Blog Layout Ekle</value>
   </data>
 </root>

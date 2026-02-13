@@ -1,0 +1,461 @@
+@using ilterisg.Models
+@using Microsoft.AspNetCore.Identity
+@using System.Globalization
+@inject Microsoft.Extensions.Localization.IStringLocalizer<SharedResource> Localizer
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@inject IConfiguration Config
+
+@{
+    var metaTitle = ViewData["MetaTitle"] as string ?? ViewData["Title"] as string ?? "Ilterisg Blog";
+    var metaDescription = ViewData["MetaDescription"] as string ?? "Ilterisg blog ve is sagligi guvenligi icerikleri.";
+    var metaKeywords = ViewData["MetaKeywords"] as string ?? "isg, is guvenligi, is sagligi, blog";
+    var canonicalUrl = ViewData["CanonicalUrl"] as string;
+    var appBaseUrl = (Config["ExternalLinks:AppBaseUrl"] ?? "https://app.ilterisg.com").TrimEnd('/');
+    var loginPath = Url.Action("Login", "Account") ?? "/Account/Login";
+    var loginUrl = $"{appBaseUrl}{loginPath}";
+
+    var routeController = ViewContext.RouteData.Values["controller"]?.ToString() ?? string.Empty;
+    var routeAction = ViewContext.RouteData.Values["action"]?.ToString() ?? string.Empty;
+    var isBlogIndex = string.Equals(routeController, "Blog", StringComparison.OrdinalIgnoreCase)
+                      && string.Equals(routeAction, "Index", StringComparison.OrdinalIgnoreCase);
+    var isBlogManage = string.Equals(routeController, "Blog", StringComparison.OrdinalIgnoreCase)
+                       && string.Equals(routeAction, "Manage", StringComparison.OrdinalIgnoreCase);
+    var isBlogCreate = string.Equals(routeController, "Blog", StringComparison.OrdinalIgnoreCase)
+                       && string.Equals(routeAction, "Create", StringComparison.OrdinalIgnoreCase);
+    var isRegisterEditor = string.Equals(routeController, "Account", StringComparison.OrdinalIgnoreCase)
+                           && string.Equals(routeAction, "RegisterEditor", StringComparison.OrdinalIgnoreCase);
+    var isLogin = string.Equals(routeController, "Account", StringComparison.OrdinalIgnoreCase)
+                  && string.Equals(routeAction, "Login", StringComparison.OrdinalIgnoreCase);
+    var isHome = string.Equals(routeController, "Home", StringComparison.OrdinalIgnoreCase)
+                 && string.Equals(routeAction, "Index", StringComparison.OrdinalIgnoreCase);
+
+    ApplicationUser? currentUser = null;
+    var displayName = User.Identity?.Name;
+    if (SignInManager.IsSignedIn(User))
+    {
+        currentUser = await UserManager.GetUserAsync(User);
+        if (currentUser != null && !string.IsNullOrWhiteSpace(currentUser.FullName))
+        {
+            displayName = currentUser.FullName;
+        }
+    }
+}
+
+<!DOCTYPE html>
+<html lang="@System.Globalization.CultureInfo.CurrentUICulture.Name">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@metaTitle - @Localizer["AppName"]</title>
+    <meta name="description" content="@metaDescription" />
+    <meta name="keywords" content="@metaKeywords" />
+    @if (!string.IsNullOrWhiteSpace(canonicalUrl))
+    {
+        <link rel="canonical" href="@canonicalUrl" />
+    }
+
+    <link rel="shortcut icon" href="~/assets/images/favicon.ico" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/assets/css/app.min.css" rel="stylesheet" />
+    <link href="~/assets/css/icons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/ilterisgHome.styles.css" asp-append-version="true" />
+    <style>
+        :root {
+            --footer-h: 56px;
+            --footer-safe: 14px;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        #layout-wrapper {
+            width: 100%;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .vertical-menu {
+            background-color: #012f51 !important;
+            width: 250px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        #page-topbar {
+            background-color: #ffc000 !important;
+            margin-left: 250px;
+            width: calc(100% - 250px);
+            position: fixed;
+            top: 0;
+            z-index: 999;
+            transition: all 0.3s ease;
+        }
+
+        #page-topbar .navbar-header {
+            color: #000000 !important;
+        }
+
+        #page-topbar .navbar-header a {
+            color: #000000 !important;
+        }
+
+        .navbar-brand-box {
+            background-color: #012f51 !important;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 5px 0 5px 0;
+            width: 100%;
+        }
+
+        .navbar-brand-box .logo img {
+            width: 250px;
+            height: 80px;
+            max-height: 80px;
+            object-fit: contain;
+            display: block;
+            margin-left: -10px;
+        }
+
+        .main-content {
+            margin-left: 250px;
+            margin-top: 60px;
+            width: calc(100% - 250px);
+            box-sizing: border-box;
+            min-height: calc(100vh - 60px);
+            padding: 20px 32px 20px 0;
+            padding-bottom: calc(var(--footer-h) + var(--footer-safe));
+        }
+
+        .page-content {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        .custom-footer {
+            margin-left: 250px;
+            width: calc(100% - 250px);
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(90deg, #d8dce0 0%, #012f51 100%);
+            color: #ffffff;
+            padding: 12px 0;
+            text-align: center;
+            z-index: 998;
+            font-size: 14px;
+            border-top: 2px solid;
+            border-image: linear-gradient(90deg, #d8dce0 0%, #012f51 100%) 1;
+        }
+
+        .custom-footer p {
+            margin: 0;
+            font-weight: 300;
+        }
+
+        .topbar-login-btn {
+            background: #012f51;
+            color: #ffffff !important;
+            border-radius: 8px;
+            border: 1px solid #012f51;
+            padding: 7px 12px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            margin-right: 6px;
+        }
+
+        .topbar-login-btn:hover {
+            background: #024070;
+            border-color: #024070;
+        }
+
+        #page-topbar .navbar-header a.topbar-login-btn,
+        #page-topbar .navbar-header a.topbar-login-btn:hover,
+        #page-topbar .navbar-header a.topbar-login-btn:focus,
+        #page-topbar .navbar-header a.topbar-login-btn:active {
+            color: #ffffff !important;
+            text-decoration: none !important;
+        }
+
+        .topbar-right {
+            margin-left: auto;
+            gap: 8px;
+        }
+
+
+        #sidebar-menu .menu-title {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 0.7rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin-top: 10px;
+            padding: 0 16px;
+        }
+
+        #sidebar-menu .menu-separator {
+            border-top: 1px solid rgba(255, 255, 255, 0.16);
+            margin: 10px 14px;
+        }
+
+        #sidebar-menu a,
+        #sidebar-menu a:hover,
+        #sidebar-menu a:focus,
+        #sidebar-menu a:active {
+            text-decoration: none !important;
+            border-bottom: none !important;
+        }
+
+        .metismenu li {
+            border-bottom: none !important;
+        }
+
+        .metismenu .sub-menu {
+            border-top: none !important;
+            border-bottom: none !important;
+        }
+
+        .metismenu .sub-menu li {
+            border-bottom: none !important;
+        }
+
+        #side-menu a.active {
+            background-color: rgba(255, 255, 255, 0.12) !important;
+            border-radius: 8px;
+        }
+
+        #vertical-menu-btn {
+            display: block;
+        }
+
+        @@media (max-width: 991px) {
+            .custom-footer {
+                margin-left: 0;
+                width: 100%;
+            }
+        }
+
+        @@media (max-width: 991px) {
+            body:not(.sidebar-enable) .vertical-menu {
+                left: -250px;
+            }
+
+            body.sidebar-enable .vertical-menu {
+                left: 0;
+            }
+
+            body:not(.sidebar-enable) #page-topbar {
+                margin-left: 0;
+                width: 100%;
+            }
+
+            body:not(.sidebar-enable) .main-content {
+                margin-left: 0;
+                width: 100%;
+                padding: 20px 15px;
+            }
+        }
+
+        body.vertical-collpsed .vertical-menu {
+            left: -250px;
+        }
+
+        body.vertical-collpsed #page-topbar {
+            margin-left: 0;
+            width: 100%;
+        }
+
+        body.vertical-collpsed .main-content {
+            margin-left: 0;
+            width: 100%;
+        }
+
+        body.vertical-collpsed .custom-footer {
+            margin-left: 0;
+            width: 100%;
+        }
+    </style>
+    @RenderSection("Styles", required: false)
+</head>
+<body data-sidebar="dark">
+    <div id="layout-wrapper">
+        <div class="vertical-menu">
+            <div data-simplebar class="h-100">
+                <div class="navbar-brand-box">
+                    <a asp-controller="Home" asp-action="Index" class="logo">
+                        <img src="~/images/Logo-01.svg" alt="Logo" />
+                    </a>
+                </div>
+                <div id="sidebar-menu">
+                    <ul class="metismenu list-unstyled" id="side-menu">
+                        <li class="menu-title">@Localizer["BlogMenuTitle"]</li>
+                        <li>
+                            <a asp-controller="Blog" asp-action="Index" class="waves-effect @(isBlogIndex ? "active" : null)">
+                                <i class="fas fa-blog"></i>
+                                <span>@Localizer["Blog"]</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a asp-controller="Home" asp-action="Index" class="waves-effect @(isHome ? "active" : null)">
+                                <i class="fas fa-home"></i>
+                                <span>@Localizer["Home"]</span>
+                            </a>
+                        </li>
+
+                        @if (SignInManager.IsSignedIn(User) && (User.IsInRole("Admin") || User.IsInRole("Editor")))
+                        {
+                            <li class="menu-separator"></li>
+                            <li class="menu-title">@Localizer["Management"]</li>
+                            <li>
+                                <a asp-controller="Blog" asp-action="Manage" class="waves-effect @(isBlogManage ? "active" : null)">
+                                    <i class="fas fa-cog"></i>
+                                    <span>@Localizer["BlogManagement"]</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a asp-controller="Blog" asp-action="Create" class="waves-effect @(isBlogCreate ? "active" : null)">
+                                    <i class="fas fa-pen"></i>
+                                    <span>@Localizer["BlogLayoutAdd"]</span>
+                                </a>
+                            </li>
+                        }
+
+                        @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                        {
+                            <li>
+                                <a asp-controller="Account" asp-action="RegisterEditor" class="waves-effect @(isRegisterEditor ? "active" : null)">
+                                    <i class="fas fa-user-plus"></i>
+                                    <span>@Localizer["AddEditor"]</span>
+                                </a>
+                            </li>
+                        }
+
+                        <li class="menu-separator"></li>
+                        <li class="menu-title">@Localizer["Account"]</li>
+                        @if (SignInManager.IsSignedIn(User))
+                        {
+                            <li>
+                                <a href="javascript:void(0);" class="waves-effect">
+                                    <i class="fas fa-user"></i>
+                                    <span>@displayName</span>
+                                </a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li>
+                                <a asp-controller="Account" asp-action="Login" class="waves-effect @(isLogin ? "active" : null)">
+                                    <i class="fas fa-sign-in-alt"></i>
+                                    <span>@Localizer["EditorAdminLogin"]</span>
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <header id="page-topbar">
+            <div class="navbar-header d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center">
+                    <button type="button" class="btn btn-sm px-3 font-size-24 header-item waves-effect" id="vertical-menu-btn">
+                        <i class="mdi mdi-menu"></i>
+                    </button>
+                </div>
+
+                <div class="d-flex align-items-center topbar-right">
+                    <div class="dropdown d-none d-md-block ms-2">
+                        <button type="button" class="btn header-item waves-effect" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img class="me-2" src="~/assets/images/flags/@(CultureInfo.CurrentUICulture.Name.Split('-')[0] == "tr" ? "turkey_flag.png" : CultureInfo.CurrentUICulture.Name.Split('-')[0] == "en" ? "us_flag.jpg" : "germany_flag.jpg")" alt="Dil Bayrağı" height="16">
+                            @Localizer[CultureInfo.CurrentUICulture.Name.Split('-')[0] == "tr" ? "Türkçe" : CultureInfo.CurrentUICulture.Name.Split('-')[0] == "en" ? "English" : "Deutsch"]
+                            <span class="mdi mdi-chevron-down"></span>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <form asp-controller="Language" asp-action="SetLanguage" method="post">
+                                <input type="hidden" name="returnUrl" value="@Context.Request.Path@Context.Request.QueryString" />
+                                @Html.AntiForgeryToken()
+                                <button type="submit" name="culture" value="tr-TR" class="dropdown-item notify-item">
+                                    <img src="~/assets/images/flags/turkey_flag.png" alt="Türkçe" class="me-1" height="12">
+                                    <span class="align-middle">@Localizer["Turkish"]</span>
+                                </button>
+                                <button type="submit" name="culture" value="en-US" class="dropdown-item notify-item">
+                                    <img src="~/assets/images/flags/us_flag.jpg" alt="English" class="me-1" height="12">
+                                    <span class="align-middle">@Localizer["English"]</span>
+                                </button>
+                                <button type="submit" name="culture" value="de-DE" class="dropdown-item notify-item">
+                                    <img src="~/assets/images/flags/germany_flag.jpg" alt="Deutsch" class="me-1" height="12">
+                                    <span class="align-middle">@Localizer["German"]</span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    <a class="topbar-login-btn" href="@loginUrl" target="_blank" rel="noopener">ILTER-ISG Giris</a>
+                    <div class="dropdown d-inline-block">
+                        <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="mdi mdi-account-circle font-size-24"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            @if (SignInManager.IsSignedIn(User))
+                            {
+                                <span class="dropdown-item-text text-muted small">@displayName</span>
+                                <div class="dropdown-divider"></div>
+                                <form asp-controller="Account" asp-action="Logout" method="post" id="logoutForm">
+                                    @Html.AntiForgeryToken()
+                                    <button type="submit" class="dropdown-item text-danger">
+                                        <i class="bx bx-power-off font-size-17 align-middle me-1 text-danger"></i> @Localizer["Logout"]
+                                    </button>
+                                </form>
+                            }
+                            else
+                            {
+                                <a class="dropdown-item" asp-controller="Account" asp-action="Login">
+                                    <i class="mdi mdi-login font-size-17 align-middle me-1"></i> @Localizer["Login"]
+                                </a>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <div class="page-content">
+                @RenderBody()
+            </div>
+        </div>
+
+        <footer class="custom-footer py-2">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-12 text-center">
+                        <p class="mb-0">
+                            &copy; <script>document.write(new Date().getFullYear())</script> @Localizer["AppName"] |
+                            @Localizer["PoweredBy"] <a href="@Url.Action("Index", "Home")" title="@Localizer["AppName"]" style="color:#ffffff;">@Localizer["AppName"]</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="~/assets/libs/jquery/jquery.min.js"></script>
+    <script src="~/assets/libs/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="~/assets/libs/node-waves/waves.min.js"></script>
+    <script src="~/assets/libs/metismenu/metisMenu.min.js"></script>
+    <script src="~/assets/js/app.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

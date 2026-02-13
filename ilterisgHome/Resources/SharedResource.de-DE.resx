@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <data name="About" xml:space="preserve">
     <value>Über Uns</value>
@@ -7,16 +7,16 @@
     <value>Über Uns</value>
   </data>
   <data name="AboutUsDescription1" xml:space="preserve">
-    <value>Unser Unternehmen wurde als Gemeinsame Gesundheits- und Sicherheitsstelle (OSGB) vom Ministerium für Arbeit und Soziales autorisiert und mit dem Ziel gegründet, innovative und zuverlässige Lösungen für die Geschäftswelt bereitzustellen.</value>
+    <value>Unser Unternehmen wurde als Gemeinsame Gesundheits- und Sicherheitsstelle (OSGB) vom Ministerium f�r Arbeit und Soziales autorisiert und mit dem Ziel gegr�ndet, innovative und zuverl�ssige L�sungen f�r die Gesch�ftswelt bereitzustellen.</value>
   </data>
   <data name="AboutUsDescription2" xml:space="preserve">
-    <value>Unsere Mission ist es, in Arbeitsstätten eine gesunde und sichere Arbeitsumgebung zu schaffen und Unternehmen dabei zu unterstützen, ihre gesetzlichen Verpflichtungen vollständig zu erfüllen. Seit unserer Gründung haben wir das Vertrauen unserer Kunden durch Dienstleistungen in Bereichen wie Risikobewertungen, umfassende Schulungen zu Arbeitsschutz und -sicherheit, Umweltmessungen, Notfallplanung, regelmäßige Gesundheitsuntersuchungen und mehr gewonnen. Durch vollständige Einhaltung der Vorschriften ermöglichen wir Unternehmen, nicht nur ihre gesetzlichen Verpflichtungen, sondern auch die Gesundheit und das Wohlbefinden ihrer Mitarbeiter in den Vordergrund zu stellen.</value>
+    <value>Unsere Mission ist es, in Arbeitsst�tten eine gesunde und sichere Arbeitsumgebung zu schaffen und Unternehmen dabei zu unterst�tzen, ihre gesetzlichen Verpflichtungen vollst�ndig zu erf�llen. Seit unserer Gr�ndung haben wir das Vertrauen unserer Kunden durch Dienstleistungen in Bereichen wie Risikobewertungen, umfassende Schulungen zu Arbeitsschutz und -sicherheit, Umweltmessungen, Notfallplanung, regelm��ige Gesundheitsuntersuchungen und mehr gewonnen. Durch vollst�ndige Einhaltung der Vorschriften erm�glichen wir Unternehmen, nicht nur ihre gesetzlichen Verpflichtungen, sondern auch die Gesundheit und das Wohlbefinden ihrer Mitarbeiter in den Vordergrund zu stellen.</value>
   </data>
   <data name="AboutUsDescription3" xml:space="preserve">
-    <value>Wir streben danach, OSGB-Dienstleistungen einen Schritt weiter zu bringen, indem wir als Brücke in Zusammenarbeit mit Unternehmen agieren. Wir bieten maßgeschneiderte Lösungen für die Bedürfnisse jedes Kunden, optimieren Geschäftsprozesse und schaffen eine nachhaltige Sicherheitskultur. Die Gesundheit der Mitarbeiter und die Kundenzufriedenheit sind die Eckpfeiler unserer Tätigkeiten. Mit diesem Bewusstsein nutzen wir die neuesten technologischen Möglichkeiten, um innovative Ansätze zu entwickeln und eine führende Rolle in der Branche zu übernehmen.</value>
+    <value>Wir streben danach, OSGB-Dienstleistungen einen Schritt weiter zu bringen, indem wir als Br�cke in Zusammenarbeit mit Unternehmen agieren. Wir bieten ma�geschneiderte L�sungen f�r die Bed�rfnisse jedes Kunden, optimieren Gesch�ftsprozesse und schaffen eine nachhaltige Sicherheitskultur. Die Gesundheit der Mitarbeiter und die Kundenzufriedenheit sind die Eckpfeiler unserer T�tigkeiten. Mit diesem Bewusstsein nutzen wir die neuesten technologischen M�glichkeiten, um innovative Ans�tze zu entwickeln und eine f�hrende Rolle in der Branche zu �bernehmen.</value>
   </data>
   <data name="AboutUsDescription4" xml:space="preserve">
-    <value>Unser Unternehmen zielt darauf ab, mit Ihnen zu wachsen und der Geschäftswelt einen Mehrwert zu bieten. Wir sind stolz darauf, Ihnen bei all Ihren Bedürfnissen im Bereich Arbeitsschutz und -sicherheit zur Seite zu stehen und streben mit unserem professionellen Team stets danach, das Beste zu bieten. Die starken Bindungen, die wir mit den Unternehmen, die uns vertrauen, aufgebaut haben, sind der größte Beweis für unseren Erfolg.</value>
+    <value>Unser Unternehmen zielt darauf ab, mit Ihnen zu wachsen und der Gesch�ftswelt einen Mehrwert zu bieten. Wir sind stolz darauf, Ihnen bei all Ihren Bed�rfnissen im Bereich Arbeitsschutz und -sicherheit zur Seite zu stehen und streben mit unserem professionellen Team stets danach, das Beste zu bieten. Die starken Bindungen, die wir mit den Unternehmen, die uns vertrauen, aufgebaut haben, sind der gr��te Beweis f�r unseren Erfolg.</value>
   </data>
   <data name="AccessReports" xml:space="preserve">
     <value>Greifen Sie auf Schulungen, Gesundheitschecks und Sicherheitsberichte über einen einzigen Bildschirm zu.</value>
@@ -40,49 +40,49 @@
     <value>Blog</value>
   </data>
   <data name="Buyer" xml:space="preserve">
-    <value>Käufer</value>
+    <value>K�ufer</value>
   </data>
   <data name="BuyerObligation" xml:space="preserve">
-    <value>Der Käufer ist verpflichtet, die oben genannten Informationen während des Kaufprozesses korrekt und vollständig zu deklarieren.</value>
+    <value>Der K�ufer ist verpflichtet, die oben genannten Informationen w�hrend des Kaufprozesses korrekt und vollst�ndig zu deklarieren.</value>
   </data>
   <data name="BuyerObligation1" xml:space="preserve">
     <value>Die Zahlungsverpflichtung pünktlich zu erfüllen</value>
   </data>
   <data name="BuyerObligation2" xml:space="preserve">
-    <value>Korrekte und vollständige Informationen bereitzustellen</value>
+    <value>Korrekte und vollst�ndige Informationen bereitzustellen</value>
   </data>
   <data name="BuyerObligation3" xml:space="preserve">
     <value>Die notwendige Zusammenarbeit für die Erbringung des Dienstes zu zeigen</value>
   </data>
   <data name="BuyerObligations" xml:space="preserve">
-    <value>Verpflichtungen des Käufers</value>
+    <value>Verpflichtungen des K�ufers</value>
   </data>
   <data name="CallMeBack" xml:space="preserve">
     <value>Lassen Sie sich von uns kontaktieren!</value>
   </data>
   <data name="CancellationChange" xml:space="preserve">
-    <value>Stornierungs- und Änderungsanfragen</value>
+    <value>Stornierungs- und �??nderungsanfragen</value>
   </data>
   <data name="CancellationChangeItem1" xml:space="preserve">
-    <value>Stornierungs- oder Änderungsanfragen vor Beginn des Dienstes müssen mindestens fünf (5) Werktage vor dem Startdatum des Dienstes schriftlich (per E-Mail oder offizielles Schreiben) an unser Unternehmen übermittelt werden.</value>
+    <value>Stornierungs- oder �nderungsanfragen vor Beginn des Dienstes m�ssen mindestens f�nf (5) Werktage vor dem Startdatum des Dienstes schriftlich (per E-Mail oder offizielles Schreiben) an unser Unternehmen �bermittelt werden.</value>
   </data>
   <data name="CancellationChangeItem2" xml:space="preserve">
-    <value>Stornierungsanfragen, die innerhalb dieses Zeitraums gemeldet werden, gelten als gültig, und die gezahlte Dienstleistungsgebühr wird dem Kunden innerhalb von 7 Werktagen ohne Abzüge vollständig zurückerstattet.</value>
+    <value>Stornierungsanfragen, die innerhalb dieses Zeitraums gemeldet werden, gelten als g�ltig, und die gezahlte Dienstleistungsgeb�hr wird dem Kunden innerhalb von 7 Werktagen ohne Abz�ge vollst�ndig zur�ckerstattet.</value>
   </data>
   <data name="CancellationChangeItem3" xml:space="preserve">
-    <value>Stornierungsanfragen, die weniger als 5 Werktage vor dem Startdatum des Dienstes gestellt werden, werden nicht berücksichtigt, und die gezahlte Gebühr wird nicht zurückerstattet. Der Dienstleistungsumfang kann jedoch auf Wunsch des Kunden geändert werden.</value>
+    <value>Stornierungsanfragen, die weniger als 5 Werktage vor dem Startdatum des Dienstes gestellt werden, werden nicht ber�cksichtigt, und die gezahlte Geb�hr wird nicht zur�ckerstattet. Der Dienstleistungsumfang kann jedoch auf Wunsch des Kunden ge�ndert werden.</value>
   </data>
   <data name="CancellationChangeItem4" xml:space="preserve">
-    <value>Für Änderungsanfragen (z. B. Verlängerung der Dienstlaufzeit oder Anforderung zusätzlichen Personals) wird unser Unternehmen zusätzliche Planungen vornehmen und dem Kunden innerhalb von maximal 3 Werktagen antworten.</value>
+    <value>F�r �nderungsanfragen (z. B. Verl�ngerung der Dienstlaufzeit oder Anforderung zus�tzlichen Personals) wird unser Unternehmen zus�tzliche Planungen vornehmen und dem Kunden innerhalb von maximal 3 Werktagen antworten.</value>
   </data>
   <data name="CollectedDataPurpose1" xml:space="preserve">
-    <value>Um sicherzustellen, dass unsere Dienste vollständig und rechtzeitig erbracht werden</value>
+    <value>Um sicherzustellen, dass unsere Dienste vollst�ndig und rechtzeitig erbracht werden</value>
   </data>
   <data name="CollectedDataPurpose2" xml:space="preserve">
     <value>Um Kundenanfragen zu erfüllen und Dienstprozesse zu planen</value>
   </data>
   <data name="CollectedDataPurpose3" xml:space="preserve">
-    <value>Um Kundenzufriedenheit zu messen und die Dienstqualität zu verbessern</value>
+    <value>Um Kundenzufriedenheit zu messen und die Dienstqualit�t zu verbessern</value>
   </data>
   <data name="CollectedDataPurpose4" xml:space="preserve">
     <value>Um gesetzliche Verpflichtungen zu erfüllen</value>
@@ -94,7 +94,7 @@
     <value>Erhobene persönliche Daten und Zwecke</value>
   </data>
   <data name="CollectedDataPurposesText" xml:space="preserve">
-    <value>Ihre persönlichen Daten werden durch Formulare, die Sie während Ihrer Dienstleistungsanfrage ausfüllen, E-Mail-Korrespondenz, Telefonanrufe, Zahlungsvorgänge und Vor-Ort-Inspektionen an Ihrem Arbeitsplatz erhoben.</value>
+    <value>Ihre pers�nlichen Daten werden durch Formulare, die Sie w�hrend Ihrer Dienstleistungsanfrage ausf�llen, E-Mail-Korrespondenz, Telefonanrufe, Zahlungsvorg�nge und Vor-Ort-Inspektionen an Ihrem Arbeitsplatz erhoben.</value>
   </data>
   <data name="CollectedDataRestriction" xml:space="preserve">
     <value>Ihre personenbezogenen Daten werden niemals für andere als die oben genannten Zwecke verwendet und nicht für Transaktionen verarbeitet, die nicht mit diesen Zwecken übereinstimmen.</value>
@@ -139,25 +139,25 @@
     <value>Kundenrechte und Feedback</value>
   </data>
   <data name="CustomerRightsFeedbackItem1" xml:space="preserve">
-    <value>Unsere Kunden können jegliche Probleme oder Unzufriedenheiten, die während des Dienstprozesses auftreten, unserem rund um die Uhr erreichbaren Kundendienstteam melden.</value>
+    <value>Unsere Kunden k�nnen jegliche Probleme oder Unzufriedenheiten, die w�hrend des Dienstprozesses auftreten, unserem rund um die Uhr erreichbaren Kundendienstteam melden.</value>
   </data>
   <data name="CustomerRightsFeedbackItem2" xml:space="preserve">
-    <value>Rückmeldungen werden innerhalb von maximal 2 Werktagen gründlich geprüft, und Lösungsvorschläge werden dem Kunden vorgelegt.</value>
+    <value>R�ckmeldungen werden innerhalb von maximal 2 Werktagen gr�ndlich gepr�ft, und L�sungsvorschl�ge werden dem Kunden vorgelegt.</value>
   </data>
   <data name="CustomerRightsFeedbackItem3" xml:space="preserve">
-    <value>Kundenzufriedenheit ist die oberste Priorität unseres Unternehmens.</value>
+    <value>Kundenzufriedenheit ist die oberste Priorit�t unseres Unternehmens.</value>
   </data>
   <data name="DataCollectionMethod" xml:space="preserve">
     <value>Datenerhebungsmethode</value>
   </data>
   <data name="DataCollectionMethodText" xml:space="preserve">
-    <value>Ihre personenbezogenen Daten werden durch ausgefüllte Formulare während Ihrer Dienstleistungsanfrage, E-Mail-Korrespondenz, Telefonate, Zahlungstransaktionen und Vor-Ort-Inspektionen an Ihrem Arbeitsplatz gesammelt. Ihre Daten werden auf der Grundlage Ihrer ausdrücklichen Zustimmung oder im Rahmen gesetzlicher Verpflichtungen verarbeitet. Während der Datenerhebung werden Sie klar darüber informiert, welche Informationen warum gesammelt werden, und Ihre Zustimmung wird für optionale Felder eingeholt.</value>
+    <value>Ihre personenbezogenen Daten werden durch ausgef�llte Formulare w�hrend Ihrer Dienstleistungsanfrage, E-Mail-Korrespondenz, Telefonate, Zahlungstransaktionen und Vor-Ort-Inspektionen an Ihrem Arbeitsplatz gesammelt. Ihre Daten werden auf der Grundlage Ihrer ausdr�cklichen Zustimmung oder im Rahmen gesetzlicher Verpflichtungen verarbeitet. W�hrend der Datenerhebung werden Sie klar dar�ber informiert, welche Informationen warum gesammelt werden, und Ihre Zustimmung wird f�r optionale Felder eingeholt.</value>
   </data>
   <data name="DataRetentionPeriod" xml:space="preserve">
     <value>Datenaufbewahrungsfrist</value>
   </data>
   <data name="DataRetentionPeriodText" xml:space="preserve">
-    <value>Ihre persönlichen Daten werden für die Dauer des Dienstes und gemäß den gesetzlichen Aufbewahrungsfristen aufbewahrt.</value>
+    <value>Ihre pers�nlichen Daten werden f�r die Dauer des Dienstes und gem�� den gesetzlichen Aufbewahrungsfristen aufbewahrt.</value>
   </data>
   <data name="DataSecurityDesign" xml:space="preserve">
     <value>Diese Maßnahmen sind darauf ausgelegt, das Risiko eines Verlusts, Diebstahls oder einer Nutzung Ihrer Daten durch unbefugte Personen zu minimieren.</value>
@@ -166,22 +166,22 @@
     <value>Elektronisch gesammelte Daten werden mit fortschrittlichen Verschlüsselungsmethoden (z. B. SSL-Zertifikat und AES-256-Verschlüsselung) geschützt und können nur von autorisiertem Personal eingesehen werden.</value>
   </data>
   <data name="DataSecurityMeasure2" xml:space="preserve">
-    <value>Physische Dokumente werden in verschlossenen Schränken und sicheren Archivräumen aufbewahrt, wobei der Zugang und die Ausgänge streng überwacht werden.</value>
+    <value>Physische Dokumente werden in verschlossenen Schr�nken und sicheren Archivr�umen aufbewahrt, wobei der Zugang und die Ausg�nge streng �berwacht werden.</value>
   </data>
   <data name="DataSecurityMeasure3" xml:space="preserve">
     <value>Unsere Datenbanken werden kontinuierlich auf unbefugten Zugriff überwacht und durch Firewalls geschützt.</value>
   </data>
   <data name="DataSecurityMeasure4" xml:space="preserve">
-    <value>Wir haben Notfallpläne für mögliche Datenverletzungen vorhanden, und in solchen Fällen verpflichten wir uns, Sie und die zuständigen Behörden gemäß KVKK-Vorschriften innerhalb von 72 Stunden zu informieren.</value>
+    <value>Wir haben Notfallpl�ne f�r m�gliche Datenverletzungen vorhanden, und in solchen F�llen verpflichten wir uns, Sie und die zust�ndigen Beh�rden gem�� KVKK-Vorschriften innerhalb von 72 Stunden zu informieren.</value>
   </data>
   <data name="DataSecurityMeasure5" xml:space="preserve">
-    <value>Unser Personal wird regelmäßig in unseren Datenschutzrichtlinien und KVKK-Vorschriften geschult und über Datensicherheit sensibilisiert.</value>
+    <value>Unser Personal wird regelm��ig in unseren Datenschutzrichtlinien und KVKK-Vorschriften geschult und �ber Datensicherheit sensibilisiert.</value>
   </data>
   <data name="DataSecurityMeasures" xml:space="preserve">
     <value>Datensicherheits- und Schutzmaßnahmen</value>
   </data>
   <data name="DataSecurityMeasuresIntro" xml:space="preserve">
-    <value>Unser Unternehmen trifft die neuesten technologischen und physischen Maßnahmen, um die Sicherheit Ihrer persönlichen Daten zu gewährleisten:</value>
+    <value>Unser Unternehmen trifft die neuesten technologischen und physischen Ma�nahmen, um die Sicherheit Ihrer pers�nlichen Daten zu gew�hrleisten:</value>
   </data>
   <data name="DataSharingException1" xml:space="preserve">
     <value>Mit offiziellen Behörden zur Erfüllung gesetzlicher Verpflichtungen (z. B. Gerichtsbeschluss oder Ministeriumsanfrage)</value>
@@ -190,7 +190,7 @@
     <value>Mit OSGB-Experten, die an einem Teil des Dienstes mitwirken (in diesem Fall sind die Experten auch an KVKK-konforme Vertraulichkeitsvereinbarungen gebunden)</value>
   </data>
   <data name="DataSharingIntro" xml:space="preserve">
-    <value>Unser Unternehmen gibt Ihre personenbezogenen Daten außer bei gesetzlichen Verpflichtungen nicht an Dritte weiter. Eine Datenfreigabe kann jedoch in folgenden Ausnahmefällen erfolgen:</value>
+    <value>Unser Unternehmen gibt Ihre personenbezogenen Daten au�er bei gesetzlichen Verpflichtungen nicht an Dritte weiter. Eine Datenfreigabe kann jedoch in folgenden Ausnahmef�llen erfolgen:</value>
   </data>
   <data name="DataSharingRestriction" xml:space="preserve">
     <value>Wenn eine Datenweitergabe an Dritte erforderlich ist, werden nur die minimal erforderlichen Daten übertragen, und diese Parteien sind verpflichtet, den gleichen Sicherheitsstandards zu entsprechen.</value>
@@ -199,19 +199,19 @@
     <value>Datenfreigabe und Beziehungen zu Dritten</value>
   </data>
   <data name="DeliveryCondition1" xml:space="preserve">
-    <value>Das Startdatum und der Zeitplan des Dienstes werden dem Käufer per E-Mail oder Telefon mitgeteilt.</value>
+    <value>Das Startdatum und der Zeitplan des Dienstes werden dem K�ufer per E-Mail oder Telefon mitgeteilt.</value>
   </data>
   <data name="DeliveryCondition2" xml:space="preserve">
-    <value>Falls es zu möglichen Verzögerungen kommt, informiert der Verkäufer den Käufer innerhalb von 24 Stunden und bietet alternative Lösungen an.</value>
+    <value>Falls es zu m�glichen Verz�gerungen kommt, informiert der Verk�ufer den K�ufer innerhalb von 24 Stunden und bietet alternative L�sungen an.</value>
   </data>
   <data name="DeliveryCondition3" xml:space="preserve">
-    <value>Der Verkäufer stellt das notwendige Personal und die technische Infrastruktur bereit, um einen unterbrechungsfreien Dienstfortbestand zu gewährleisten.</value>
+    <value>Der Verk�ufer stellt das notwendige Personal und die technische Infrastruktur bereit, um einen unterbrechungsfreien Dienstfortbestand zu gew�hrleisten.</value>
   </data>
   <data name="DeliveryConditions" xml:space="preserve">
     <value>Lieferbedingungen</value>
   </data>
   <data name="DeliveryConditionsText" xml:space="preserve">
-    <value>Der Verkäufer beginnt die Dienstleistungslieferung innerhalb von maximal 5 (fünf) Werktagen nach Zahlungsbestätigung und Vertragsabschluss.</value>
+    <value>Der Verk�ufer beginnt die Dienstleistungslieferung innerhalb von maximal 5 (f�nf) Werktagen nach Zahlungsbest�tigung und Vertragsabschluss.</value>
   </data>
   <data name="DeliveryProcess" xml:space="preserve">
     <value>Lieferprozess</value>
@@ -220,22 +220,22 @@
     <value>Unser Unternehmen bietet Dienstleistungen der Gemeinsamen Gesundheits- und Sicherheitsstelle (OSGB) innerhalb der in dem detaillierten schriftlichen Vertrag mit dem Kunden angegebenen Termine und Bedingungen an.</value>
   </data>
   <data name="DeliveryProcessItem2" xml:space="preserve">
-    <value>Das Startdatum des Dienstes wird dem Kunden schriftlich innerhalb von maximal zwei (2) Werktagen nach Zahlungsbestätigung und Vertragsunterzeichnung durch beide Parteien mitgeteilt. Zusätzlich werden der Umsetzungsplan und die Phasen des Dienstes detailliert geteilt.</value>
+    <value>Das Startdatum des Dienstes wird dem Kunden schriftlich innerhalb von maximal zwei (2) Werktagen nach Zahlungsbest�tigung und Vertragsunterzeichnung durch beide Parteien mitgeteilt. Zus�tzlich werden der Umsetzungsplan und die Phasen des Dienstes detailliert geteilt.</value>
   </data>
   <data name="DeliveryProcessItem3" xml:space="preserve">
-    <value>Die Zahlung kann vor Beginn des Dienstes vollständig oder in Raten erfolgen. Der Zahlungsplan wird im Vertrag klar festgelegt und vom Kunden genehmigt.</value>
+    <value>Die Zahlung kann vor Beginn des Dienstes vollst�ndig oder in Raten erfolgen. Der Zahlungsplan wird im Vertrag klar festgelegt und vom Kunden genehmigt.</value>
   </data>
   <data name="DeliveryProcessItem4" xml:space="preserve">
-    <value>Die Dienstleistungserbringung erfolgt durch von der OSGB beauftragte Expertenteams durch regelmäßige Inspektionen, Schulungen und Berichterstattung im Rahmen von Arbeitsschutz- und Sicherheitsprojekten (OHS).</value>
+    <value>Die Dienstleistungserbringung erfolgt durch von der OSGB beauftragte Expertenteams durch regelm��ige Inspektionen, Schulungen und Berichterstattung im Rahmen von Arbeitsschutz- und Sicherheitsprojekten (OHS).</value>
   </data>
   <data name="DeliveryProcessItem5" xml:space="preserve">
-    <value>Im Falle möglicher Verzögerungen durch technische Probleme, Personalmangel oder unvorhergesehene Umstände während des Lieferprozesses bietet unser Unternehmen innerhalb von 24 Stunden Lösungen und informiert den Kunden. Ersatzpläne werden aktiviert, um einen unterbrechungsfreien Dienst zu gewährleisten.</value>
+    <value>Im Falle m�glicher Verz�gerungen durch technische Probleme, Personalmangel oder unvorhergesehene Umst�nde w�hrend des Lieferprozesses bietet unser Unternehmen innerhalb von 24 Stunden L�sungen und informiert den Kunden. Ersatzpl�ne werden aktiviert, um einen unterbrechungsfreien Dienst zu gew�hrleisten.</value>
   </data>
   <data name="DeliveryProcessItem6" xml:space="preserve">
-    <value>Bei Änderungen der Arbeitsplatzbedingungen des Kunden (z. B. Erhöhung der Mitarbeiterzahl oder Feststellung eines neuen Risikos) wird der Dienstleistungsumfang ohne zusätzliche Gebühren überprüft und aktualisiert.</value>
+    <value>Bei �nderungen der Arbeitsplatzbedingungen des Kunden (z. B. Erh�hung der Mitarbeiterzahl oder Feststellung eines neuen Risikos) wird der Dienstleistungsumfang ohne zus�tzliche Geb�hren �berpr�ft und aktualisiert.</value>
   </data>
   <data name="DeliveryProcessItem7" xml:space="preserve">
-    <value>In jeder Phase des Dienstes werden dem Kunden regelmäßige Fortschrittsberichte (monatlich oder projektbasiert) zur Verfügung gestellt. Diese Berichte enthalten die durchgeführten Arbeiten, identifizierte Risiken und Lösungsvorschläge.</value>
+    <value>In jeder Phase des Dienstes werden dem Kunden regelm��ige Fortschrittsberichte (monatlich oder projektbasiert) zur Verf�gung gestellt. Diese Berichte enthalten die durchgef�hrten Arbeiten, identifizierte Risiken und L�sungsvorschl�ge.</value>
   </data>
   <data name="DeliveryReturn" xml:space="preserve">
     <value>Liefer- und Rückgabebedingungen</value>
@@ -253,7 +253,7 @@
     <value>Streitbeilegung</value>
   </data>
   <data name="DisputeResolutionText" xml:space="preserve">
-    <value>Bei Streitigkeiten, die aus dem Vertrag entstehen, suchen die Parteien zunächst in gutem Glauben eine Lösung. Kann keine Lösung erzielt werden, sind das Verbraucherschutz-Schiedsgericht oder die Verbrauchergerichte am Wohnort des Käufers zuständig.</value>
+    <value>Bei Streitigkeiten, die aus dem Vertrag entstehen, suchen die Parteien zun�chst in gutem Glauben eine L�sung. Kann keine L�sung erzielt werden, sind das Verbraucherschutz-Schiedsgericht oder die Verbrauchergerichte am Wohnort des K�ufers zust�ndig.</value>
   </data>
   <data name="DistanceSale" xml:space="preserve">
     <value>Fernabsatzvertrag</value>
@@ -262,7 +262,7 @@
     <value>Fernverkaufsvertrag</value>
   </data>
   <data name="DistanceSaleContractDescription" xml:space="preserve">
-    <value>Dieser Fernverkaufsvertrag („Vertrag“) wird zwischen den unten angegebenen Parteien für Online-Kauftransaktionen zwischen der Website unseres Unternehmens und Ihrem Unternehmen für OSGB-Dienste erstellt. Er wurde in Übereinstimmung mit dem Gesetz Nr. 6502 zum Verbraucherschutz und der Verordnung über Fernverträge vorbereitet und regelt klar die Rechte und Pflichten des Käufers und Verkäufers. Der Vertrag wird mit dem Kauf des Dienstes zwischen den Parteien verbindlich.</value>
+    <value>Dieser Fernverkaufsvertrag (??Vertrag�) wird zwischen den unten angegebenen Parteien f�r Online-Kauftransaktionen zwischen der Website unseres Unternehmens und Ihrem Unternehmen f�r OSGB-Dienste erstellt. Er wurde in �bereinstimmung mit dem Gesetz Nr. 6502 zum Verbraucherschutz und der Verordnung �ber Fernvertr�ge vorbereitet und regelt klar die Rechte und Pflichten des K�ufers und Verk�ufers. Der Vertrag wird mit dem Kauf des Dienstes zwischen den Parteien verbindlich.</value>
   </data>
   <data name="EasiestService" xml:space="preserve">
     <value>Wir bieten Ihnen den mühelosesten Service!</value>
@@ -271,7 +271,7 @@
     <value>Einfaches und schnelles Arbeitsschutzmanagement</value>
   </data>
   <data name="EasyOHSManagementDesc" xml:space="preserve">
-    <value>Verwalten Sie Ihre Arbeitsschutzdienste online und beschleunigen Sie Ihre Feldeinsätze. Verfolgen Sie Vereinbarungen, Berichterstattung, Schulungsprozesse und Gesundheitsuntersuchungen von einer einzigen Plattform aus.</value>
+    <value>Verwalten Sie Ihre Arbeitsschutzdienste online und beschleunigen Sie Ihre Feldeins�tze. Verfolgen Sie Vereinbarungen, Berichterstattung, Schulungsprozesse und Gesundheitsuntersuchungen von einer einzigen Plattform aus.</value>
   </data>
   <data name="EasyPayments" xml:space="preserve">
     <value>Beschleunigen Sie Transaktionen mit einfachen Zahlungsoptionen.</value>
@@ -298,7 +298,7 @@
     <value>Ein Fehler ist aufgetreten:</value>
   </data>
   <data name="ExpertManagement" xml:space="preserve">
-    <value>Unterstützung bei der Verwaltung von Arbeitssicherheitsprozessen mit fachkundigen Händen.</value>
+    <value>Unterst�tzung bei der Verwaltung von Arbeitssicherheitsprozessen mit fachkundigen H�nden.</value>
   </data>
   <data name="FacilitateCompliance" xml:space="preserve">
     <value>wir erleichtern Ihnen die Einhaltung gesetzlicher Vorschriften.</value>
@@ -313,7 +313,7 @@
     <value>Schnelles OSGB Bild</value>
   </data>
   <data name="FastReliableSolutions" xml:space="preserve">
-    <value>Bereitstellung schneller, einfacher und zuverlässiger Lösungen bei der OSGB-Auswahl und Schulungsprozessen.</value>
+    <value>Bereitstellung schneller, einfacher und zuverl�ssiger L�sungen bei der OSGB-Auswahl und Schulungsprozessen.</value>
   </data>
   <data name="FastSecureAgreements" xml:space="preserve">
     <value>Schnelle und sichere Vertragsprozesse.</value>
@@ -340,7 +340,7 @@
     <value>Planen Sie notwendige Gesundheitsuntersuchungen für Ihre Mitarbeiter.</value>
   </data>
   <data name="HealthScreeningsPeriodic" xml:space="preserve">
-    <value>Gesundheitschecks, regelmäßige Untersuchungen und Risikoanalysen.</value>
+    <value>Gesundheitschecks, regelm��ige Untersuchungen und Risikoanalysen.</value>
   </data>
   <data name="Help" xml:space="preserve">
     <value>Hilfe erhalten</value>
@@ -361,7 +361,7 @@
     <value>Information</value>
   </data>
   <data name="InnovativeEfficient" xml:space="preserve">
-    <value>Prozesse mit innovativen Technologien effizienter, schneller und zuverlässiger zu gestalten.</value>
+    <value>Prozesse mit innovativen Technologien effizienter, schneller und zuverl�ssiger zu gestalten.</value>
   </data>
   <data name="InternationalStandards" xml:space="preserve">
     <value>Bereitstellung von IAG-Diensten, die internationalen Standards entsprechen.</value>
@@ -373,7 +373,7 @@
     <value>Rechnungsinformationen</value>
   </data>
   <data name="InvoiceInfoText" xml:space="preserve">
-    <value>Die Rechnung für die Dienstgebühr wird nach Zahlungsabwicklung an die vom Käufer angegebene Adresse oder E-Mail-Adresse gesendet.</value>
+    <value>Die Rechnung f�r die Dienstgeb�hr wird nach Zahlungsabwicklung an die vom K�ufer angegebene Adresse oder E-Mail-Adresse gesendet.</value>
   </data>
   <data name="Keywords" xml:space="preserve">
     <value>Arbeitsschutz, OSGB, Betriebsarzt, Risikoanalyse, Gemeinsame Gesundheit und Sicherheit, ILTER, Ilteris, Ilterisg, Gefahrenklasse, Ilter, Ilter-osgb, ilteris, Blog, Anmelden</value>
@@ -400,10 +400,10 @@
     <value>Verwalten Sie Arbeitsschutzdienste von einem einzigen Punkt aus.</value>
   </data>
   <data name="ManageOHSProcesses" xml:space="preserve">
-    <value>Verwalten Sie die Arbeitsschutz- und Sicherheitsprozesse Ihres Unternehmens professionell. Sorgen Sie mit unserer Arbeitsschutzberatung, Risikoanalysen, Gesundheitsuntersuchungen und gesetzlichen Konformitätsdiensten für Sicherheit am Arbeitsplatz.</value>
+    <value>Verwalten Sie die Arbeitsschutz- und Sicherheitsprozesse Ihres Unternehmens professionell. Sorgen Sie mit unserer Arbeitsschutzberatung, Risikoanalysen, Gesundheitsuntersuchungen und gesetzlichen Konformit�tsdiensten f�r Sicherheit am Arbeitsplatz.</value>
   </data>
   <data name="ManageOSGBAgreements" xml:space="preserve">
-    <value>wir ermöglichen es Ihnen, OSGB-Verträge, Gesundheitschecks, Schulungen und Risikoanalysen von einem zentralen Punkt aus zu verwalten.</value>
+    <value>wir erm�glichen es Ihnen, OSGB-Vertr�ge, Gesundheitschecks, Schulungen und Risikoanalysen von einem zentralen Punkt aus zu verwalten.</value>
   </data>
   <data name="ManageServicesOnePlace" xml:space="preserve">
     <value>Verwalten Sie alle Dienstleistungen von einem Ort aus</value>
@@ -424,7 +424,7 @@
     <value>Mehr</value>
   </data>
   <data name="MostTrustedPartner" xml:space="preserve">
-    <value>Der zuverlässigste und schnellste Lösungspartner für Arbeitsschutzdienste zu sein.</value>
+    <value>Der zuverl�ssigste und schnellste L�sungspartner f�r Arbeitsschutzdienste zu sein.</value>
   </data>
   <data name="NameSurname" xml:space="preserve">
     <value>Name Vorname</value>
@@ -523,13 +523,13 @@
     <value>Unterstützt von </value>
   </data>
   <data name="PriceInfo" xml:space="preserve">
-    <value>Die Gebühr wird dem Käufer während des Kaufprozesses klar mitgeteilt und als Gesamtbetrag unter Einbeziehung aller Steuern präsentiert.</value>
+    <value>Die Geb�hr wird dem K�ufer w�hrend des Kaufprozesses klar mitgeteilt und als Gesamtbetrag unter Einbeziehung aller Steuern pr�sentiert.</value>
   </data>
   <data name="PrivacyPolicy" xml:space="preserve">
     <value>Datenschutzrichtlinie</value>
   </data>
   <data name="PrivacyPolicyDescription1" xml:space="preserve">
-    <value>Unser Unternehmen verpflichtet sich, die Sicherheit und Privatsphäre der persönlichen Daten unserer Kunden nach höchsten Standards gemäß Gesetz Nr. 6698 zum Schutz personenbezogener Daten (KVKK) zu schützen.</value>
+    <value>Unser Unternehmen verpflichtet sich, die Sicherheit und Privatsph�re der pers�nlichen Daten unserer Kunden nach h�chsten Standards gem�� Gesetz Nr. 6698 zum Schutz personenbezogener Daten (KVKK) zu sch�tzen.</value>
   </data>
   <data name="RegisterApply" xml:space="preserve">
     <value>Registrieren und Bewerben</value>
@@ -544,10 +544,10 @@
     <value>Rückgabe- und Stornierungsbedingungen</value>
   </data>
   <data name="ReturnCancellationItem1" xml:space="preserve">
-    <value>Der Käufer benachrichtigt den Verkäufer unter Vorlage von Unterlagen.</value>
+    <value>Der K�ufer benachrichtigt den Verk�ufer unter Vorlage von Unterlagen.</value>
   </data>
   <data name="ReturnCancellationItem2" xml:space="preserve">
-    <value>Der Verkäufer behebt den Mangel innerhalb von 48 Stunden oder bietet Ausgleichsleistungen an.</value>
+    <value>Der Verk�ufer behebt den Mangel innerhalb von 48 Stunden oder bietet Ausgleichsleistungen an.</value>
   </data>
   <data name="ReturnCancellationItem3" xml:space="preserve">
     <value>Kann der Mangel nicht behoben werden, wird der volle gezahlte Betrag oder der Betrag, der dem Mangel entspricht, innerhalb von 7 Werktagen erstattet.</value>
@@ -559,31 +559,31 @@
     <value>Dienstleistungsrückerstattung und Garantie</value>
   </data>
   <data name="ReturnGuaranteeItem1" xml:space="preserve">
-    <value>Aufgrund der Natur des Dienstes ist eine Rückerstattung nach Beginn nicht möglich. Wenn der von unserem Unternehmen erbrachte Dienst jedoch unvollständig oder unzureichend ist, kann der Kunde dies mit Dokumentation unserem Unternehmen melden.</value>
+    <value>Aufgrund der Natur des Dienstes ist eine R�ckerstattung nach Beginn nicht m�glich. Wenn der von unserem Unternehmen erbrachte Dienst jedoch unvollst�ndig oder unzureichend ist, kann der Kunde dies mit Dokumentation unserem Unternehmen melden.</value>
   </data>
   <data name="ReturnGuaranteeItem2" xml:space="preserve">
-    <value>Wenn der von unserem Unternehmen erbrachte Dienst jedoch unzureichend oder unvollständig ist, kann der Kunde uns dies unter Vorlage von Unterlagen mitteilen.</value>
+    <value>Wenn der von unserem Unternehmen erbrachte Dienst jedoch unzureichend oder unvollst�ndig ist, kann der Kunde uns dies unter Vorlage von Unterlagen mitteilen.</value>
   </data>
   <data name="ReturnGuaranteeItem3" xml:space="preserve">
-    <value>Bei Feststellung von Mängeln bietet unser Unternehmen innerhalb von 48 Stunden zusätzliche Unterstützung oder kostenlose Ausgleichsleistungen an.</value>
+    <value>Bei Feststellung von M�ngeln bietet unser Unternehmen innerhalb von 48 Stunden zus�tzliche Unterst�tzung oder kostenlose Ausgleichsleistungen an.</value>
   </data>
   <data name="RightOfWithdrawal" xml:space="preserve">
     <value>Widerrufsrecht</value>
   </data>
   <data name="RightOfWithdrawalItem1" xml:space="preserve">
-    <value>Der Käufer teilt dem Verkäufer den Widerrufsantrag schriftlich (per E-Mail oder Einschreiben) mit.</value>
+    <value>Der K�ufer teilt dem Verk�ufer den Widerrufsantrag schriftlich (per E-Mail oder Einschreiben) mit.</value>
   </data>
   <data name="RightOfWithdrawalItem2" xml:space="preserve">
-    <value>Der gezahlte Betrag wird dem Käufer innerhalb von 10 (zehn) Werktagen ab der Widerrufsmitteilung ohne Unterbrechung erstattet.</value>
+    <value>Der gezahlte Betrag wird dem K�ufer innerhalb von 10 (zehn) Werktagen ab der Widerrufsmitteilung ohne Unterbrechung erstattet.</value>
   </data>
   <data name="RightOfWithdrawalItem3" xml:space="preserve">
     <value>Das Widerrufsrecht kann nach Beginn des Dienstes nicht ausgeübt werden; in diesem Fall gelten Rückgabe- und Stornierungsbedingungen.</value>
   </data>
   <data name="RightOfWithdrawalNote" xml:space="preserve">
-    <value>Das Widerrufsrecht kann ungültig werden, wenn der Käufer ausdrücklich der vorzeitigen Inbetriebnahme des Dienstes zustimmt.</value>
+    <value>Das Widerrufsrecht kann ung�ltig werden, wenn der K�ufer ausdr�cklich der vorzeitigen Inbetriebnahme des Dienstes zustimmt.</value>
   </data>
   <data name="RightOfWithdrawalText" xml:space="preserve">
-    <value>Der Käufer kann das Widerrufsrecht aufgrund der Art des Dienstes innerhalb von 14 (vierzehn) Tagen vor Beginn des Dienstes ausüben.</value>
+    <value>Der K�ufer kann das Widerrufsrecht aufgrund der Art des Dienstes innerhalb von 14 (vierzehn) Tagen vor Beginn des Dienstes aus�ben.</value>
   </data>
   <data name="RiskAnalysis" xml:space="preserve">
     <value>Risikoanalyse</value>
@@ -604,28 +604,28 @@
     <value>Nach oben scrollen</value>
   </data>
   <data name="SelectOSGB" xml:space="preserve">
-    <value>Wählen Sie das passendste OSGB und erhalten Sie sofort ein Angebot.</value>
+    <value>W�hlen Sie das passendste OSGB und erhalten Sie sofort ein Angebot.</value>
   </data>
   <data name="SelectSubject" xml:space="preserve">
-    <value>Wählen...</value>
+    <value>W�hlen...</value>
   </data>
   <data name="Seller" xml:space="preserve">
-    <value>Verkäufer</value>
+    <value>Verk�ufer</value>
   </data>
   <data name="SellerAddress" xml:space="preserve">
     <value>Atatürk Mah. Cumhuriyet Cad. Nr.: 123, 34750 Istanbul, Türkei</value>
   </data>
   <data name="SellerObligation1" xml:space="preserve">
-    <value>Die Dienstleistung in der im Vertrag festgelegten Qualität und innerhalb der festgelegten Frist zu erbringen</value>
+    <value>Die Dienstleistung in der im Vertrag festgelegten Qualit�t und innerhalb der festgelegten Frist zu erbringen</value>
   </data>
   <data name="SellerObligation2" xml:space="preserve">
-    <value>Den Käufer über alle Prozesse zu informieren</value>
+    <value>Den K�ufer �ber alle Prozesse zu informieren</value>
   </data>
   <data name="SellerObligation3" xml:space="preserve">
-    <value>Persönliche Daten gemäß KVKK-Vorschriften zu schützen</value>
+    <value>Pers�nliche Daten gem�� KVKK-Vorschriften zu sch�tzen</value>
   </data>
   <data name="SellerObligations" xml:space="preserve">
-    <value>Verpflichtungen des Verkäufers</value>
+    <value>Verpflichtungen des Verk�ufers</value>
   </data>
   <data name="SellerTax" xml:space="preserve">
     <value>Beyoğlu Steueramt - 1234567890</value>
@@ -661,7 +661,7 @@
     <value>Arbeitsschutz Bild</value>
   </data>
   <data name="Slide1Title" xml:space="preserve">
-    <value>Slide1Title</value>
+    <value>Sichere Arbeitsumgebungen mit Arbeitsschutzexpertise</value>
   </data>
   <data name="Slide2Alt" xml:space="preserve">
     <value>Arbeitssicherheitsexpertise Bild</value>
@@ -670,16 +670,16 @@
     <value>Sichere Arbeitsumgebungen mit Arbeitsschutzexpertise</value>
   </data>
   <data name="Slide2Title" xml:space="preserve">
-    <value>Slide2Title</value>
+    <value>Sichere Arbeitsumgebungen mit Arbeitsschutzexpertise</value>
   </data>
   <data name="SpecialCasesContact" xml:space="preserve">
-    <value>Sonderfälle und Kontakt</value>
+    <value>Sonderf�lle und Kontakt</value>
   </data>
   <data name="SpecialCasesContactItem1" xml:space="preserve">
-    <value>Bitte kontaktieren Sie unser Kundendienstteam, um besondere Umstände im Zusammenhang mit dem Lieferprozess, Rückgabebedingungen oder Zahlungsplänen zu bewerten.</value>
+    <value>Bitte kontaktieren Sie unser Kundendienstteam, um besondere Umst�nde im Zusammenhang mit dem Lieferprozess, R�ckgabebedingungen oder Zahlungspl�nen zu bewerten.</value>
   </data>
   <data name="SpecialCasesContactItem2" xml:space="preserve">
-    <value>In Notfällen wird sofort gehandelt, um Unterbrechungen der OSGB-Dienste zu verhindern, und dem Kunden werden alternative Lösungen angeboten.</value>
+    <value>In Notf�llen wird sofort gehandelt, um Unterbrechungen der OSGB-Dienste zu verhindern, und dem Kunden werden alternative L�sungen angeboten.</value>
   </data>
   <data name="SpecialCasesContactItem3" xml:space="preserve">
     <value>Für detaillierte Informationen, Unterstützung oder spezielle Anfragen können Sie eine E-Mail an info@ilterisg.com senden oder uns unter +90 541 710 3373 erreichen.</value>
@@ -688,7 +688,7 @@
     <value>Betreff</value>
   </data>
   <data name="SubjectDescription" xml:space="preserve">
-    <value>Der Gegenstand dieses Vertrags ist die Regelung der Qualitäten, Gebühren, Zahlungsmethoden, Lieferbedingungen, des Widerrufsrechts, der Rückgabe- und Stornierungsverfahren der OSGB-Dienste (Gemeinsame Gesundheits- und Sicherheitsstelle), die der Käufer über die Website www.ilterisg.com des Verkäufers kauft.</value>
+    <value>Der Gegenstand dieses Vertrags ist die Regelung der Qualit�ten, Geb�hren, Zahlungsmethoden, Lieferbedingungen, des Widerrufsrechts, der R�ckgabe- und Stornierungsverfahren der OSGB-Dienste (Gemeinsame Gesundheits- und Sicherheitsstelle), die der K�ufer �ber die Website www.ilterisg.com des Verk�ufers kauft.</value>
   </data>
   <data name="Success" xml:space="preserve">
     <value>Erfolg!</value>
@@ -721,7 +721,7 @@
     <value>Verfolgen Sie Ihre Vereinbarungen digital und vermeiden Sie unnötigen Papierkram.</value>
   </data>
   <data name="TrainingConsultingCompliance" xml:space="preserve">
-    <value>Vollständige Übereinstimmung mit Schulungs- und Beratungsdiensten.</value>
+    <value>Vollst�ndige �bereinstimmung mit Schulungs- und Beratungsdiensten.</value>
   </data>
   <data name="TrustPeace" xml:space="preserve">
     <value>Vertrauen und Ruhe</value>
@@ -736,7 +736,7 @@
     <value>Gültigkeit und Genehmigung</value>
   </data>
   <data name="ValidityApprovalText" xml:space="preserve">
-    <value>Dieser Vertrag tritt in Kraft, wenn der Käufer den Kaufprozess auf der Website abschließt und das Kästchen \"Ich habe den Vertrag gelesen und akzeptiere ihn\" ankreuzt.</value>
+    <value>Dieser Vertrag tritt in Kraft, wenn der K�ufer den Kaufprozess auf der Website abschlie�t und das K�stchen \"Ich habe den Vertrag gelesen und akzeptiere ihn\" ankreuzt.</value>
   </data>
   <data name="WeAreWithYou" xml:space="preserve">
     <value>Wir sind immer an Ihrer Seite in Ihrer Arbeit und Sicherheit.</value>
@@ -754,7 +754,7 @@
     <value>wir bieten Ihnen den am besten geeigneten OSGB-Dienst (Gemeinsame Gesundheits- und Sicherheitsstelle) für Ihr Unternehmen</value>
   </data>
   <data name="WhyChooseUs" xml:space="preserve">
-    <value>Warum uns wählen?</value>
+    <value>Warum uns w�hlen?</value>
   </data>
   <data name="YourMessage" xml:space="preserve">
     <value>Ihre Nachricht</value>
@@ -775,7 +775,7 @@
     <value>Die Dritten zu kennen, an die Ihre Daten übermittelt wurden</value>
   </data>
   <data name="YourRight5" xml:space="preserve">
-    <value>Die Korrektur unvollständiger oder unrichtig verarbeiteter Daten zu verlangen</value>
+    <value>Die Korrektur unvollst�ndiger oder unrichtig verarbeiteter Daten zu verlangen</value>
   </data>
   <data name="YourRight6" xml:space="preserve">
     <value>Widerspruch einzulegen, falls bei der Analyse Ihrer verarbeiteten Daten mit automatisierten Systemen ein Ergebnis zu Ihren Ungunsten entsteht</value>
@@ -784,13 +784,13 @@
     <value>Sie können diese Rechte ausüben, indem Sie eine schriftliche Anfrage an destek@ilterisg.com senden oder uns unter +90 541 710 3373 kontaktieren.</value>
   </data>
   <data name="YourRightsKVKK" xml:space="preserve">
-    <value>Ihre Rechte gemäß KVKK</value>
+    <value>Ihre Rechte gem�� KVKK</value>
   </data>
   <data name="YourRightsKVKKIntro" xml:space="preserve">
-    <value>Gemäß Gesetz Nr. 6698 haben Sie die folgenden Rechte in Bezug auf Ihre persönlichen Daten:</value>
+    <value>Gem�� Gesetz Nr. 6698 haben Sie die folgenden Rechte in Bezug auf Ihre pers�nlichen Daten:</value>
   </data>
   <data name="ZeroAccidentVision" xml:space="preserve">
-    <value>Saubere, schnelle und sichere Arbeitsumgebungen mit einer Vision von null Unfällen schaffen.</value>
+    <value>Saubere, schnelle und sichere Arbeitsumgebungen mit einer Vision von null Unf�llen schaffen.</value>
   </data>
   <data name="RateLimitExceeded" xml:space="preserve">
     <value>RateLimitExceeded</value>
@@ -895,7 +895,7 @@
     <value>Beim Hochladen des Bildes ist ein Fehler aufgetreten.</value>
   </data>
   <data name="InvalidBlogPostError" xml:space="preserve">
-    <value>Bitte wählen Sie einen gültigen Blogbeitrag aus.</value>
+    <value>Bitte w�hlen Sie einen g�ltigen Blogbeitrag aus.</value>
   </data>
   <data name="InvalidBlogPostsError" xml:space="preserve">
     <value>Blogbeitrag-Optionen konnten nicht erstellt werden.</value>
@@ -910,7 +910,7 @@
     <value>Bitte geben Sie eine gültige Reihenfolgennummer ein (1 oder größer).</value>
   </data>
   <data name="LatestPosts" xml:space="preserve">
-    <value>Letzte Beiträge</value>
+    <value>Letzte Beitr�ge</value>
   </data>
   <data name="ListView" xml:space="preserve">
     <value>Liste</value>
@@ -922,16 +922,16 @@
     <value>Nein</value>
   </data>
   <data name="NoBlogPostsError" xml:space="preserve">
-    <value>Blogbeiträge konnten nicht geladen werden. Bitte aktualisieren Sie die Seite.</value>
+    <value>Blogbeitr�ge konnten nicht geladen werden. Bitte aktualisieren Sie die Seite.</value>
   </data>
   <data name="NoBlogPostsYet" xml:space="preserve">
-    <value>Noch keine Blogbeiträge vorhanden.</value>
+    <value>Noch keine Blogbeitr�ge vorhanden.</value>
   </data>
   <data name="NoCommentsYet" xml:space="preserve">
     <value>Noch keine Kommentare. Seien Sie der Erste, der kommentiert!</value>
   </data>
   <data name="NoPostsAvailable" xml:space="preserve">
-    <value>Keine Blogbeiträge verfügbar.</value>
+    <value>Keine Blogbeitr�ge verf�gbar.</value>
   </data>
   <data name="OnlyImageFilesAllowed" xml:space="preserve">
     <value>Nur Bilddateien sind erlaubt.</value>
@@ -940,7 +940,7 @@
     <value>Beliebte Themen</value>
   </data>
   <data name="Posts" xml:space="preserve">
-    <value>Beiträge</value>
+    <value>Beitr�ge</value>
   </data>
   <data name="PostStream" xml:space="preserve">
     <value>Beitragsstrom</value>
@@ -967,7 +967,7 @@
     <value>Weiterlesen</value>
   </data>
   <data name="RecommendedPosts" xml:space="preserve">
-    <value>Empfohlene Beiträge</value>
+    <value>Empfohlene Beitr�ge</value>
   </data>
   <data name="RemoveImage" xml:space="preserve">
     <value>Bild Entfernen</value>
@@ -1010,5 +1010,83 @@
   </data>
   <data name="YourName" xml:space="preserve">
     <value>Ihr Name</value>
+  </data>
+  <data name="EditorAccountCreated" xml:space="preserve">
+    <value>Das Editor-Konto wurde erstellt.</value>
+  </data>
+  <data name="CompleteProfile" xml:space="preserve">
+    <value>Profil vervollst�ndigen</value>
+  </data>
+  <data name="UserAlreadyExists" xml:space="preserve">
+    <value>Ein Benutzer mit dieser E-Mail existiert bereits.</value>
+  </data>
+  <data name="SignIn" xml:space="preserve">
+    <value>Anmelden</value>
+  </data>
+  <data name="SaveAndContinue" xml:space="preserve">
+    <value>Speichern und Fortfahren</value>
+  </data>
+  <data name="RegisterEditorHeading" xml:space="preserve">
+    <value>Neuen Editor anlegen</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Passwort</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>Vorname</value>
+  </data>
+  <data name="AccountLockedOut" xml:space="preserve">
+    <value>Ihr Konto ist gesperrt. Bitte versuchen Sie es sp�ter erneut.</value>
+  </data>
+  <data name="AccessDenied" xml:space="preserve">
+    <value>Zugriff verweigert</value>
+  </data>
+  <data name="CreateEditor" xml:space="preserve">
+    <value>Editor erstellen</value>
+  </data>
+  <data name="ReturnToHome" xml:space="preserve">
+    <value>Zur Startseite</value>
+  </data>
+  <data name="RegisterEditorTitle" xml:space="preserve">
+    <value>Editor-Registrierung</value>
+  </data>
+  <data name="EditorAdminLogin" xml:space="preserve">
+    <value>Editor/Admin-Anmeldung</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Passwort best�tigen</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Angemeldet bleiben</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Nachname</value>
+  </data>
+  <data name="CompleteProfileDescription" xml:space="preserve">
+    <value>Vervollst�ndigen Sie Ihren Vor- und Nachnamen, um den Blog zu verwalten.</value>
+  </data>
+  <data name="AccessDeniedMessage" xml:space="preserve">
+    <value>Sie haben keine Berechtigung, auf diese Seite zuzugreifen.</value>
+  </data>
+  <data name="InvalidEmailOrPassword" xml:space="preserve">
+    <value>E-Mail oder Passwort ist falsch.</value>
+  </data>
+  <data name="Account" xml:space="preserve">
+    <value>Konto</value>
+  </data>
+  <data name="Management" xml:space="preserve">
+    <value>Verwaltung</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Abmelden</value>
+  </data>
+  <data name="AddEditor" xml:space="preserve">
+    <value>Editor hinzufügen</value>
+  </data>
+  <data name="BlogMenuTitle" xml:space="preserve">
+    <value>Blog-Menü</value>
+  </data>
+  <data name="BlogLayoutAdd" xml:space="preserve">
+    <value>Blog-Layout hinzufügen</value>
   </data>
 </root>

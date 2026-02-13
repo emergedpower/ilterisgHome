@@ -1,0 +1,11 @@
+﻿@inject Microsoft.Extensions.Localization.IStringLocalizer<SharedResource> Localizer
+@{
+    ViewData["Title"] = Localizer["AccessDenied"];
+}
+
+<div class="container py-5">
+    <div class="alert alert-warning">
+        @Localizer["AccessDeniedMessage"]
+    </div>
+    <a class="btn btn-primary" asp-controller="Home" asp-action="Index">@Localizer["ReturnToHome"]</a>
+</div>

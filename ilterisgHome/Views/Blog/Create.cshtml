@@ -1,0 +1,664 @@
+@model ilterisg.Models.BlogPost
+@inject Microsoft.Extensions.Localization.IStringLocalizer<SharedResource> Localizer
+@{
+    var isEdit = (Model?.Id ?? 0) != 0;
+    Layout = "~/Views/Shared/_BlogLayout.cshtml";
+    ViewData["Title"] = isEdit ? Localizer["EditPost"] : Localizer["NewBlogPost"];
+}
+
+@section Styles {
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00c4b4;
+            --background: #f8f8f8;
+            --card-bg: #ffffff;
+            --text-dark: #333333;
+            --text-muted: #666666;
+            --input-bg: #f0f0f0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background);
+            color: var(--text-dark);
+            margin: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            padding: 60px 15px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .blog-form {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-label {
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .form-control, .form-check-input {
+            background: var(--input-bg);
+            border: 1px solid #d0d0d0;
+            color: var(--text-dark);
+            border-radius: 8px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+            .form-control:focus {
+                background: var(--input-bg);
+                color: var(--text-dark);
+                border-color: var(--primary);
+                box-shadow: 0 0 8px rgba(0, 196, 180, 0.3);
+            }
+
+            .form-check-input:checked {
+                background-color: var(--primary);
+                border-color: var(--primary);
+            }
+
+        .btn-primary {
+            background-color: var(--primary);
+            border: none;
+            font-weight: 600;
+            border-radius: 50px;
+            padding: 12px 24px;
+            color: #ffffff;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+            .btn-primary:hover {
+                background-color: #00a89a;
+                transform: translateY(-2px);
+            }
+
+        .btn-secondary {
+            background-color: #d0d0d0;
+            border: none;
+            font-weight: 600;
+            color: var(--text-dark);
+            border-radius: 50px;
+            padding: 12px 24px;
+            transition: background-color 0.3s ease;
+        }
+
+            .btn-secondary:hover {
+                background-color: #c0c0c0;
+            }
+
+        .btn-outline-danger {
+            border-color: #e74c3c;
+            color: #e74c3c;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+            .btn-outline-danger:hover {
+                background-color: #e74c3c;
+                color: #fff;
+            }
+
+        .ql-toolbar {
+            background: var(--input-bg);
+            border-radius: 8px 8px 0 0;
+            border: none;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .ql-container {
+            background: #f0f0f0;
+            border-radius: 0 0 8px 8px;
+            border: none;
+            min-height: 300px;
+            color: var(--text-dark);
+        }
+
+        .ql-editor {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .ql-toolbar .ql-formats button,
+        .ql-toolbar .ql-formats .ql-picker-label {
+            color: var(--text-dark) !important;
+        }
+
+            .ql-toolbar .ql-formats button:hover,
+            .ql-toolbar .ql-formats .ql-picker-label:hover {
+                color: var(--primary) !important;
+            }
+
+        .image-preview {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+            .image-preview img {
+                max-width: 100%;
+                border-radius: 10px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            }
+
+            .image-preview .remove-image {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                background: #e74c3c;
+                color: #fff;
+                border: none;
+                border-radius: 50%;
+                width: 30px;
+                height: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+
+                .image-preview .remove-image:hover {
+                    background: #c0392b;
+                }
+
+        .drag-drop {
+            border: 2px dashed var(--text-muted);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            color: var(--text-dark);
+            cursor: pointer;
+            transition: border-color 0.3s ease, background-color 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+            .drag-drop:hover, .drag-drop.drag-active {
+                border-color: var(--primary);
+                background-color: rgba(0, 196, 180, 0.1);
+            }
+
+        .preview-toggle {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 20px;
+            cursor: pointer;
+            color: var(--primary);
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+            .preview-toggle:hover {
+                background: #e0e0e0;
+            }
+
+        .preview-content {
+            background: #ffffff;
+            color: var(--text-dark);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            display: none;
+        }
+
+        .meta-keywords-input-wrap {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            background: var(--input-bg);
+            border: 1px solid #d0d0d0;
+            border-radius: 8px;
+            padding: 8px 10px;
+        }
+
+        .meta-keywords-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .meta-keyword-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--primary);
+            color: #ffffff;
+            border-radius: 999px;
+            padding: 5px 10px;
+            font-size: 0.85rem;
+            line-height: 1;
+        }
+
+        .meta-keyword-chip button {
+            border: none;
+            background: transparent;
+            color: #ffffff;
+            cursor: pointer;
+            font-size: 0.9rem;
+            padding: 0;
+            line-height: 1;
+        }
+
+        .meta-keywords-input {
+            border: none;
+            background: transparent;
+            flex: 1;
+            min-width: 180px;
+            outline: none;
+            color: var(--text-dark);
+        }
+
+        .alert-danger {
+            border-radius: 10px;
+            background: #e74c3c;
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .fa-icon {
+            color: var(--text-dark);
+        }
+
+        .btn-primary .fa-icon,
+        .btn-outline-danger .fa-icon {
+            color: #ffffff;
+        }
+
+        .btn-outline-danger:hover .fa-icon {
+            color: #ffffff;
+        }
+
+        @@media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .ql-container {
+                min-height: 200px;
+            }
+        }
+
+        @@media (max-width: 576px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .container {
+                padding: 40px 15px;
+            }
+        }
+        </style>
+}
+    <div class="container">
+        <h1 data-aos="fade-down">@ViewData["Title"]</h1>
+        <form id="blogForm" asp-controller="Blog" asp-action="@(isEdit ? "Edit" : "Create")" method="post" enctype="multipart/form-data" class="blog-form">
+            @Html.AntiForgeryToken()
+            @if (ViewData.ModelState.ErrorCount > 0)
+            {
+                <div asp-validation-summary="All" class="alert alert-danger" data-aos="fade-up">@Localizer["ValidationErrors"]</div>
+            }
+            @if (isEdit)
+            {
+                <input type="hidden" asp-for="Id" />
+            }
+            <div class="mb-4" data-aos="fade-up" data-aos-delay="100">
+                <label asp-for="Title" class="form-label">@Localizer["Title"]</label>
+                <input asp-for="Title" class="form-control" placeholder="@Localizer["EnterPostTitle"]" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="mb-4" data-aos="fade-up" data-aos-delay="200">
+                <label asp-for="Content" class="form-label">@Localizer["Content"]</label>
+                <input type="hidden" asp-for="Content" id="Content" />
+                <div id="quillEditor"></div>
+                <span asp-validation-for="Content" class="text-danger"></span>
+            </div>
+            <div class="mb-4" data-aos="fade-up" data-aos-delay="300">
+                <label asp-for="ImageUrl" class="form-label">@Localizer["FeaturedImage"]</label>
+                <div class="drag-drop" id="dragDrop">
+                    <p>@Localizer["DragOrClickToUpload"]</p>
+                    <input type="file" id="imageInput" accept="image/*" style="display: none;" />
+                </div>
+                <input asp-for="ImageUrl" id="ImageUrl" class="form-control" placeholder="@Localizer["EnterImageUrlOrUpload"]" />
+                <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                @if (!string.IsNullOrEmpty(Model?.ImageUrl))
+                {
+                    <div class="image-preview">
+                        <img src="@Model.ImageUrl" alt="@Localizer["PreviewImage"]" />
+                        <button type="button" class="remove-image" title="@Localizer["RemoveImage"]"><i class="fas fa-times"></i></button>
+                    </div>
+                }
+            </div>
+            <div class="mb-4" data-aos="fade-up" data-aos-delay="400">
+                <label asp-for="Summary" class="form-label">@Localizer["Summary"]</label>
+                <textarea asp-for="Summary" class="form-control" rows="3" placeholder="@Localizer["EnterPostSummary"]"></textarea>
+                <span asp-validation-for="Summary" class="text-danger"></span>
+            </div>
+            <div class="mb-4" data-aos="fade-up" data-aos-delay="450">
+                <label asp-for="MetaTitle" class="form-label">SEO Başlık (max 70)</label>
+                <input asp-for="MetaTitle" class="form-control" placeholder="Google için başlık" />
+                <span asp-validation-for="MetaTitle" class="text-danger"></span>
+            </div>
+            <div class="mb-4" data-aos="fade-up" data-aos-delay="500">
+                <label asp-for="MetaDescription" class="form-label">SEO Açıklama (max 160)</label>
+                <textarea asp-for="MetaDescription" class="form-control" rows="2" placeholder="Google arama açıklaması"></textarea>
+                <span asp-validation-for="MetaDescription" class="text-danger"></span>
+            </div>
+            <div class="mb-4" data-aos="fade-up" data-aos-delay="550">
+                <label asp-for="MetaKeywords" class="form-label">SEO Anahtar Kelimeler</label>
+                <input type="hidden" asp-for="MetaKeywords" id="metaKeywordsHidden" />
+                <div class="meta-keywords-input-wrap">
+                    <div id="metaKeywordsTags" class="meta-keywords-tags"></div>
+                    <input type="text"
+                           id="metaKeywordsInput"
+                           class="meta-keywords-input"
+                           placeholder="Kelime yaz, space bas, etiket olsun" />
+                </div>
+                <span asp-validation-for="MetaKeywords" class="text-danger"></span>
+            </div>
+            <div class="mb-4" data-aos="fade-up" data-aos-delay="575">
+                <label asp-for="Slug" class="form-label">SEO URL Slug</label>
+                <input asp-for="Slug" class="form-control" placeholder="ornek-blog-yazisi" />
+                <span asp-validation-for="Slug" class="text-danger"></span>
+            </div>
+            <div class="mb-4" data-aos="fade-up" data-aos-delay="500">
+                <button type="button" id="insertYouTube" class="btn btn-outline-danger">
+                    <i class="fab fa-youtube fa-icon"></i> @Localizer["AddYouTubeVideo"]
+                </button>
+            </div>
+            <div class="form-check mb-4" data-aos="fade-up" data-aos-delay="600">
+                <input asp-for="IsPublished" class="form-check-input" />
+                <label asp-for="IsPublished" class="form-label">@Localizer["Publish"]</label>
+            </div>
+            <div class="preview-toggle" data-aos="fade-up" data-aos-delay="700">
+                <i class="fas fa-eye fa-icon"></i> @Localizer["PreviewContent"]
+            </div>
+            <div class="preview-content"></div>
+            <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="800">
+                <button type="submit" class="btn btn-primary me-2">
+                    <i class="fas fa-save fa-icon"></i> @(isEdit? Localizer["Update"] : Localizer["Save"])
+                </button>
+                <a asp-action="Manage" class="btn btn-secondary">
+                    <i class="fas fa-times fa-icon"></i> @Localizer["Cancel"]
+                </a>
+            </div>
+        </form>
+    </div>
+
+    @section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            AOS.init({
+                duration: 800,
+                once: true
+            });
+
+            const toolbarOptions = {
+                container: [
+                    [{ 'header': [1, 2, false] }],
+                    ['bold', 'italic', 'underline'],
+                    ['link', 'image'],
+                    [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+                    ['clean']
+                ]
+            };
+
+            const quill = new Quill('#quillEditor', {
+                theme: 'snow',
+                placeholder: '@Localizer["WriteContentHere"]',
+                modules: {
+                    toolbar: toolbarOptions
+                }
+            });
+
+            const hiddenInput = document.getElementById('Content');
+            const metaKeywordsHidden = document.getElementById('metaKeywordsHidden');
+            const metaKeywordsInput = document.getElementById('metaKeywordsInput');
+            const metaKeywordsTags = document.getElementById('metaKeywordsTags');
+            const metaKeywordList = [];
+
+            const syncMetaKeywords = () => {
+                metaKeywordsHidden.value = metaKeywordList.join(', ');
+            };
+
+            const renderMetaKeywords = () => {
+                metaKeywordsTags.innerHTML = '';
+                metaKeywordList.forEach((keyword, index) => {
+                    const chip = document.createElement('span');
+                    chip.className = 'meta-keyword-chip';
+                    chip.innerHTML = `<span>${keyword}</span><button type="button" aria-label="sil">&times;</button>`;
+                    chip.querySelector('button').addEventListener('click', () => {
+                        metaKeywordList.splice(index, 1);
+                        syncMetaKeywords();
+                        renderMetaKeywords();
+                        metaKeywordsInput.focus();
+                    });
+                    metaKeywordsTags.appendChild(chip);
+                });
+            };
+
+            const pushMetaKeyword = (raw) => {
+                const value = (raw || '').trim();
+                if (!value) {
+                    return;
+                }
+
+                const exists = metaKeywordList.some(x => x.toLowerCase() === value.toLowerCase());
+                if (exists) {
+                    return;
+                }
+
+                metaKeywordList.push(value);
+            };
+
+            const addMetaKeywordsFromText = (text) => {
+                (text || '')
+                    .split(/[\s,]+/g)
+                    .forEach(token => pushMetaKeyword(token));
+                syncMetaKeywords();
+                renderMetaKeywords();
+            };
+
+            if (metaKeywordsHidden.value) {
+                metaKeywordsHidden.value
+                    .split(',')
+                    .forEach(token => pushMetaKeyword(token));
+                syncMetaKeywords();
+                renderMetaKeywords();
+            }
+
+            const commitMetaKeywordInput = () => {
+                if (!metaKeywordsInput.value.trim()) {
+                    return;
+                }
+                addMetaKeywordsFromText(metaKeywordsInput.value);
+                metaKeywordsInput.value = '';
+            };
+
+            metaKeywordsInput.addEventListener('keydown', (event) => {
+                if (event.key === ' ' || event.key === 'Enter' || event.key === ',') {
+                    event.preventDefault();
+                    commitMetaKeywordInput();
+                }
+
+                if (event.key === 'Backspace' && !metaKeywordsInput.value && metaKeywordList.length > 0) {
+                    metaKeywordList.pop();
+                    syncMetaKeywords();
+                    renderMetaKeywords();
+                }
+            });
+
+            metaKeywordsInput.addEventListener('blur', commitMetaKeywordInput);
+
+            metaKeywordsInput.addEventListener('paste', (event) => {
+                event.preventDefault();
+                const pastedText = (event.clipboardData || window.clipboardData).getData('text');
+                addMetaKeywordsFromText(pastedText);
+                metaKeywordsInput.value = '';
+            });
+
+            if (hiddenInput.value) {
+                quill.root.innerHTML = hiddenInput.value;
+            }
+
+            document.getElementById('blogForm').addEventListener('submit', function () {
+                commitMetaKeywordInput();
+                syncMetaKeywords();
+                hiddenInput.value = quill.root.innerHTML;
+            });
+
+            quill.getModule('toolbar').addHandler('image', () => {
+                document.getElementById('imageInput').click();
+            });
+
+            const imageInput = document.getElementById('imageInput');
+            const dragDrop = document.getElementById('dragDrop');
+            const imageUrlInput = document.getElementById('ImageUrl');
+            const imagePreview = document.querySelector('.image-preview');
+
+            dragDrop.addEventListener('click', () => imageInput.click());
+            dragDrop.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                dragDrop.classList.add('drag-active');
+            });
+            dragDrop.addEventListener('dragleave', () => dragDrop.classList.remove('drag-active'));
+            dragDrop.addEventListener('drop', (e) => {
+                e.preventDefault();
+                dragDrop.classList.remove('drag-active');
+                const file = e.dataTransfer.files[0];
+                if (file && /^image\//.test(file.type)) {
+                    uploadImage(file);
+                } else {
+                    alert('@Localizer["OnlyImageFilesAllowed"]');
+                }
+            });
+
+            imageInput.addEventListener('change', () => {
+                const file = imageInput.files[0];
+                if (file && /^image\//.test(file.type)) {
+                    uploadImage(file);
+                } else {
+                    alert('@Localizer["OnlyImageFilesAllowed"]');
+                }
+            });
+
+            function uploadImage(file) {
+                const formData = new FormData();
+                formData.append('file', file);
+                fetch('/Blog/UploadImage', {
+                    method: 'POST',
+                    body: formData
+                })
+                    .then(response => response.json())
+                    .then(result => {
+                        imageUrlInput.value = result.location;
+                        updateImagePreview(result.location);
+                    })
+                    .catch(error => {
+                        console.error('Görsel yüklenemedi:', error);
+                        alert('@Localizer["ImageUploadError"]');
+                    });
+            }
+
+            function updateImagePreview(url) {
+                if (imagePreview) {
+                    imagePreview.remove();
+                }
+                const previewDiv = document.createElement('div');
+                previewDiv.className = 'image-preview';
+                previewDiv.innerHTML = `
+                    <img src="${url}" alt="@Localizer["PreviewImage"]" />
+                    <button type="button" class="remove-image" title="@Localizer["RemoveImage"]"><i class="fas fa-times"></i></button>
+                `;
+                imageUrlInput.parentElement.appendChild(previewDiv);
+                bindRemoveImage();
+            }
+
+            function bindRemoveImage() {
+                document.querySelectorAll('.remove-image').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        imageUrlInput.value = '';
+                        btn.parentElement.remove();
+                    });
+                });
+            }
+
+            if (imagePreview) {
+                bindRemoveImage();
+            }
+
+            document.getElementById('insertYouTube').addEventListener('click', function () {
+                const url = prompt('@Localizer["EnterYouTubeUrl"]');
+                if (url) {
+                    const embedUrl = convertToEmbedUrl(url);
+                    const iframe = `<iframe width="560" height="315" src="${embedUrl}" frameborder="0" allowfullscreen></iframe>`;
+                    const range = quill.getSelection(true);
+                    quill.clipboard.dangerouslyPasteHTML(range.index, iframe);
+                }
+            });
+
+            quill.on('text-change', function (delta, oldDelta, source) {
+                if (source === 'user') {
+                    convertYoutubeLinksToEmbed();
+                }
+            });
+
+            function convertToEmbedUrl(url) {
+                const regex = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)([^\s&]+)/;
+                const match = url.match(regex);
+                return match && match[1] ? `https://www.youtube.com/embed/${match[1]}` : url;
+            }
+
+            function convertYoutubeLinksToEmbed() {
+                const text = quill.getText();
+                const youtubeRegex = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)([^\s]+)/g;
+                let match;
+                while ((match = youtubeRegex.exec(text)) !== null) {
+                    const videoId = match[1];
+                    const embedUrl = `https://www.youtube.com/embed/${videoId}`;
+                    const iframe = `<iframe width="560" height="315" src="${embedUrl}" frameborder="0" allowfullscreen></iframe>`;
+                    const index = match.index;
+                    quill.deleteText(index, match[0].length);
+                    quill.clipboard.dangerouslyPasteHTML(index, iframe);
+                }
+            }
+
+            const previewToggle = document.querySelector('.preview-toggle');
+            const previewContent = document.querySelector('.preview-content');
+            previewToggle.addEventListener('click', () => {
+                const isVisible = previewContent.style.display === 'block';
+                previewContent.style.display = isVisible ? 'none' : 'block';
+                previewContent.innerHTML = quill.root.innerHTML;
+                previewToggle.innerHTML = isVisible
+                    ? '<i class="fas fa-eye fa-icon"></i> @Localizer["PreviewContent"]'
+                    : '<i class="fas fa-eye-slash fa-icon"></i> @Localizer["HidePreview"]';
+            });
+        });
+        </script>
+}
+
+
+

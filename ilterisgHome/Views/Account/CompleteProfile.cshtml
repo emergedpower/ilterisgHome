@@ -1,0 +1,108 @@
+﻿@model ilterisg.Models.ViewModels.CompleteProfileViewModel
+@inject Microsoft.Extensions.Localization.IStringLocalizer<SharedResource> Localizer
+@{
+    Layout = null;
+    ViewData["Title"] = Localizer["CompleteProfile"];
+}
+
+<!DOCTYPE html>
+<html lang="@System.Globalization.CultureInfo.CurrentUICulture.Name">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - @Localizer["AppName"]</title>
+    <link rel="shortcut icon" href="~/assets/images/favicon.ico" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <style>
+        :root {
+            --footer-h: 56px;
+            --footer-safe: 14px;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background-color: #f8f9fa;
+        }
+
+        .page-wrapper {
+            min-height: 100vh;
+            padding: 40px 0 calc(var(--footer-h) + var(--footer-safe));
+        }
+
+        .custom-footer {
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(90deg, #d8dce0 0%, #012f51 100%);
+            color: #ffffff;
+            padding: 12px 0;
+            text-align: center;
+            z-index: 998;
+            font-size: 14px;
+            border-top: 2px solid;
+            border-image: linear-gradient(90deg, #d8dce0 0%, #012f51 100%) 1;
+        }
+
+        .custom-footer p {
+            margin: 0;
+            font-weight: 300;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-md-7 col-lg-6">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body p-4">
+                            <h1 class="h4 mb-3 text-center">@Localizer["CompleteProfile"]</h1>
+                            <p class="text-muted mb-4">@Localizer["CompleteProfileDescription"]</p>
+
+                            <form asp-action="CompleteProfile" method="post">
+                                @Html.AntiForgeryToken()
+                                <input type="hidden" asp-for="ReturnUrl" />
+                                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                                <div class="mb-3">
+                                    <label asp-for="FirstName" class="form-label">@Localizer["FirstName"]</label>
+                                    <input asp-for="FirstName" class="form-control" placeholder="@Localizer["FirstName"]" />
+                                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label asp-for="LastName" class="form-label">@Localizer["LastName"]</label>
+                                    <input asp-for="LastName" class="form-control" placeholder="@Localizer["LastName"]" />
+                                    <span asp-validation-for="LastName" class="text-danger"></span>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary w-100">@Localizer["SaveAndContinue"]</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="custom-footer py-2">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-12 text-center">
+                    <p class="mb-0">
+                        &copy; <script>document.write(new Date().getFullYear())</script> @Localizer["AppName"] |
+                        @Localizer["PoweredBy"] <a href="@Url.Action("Index", "Home")" title="@Localizer["AppName"]" style="color:#ffffff;">@Localizer["AppName"]</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/assets/libs/jquery/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+</body>
+</html>

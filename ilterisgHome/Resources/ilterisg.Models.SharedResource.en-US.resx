@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <data name="About" xml:space="preserve">
     <value>About Us</value>
@@ -10,10 +10,10 @@
     <value>Our company, authorized by the Ministry of Labor and Social Security as a Joint Health and Safety Unit (OSGB), was established to provide innovative and reliable solutions to the business world.</value>
   </data>
   <data name="AboutUsDescription2" xml:space="preserve">
-    <value>Our mission is to create a healthy and safe working environment in workplaces, supporting businesses in fully meeting their legal obligations. Since our establishment, we have earned our customers’ trust through services in areas such as risk assessments, comprehensive occupational health and safety training, environmental measurements, emergency planning, periodic health screenings, and more. By ensuring full compliance with regulations, we enable businesses to prioritize not only their legal obligations but also the health and well-being of their employees.</value>
+    <value>Our mission is to create a healthy and safe working environment in workplaces, supporting businesses in fully meeting their legal obligations. Since our establishment, we have earned our customers�???? trust through services in areas such as risk assessments, comprehensive occupational health and safety training, environmental measurements, emergency planning, periodic health screenings, and more. By ensuring full compliance with regulations, we enable businesses to prioritize not only their legal obligations but also the health and well-being of their employees.</value>
   </data>
   <data name="AboutUsDescription3" xml:space="preserve">
-    <value>We aim to take OSGB services a step further by acting as a bridge collaborating with companies. We provide tailored solutions for each customer’s needs, streamline business processes, and build a sustainable safety culture. Employee health and customer satisfaction are the cornerstones of our operations. With this awareness, we leverage the latest technological opportunities to develop innovative approaches and take a leading role in the industry.</value>
+    <value>We aim to take OSGB services a step further by acting as a bridge collaborating with companies. We provide tailored solutions for each customer�????s needs, streamline business processes, and build a sustainable safety culture. Employee health and customer satisfaction are the cornerstones of our operations. With this awareness, we leverage the latest technological opportunities to develop innovative approaches and take a leading role in the industry.</value>
   </data>
   <data name="AboutUsDescription4" xml:space="preserve">
     <value>Our company aims to grow with you and add value to the business world. We take pride in being by your side for all your occupational health and safety needs, always striving to offer the best with our professional team. The strong bonds we have built with the businesses that trust us are the greatest proof of our success.</value>
@@ -25,7 +25,7 @@
     <value>Address</value>
   </data>
   <data name="AddressDynamic" xml:space="preserve">
-    <value>Customer’s delivery or billing address</value>
+    <value>Customer�????s delivery or billing address</value>
   </data>
   <data name="AdminNotificationSubject" xml:space="preserve">
     <value>AdminNotificationSubject</value>
@@ -55,7 +55,7 @@
     <value>To demonstrate the necessary cooperation for the provision of the service</value>
   </data>
   <data name="BuyerObligations" xml:space="preserve">
-    <value>Buyer’s Obligations</value>
+    <value>Buyer�????s Obligations</value>
   </data>
   <data name="CallMeBack" xml:space="preserve">
     <value>Let Us Reach You!</value>
@@ -70,7 +70,7 @@
     <value>Cancellation requests reported within this period are considered valid, and the full service fee paid is refunded to the customer without deductions within 7 business days.</value>
   </data>
   <data name="CancellationChangeItem3" xml:space="preserve">
-    <value>Cancellation requests made less than 5 business days before the service start date will not be considered, and the paid fee will not be refunded. However, the service scope can be modified upon the customer’s request.</value>
+    <value>Cancellation requests made less than 5 business days before the service start date will not be considered, and the paid fee will not be refunded. However, the service scope can be modified upon the customer�????s request.</value>
   </data>
   <data name="CancellationChangeItem4" xml:space="preserve">
     <value>For change requests (e.g., extending the service duration or requesting additional staff), our company will make additional planning and respond to the customer within a maximum of 3 business days.</value>
@@ -145,7 +145,7 @@
     <value>Feedback is thoroughly reviewed within a maximum of 2 business days, and solution proposals are presented to the customer.</value>
   </data>
   <data name="CustomerRightsFeedbackItem3" xml:space="preserve">
-    <value>Customer satisfaction is our company’s top priority.</value>
+    <value>Customer satisfaction is our company�????s top priority.</value>
   </data>
   <data name="DataCollectionMethod" xml:space="preserve">
     <value>Data Collection Method</value>
@@ -232,7 +232,7 @@
     <value>In case of potential delays due to technical issues, staff shortages, or unforeseen circumstances during the delivery process, our company provides solutions within 24 hours and informs the customer. Backup plans are activated to ensure uninterrupted service.</value>
   </data>
   <data name="DeliveryProcessItem6" xml:space="preserve">
-    <value>In case of changes in the customer’s workplace conditions (e.g., an increase in the number of employees or identification of a new risk), the service scope is reviewed and updated without additional fees.</value>
+    <value>In case of changes in the customer�????s workplace conditions (e.g., an increase in the number of employees or identification of a new risk), the service scope is reviewed and updated without additional fees.</value>
   </data>
   <data name="DeliveryProcessItem7" xml:space="preserve">
     <value>At every stage of the service, regular progress reports (monthly or project-based) are provided to the customer. These reports include the work performed, identified risks, and solution recommendations.</value>
@@ -253,7 +253,7 @@
     <value>Dispute Resolution</value>
   </data>
   <data name="DisputeResolutionText" xml:space="preserve">
-    <value>In disputes arising from the Contract, the parties first seek a solution in good faith. If no solution is reached, the Consumer Arbitration Committee or Consumer Courts at the Buyer’s place of residence are authorized.</value>
+    <value>In disputes arising from the Contract, the parties first seek a solution in good faith. If no solution is reached, the Consumer Arbitration Committee or Consumer Courts at the Buyer�????s place of residence are authorized.</value>
   </data>
   <data name="DistanceSale" xml:space="preserve">
     <value>Distance Sale Contract</value>
@@ -262,7 +262,7 @@
     <value>Distance Sale Contract</value>
   </data>
   <data name="DistanceSaleContractDescription" xml:space="preserve">
-    <value>This Distance Sale Contract (\"Contract\") is drawn up between the parties specified below for online purchase transactions between our company’s website and your company for OSGB services. It is prepared in accordance with Law No. 6502 on Consumer Protection and the Distance Contracts Regulation, clearly regulating the rights and obligations of the buyer and seller. The contract becomes binding between the parties upon the purchase of the service.</value>
+    <value>This Distance Sale Contract (\"Contract\") is drawn up between the parties specified below for online purchase transactions between our company�????s website and your company for OSGB services. It is prepared in accordance with Law No. 6502 on Consumer Protection and the Distance Contracts Regulation, clearly regulating the rights and obligations of the buyer and seller. The contract becomes binding between the parties upon the purchase of the service.</value>
   </data>
   <data name="EasiestService" xml:space="preserve">
     <value>We offer you the most effortless service!</value>
@@ -283,7 +283,7 @@
     <value>Our Email Addresses</value>
   </data>
   <data name="EmailDynamic" xml:space="preserve">
-    <value>Customer’s email address</value>
+    <value>Customer�????s email address</value>
   </data>
   <data name="EmailPlaceholder" xml:space="preserve">
     <value>example@domain.com</value>
@@ -304,7 +304,7 @@
     <value>we facilitate your compliance with legal obligations.</value>
   </data>
   <data name="FastestSafestOHS" xml:space="preserve">
-    <value>As ILTER-OSGB, we strive to provide you with the fastest and safest occupational health and safety (OHS) services. We offer the most suitable Common Health and Safety Unit (OSGB) services tailored to your company’s needs, making it easier for you to meet your legal obligations.</value>
+    <value>As ILTER-OSGB, we strive to provide you with the fastest and safest occupational health and safety (OHS) services. We offer the most suitable Common Health and Safety Unit (OSGB) services tailored to your company�????s needs, making it easier for you to meet your legal obligations.</value>
   </data>
   <data name="FastOSGB" xml:space="preserve">
     <value>Fast Agreement and Payment with OSGB</value>
@@ -373,7 +373,7 @@
     <value>Invoice Information</value>
   </data>
   <data name="InvoiceInfoText" xml:space="preserve">
-    <value>The service fee invoice is sent to the Buyer’s specified address or email address after payment is completed.</value>
+    <value>The service fee invoice is sent to the Buyer�????s specified address or email address after payment is completed.</value>
   </data>
   <data name="Keywords" xml:space="preserve">
     <value>OHS, OSGB, Occupational Physician, Risk Analysis, Common Health and Safety, ILTER, Ilteris, Ilterisg, Hazard Class, Ilter, Ilter-osgb, ilteris, Blog, Login</value>
@@ -400,7 +400,7 @@
     <value>Manage occupational health and safety services from a single point.</value>
   </data>
   <data name="ManageOHSProcesses" xml:space="preserve">
-    <value>Manage your company’s occupational health and safety processes professionally. Ensure workplace safety with our OHS consultancy, risk analysis, health screenings, and legal compliance services.</value>
+    <value>Manage your company�????s occupational health and safety processes professionally. Ensure workplace safety with our OHS consultancy, risk analysis, health screenings, and legal compliance services.</value>
   </data>
   <data name="ManageOSGBAgreements" xml:space="preserve">
     <value>we enable you to manage OSGB agreements, health screenings, trainings, and risk analyses from a single point.</value>
@@ -478,7 +478,7 @@
     <value>Parties</value>
   </data>
   <data name="PartiesRightsObligations" xml:space="preserve">
-    <value>Parties’ Rights and Obligations</value>
+    <value>Parties�???? Rights and Obligations</value>
   </data>
   <data name="PartnerWithOSGB" xml:space="preserve">
     <value>OSGB'niz ile anlaşın</value>
@@ -508,7 +508,7 @@
     <value>Phone</value>
   </data>
   <data name="PhoneDynamic" xml:space="preserve">
-    <value>Customer’s contact number</value>
+    <value>Customer�????s contact number</value>
   </data>
   <data name="PhoneNumber" xml:space="preserve">
     <value>Phone Number</value>
@@ -529,7 +529,7 @@
     <value>Privacy Policy</value>
   </data>
   <data name="PrivacyPolicyDescription1" xml:space="preserve">
-    <value>Our company is committed to protecting the security and privacy of our customers’ personal data to the highest degree in accordance with Law No. 6698 on the Protection of Personal Data (KVKK).</value>
+    <value>Our company is committed to protecting the security and privacy of our customers�???? personal data to the highest degree in accordance with Law No. 6698 on the Protection of Personal Data (KVKK).</value>
   </data>
   <data name="RegisterApply" xml:space="preserve">
     <value>Register and Apply</value>
@@ -625,7 +625,7 @@
     <value>To protect personal data under KVKK regulations</value>
   </data>
   <data name="SellerObligations" xml:space="preserve">
-    <value>Seller’s Obligations</value>
+    <value>Seller�????s Obligations</value>
   </data>
   <data name="SellerTax" xml:space="preserve">
     <value>Beyoğlu Tax Office - 1234567890</value>
@@ -661,7 +661,7 @@
     <value>slidebg1</value>
   </data>
   <data name="Slide1Title" xml:space="preserve">
-    <value>Sağlığınız Bir Tık Uzağınızda!</value>
+    <value>Safe Work Environments with OHS Expertise</value>
   </data>
   <data name="Slide2Alt" xml:space="preserve">
     <value>Occupational Safety Expertise Image</value>
@@ -670,7 +670,7 @@
     <value>Safe Work Environments with OHS Expertise</value>
   </data>
   <data name="Slide2Title" xml:space="preserve">
-    <value>İSG Uzmanlığı ile Güvenli Çalışma Ortamları</value>
+    <value>Safe Work Environments with OHS Expertise</value>
   </data>
   <data name="SpecialCasesContact" xml:space="preserve">
     <value>Special Cases and Contact</value>
@@ -688,7 +688,7 @@
     <value>Subject</value>
   </data>
   <data name="SubjectDescription" xml:space="preserve">
-    <value>The subject of this Contract is to regulate the qualities, fees, payment methods, delivery conditions, right of withdrawal, return, and cancellation procedures of the OSGB (Joint Health and Safety Unit) services purchased by the Buyer through the Seller’s www.ilterisg.com website.</value>
+    <value>The subject of this Contract is to regulate the qualities, fees, payment methods, delivery conditions, right of withdrawal, return, and cancellation procedures of the OSGB (Joint Health and Safety Unit) services purchased by the Buyer through the Seller�????s www.ilterisg.com website.</value>
   </data>
   <data name="Success" xml:space="preserve">
     <value>Success!</value>
@@ -794,5 +794,299 @@
   </data>
   <data name="RateLimitExceeded" xml:space="preserve">
     <value>RateLimitExceeded</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="AddNewPost" xml:space="preserve">
+    <value>Add New Post</value>
+  </data>
+  <data name="AddYouTubeVideo" xml:space="preserve">
+    <value>Add YouTube Video</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="BlogHomePage" xml:space="preserve">
+    <value>Blog Homepage</value>
+  </data>
+  <data name="BlogManagement" xml:space="preserve">
+    <value>Blog Management</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Comments</value>
+  </data>
+  <data name="ConfirmDeleteMessage" xml:space="preserve">
+    <value>Are you sure you want to delete this?</value>
+  </data>
+  <data name="ConfirmDeletePost" xml:space="preserve">
+    <value>titled post</value>
+  </data>
+  <data name="ContainerNotFoundError" xml:space="preserve">
+    <value>Related section not found. Please refresh the page.</value>
+  </data>
+  <data name="Content" xml:space="preserve">
+    <value>Content</value>
+  </data>
+  <data name="CreationDate" xml:space="preserve">
+    <value>Creation Date</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="DeleteError" xml:space="preserve">
+    <value>An error occurred while deleting: </value>
+  </data>
+  <data name="DeleteFailed" xml:space="preserve">
+    <value>Delete operation failed.</value>
+  </data>
+  <data name="DeletePost" xml:space="preserve">
+    <value>Delete Post</value>
+  </data>
+  <data name="Draft" xml:space="preserve">
+    <value>Draft</value>
+  </data>
+  <data name="DragOrClickToUpload" xml:space="preserve">
+    <value>Drag an image here or click to upload</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="EditPost" xml:space="preserve">
+    <value>Edit Post</value>
+  </data>
+  <data name="EnterImageUrlOrUpload" xml:space="preserve">
+    <value>Enter image URL or upload</value>
+  </data>
+  <data name="EnterPostSummary" xml:space="preserve">
+    <value>Enter a short summary of your post</value>
+  </data>
+  <data name="EnterPostTitle" xml:space="preserve">
+    <value>Enter your post title</value>
+  </data>
+  <data name="EnterYouTubeUrl" xml:space="preserve">
+    <value>Enter YouTube video URL:</value>
+  </data>
+  <data name="Featured" xml:space="preserve">
+    <value>Featured</value>
+  </data>
+  <data name="FeaturedContentRemoved" xml:space="preserve">
+    <value>Featured content removed.</value>
+  </data>
+  <data name="FeaturedContentUpdated" xml:space="preserve">
+    <value>Featured content updated.</value>
+  </data>
+  <data name="FeaturedImage" xml:space="preserve">
+    <value>Featured Image</value>
+  </data>
+  <data name="FollowUs" xml:space="preserve">
+    <value>Follow Us</value>
+  </data>
+  <data name="GridView" xml:space="preserve">
+    <value>Grid</value>
+  </data>
+  <data name="HidePreview" xml:space="preserve">
+    <value>Hide Preview</value>
+  </data>
+  <data name="ImageUploadError" xml:space="preserve">
+    <value>An error occurred while uploading the image.</value>
+  </data>
+  <data name="InvalidBlogPostError" xml:space="preserve">
+    <value>Please select a valid blog post.</value>
+  </data>
+  <data name="InvalidBlogPostsError" xml:space="preserve">
+    <value>Blog post options could not be created.</value>
+  </data>
+  <data name="InvalidElementsError" xml:space="preserve">
+    <value>Selection or order field not found. Please refresh the page.</value>
+  </data>
+  <data name="InvalidItemError" xml:space="preserve">
+    <value>Invalid item. Please refresh the page.</value>
+  </data>
+  <data name="InvalidOrderError" xml:space="preserve">
+    <value>Please enter a valid order number (1 or greater).</value>
+  </data>
+  <data name="LatestPosts" xml:space="preserve">
+    <value>Latest Posts</value>
+  </data>
+  <data name="ListView" xml:space="preserve">
+    <value>List</value>
+  </data>
+  <data name="NewBlogPost" xml:space="preserve">
+    <value>New Blog Post</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="NoBlogPostsError" xml:space="preserve">
+    <value>Blog posts could not be loaded. Please refresh the page.</value>
+  </data>
+  <data name="NoBlogPostsYet" xml:space="preserve">
+    <value>No blog posts yet.</value>
+  </data>
+  <data name="NoCommentsYet" xml:space="preserve">
+    <value>No comments yet. Be the first to comment!</value>
+  </data>
+  <data name="NoPostsAvailable" xml:space="preserve">
+    <value>No blog posts available.</value>
+  </data>
+  <data name="OnlyImageFilesAllowed" xml:space="preserve">
+    <value>Only image files are allowed.</value>
+  </data>
+  <data name="PopularTopics" xml:space="preserve">
+    <value>Popular Topics</value>
+  </data>
+  <data name="Posts" xml:space="preserve">
+    <value>Posts</value>
+  </data>
+  <data name="PostStream" xml:space="preserve">
+    <value>Post Stream</value>
+  </data>
+  <data name="Preview" xml:space="preserve">
+    <value>Preview</value>
+  </data>
+  <data name="PreviewContent" xml:space="preserve">
+    <value>Preview Content</value>
+  </data>
+  <data name="PreviewImage" xml:space="preserve">
+    <value>Preview Image</value>
+  </data>
+  <data name="Publish" xml:space="preserve">
+    <value>Publish</value>
+  </data>
+  <data name="Published" xml:space="preserve">
+    <value>Published</value>
+  </data>
+  <data name="PublishStatus" xml:space="preserve">
+    <value>Publish Status</value>
+  </data>
+  <data name="ReadMore" xml:space="preserve">
+    <value>Read More</value>
+  </data>
+  <data name="RecommendedPosts" xml:space="preserve">
+    <value>Recommended Posts</value>
+  </data>
+  <data name="RemoveImage" xml:space="preserve">
+    <value>Remove Image</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="SectionNotFoundError" xml:space="preserve">
+    <value>Section information not found. Please refresh the page.</value>
+  </data>
+  <data name="SubmitComment" xml:space="preserve">
+    <value>Submit Comment</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>Summary</value>
+  </data>
+  <data name="Unpublish" xml:space="preserve">
+    <value>Unpublish</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="UpdateError" xml:space="preserve">
+    <value>An error occurred while updating: </value>
+  </data>
+  <data name="UpdateFailed" xml:space="preserve">
+    <value>Update operation failed: </value>
+  </data>
+  <data name="ValidationErrors" xml:space="preserve">
+    <value>Validation errors exist.</value>
+  </data>
+  <data name="WriteContentHere" xml:space="preserve">
+    <value>Write your content here...</value>
+  </data>
+  <data name="YesDelete" xml:space="preserve">
+    <value>Yes, Delete</value>
+  </data>
+  <data name="YourComment" xml:space="preserve">
+    <value>Your Comment</value>
+  </data>
+  <data name="YourName" xml:space="preserve">
+    <value>Your Name</value>
+  </data>
+  <data name="EditorAccountCreated" xml:space="preserve">
+    <value>Editor account has been created.</value>
+  </data>
+  <data name="CompleteProfile" xml:space="preserve">
+    <value>Complete Profile</value>
+  </data>
+  <data name="UserAlreadyExists" xml:space="preserve">
+    <value>A user with this email already exists.</value>
+  </data>
+  <data name="SignIn" xml:space="preserve">
+    <value>Sign In</value>
+  </data>
+  <data name="SaveAndContinue" xml:space="preserve">
+    <value>Save and Continue</value>
+  </data>
+  <data name="RegisterEditorHeading" xml:space="preserve">
+    <value>Create New Editor</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>First Name</value>
+  </data>
+  <data name="AccountLockedOut" xml:space="preserve">
+    <value>Your account is locked. Please try again later.</value>
+  </data>
+  <data name="AccessDenied" xml:space="preserve">
+    <value>Access Denied</value>
+  </data>
+  <data name="CreateEditor" xml:space="preserve">
+    <value>Create Editor</value>
+  </data>
+  <data name="ReturnToHome" xml:space="preserve">
+    <value>Return to Home</value>
+  </data>
+  <data name="RegisterEditorTitle" xml:space="preserve">
+    <value>Editor Registration</value>
+  </data>
+  <data name="EditorAdminLogin" xml:space="preserve">
+    <value>Editor/Admin Login</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Confirm Password</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Remember me</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Last Name</value>
+  </data>
+  <data name="CompleteProfileDescription" xml:space="preserve">
+    <value>Complete your first and last name information to manage the blog.</value>
+  </data>
+  <data name="AccessDeniedMessage" xml:space="preserve">
+    <value>You do not have permission to access this page.</value>
+  </data>
+  <data name="InvalidEmailOrPassword" xml:space="preserve">
+    <value>Email or password is incorrect.</value>
+  </data>
+  <data name="Account" xml:space="preserve">
+    <value>Account</value>
+  </data>
+  <data name="Management" xml:space="preserve">
+    <value>Management</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="AddEditor" xml:space="preserve">
+    <value>Add Editor</value>
+  </data>
+  <data name="BlogMenuTitle" xml:space="preserve">
+    <value>Blog Menu</value>
+  </data>
+  <data name="BlogLayoutAdd" xml:space="preserve">
+    <value>Add Blog Layout</value>
   </data>
 </root>

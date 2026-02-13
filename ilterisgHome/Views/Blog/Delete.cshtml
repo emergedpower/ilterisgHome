@@ -1,0 +1,78 @@
+﻿@model ilterisg.Models.BlogPost
+@inject Microsoft.Extensions.Localization.IStringLocalizer<SharedResource> Localizer
+@{
+    Layout = "~/Views/Shared/_BlogLayout.cshtml";
+    ViewData["Title"] = Localizer["DeletePost"];
+}
+
+<div class="container my-5">
+    <div class="card shadow-sm border-0" style="max-width: 600px; margin: 0 auto; border-radius: 15px;">
+        <div class="card-body p-4">
+            <h1 class="card-title text-center mb-4" style="font-size: 1.8rem; font-weight: 600; color: #333;">
+                @ViewData["Title"]
+            </h1>
+            <p class="text-center mb-5" style="font-size: 1.1rem; color: #555;">
+                @Localizer["ConfirmDeleteMessage"] “<strong>@Model.Title</strong>” @Localizer["ConfirmDeletePost"]
+            </p>
+
+            <form asp-action="Delete" method="post" class="text-center">
+                <input type="hidden" asp-for="Id" />
+                <div class="d-flex justify-content-center gap-3">
+                    <button type="submit" class="btn btn-danger btn-lg px-4 py-2 delete-btn">
+                        @Localizer["YesDelete"]
+                    </button>
+                    <a asp-action="Manage" class="btn btn-outline-secondary btn-lg px-4 py-2 cancel-btn">
+                        @Localizer["No"]
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Custom styles for the delete page */
+    .card {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1) !important;
+        }
+
+    .delete-btn {
+        background-color: #dc3545;
+        border: none;
+        transition: background-color 0.3s ease;
+    }
+
+        .delete-btn:hover {
+            background-color: #c82333;
+        }
+
+    .cancel-btn {
+        border-color: #6c757d;
+        color: #6c757d;
+        transition: all 0.3s ease;
+    }
+
+        .cancel-btn:hover {
+            background-color: #6c757d;
+            color: #fff;
+            border-color: #6c757d;
+        }
+
+    /* Responsive adjustments */
+    @@media (max-width: 576px) {
+        .card {
+            margin: 0 15px;
+        }
+
+        .btn-lg {
+            padding: 0.5rem 1.5rem;
+            font-size: 1rem;
+        }
+    }
+</style>
+

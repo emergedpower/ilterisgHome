@@ -1,0 +1,732 @@
+﻿@model IEnumerable<ilterisg.Models.BlogPost>
+@inject Microsoft.Extensions.Localization.IStringLocalizer<SharedResource> Localizer
+@{
+    ViewData["Title"] = Localizer["BlogManagement"];
+    Layout = "~/Views/Shared/_BlogLayout.cshtml";
+}
+
+@functions {
+    public string GetTooltipHtml(BlogPost post)
+    {
+        return $"<div class='tooltip-preview'><img src='{post.ImageUrl}' alt='{post.Title}' /><h6>{post.Title}</h6><p>{(post.Summary?.Length > 50 ? post.Summary.Substring(0, 50) + "..." : post.Summary)}</p></div>";
+    }
+}
+
+@section Styles {
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- AOS for Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00c4b4;
+            --background: #f8f8f8;
+            --card-bg: #ffffff;
+            --text-dark: #333333;
+            --text-muted: #666666;
+            --input-bg: #f0f0f0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background);
+            color: var(--text-dark);
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            padding: 60px 15px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            border: none;
+            font-weight: 600;
+            border-radius: 50px;
+            padding: 10px 20px;
+            color: #ffffff;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+            .btn-primary:hover {
+                background-color: #00a89a;
+                transform: translateY(-2px);
+            }
+
+        .btn-view-toggle {
+            background: #d0d0d0;
+            border: none;
+            color: var(--text-dark);
+            border-radius: 50px;
+            padding: 8px 16px;
+            transition: background-color 0.3s ease;
+        }
+
+            .btn-view-toggle:hover {
+                background: #c0c0c0;
+            }
+
+            .btn-view-toggle.active {
+                background: var(--primary);
+                color: #ffffff;
+            }
+
+        .table-container {
+            background: var(--card-bg);
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .table {
+            margin-bottom: 0;
+        }
+
+            .table th {
+                font-weight: 600;
+                color: var(--text-dark);
+                border-bottom: 2px solid #d0d0d0;
+            }
+
+            .table td {
+                vertical-align: middle;
+                color: var(--text-dark);
+            }
+
+            .table tr:hover {
+                background: #f0f0f0;
+            }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .grid-card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+            .grid-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            }
+
+            .grid-card img {
+                width: 100%;
+                height: 150px;
+                object-fit: cover;
+                border-radius: 8px;
+                margin-bottom: 10px;
+            }
+
+            .grid-card h5 {
+                font-size: 1.2rem;
+                font-weight: 600;
+                color: var(--text-dark);
+                margin-bottom: 5px;
+            }
+
+            .grid-card p {
+                font-size: 0.9rem;
+                color: var(--text-muted);
+                margin-bottom: 10px;
+            }
+
+        .action-buttons {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            gap: 5px;
+        }
+
+        .table tr:hover .action-buttons,
+        .grid-card:hover .action-buttons {
+            opacity: 1;
+        }
+
+        .action-buttons .btn {
+            padding: 5px;
+            font-size: 0.9rem;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .action-buttons .btn-secondary {
+            background-color: #d0d0d0;
+            color: var(--text-dark);
+        }
+
+        .action-buttons .btn-danger {
+            background-color: #e74c3c;
+            color: #fff;
+        }
+
+        .action-buttons .btn-info {
+            background-color: var(--primary);
+            color: #fff;
+        }
+
+        .tooltip-preview {
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            max-width: 300px;
+        }
+
+            .tooltip-preview img {
+                width: 100%;
+                height: 100px;
+                object-fit: cover;
+                border-radius: 5px;
+                margin-bottom: 5px;
+            }
+
+            .tooltip-preview h6 {
+                font-size: 1rem;
+                font-weight: 600;
+                color: var(--text-dark);
+                margin-bottom: 5px;
+            }
+
+            .tooltip-preview p {
+                font-size: 0.85rem;
+                color: var(--text-muted);
+                margin: 0;
+            }
+
+        .empty-message {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            padding: 20px;
+            background: var(--card-bg);
+            border-radius: 10px;
+        }
+
+        .nav-tabs-custom .nav-link {
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+            .nav-tabs-custom .nav-link.active {
+                background-color: var(--primary);
+                color: #fff;
+            }
+
+        .featured-section {
+            margin-bottom: 20px;
+        }
+
+            .featured-section h6 {
+                font-size: 1.2rem;
+                font-weight: 600;
+                margin-bottom: 10px;
+            }
+
+        .featured-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            border: 1px solid #d0d0d0;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+            .featured-item select {
+                flex-grow: 1;
+                margin-right: 10px;
+            }
+
+            .featured-item input {
+                width: 60px;
+                margin-right: 10px;
+            }
+
+            .featured-item .btn-danger {
+                background-color: #e74c3c;
+                border: none;
+            }
+
+        @@media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @@media (max-width: 576px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .container {
+                padding: 40px 15px;
+            }
+        }
+    </style>
+}
+
+<div class="container">
+    <h1 data-aos="fade-down">@ViewData["Title"]</h1>
+    <div class="d-none">
+        @Html.AntiForgeryToken()
+    </div>
+    <div class="d-flex justify-content-between align-items-center mb-4" data-aos="fade-up">
+        <a class="btn btn-primary" asp-action="Create"><i class="fas fa-plus"></i> @Localizer["AddNewPost"]</a>
+        <div>
+            <button class="btn btn-view-toggle list-view active" onclick="toggleView('list')"><i class="fas fa-list"></i> @Localizer["ListView"]</button>
+            <button class="btn btn-view-toggle grid-view" onclick="toggleView('grid')"><i class="fas fa-th"></i> @Localizer["GridView"]</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <ul class="nav nav-tabs nav-tabs-custom nav-justified" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" data-bs-toggle="tab" href="#posts" role="tab">
+                    <i class="fas fa-list"></i> <span class="d-none d-sm-block">@Localizer["Posts"]</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#featured" role="tab">
+                    <i class="fas fa-star"></i> <span class="d-none d-sm-block">@Localizer["Featured"]</span>
+                </a>
+            </li>
+        </ul>
+        <div class="tab-content p-4">
+            <!-- Yazılar Sekmesi -->
+            <div class="tab-pane active" id="posts" role="tabpanel">
+                @if (!Model.Any())
+                {
+                    <div class="empty-message" data-aos="fade-up">@Localizer["NoPostsAvailable"]</div>
+                }
+                else
+                {
+                    <!-- Liste Görünümü -->
+                    <div class="table-container list-view-content" data-aos="fade-up">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>@Localizer["Title"]</th>
+                                    <th>@Localizer["CreationDate"]</th>
+                                    <th>@Localizer["PublishStatus"]</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var post in Model)
+                                {
+                                    <tr data-bs-toggle="tooltip" data-bs-html="true" data-bs-title="@GetTooltipHtml(post)">
+                                        <td>@post.Title</td>
+                                        <td>@post.CreatedAt.ToString("dd.MM.yyyy HH:mm")</td>
+                                        <td>@(post.IsPublished? Localizer["Published"] : Localizer["Draft"])</td>
+                                        <td class="position-relative">
+                                            <div class="action-buttons">
+                                                <a asp-action="Edit" asp-route-id="@post.Id" class="btn btn-secondary" title="@Localizer["Edit"]"><i class="fas fa-edit"></i></a>
+                                                <a asp-action="Delete" asp-route-id="@post.Id" class="btn btn-danger" title="@Localizer["Delete"]"><i class="fas fa-trash"></i></a>
+                                                <a asp-action="Details" asp-route-id="@post.Id" class="btn btn-info" title="@Localizer["Preview"]"><i class="fas fa-eye"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Izgara Görünümü -->
+                    <div class="grid-container grid-view-content d-none" data-aos="fade-up">
+                        @foreach (var post in Model)
+                        {
+                            <div class="grid-card" data-bs-toggle="tooltip" data-bs-html="true" data-bs-title="@GetTooltipHtml(post)">
+                                @if (!string.IsNullOrEmpty(post.ImageUrl))
+                                {
+                                    <img src="@post.ImageUrl" alt="@post.Title" />
+                                }
+                                <h5>@post.Title</h5>
+                                <p>@post.CreatedAt.ToString("dd.MM.yyyy HH:mm") • @(post.IsPublished? Localizer["Published"] : Localizer["Draft"])</p>
+                                <div class="action-buttons">
+                                    <a asp-action="Edit" asp-route-id="@post.Id" class="btn btn-secondary" title="@Localizer["Edit"]"><i class="fas fa-edit"></i></a>
+                                    <a asp-action="Delete" asp-route-id="@post.Id" class="btn btn-danger" title="@Localizer["Delete"]"><i class="fas fa-trash"></i></a>
+                                    <a asp-action="Details" asp-route-id="@post.Id" class="btn btn-info" title="@Localizer["Preview"]"><i class="fas fa-eye"></i></a>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
+            </div>
+
+            <!-- Öne Çıkanlar Sekmesi -->
+            <div class="tab-pane" id="featured" role="tabpanel">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="featured-section">
+                            <h6>@Localizer["LatestPosts"]</h6>
+                            <div id="latest-posts">
+                                @{
+                                    var latestPosts = (ViewBag.FeaturedContents as List<ilterisg.Models.FeaturedContent>)?.Where(fc => fc.Section == "LatestPosts").OrderBy(fc => fc.DisplayOrder).ToList() ?? new List<ilterisg.Models.FeaturedContent>();
+                                    foreach (var item in latestPosts)
+                                    {
+                                        <div class="featured-item" data-id="@item.BlogPostId" data-section="LatestPosts">
+                                            <select class="form-select post-select">
+                                                <option value="@item.BlogPostId" selected>@item.BlogPost.Title</option>
+                                                @foreach (var post in ViewBag.BlogPosts as List<dynamic> ?? new List<dynamic>())
+                                                {
+                                                    if (post.Id != item.BlogPostId)
+                                                    {
+                                                        <option value="@post.Id">@post.Title</option>
+                                                    }
+                                                }
+                                            </select>
+                                            <input type="number" class="form-control display-order" value="@item.DisplayOrder" min="1" />
+                                            <button class="btn btn-danger btn-sm remove-item"><i class="fas fa-trash"></i></button>
+                                        </div>
+                                    }
+                                }
+                            </div>
+                            <button class="btn btn-primary btn-sm mt-2 add-featured-item" data-section="LatestPosts">@Localizer["Add"]</button>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="featured-section">
+                            <h6>@Localizer["RecommendedPosts"]</h6>
+                            <div id="recommended-posts">
+                                @{
+                                    var recommendedPosts = (ViewBag.FeaturedContents as List<ilterisg.Models.FeaturedContent>)?.Where(fc => fc.Section == "RecommendedPosts").OrderBy(fc => fc.DisplayOrder).ToList() ?? new List<ilterisg.Models.FeaturedContent>();
+                                    foreach (var item in recommendedPosts)
+                                    {
+                                        <div class="featured-item" data-id="@item.BlogPostId" data-section="RecommendedPosts">
+                                            <select class="form-select post-select">
+                                                <option value="@item.BlogPostId" selected>@item.BlogPost.Title</option>
+                                                @foreach (var post in ViewBag.BlogPosts as List<dynamic> ?? new List<dynamic>())
+                                                {
+                                                    if (post.Id != item.BlogPostId)
+                                                    {
+                                                        <option value="@post.Id">@post.Title</option>
+                                                    }
+                                                }
+                                            </select>
+                                            <input type="number" class="form-control display-order" value="@item.DisplayOrder" min="1" />
+                                            <button class="btn btn-danger btn-sm remove-item"><i class="fas fa-trash"></i></button>
+                                        </div>
+                                    }
+                                }
+                            </div>
+                            <button class="btn btn-primary btn-sm mt-2 add-featured-item" data-section="RecommendedPosts">@Localizer["Add"]</button>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="featured-section">
+                            <h6>@Localizer["PopularTopics"]</h6>
+                            <div id="popular-posts">
+                                @{
+                                    var popularPosts = (ViewBag.FeaturedContents as List<ilterisg.Models.FeaturedContent>)?.Where(fc => fc.Section == "PopularPosts").OrderBy(fc => fc.DisplayOrder).ToList() ?? new List<ilterisg.Models.FeaturedContent>();
+                                    foreach (var item in popularPosts)
+                                    {
+                                        <div class="featured-item" data-id="@item.BlogPostId" data-section="PopularPosts">
+                                            <select class="form-select post-select">
+                                                <option value="@item.BlogPostId" selected>@item.BlogPost.Title</option>
+                                                @foreach (var post in ViewBag.BlogPosts as List<dynamic> ?? new List<dynamic>())
+                                                {
+                                                    if (post.Id != item.BlogPostId)
+                                                    {
+                                                        <option value="@post.Id">@post.Title</option>
+                                                    }
+                                                }
+                                            </select>
+                                            <input type="number" class="form-control display-order" value="@item.DisplayOrder" min="1" />
+                                            <button class="btn btn-danger btn-sm remove-item"><i class="fas fa-trash"></i></button>
+                                        </div>
+                                    }
+                                }
+                            </div>
+                            <button class="btn btn-primary btn-sm mt-2 add-featured-item" data-section="PopularPosts">@Localizer["Add"]</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // Görünüm değiştirme
+        function toggleView(view) {
+            const listView = document.querySelector('.list-view-content');
+            const gridView = document.querySelector('.grid-view-content');
+            const listButton = document.querySelector('.list-view');
+            const gridButton = document.querySelector('.grid-view');
+
+            if (view === 'list') {
+                listView.classList.remove('d-none');
+                gridView.classList.add('d-none');
+                listButton.classList.add('active');
+                gridButton.classList.remove('active');
+            } else {
+                listView.classList.add('d-none');
+                gridView.classList.remove('d-none');
+                listButton.classList.remove('active');
+                gridButton.classList.add('active');
+            }
+        }
+
+        // Bootstrap tooltip başlatma
+        document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(element => {
+            new bootstrap.Tooltip(element, {
+                placement: 'top',
+                boundary: 'window'
+            });
+        });
+
+        // Blog yazıları verisini JavaScript'e aktar
+        const blogPosts = @Html.Raw(Json.Serialize(ViewBag.BlogPosts));
+        const requestVerificationToken = document.querySelector('input[name="__RequestVerificationToken"]')?.value ?? '';
+        console.log('Blog yazıları verisi:', blogPosts);
+
+        // Öne Çıkanlar Yönetimi Script'leri
+        document.querySelectorAll('.add-featured-item').forEach(button => {
+            button.addEventListener('click', function () {
+                const section = this.getAttribute('data-section');
+                // section değerini (LatestPosts, RecommendedPosts, PopularPosts) uygun ID formatına çevir
+                const sectionIdMap = {
+                    'LatestPosts': 'latest-posts',
+                    'RecommendedPosts': 'recommended-posts',
+                    'PopularPosts': 'popular-posts'
+                };
+                const containerId = sectionIdMap[section];
+                const container = document.getElementById(containerId);
+                console.log('Ekle butonuna basıldı, section:', section, 'containerId:', containerId);
+
+                if (!container) {
+                    console.error('Container bulunamadı, ID:', containerId);
+                    Swal.fire('@Localizer["Error"]', '@Localizer["ContainerNotFoundError"]', 'error');
+                    return;
+                }
+
+                if (!blogPosts || blogPosts.length === 0) {
+                    console.error('Blog yazıları verisi bulunamadı:', blogPosts);
+                    Swal.fire('@Localizer["Error"]', '@Localizer["NoBlogPostsError"]', 'error');
+                    return;
+                }
+
+                const newItem = document.createElement('div');
+                newItem.className = 'featured-item';
+                newItem.setAttribute('data-section', section);
+
+                // Select elementini oluştur
+                let selectOptions = '';
+                blogPosts.forEach(post => {
+                    // Hata ayıklama: post nesnesinin yapısını logla
+                    console.log('Post nesnesi:', post);
+                    // blogPosts verisi { id, title } şeklinde (istemci tarafında küçük harf)
+                    if (post && typeof post.id !== 'undefined' && post.title) {
+                        selectOptions += `<option value="${post.id}">${post.title}</option>`;
+                    } else {
+                        console.error('Geçersiz post nesnesi:', post);
+                    }
+                });
+
+                if (!selectOptions) {
+                    console.error('Select seçenekleri oluşturulamadı, blogPosts verisi geçersiz.');
+                    Swal.fire('@Localizer["Error"]', '@Localizer["InvalidBlogPostsError"]', 'error');
+                    return;
+                }
+
+                newItem.innerHTML = `
+                    <select class="form-select post-select">
+                        ${selectOptions}
+                    </select>
+                    <input type="number" class="form-control display-order" value="1" min="1" />
+                    <button class="btn btn-danger btn-sm remove-item"><i class="fas fa-trash"></i></button>
+                `;
+                container.appendChild(newItem);
+                console.log('Yeni öğe eklendi:', newItem);
+
+                bindFeaturedItemEvents(newItem);
+            });
+        });
+
+        function bindFeaturedItemEvents(item) {
+            if (!item) {
+                console.error('Geçersiz item: item null veya undefined.');
+                return;
+            }
+
+            const section = item.getAttribute('data-section');
+            const select = item.querySelector('.post-select');
+            const orderInput = item.querySelector('.display-order');
+            const removeButton = item.querySelector('.remove-item');
+
+            console.log('bindFeaturedItemEvents çağrıldı:', { item, section, select, orderInput, removeButton });
+
+            if (!select || !orderInput || !removeButton) {
+                console.error('Geçersiz elementler:', { select, orderInput, removeButton });
+                return;
+            }
+
+            // Olay dinleyicilerini bağla
+            select.addEventListener('change', () => {
+                console.log('Select değişti, updateFeaturedContent çağrılacak.');
+                updateFeaturedContent(item);
+            });
+            orderInput.addEventListener('change', () => {
+                console.log('OrderInput değişti, updateFeaturedContent çağrılacak.');
+                updateFeaturedContent(item);
+            });
+            removeButton.addEventListener('click', () => {
+                const postId = item.getAttribute('data-id');
+                console.log('Silme işlemi, section:', section, 'postId:', postId);
+
+                if (postId) {
+                    fetch('@Url.Action("RemoveFeaturedContent", "Blog")', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'RequestVerificationToken': requestVerificationToken
+                        },
+                        body: JSON.stringify({ section: section, blogPostId: parseInt(postId) })
+                    })
+                        .then(response => {
+                            console.log('Silme isteği durumu:', response.status, response.statusText);
+                            if (!response.ok) {
+                                throw new Error('Silme işlemi başarısız: ' + response.statusText);
+                            }
+                            return response.json();
+                        })
+                        .then(result => {
+                            console.log('Silme işlemi sonucu:', result);
+                            if (result.success) {
+                                item.remove();
+                                Swal.fire('@Localizer["Success"]', '@Localizer["FeaturedContentRemoved"]', 'success');
+                            } else {
+                                Swal.fire('@Localizer["Error"]', result.message || '@Localizer["DeleteFailed"]', 'error');
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Silme işlemi sırasında hata:', error);
+                            Swal.fire('@Localizer["Error"]', '@Localizer["DeleteError"]' + error.message, 'error');
+                        });
+                } else {
+                    item.remove();
+                    console.log('Yeni eklenen öğe kaldırıldı (veritabanına kaydedilmemişti).');
+                }
+            });
+        }
+
+        function updateFeaturedContent(item) {
+            if (!item) {
+                console.error('Geçersiz item: item null veya undefined.');
+                Swal.fire('@Localizer["Error"]', '@Localizer["InvalidItemError"]', 'error');
+                return;
+            }
+
+            const section = item.getAttribute('data-section');
+            const select = item.querySelector('.post-select');
+            const orderInput = item.querySelector('.display-order');
+
+            console.log('updateFeaturedContent çağrıldı:', { item, section, select, orderInput });
+
+            if (!section) {
+                console.error('Geçersiz section: section null veya undefined.');
+                Swal.fire('@Localizer["Error"]', '@Localizer["SectionNotFoundError"]', 'error');
+                return;
+            }
+
+            if (!select || !orderInput) {
+                console.error('Geçersiz elementler: select veya orderInput bulunamadı.', { select, orderInput });
+                Swal.fire('@Localizer["Error"]', '@Localizer["InvalidElementsError"]', 'error');
+                return;
+            }
+
+            const blogPostIdRaw = select.value;
+            const displayOrderRaw = orderInput.value;
+
+            console.log('Değerler alındı:', { blogPostIdRaw, displayOrderRaw });
+
+            const blogPostId = parseInt(blogPostIdRaw);
+            const displayOrder = parseInt(displayOrderRaw);
+
+            if (isNaN(blogPostId) || blogPostId <= 0) {
+                console.error('Geçersiz blogPostId:', blogPostIdRaw);
+                Swal.fire('@Localizer["Error"]', '@Localizer["InvalidBlogPostError"]', 'error');
+                return;
+            }
+
+            if (isNaN(displayOrder) || displayOrder < 1) {
+                console.error('Geçersiz displayOrder:', displayOrderRaw);
+                Swal.fire('@Localizer["Error"]', '@Localizer["InvalidOrderError"]', 'error');
+                return;
+            }
+
+            console.log('Güncelleme işlemi, section:', section, 'blogPostId:', blogPostId, 'displayOrder:', displayOrder);
+
+            fetch('@Url.Action("UpdateFeaturedContent", "Blog")', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'RequestVerificationToken': requestVerificationToken
+                },
+                body: JSON.stringify({ section: section, blogPostId: blogPostId, displayOrder: displayOrder })
+            })
+                .then(response => {
+                    console.log('Güncelleme isteği durumu:', response.status, response.statusText);
+                    if (!response.ok) {
+                        throw new Error('Güncelleme işlemi başarısız: ' + response.statusText);
+                    }
+                    return response.json();
+                })
+                .then(result => {
+                    console.log('Güncelleme işlemi sonucu:', result);
+                    if (result.success) {
+                        item.setAttribute('data-id', blogPostId);
+                        Swal.fire('@Localizer["Success"]', '@Localizer["FeaturedContentUpdated"]', 'success');
+                    } else {
+                        Swal.fire('@Localizer["Error"]', '@Localizer["UpdateFailed"]' + (result.message || ''), 'error');
+                    }
+                })
+                .catch(error => {
+                    console.error('Güncelleme işlemi sırasında hata:', error);
+                    Swal.fire('@Localizer["Error"]', '@Localizer["UpdateError"]' + error.message, 'error');
+                });
+        }
+
+        document.querySelectorAll('.featured-item').forEach(item => {
+            console.log('Sayfa yüklendiğinde bindFeaturedItemEvents çağrılıyor:', item);
+            bindFeaturedItemEvents(item);
+        });
+    </script>
+}
+

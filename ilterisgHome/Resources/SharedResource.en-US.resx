@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <data name="About" xml:space="preserve">
     <value>About Us</value>
@@ -661,7 +661,7 @@
     <value>slidebg1</value>
   </data>
   <data name="Slide1Title" xml:space="preserve">
-    <value>Slide1Title</value>
+    <value>Safe Work Environments with OHS Expertise</value>
   </data>
   <data name="Slide2Alt" xml:space="preserve">
     <value>Occupational Safety Expertise Image</value>
@@ -670,7 +670,7 @@
     <value>Safe Work Environments with OHS Expertise</value>
   </data>
   <data name="Slide2Title" xml:space="preserve">
-    <value>Slide2Title</value>
+    <value>Safe Work Environments with OHS Expertise</value>
   </data>
   <data name="SpecialCasesContact" xml:space="preserve">
     <value>Special Cases and Contact</value>
@@ -1010,5 +1010,83 @@
   </data>
   <data name="YourName" xml:space="preserve">
     <value>Your Name</value>
+  </data>
+  <data name="EditorAccountCreated" xml:space="preserve">
+    <value>Editor account has been created.</value>
+  </data>
+  <data name="CompleteProfile" xml:space="preserve">
+    <value>Complete Profile</value>
+  </data>
+  <data name="UserAlreadyExists" xml:space="preserve">
+    <value>A user with this email already exists.</value>
+  </data>
+  <data name="SignIn" xml:space="preserve">
+    <value>Sign In</value>
+  </data>
+  <data name="SaveAndContinue" xml:space="preserve">
+    <value>Save and Continue</value>
+  </data>
+  <data name="RegisterEditorHeading" xml:space="preserve">
+    <value>Create New Editor</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>First Name</value>
+  </data>
+  <data name="AccountLockedOut" xml:space="preserve">
+    <value>Your account is locked. Please try again later.</value>
+  </data>
+  <data name="AccessDenied" xml:space="preserve">
+    <value>Access Denied</value>
+  </data>
+  <data name="CreateEditor" xml:space="preserve">
+    <value>Create Editor</value>
+  </data>
+  <data name="ReturnToHome" xml:space="preserve">
+    <value>Return to Home</value>
+  </data>
+  <data name="RegisterEditorTitle" xml:space="preserve">
+    <value>Editor Registration</value>
+  </data>
+  <data name="EditorAdminLogin" xml:space="preserve">
+    <value>Editor/Admin Login</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Confirm Password</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Remember me</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Last Name</value>
+  </data>
+  <data name="CompleteProfileDescription" xml:space="preserve">
+    <value>Complete your first and last name information to manage the blog.</value>
+  </data>
+  <data name="AccessDeniedMessage" xml:space="preserve">
+    <value>You do not have permission to access this page.</value>
+  </data>
+  <data name="InvalidEmailOrPassword" xml:space="preserve">
+    <value>Email or password is incorrect.</value>
+  </data>
+  <data name="Account" xml:space="preserve">
+    <value>Account</value>
+  </data>
+  <data name="Management" xml:space="preserve">
+    <value>Management</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="AddEditor" xml:space="preserve">
+    <value>Add Editor</value>
+  </data>
+  <data name="BlogMenuTitle" xml:space="preserve">
+    <value>Blog Menu</value>
+  </data>
+  <data name="BlogLayoutAdd" xml:space="preserve">
+    <value>Add Blog Layout</value>
   </data>
 </root>

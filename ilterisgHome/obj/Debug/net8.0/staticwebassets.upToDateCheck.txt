@@ -4356,6 +4356,7 @@ wwwroot\templates\osgbpersonel.xlsm
 wwwroot\templates\personel.xlsx
 wwwroot\uploads\31_20251114114118_b691980c_asdasfd.jpg
 wwwroot\uploads\32_WhatsApp Görsel 2025-11-14 saat 10.58.33_64620081.jpg
+wwwroot\uploads\6029655395b342689a7856ad4ba2aaa5.png
 wwwroot\uploads\benim_firma_1\egitim_materyalleri\egitim_1\EgitimDokumanlari\20251110171606_692f181e_20251110160427_689b1910_10.11.2025 Tarihli Dekont.pdf
 wwwroot\uploads\benim_firma_1\egitim_materyalleri\egitim_1\EgitimDokumanlari\20251110171618_6d45de2d_10.11.2025 Tarihli Eğitim Dokümanları.pdf
 wwwroot\uploads\benim_firma_1\egitim_materyalleri\egitim_1\EgitimDokumanlari\20251110171627_dbd5cf25_kafalik5.png

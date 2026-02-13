@@ -1,0 +1,796 @@
+﻿@model IEnumerable<ilterisg.Models.BlogPost>
+@inject Microsoft.Extensions.Localization.IStringLocalizer<SharedResource> Localizer
+@{
+    Layout = "~/Views/Shared/_BlogLayout.cshtml";
+    ViewData["Title"] = Localizer["BlogHomePage"]; // "Blog Anasayfa" localize edildi
+
+    var featured = Model.FirstOrDefault();
+    var others = Model.Skip(0).ToList();
+    var popularPosts = ViewBag.PopularPosts as List<ilterisg.Models.BlogPost> ?? new List<ilterisg.Models.BlogPost>();
+    var latestPosts = ViewBag.LatestPosts as List<ilterisg.Models.BlogPost> ?? new List<ilterisg.Models.BlogPost>();
+    var recommendedPosts = ViewBag.RecommendedPosts as List<ilterisg.Models.BlogPost> ?? new List<ilterisg.Models.BlogPost>();
+
+    string StripHtmlAndMedia(string html)
+    {
+        if (string.IsNullOrEmpty(html)) return "";
+        var noMedia = System.Text.RegularExpressions.Regex.Replace(html, @"<iframe.*?</iframe>|<video.*?</video>|<img.*?>", "");
+        var noHtml = System.Text.RegularExpressions.Regex.Replace(noMedia, "<.*?>", "");
+        var noEntities = System.Text.RegularExpressions.Regex.Replace(noHtml, @"&[a-zA-Z0-9#]+;", "");
+        var noDate = System.Text.RegularExpressions.Regex.Replace(noEntities, @"\d{2}\.\d{2}\.\d{4}\s+\d{2}:\d{2}", "");
+        return noDate.Length > 200 ? noDate.Substring(0, 200).Trim() + "..." : noDate.Trim();
+    }
+}
+
+@section Styles {
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <style>
+        :root {
+            --primary: #2A9D8F;
+            --background: #F5F7FA;
+            --card-bg: #2C3333;
+            --text-light: #E0E0E0;
+            --text-dark: #1A2526;
+            --accent: #E9C46A;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background);
+            color: var(--text-dark);
+        }
+
+        .container {
+            max-width: 1200px;
+        }
+
+        .featured-slider {
+            position: relative;
+            margin-bottom: 40px;
+            min-height: auto; /* Sabit yükseklik kaldırıldı */
+            opacity: 0; /* Yüklenene kadar gizli */
+            transition: opacity 0.3s ease;
+        }
+
+            .featured-slider.slick-initialized {
+                opacity: 1; /* Slick yüklendiğinde görünür */
+            }
+
+            .featured-slider .slick-slide {
+                padding: 10px;
+            }
+
+        .featured-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 25px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+            .featured-card:hover {
+                transform: scale(1.02);
+                box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+            }
+
+            .featured-card img {
+                width: 100%;
+                height: auto; /* Height auto, tam resim gösterimi */
+                display: block;
+                border-radius: 25px 25px 0 0;
+                object-fit: cover; /* Kırpma ile doldurma, ama height auto ile beraber çalışmayabilir, test et */
+                object-position: center; /* Ortala */
+            }
+
+            .featured-card .card-img-overlay {
+                background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent 60%);
+                padding: 40px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                position: absolute; /* Overlay için */
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: auto; /* Overlay height auto */
+            }
+
+            .featured-card h3 {
+                font-size: 2.8rem;
+                font-weight: 800;
+                color: #ffffff;
+                text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+                line-height: 1.2;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                max-width: 100%;
+            }
+
+            .featured-card p {
+                font-size: 1.15rem;
+                color: #ffffff;
+                text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+                margin-bottom: 25px;
+                line-height: 1.6;
+            }
+
+            .featured-card .btn-continue {
+                background-color: var(--primary);
+                color: #fff;
+                font-weight: 600;
+                padding: 12px 28px;
+                border-radius: 50px;
+                border: none;
+                transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+                touch-action: manipulation;
+            }
+
+                .featured-card .btn-continue:hover {
+                    background-color: #264653;
+                    transform: translateY(-3px);
+                    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+                }
+
+        .slick-prev, .slick-next {
+            font-size: 0;
+            line-height: 0;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            display: block;
+            width: 40px;
+            height: 40px;
+            padding: 0;
+            cursor: pointer;
+            color: transparent;
+            border: none;
+            outline: none;
+            background: var(--primary);
+            border-radius: 50%;
+            z-index: 1;
+            transition: background-color 0.3s ease;
+        }
+
+            .slick-prev:hover, .slick-next:hover {
+                background: #264653;
+            }
+
+            .slick-prev:before, .slick-next:before {
+                font-family: 'Font Awesome 5 Free';
+                font-weight: 900;
+                font-size: 20px;
+                color: #fff;
+            }
+
+            .slick-prev:before {
+                content: '\f053';
+            }
+
+            .slick-next:before {
+                content: '\f054';
+            }
+
+        .slick-prev {
+            left: 10px;
+        }
+
+        .slick-next {
+            right: 10px;
+        }
+
+        .slick-dots {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+            .slick-dots li {
+                display: inline-block;
+                margin: 0 5px;
+            }
+
+                .slick-dots li button {
+                    font-size: 0;
+                    line-height: 0;
+                    display: block;
+                    width: 10px;
+                    height: 10px;
+                    padding: 0;
+                    cursor: pointer;
+                    border: 0;
+                    outline: none;
+                    background: #ccc;
+                    border-radius: 50%;
+                    transition: background-color 0.3s ease;
+                }
+
+                .slick-dots li.slick-active button {
+                    background: var(--primary);
+                }
+
+        .blog-post-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            opacity: 0; /* Başlangıçta görünmez, AOS yüklendiğinde görünür */
+        }
+
+            .blog-post-card.aos-animate {
+                opacity: 1; /* Animasyon tamamlandığında görünür */
+            }
+
+            .blog-post-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+            }
+
+            .blog-post-card img {
+                width: 100%;
+                height: auto; /* Height auto, tam gösterim */
+                object-fit: cover; /* Kırpma ile doldurma */
+                object-position: center; /* Ortala */
+                border-bottom: 4px solid var(--primary);
+                transition: opacity 0.3s ease;
+                display: block;
+            }
+
+            .blog-post-card:hover img {
+                opacity: 0.9;
+            }
+
+            .blog-post-card .card-body {
+                padding: 25px;
+            }
+
+            .blog-post-card h5 {
+                font-size: 1.6rem;
+                font-weight: 700;
+                color: var(--text-light);
+                margin-bottom: 10px;
+            }
+
+            .blog-post-card small {
+                font-size: 0.9rem;
+                color: #a0a0a0;
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            .blog-post-card p {
+                font-size: 1rem;
+                color: #b0b0b0;
+                margin-bottom: 20px;
+                line-height: 1.6;
+            }
+
+            .blog-post-card .btn-continue {
+                background-color: var(--primary);
+                color: #fff;
+                font-weight: 600;
+                padding: 10px 20px;
+                border-radius: 50px;
+                border: none;
+                transition: background-color 0.3s ease, transform 0.2s ease;
+                touch-action: manipulation;
+            }
+
+                .blog-post-card .btn-continue:hover {
+                    background-color: #264653;
+                    transform: translateY(-2px);
+                }
+
+        .sidebar {
+            position: sticky;
+            top: 20px;
+        }
+
+            .sidebar h5 {
+                font-weight: 700;
+                font-size: 1.3rem;
+                color: var(--text-dark);
+                margin-bottom: 20px;
+                position: relative;
+                padding-left: 15px;
+            }
+
+                .sidebar h5::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 5px;
+                    height: 20px;
+                    background-color: var(--primary);
+                    border-radius: 3px;
+                }
+
+            .sidebar .list-group-item {
+                background: var(--card-bg);
+                border: none;
+                border-radius: 12px;
+                margin-bottom: 15px;
+                padding: 15px;
+                color: var(--text-light);
+                transition: background-color 0.3s ease, transform 0.3s ease;
+                display: flex;
+                align-items: center;
+            }
+
+                .sidebar .list-group-item:hover {
+                    background-color: #363d3d;
+                    transform: translateY(-3px);
+                }
+
+                .sidebar .list-group-item a {
+                    color: var(--text-light);
+                    text-decoration: none;
+                    font-weight: 500;
+                    flex-grow: 1;
+                    font-size: 1rem;
+                }
+
+                    .sidebar .list-group-item a:hover {
+                        color: var(--primary);
+                    }
+
+                .sidebar .list-group-item img {
+                    width: 60px;
+                    height: auto; /* Sidebar thumbnail height auto */
+                    object-fit: cover;
+                    object-position: center;
+                    border-radius: 5px;
+                    margin-right: 15px;
+                }
+
+            .sidebar .badge {
+                background-color: var(--primary);
+                color: #fff;
+                font-weight: 600;
+                padding: 5px 10px;
+                border-radius: 20px;
+            }
+
+            .sidebar .social-buttons {
+                display: flex;
+                gap: 15px;
+            }
+
+                .sidebar .social-buttons .btn {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    background: var(--card-bg);
+                    color: var(--text-light);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                    touch-action: manipulation;
+                }
+
+                    .sidebar .social-buttons .btn:hover {
+                        background-color: var(--primary);
+                        color: #fff;
+                        transform: scale(1.1);
+                        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+                    }
+
+        @@media (max-width: 992px) {
+            .featured-slider {
+                min-height: auto;
+            }
+
+            .featured-card img {
+                height: auto;
+            }
+
+            .featured-card h3 {
+                font-size: 2rem;
+            }
+
+            .featured-card p {
+                font-size: 1rem;
+            }
+
+            .featured-card .card-img-overlay {
+                padding: 20px;
+            }
+
+            .featured-card .btn-continue {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+
+            .blog-post-card img {
+                height: auto;
+            }
+
+            .blog-post-card h5 {
+                font-size: 1.3rem;
+            }
+
+            .blog-post-card .card-body {
+                padding: 20px;
+            }
+
+            .blog-post-card .btn-continue {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+
+            .sidebar {
+                margin-top: 40px;
+                position: static;
+            }
+
+                .sidebar .list-group-item img {
+                    width: 50px;
+                    height: auto;
+                }
+
+                .sidebar .social-buttons .btn {
+                    width: 45px;
+                    height: 45px;
+                }
+        }
+
+        @@media (max-width: 576px) {
+            .container {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+                .container.py-2 {
+                    padding-top: 0.5rem;
+                    padding-bottom: 0.5rem;
+                }
+
+            .mx-auto {
+                padding-top: 10px;
+                padding-bottom: 20px;
+            }
+
+            .featured-slider {
+                margin-bottom: 20px;
+                min-height: auto;
+            }
+
+            .featured-card {
+                border-radius: 15px;
+            }
+
+                .featured-card img {
+                    height: auto;
+                }
+
+                .featured-card .card-img-overlay {
+                    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent 60%);
+                    padding: 15px;
+                }
+
+                .featured-card h3 {
+                    font-size: 1.5rem;
+                    line-height: 1.3;
+                    white-space: normal;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                }
+
+                .featured-card p {
+                    font-size: 0.85rem;
+                    color: #ffffff;
+                    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+                    margin-bottom: 15px;
+                    line-height: 1.4;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                }
+
+                .featured-card .btn-continue {
+                    padding: 8px 16px;
+                    font-size: 0.85rem;
+                }
+
+            .slick-prev, .slick-next {
+                width: 30px;
+                height: 30px;
+            }
+
+                .slick-prev:before, .slick-next:before {
+                    font-size: 16px;
+                }
+
+            .slick-dots li button {
+                width: 8px;
+                height: 8px;
+            }
+
+            .blog-post-card {
+                border-radius: 15px;
+                margin-bottom: 15px;
+            }
+
+                .blog-post-card img {
+                    height: auto;
+                }
+
+                .blog-post-card h5 {
+                    font-size: 1.1rem;
+                }
+
+                .blog-post-card p {
+                    font-size: 0.9rem;
+                }
+
+                .blog-post-card .card-body {
+                    padding: 15px;
+                }
+
+                .blog-post-card .btn-continue {
+                    padding: 7px 14px;
+                    font-size: 0.85rem;
+                }
+
+            .sidebar h5 {
+                font-size: 1.1rem;
+                margin-bottom: 15px;
+            }
+
+            .sidebar .list-group-item {
+                padding: 12px;
+                font-size: 0.9rem;
+            }
+
+                .sidebar .list-group-item img {
+                    width: 45px;
+                    height: auto;
+                }
+
+            .sidebar .badge {
+                padding: 4px 8px;
+                font-size: 0.8rem;
+            }
+
+            .sidebar .social-buttons {
+                gap: 10px;
+            }
+
+                .sidebar .social-buttons .btn {
+                    width: 40px;
+                    height: 40px;
+                }
+        }
+
+        @@media (max-width: 360px) {
+            .featured-slider {
+                min-height: auto;
+            }
+
+            .featured-card img {
+                height: auto;
+            }
+
+            .featured-card h3 {
+                font-size: 1.3rem;
+                -webkit-line-clamp: 2;
+            }
+
+            .featured-card p {
+                font-size: 0.8rem;
+                -webkit-line-clamp: 2;
+            }
+
+            .blog-post-card img {
+                height: auto;
+            }
+
+            .blog-post-card h5 {
+                font-size: 1rem;
+            }
+
+            .blog-post-card p {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+}
+
+<div class="mx-auto" style="padding-top:20px; padding-bottom:30px;">
+    <div class="container py-2">
+        <div class="row">
+            <!-- Sol Alan -->
+            <div class="col-lg-9">
+                <!-- Öne Çıkan Yazılar Slider -->
+                @if (popularPosts.Any())
+                {
+                    <div class="featured-slider">
+                        @foreach (var post in popularPosts)
+                        {
+                            <div class="featured-card">
+                                <div class="card bg-dark text-white">
+                                    <img src="@post.ImageUrl" class="card-img" alt="@post.Title" />
+                                    <div class="card-img-overlay">
+                                        <h3 class="card-title">@post.Title</h3>
+                                        <p class="card-text">@StripHtmlAndMedia(post.Content)</p>
+                                        <a asp-action="Details" asp-route-id="@post.Id" asp-route-slug="@post.Slug" class="btn btn-continue">@Localizer["ReadMore"]</a>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
+
+                <!-- Yayın Akışı -->
+                <div>
+                    <h4 class="mb-4" data-aos="fade-right" data-aos-delay="0">@Localizer["PostStream"]</h4>
+                    @if (!others.Any())
+                    {
+                        <p class="text-muted">@Localizer["NoBlogPostsYet"]</p>
+                    }
+                    else
+                    {
+                        var postIndex = 0;
+                        @foreach (var post in others)
+                        {
+                            var aosClass = postIndex < 2 ? "blog-post-card initial-post" : "blog-post-card";
+                            var aosDelay = postIndex < 2 ? (postIndex * 100).ToString() : "50";
+                            var aosOffset = postIndex < 2 ? "0" : "50";
+                            <div class="@aosClass" data-aos="fade-up" data-aos-delay="@aosDelay" data-aos-offset="@aosOffset">
+                                <img src="@post.ImageUrl" alt="@post.Title" />
+                                <div class="card-body">
+                                    <h5 class="mt-0">@post.Title</h5>
+                                    <small class="text-muted">@post.CreatedAt.ToString("dd MMMM yyyy")</small>
+                                    <p>@StripHtmlAndMedia(post.Content)</p>
+                                    <a asp-action="Details" asp-route-id="@post.Id" asp-route-slug="@post.Slug" class="btn btn-continue">@Localizer["ReadMore"]</a>
+                                </div>
+                            </div>
+                            postIndex++;
+                        }
+                    }
+                </div>
+            </div>
+
+            <!-- Sağ Alan -->
+            <div class="col-lg-3 sidebar">
+                <!-- Son Yazılar -->
+                <div class="mb-5" data-aos="fade-left" data-aos-delay="50">
+                    <h5>@Localizer["LatestPosts"]</h5>
+                    <ul class="list-group">
+                        @foreach (var post in latestPosts)
+                        {
+                            <li class="list-group-item">
+                                @if (!string.IsNullOrEmpty(post.ImageUrl))
+                                {
+                                    <img src="@post.ImageUrl" alt="@post.Title" />
+                                }
+                                <a asp-action="Details" asp-route-id="@post.Id" asp-route-slug="@post.Slug">@post.Title</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+
+                <!-- Şunlara Göz Atın -->
+                <div class="mb-5" data-aos="fade-left" data-aos-delay="100">
+                    <h5>@Localizer["RecommendedPosts"]</h5>
+                    <ul class="list-group">
+                        @foreach (var post in recommendedPosts)
+                        {
+                            <li class="list-group-item">
+                                @if (!string.IsNullOrEmpty(post.ImageUrl))
+                                {
+                                    <img src="@post.ImageUrl" alt="@post.Title" />
+                                }
+                                <a asp-action="Details" asp-route-id="@post.Id" asp-route-slug="@post.Slug">@post.Title</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+
+                <!-- Popüler Konular -->
+                <div class="mb-5" data-aos="fade-left" data-aos-delay="150">
+                    <h5>@Localizer["PopularTopics"]</h5>
+                    <ul class="list-group">
+                        @foreach (var post in popularPosts)
+                        {
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <a asp-action="Details" asp-route-id="@post.Id" asp-route-slug="@post.Slug">@post.Title</a>
+                                <span class="badge rounded-pill">@post.ViewCount</span>
+                            </li>
+                        }
+                    </ul>
+                </div>
+
+                <!-- Sosyal Medya -->
+                <div data-aos="fade-left" data-aos-delay="200">
+                    <h5>@Localizer["FollowUs"]</h5>
+                    <div class="social-buttons">
+                        <a href="#" class="btn"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="btn"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="btn"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="btn"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        AOS.init({
+            duration: 600, // Animasyon süresini kısalttık, daha hızlı
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 50 // Daha erken tetikleme için offset düşürüldü
+        });
+
+        $(document).ready(function () {
+            // Slider için resim yükleme kontrolü
+            const images = $('.featured-slider img');
+            let imagesLoaded = 0;
+
+            function initSlider() {
+                $('.featured-slider').slick({
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 5000,
+                    arrows: true,
+                    dots: true,
+                    fade: false,
+                    cssEase: 'ease-in-out',
+                    speed: 600,
+                    prevArrow: '<button type="button" class="slick-prev"></button>',
+                    nextArrow: '<button type="button" class="slick-next"></button>',
+                    infinite: true,
+                    pauseOnHover: true,
+                    responsive: [
+                        {
+                            breakpoint: 576,
+                            settings: {
+                                arrows: false,
+                                dots: true,
+                                speed: 400
+                            }
+                        }
+                    ]
+                });
+            }
+
+            if (images.length === 0) {
+                initSlider();
+            } else {
+                images.each(function () {
+                    const img = new Image();
+                    img.src = $(this).attr('src');
+                    img.onload = img.onerror = function () {
+                        imagesLoaded++;
+                        if (imagesLoaded === images.length) {
+                            initSlider();
+                            AOS.refresh(); // Slider yüklendiğinde AOS'u yenile
+                        }
+                    };
+                });
+            }
+
+            console.log('Slider başlatıldı. popularPosts sayısı: ' + @(popularPosts.Count));
+        });
+    </script>
+}
+
+

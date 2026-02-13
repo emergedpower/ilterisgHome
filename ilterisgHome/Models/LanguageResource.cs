@@ -11,15 +11,15 @@ namespace ilterisg.Models
 
         [Required]
         [StringLength(200)]
-        public string ResourceKey { get; set; }
+        public string ResourceKey { get; set; } = string.Empty;
 
         [Required]
         [StringLength(10)]
-        public string LanguageCode { get; set; }
+        public string LanguageCode { get; set; } = string.Empty;
 
         [Required]
         [StringLength(1000)]
-        public string Value { get; set; }
+        public string Value { get; set; } = string.Empty;
 
         public DateTime LastUpdated { get; set; } = DateTime.UtcNow;
     }

@@ -1,0 +1,458 @@
+﻿@model ilterisg.Models.BlogPost
+@inject Microsoft.Extensions.Localization.IStringLocalizer<SharedResource> Localizer
+@{
+    Layout = "~/Views/Shared/_BlogLayout.cshtml";
+    ViewData["Title"] = Model.Title; // Model.Title zaten dinamik, localize edilmedi
+
+    var latestPosts = ViewBag.LatestPosts as List<ilterisg.Models.BlogPost> ?? new List<ilterisg.Models.BlogPost>();
+    var recommendedPosts = ViewBag.RecommendedPosts as List<ilterisg.Models.BlogPost> ?? new List<ilterisg.Models.BlogPost>();
+    var popularPosts = ViewBag.PopularPosts as List<ilterisg.Models.BlogPost> ?? new List<ilterisg.Models.BlogPost>();
+}
+
+@section Styles {
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- AOS for Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2A9D8F; /* Daha sofistike deniz mavisi */
+            --background: #F5F7FA; /* Hafif gri arka plan */
+            --card-bg: #2C3333; /* Daha yumuşak koyu gri */
+            --text-light: #E0E0E0; /* Açık metin rengi */
+            --text-dark: #1A2526; /* Koyu metin rengi */
+            --accent: #E9C46A; /* Sarımsı aksan rengi */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background);
+            color: var(--text-dark);
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            padding: 80px 15px;
+        }
+
+        /* Blog Detay (Güncellenmiş Tasarım) */
+        .post-header {
+            margin-bottom: 30px;
+        }
+
+            .post-header img {
+                width: 100%;
+                height: 400px;
+                object-fit: cover;
+                border-radius: 15px;
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+                margin-bottom: 20px;
+                transition: opacity 0.3s ease;
+            }
+
+            .post-header:hover img {
+                opacity: 0.9;
+            }
+
+            .post-header h1 {
+                font-size: 2.8rem;
+                font-weight: 800;
+                color: var(--text-dark);
+                line-height: 1.2;
+                margin-bottom: 15px;
+            }
+
+            .post-header .text-muted {
+                font-size: 0.95rem;
+                color: var(--text-dark);
+                opacity: 0.7;
+            }
+
+        .post-content {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 30px;
+        }
+
+            .post-content img,
+            .post-content iframe {
+                max-width: 100%;
+                border-radius: 10px;
+                margin: 15px 0;
+                display: block;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            }
+
+            /* Liste Stilleri */
+            .post-content ul {
+                list-style-type: disc !important; /* Madde işaretleri için disk şekli */
+                margin: 20px 0;
+                padding-left: 30px; /* Sol boşluk */
+            }
+
+                .post-content ul li {
+                    margin-bottom: 12px; /* Liste öğeleri arasında boşluk */
+                    line-height: 1.6; /* Satır yüksekliği */
+                }
+
+        .back-link {
+            color: var(--primary);
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+            .back-link:hover {
+                color: #264653;
+                transform: translateX(-5px);
+            }
+
+        /* Sidebar (Index.cshtml'den Güncellenmiş Tasarım) */
+        .sidebar {
+            position: sticky;
+            top: 20px;
+        }
+
+            .sidebar h5 {
+                font-weight: 700;
+                font-size: 1.3rem;
+                color: var(--text-dark);
+                margin-bottom: 20px;
+                position: relative;
+                padding-left: 15px;
+            }
+
+                .sidebar h5::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 5px;
+                    height: 20px;
+                    background-color: var(--primary);
+                    border-radius: 3px;
+                }
+
+            .sidebar .list-group-item {
+                background: var(--card-bg);
+                border: none;
+                border-radius: 12px;
+                margin-bottom: 15px;
+                padding: 15px;
+                color: var(--text-light);
+                transition: background-color 0.3s ease, transform 0.3s ease;
+                display: flex;
+                align-items: center;
+            }
+
+                .sidebar .list-group-item:hover {
+                    background-color: #363d3d;
+                    transform: translateY(-3px);
+                }
+
+                .sidebar .list-group-item a {
+                    color: var(--text-light);
+                    text-decoration: none;
+                    font-weight: 500;
+                    flex-grow: 1;
+                    font-size: 1rem;
+                }
+
+                    .sidebar .list-group-item a:hover {
+                        color: var(--primary);
+                    }
+
+                .sidebar .list-group-item img {
+                    width: 60px;
+                    height: 40px;
+                    object-fit: cover;
+                    border-radius: 5px;
+                    margin-right: 15px;
+                }
+
+            .sidebar .badge {
+                background-color: var(--primary);
+                color: #fff;
+                font-weight: 600;
+                padding: 5px 10px;
+                border-radius: 20px;
+            }
+
+            .sidebar .social-buttons {
+                display: flex;
+                gap: 15px;
+            }
+
+                .sidebar .social-buttons .btn {
+                    width: 45px;
+                    height: 45px;
+                    border-radius: 50%;
+                    background: var(--card-bg);
+                    color: var(--text-light);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                }
+
+                    .sidebar .social-buttons .btn:hover {
+                        background-color: var(--primary);
+                        color: #fff;
+                        transform: scale(1.1);
+                        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+                    }
+
+        /* Yorum Bölümü (Mevcut Tasarım Korundu) */
+        .comment-section {
+            margin-top: 50px;
+        }
+
+            .comment-section h5 {
+                font-weight: 700;
+                font-size: 1.3rem;
+                color: var(--text-dark);
+                margin-bottom: 20px;
+                position: relative;
+                padding-left: 15px;
+            }
+
+                .comment-section h5::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 5px;
+                    height: 20px;
+                    background-color: var(--primary);
+                    border-radius: 3px;
+                }
+
+        .comment-form {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+            .comment-form .form-control {
+                background: #3a3a3a;
+                border: none;
+                color: var(--text-light);
+                border-radius: 8px;
+                resize: vertical;
+            }
+
+                .comment-form .form-control:focus {
+                    background: #3a3a3a;
+                    color: var(--text-light);
+                    box-shadow: 0 0 5px rgba(0, 196, 180, 0.5);
+                }
+
+            .comment-form .btn {
+                background-color: var(--primary);
+                color: #fff;
+                font-weight: 600;
+                border-radius: 50px;
+                padding: 10px 20px;
+                border: none;
+                transition: background-color 0.3s ease, transform 0.2s ease;
+            }
+
+                .comment-form .btn:hover {
+                    background-color: #264653;
+                    transform: translateY(-2px);
+                }
+
+        .comment {
+            background: var(--card-bg);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+            .comment .author {
+                font-weight: 600;
+                color: var(--text-light);
+            }
+
+            .comment .date {
+                font-size: 0.85rem;
+                color: var(--text-muted);
+            }
+
+            .comment .text {
+                color: var(--text-light);
+                margin-top: 5px;
+            }
+
+        /* Responsive Adjustments */
+        @@media (max-width: 992px) {
+            .post-header img {
+                height: 300px;
+            }
+
+            .post-header h1 {
+                font-size: 2rem;
+            }
+
+            .sidebar {
+                position: static;
+                margin-top: 30px;
+            }
+        }
+
+        @@media (max-width: 576px) {
+            .post-header img {
+                height: 200px;
+            }
+
+            .post-header h1 {
+                font-size: 1.6rem;
+            }
+
+            .container {
+                padding: 40px 15px;
+            }
+        }
+    </style>
+}
+
+<div class="container">
+    <div class="row">
+        <!-- Main Content -->
+        <div class="col-lg-9">
+            <article data-aos="fade-up">
+                @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                {
+                    <div class="post-header">
+                        <img src="@Model.ImageUrl" alt="@Model.Title" />
+                    </div>
+                }
+                <div class="post-header">
+                    <h1>@Model.Title</h1>
+                    <p class="text-muted">@Model.CreatedAt.ToString("dd.MM.yyyy HH:mm")</p>
+                </div>
+                <div class="post-content">
+                    @Html.Raw(Model.Content)
+                </div>
+                <p data-aos="fade-up" data-aos-delay="200">
+                    <a asp-action="Index" class="back-link"><i class="fas fa-arrow-left"></i> @Localizer["Back"]</a>
+                </p>
+                <div class="comment-section" data-aos="fade-up" data-aos-delay="300">
+                    <h5>@Localizer["Comments"]</h5>
+                    <form id="comment-form" class="comment-form">
+                        <input type="hidden" name="PostId" value="@Model.Id" />
+                        <div class="mb-3">
+                            <label for="author" class="form-label">@Localizer["YourName"]</label>
+                            <input type="text" class="form-control" id="author" name="Author" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="text" class="form-label">@Localizer["YourComment"]</label>
+                            <textarea class="form-control" id="text" name="Text" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">@Localizer["SubmitComment"]</button>
+                    </form>
+                    <div id="comments-list">
+                        <p class="text-muted">@Localizer["NoCommentsYet"]</p>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <!-- Sidebar -->
+        <div class="col-lg-3 sidebar">
+            <div class="mb-5" data-aos="fade-left">
+                <h5>@Localizer["LatestPosts"]</h5>
+                <ul class="list-group">
+                    @foreach (var post in latestPosts)
+                    {
+                        <li class="list-group-item">
+                            @if (!string.IsNullOrEmpty(post.ImageUrl))
+                            {
+                                <img src="@post.ImageUrl" alt="@post.Title" />
+                            }
+                            <a asp-action="Details" asp-route-id="@post.Id" asp-route-slug="@post.Slug">@post.Title</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+            <div class="mb-5" data-aos="fade-left" data-aos-delay="100">
+                <h5>@Localizer["RecommendedPosts"]</h5>
+                <ul class="list-group">
+                    @foreach (var post in recommendedPosts)
+                    {
+                        <li class="list-group-item">
+                            @if (!string.IsNullOrEmpty(post.ImageUrl))
+                            {
+                                <img src="@post.ImageUrl" alt="@post.Title" />
+                            }
+                            <a asp-action="Details" asp-route-id="@post.Id" asp-route-slug="@post.Slug">@post.Title</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+            <div class="mb-5" data-aos="fade-left" data-aos-delay="200">
+                <h5>@Localizer["PopularTopics"]</h5>
+                <ul class="list-group">
+                    @foreach (var post in popularPosts)
+                    {
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <a asp-action="Details" asp-route-id="@post.Id" asp-route-slug="@post.Slug">@post.Title</a>
+                            <span class="badge rounded-pill">@post.ViewCount</span>
+                        </li>
+                    }
+                </ul>
+            </div>
+            <div data-aos="fade-left" data-aos-delay="300">
+                <h5>@Localizer["FollowUs"]</h5>
+                <div class="social-buttons">
+                    <a href="#" class="btn"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="btn"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="btn"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="btn"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1200,
+            easing: 'ease-out-cubic',
+            once: true
+        });
+
+        document.getElementById('comment-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const author = document.getElementById('author').value;
+            const text = document.getElementById('text').value;
+            if (author && text) {
+                const commentsList = document.getElementById('comments-list');
+                const commentDiv = document.createElement('div');
+                commentDiv.className = 'comment';
+                commentDiv.innerHTML = `
+                    <div class="d-flex justify-content-between">
+                        <span class="author">${author}</span>
+                        <span class="date">${new Date().toLocaleString('tr-TR', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' })}</span>
+                    </div>
+                    <p class="text">${text}</p>
+                `;
+                commentsList.prepend(commentDiv);
+                commentsList.querySelector('.text-muted')?.remove();
+                document.getElementById('comment-form').reset();
+            }
+        });
+    </script>
+}
+
+
