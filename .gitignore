@@ -5,3 +5,9 @@ obj/
 *.user
 *.suo
 EOF
+# Publish / build artifacts
+artifacts/
+**/artifacts/
+
+# uploads (istersen)
+# wwwroot/uploads/
