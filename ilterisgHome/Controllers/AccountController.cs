@@ -1,8 +1,12 @@
+using ilterisg.Data;
 using ilterisg.Models;
 using ilterisg.Models.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Localization;
+using Microsoft.Extensions.Logging;
 
 namespace ilterisg.Controllers
 {
@@ -11,15 +15,24 @@ namespace ilterisg.Controllers
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly AppDbContext _context;
+        private readonly IStringLocalizer<SharedResource> _localizer;
+        private readonly ILogger<AccountController> _logger;
 
         public AccountController(
+            AppDbContext context,
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
-            RoleManager<IdentityRole> roleManager)
+            RoleManager<IdentityRole> roleManager,
+            IStringLocalizer<SharedResource> localizer,
+            ILogger<AccountController> logger)
         {
+            _context = context;
             _userManager = userManager;
             _signInManager = signInManager;
             _roleManager = roleManager;
+            _localizer = localizer;
+            _logger = logger;
         }
 
         [AllowAnonymous]
@@ -91,6 +104,57 @@ namespace ilterisg.Controllers
         }
 
         [Authorize(Roles = "Admin")]
+        [HttpGet]
+        public async Task<IActionResult> UserManagement()
+        {
+            var users = await _userManager.Users
+                .OrderBy(u => u.Email)
+                .ToListAsync();
+
+            var items = new List<AdminUserListItemViewModel>();
+            foreach (var user in users)
+            {
+                var roles = await _userManager.GetRolesAsync(user);
+                var isAdmin = roles.Contains("Admin", StringComparer.OrdinalIgnoreCase);
+                var isEditor = roles.Contains("Editor", StringComparer.OrdinalIgnoreCase);
+
+                if (!isAdmin && !isEditor)
+                {
+                    continue;
+                }
+
+                var isLockedOut = user.LockoutEnabled &&
+                                  user.LockoutEnd.HasValue &&
+                                  user.LockoutEnd.Value > DateTimeOffset.UtcNow;
+
+                items.Add(new AdminUserListItemViewModel
+                {
+                    Id = user.Id,
+                    FullName = string.IsNullOrWhiteSpace(user.FullName) ? "-" : user.FullName!,
+                    Email = user.Email ?? user.UserName ?? "-",
+                    IsAdmin = isAdmin,
+                    IsEditor = isEditor,
+                    IsActive = !isLockedOut,
+                    CanDeleteEditor = isEditor && !isAdmin
+                });
+            }
+
+            var sorted = items
+                .OrderByDescending(x => x.IsAdmin)
+                .ThenBy(x => x.Email)
+                .ToList();
+
+            ViewData["MetaTitle"] = _localizer["UserManagementTitle"];
+            return View(new AdminUsersViewModel
+            {
+                Users = sorted,
+                AdminCount = sorted.Count(x => x.IsAdmin),
+                EditorCount = sorted.Count(x => x.IsEditor),
+                ActiveCount = sorted.Count(x => x.IsActive)
+            });
+        }
+
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> RegisterEditor(RegisterEditorViewModel model)
@@ -133,6 +197,96 @@ namespace ilterisg.Controllers
             await _userManager.AddToRoleAsync(user, "Editor");
             TempData["SuccessMessage"] = "Editor hesabi olusturuldu.";
             return RedirectToAction(nameof(RegisterEditor));
+        }
+
+        [Authorize(Roles = "Admin")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteEditor(string id)
+        {
+            if (string.IsNullOrWhiteSpace(id))
+            {
+                TempData["ErrorMessage"] = _localizer["UserNotFound"].Value;
+                return RedirectToAction(nameof(UserManagement));
+            }
+
+            var currentUserId = _userManager.GetUserId(User);
+            if (string.Equals(currentUserId, id, StringComparison.Ordinal))
+            {
+                TempData["ErrorMessage"] = _localizer["CannotDeleteCurrentUser"].Value;
+                return RedirectToAction(nameof(UserManagement));
+            }
+
+            var user = await _userManager.FindByIdAsync(id);
+            if (user == null)
+            {
+                TempData["ErrorMessage"] = _localizer["UserNotFound"].Value;
+                return RedirectToAction(nameof(UserManagement));
+            }
+
+            var roles = await _userManager.GetRolesAsync(user);
+            var isAdmin = roles.Contains("Admin", StringComparer.OrdinalIgnoreCase);
+            var isEditor = roles.Contains("Editor", StringComparer.OrdinalIgnoreCase);
+
+            if (isAdmin)
+            {
+                TempData["ErrorMessage"] = _localizer["CannotDeleteAdminUser"].Value;
+                return RedirectToAction(nameof(UserManagement));
+            }
+
+            if (!isEditor)
+            {
+                TempData["ErrorMessage"] = _localizer["CannotDeleteNonEditor"].Value;
+                return RedirectToAction(nameof(UserManagement));
+            }
+
+            if (string.IsNullOrWhiteSpace(currentUserId))
+            {
+                TempData["ErrorMessage"] = _localizer["DeleteEditorFailed"].Value;
+                return RedirectToAction(nameof(UserManagement));
+            }
+
+            try
+            {
+                await using var transaction = await _context.Database.BeginTransactionAsync();
+
+                var authoredPosts = await _context.BlogPosts
+                    .Where(p => p.AuthorUserId == user.Id)
+                    .ToListAsync();
+
+                if (authoredPosts.Count > 0)
+                {
+                    foreach (var post in authoredPosts)
+                    {
+                        post.AuthorUserId = currentUserId;
+                    }
+
+                    await _context.SaveChangesAsync();
+                }
+
+                var result = await _userManager.DeleteAsync(user);
+                if (!result.Succeeded)
+                {
+                    await transaction.RollbackAsync();
+                    TempData["ErrorMessage"] = _localizer["DeleteEditorFailed"].Value;
+                    return RedirectToAction(nameof(UserManagement));
+                }
+
+                await transaction.CommitAsync();
+                TempData["SuccessMessage"] = _localizer["DeleteEditorSuccess"].Value;
+            }
+            catch (DbUpdateException ex)
+            {
+                _logger.LogError(ex, "DeleteEditor DbUpdateException for userId {UserId}", id);
+                TempData["ErrorMessage"] = _localizer["DeleteEditorFailed"].Value;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "DeleteEditor failed for userId {UserId}", id);
+                TempData["ErrorMessage"] = _localizer["DeleteEditorFailed"].Value;
+            }
+
+            return RedirectToAction(nameof(UserManagement));
         }
 
         [Authorize]

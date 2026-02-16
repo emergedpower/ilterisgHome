@@ -861,6 +861,33 @@
   <data name="EnterImageUrlOrUpload" xml:space="preserve">
     <value>Enter image URL or upload</value>
   </data>
+  <data name="BlogCreateTooltipTitle" xml:space="preserve">
+    <value>Main title of the post. Visible in list and detail pages.</value>
+  </data>
+  <data name="BlogCreateTooltipContent" xml:space="preserve">
+    <value>Full body of the blog post. Cannot be empty.</value>
+  </data>
+  <data name="BlogCreateTooltipFeaturedImage" xml:space="preserve">
+    <value>Stores featured image URL. You can enter a URL or upload a file.</value>
+  </data>
+  <data name="BlogCreateTooltipSummary" xml:space="preserve">
+    <value>Short summary used on cards and search results.</value>
+  </data>
+  <data name="BlogCreateTooltipMetaTitle" xml:space="preserve">
+    <value>Appears as Google result title. Recommended length is 50-70 characters.</value>
+  </data>
+  <data name="BlogCreateTooltipMetaDescription" xml:space="preserve">
+    <value>Appears as Google result description line. Recommended length is 120-160 characters.</value>
+  </data>
+  <data name="BlogCreateTooltipMetaKeywords" xml:space="preserve">
+    <value>Written to the keywords meta tag. Add terms with space or comma.</value>
+  </data>
+  <data name="BlogCreateTooltipSlug" xml:space="preserve">
+    <value>Readable part at the end of URL. If empty, the system generates it automatically.</value>
+  </data>
+  <data name="BlogCreateTooltipPublish" xml:space="preserve">
+    <value>If checked, the post is published immediately. If not checked, it remains draft.</value>
+  </data>
   <data name="EnterPostSummary" xml:space="preserve">
     <value>Enter a short summary of your post</value>
   </data>
@@ -1087,6 +1114,84 @@
     <value>Blog Menu</value>
   </data>
   <data name="BlogLayoutAdd" xml:space="preserve">
-    <value>Add Blog Layout</value>
+    <value>Add Blog Post</value>
+  </data>
+  <data name="UserManagementMenu" xml:space="preserve">
+    <value>User Management</value>
+  </data>
+  <data name="UserManagementTitle" xml:space="preserve">
+    <value>User Management</value>
+  </data>
+  <data name="UserManagementHeading" xml:space="preserve">
+    <value>Admin and Editor Accounts</value>
+  </data>
+  <data name="UserManagementDescription" xml:space="preserve">
+    <value>View active Admin and Editor users, and delete editor accounts when needed.</value>
+  </data>
+  <data name="UserManagementStatsActive" xml:space="preserve">
+    <value>Active Users</value>
+  </data>
+  <data name="UserManagementStatsAdmin" xml:space="preserve">
+    <value>Admin Count</value>
+  </data>
+  <data name="UserManagementStatsEditor" xml:space="preserve">
+    <value>Editor Count</value>
+  </data>
+  <data name="UserManagementNoUsers" xml:space="preserve">
+    <value>No Admin or Editor users found.</value>
+  </data>
+  <data name="UserManagementColumnName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="UserManagementColumnEmail" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="UserManagementColumnRoles" xml:space="preserve">
+    <value>Roles</value>
+  </data>
+  <data name="UserManagementColumnStatus" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="UserManagementColumnActions" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="UserManagementRoleAdmin" xml:space="preserve">
+    <value>Admin</value>
+  </data>
+  <data name="UserManagementRoleEditor" xml:space="preserve">
+    <value>Editor</value>
+  </data>
+  <data name="UserManagementStatusActive" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="UserManagementStatusPassive" xml:space="preserve">
+    <value>Inactive</value>
+  </data>
+  <data name="DeleteEditorButton" xml:space="preserve">
+    <value>Delete Editor</value>
+  </data>
+  <data name="DeleteEditorConfirm" xml:space="preserve">
+    <value>Are you sure you want to delete this editor account?</value>
+  </data>
+  <data name="DeleteEditorSuccess" xml:space="preserve">
+    <value>Editor account deleted successfully.</value>
+  </data>
+  <data name="DeleteEditorFailed" xml:space="preserve">
+    <value>The editor account could not be deleted.</value>
+  </data>
+  <data name="CannotDeleteAdminUser" xml:space="preserve">
+    <value>Admin users cannot be deleted from this page.</value>
+  </data>
+  <data name="CannotDeleteNonEditor" xml:space="preserve">
+    <value>This user is not an editor account.</value>
+  </data>
+  <data name="CannotDeleteCurrentUser" xml:space="preserve">
+    <value>You cannot delete your own account.</value>
+  </data>
+  <data name="UserNotFound" xml:space="preserve">
+    <value>User not found.</value>
+  </data>
+  <data name="CannotDeleteEditorWithPosts" xml:space="preserve">
+    <value>This editor cannot be deleted because they have blog posts.</value>
   </data>
 </root>

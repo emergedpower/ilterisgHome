@@ -7,6 +7,7 @@
     var latestPosts = ViewBag.LatestPosts as List<ilterisg.Models.BlogPost> ?? new List<ilterisg.Models.BlogPost>();
     var recommendedPosts = ViewBag.RecommendedPosts as List<ilterisg.Models.BlogPost> ?? new List<ilterisg.Models.BlogPost>();
     var popularPosts = ViewBag.PopularPosts as List<ilterisg.Models.BlogPost> ?? new List<ilterisg.Models.BlogPost>();
+    var comments = ViewBag.Comments as List<ilterisg.Models.BlogComment> ?? new List<ilterisg.Models.BlogComment>();
 }
 
 @section Styles {
@@ -24,6 +25,7 @@
             --text-light: #E0E0E0; /* Açık metin rengi */
             --text-dark: #1A2526; /* Koyu metin rengi */
             --accent: #E9C46A; /* Sarımsı aksan rengi */
+            --text-muted: #9CA3AF;
         }
 
         body {
@@ -241,18 +243,28 @@
             margin-bottom: 30px;
         }
 
+            .comment-form .form-label {
+                color: #DDE4E8;
+                font-weight: 600;
+            }
+
             .comment-form .form-control {
                 background: #3a3a3a;
                 border: none;
-                color: var(--text-light);
+                color: #F3F6F8;
                 border-radius: 8px;
                 resize: vertical;
             }
 
                 .comment-form .form-control:focus {
                     background: #3a3a3a;
-                    color: var(--text-light);
+                    color: #F3F6F8;
                     box-shadow: 0 0 5px rgba(0, 196, 180, 0.5);
+                }
+
+                .comment-form .form-control::placeholder {
+                    color: #A8B3BD;
+                    opacity: 1;
                 }
 
             .comment-form .btn {
@@ -278,8 +290,8 @@
         }
 
             .comment .author {
-                font-weight: 600;
-                color: var(--text-light);
+                font-weight: 800;
+                color: var(--accent);
             }
 
             .comment .date {
@@ -288,7 +300,7 @@
             }
 
             .comment .text {
-                color: var(--text-light);
+                color: #EEF3F6;
                 margin-top: 5px;
             }
 
@@ -345,22 +357,39 @@
                 <p data-aos="fade-up" data-aos-delay="200">
                     <a asp-action="Index" class="back-link"><i class="fas fa-arrow-left"></i> @Localizer["Back"]</a>
                 </p>
-                <div class="comment-section" data-aos="fade-up" data-aos-delay="300">
+                <div id="comments" class="comment-section" data-aos="fade-up" data-aos-delay="300">
                     <h5>@Localizer["Comments"]</h5>
-                    <form id="comment-form" class="comment-form">
-                        <input type="hidden" name="PostId" value="@Model.Id" />
+                    <form asp-action="AddComment" method="post" class="comment-form">
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" name="blogPostId" value="@Model.Id" />
                         <div class="mb-3">
                             <label for="author" class="form-label">@Localizer["YourName"]</label>
-                            <input type="text" class="form-control" id="author" name="Author" required />
+                            <input type="text" class="form-control" id="author" name="authorName" maxlength="120" required />
                         </div>
                         <div class="mb-3">
                             <label for="text" class="form-label">@Localizer["YourComment"]</label>
-                            <textarea class="form-control" id="text" name="Text" rows="4" required></textarea>
+                            <textarea class="form-control" id="text" name="commentText" rows="4" maxlength="2000" required></textarea>
                         </div>
                         <button type="submit" class="btn">@Localizer["SubmitComment"]</button>
                     </form>
                     <div id="comments-list">
-                        <p class="text-muted">@Localizer["NoCommentsYet"]</p>
+                        @if (!comments.Any())
+                        {
+                            <p class="text-muted">@Localizer["NoCommentsYet"]</p>
+                        }
+                        else
+                        {
+                            foreach (var comment in comments)
+                            {
+                                <div class="comment">
+                                    <div class="d-flex justify-content-between">
+                                        <span class="author">@comment.AuthorName</span>
+                                        <span class="date">@comment.CreatedAt.ToLocalTime().ToString("dd.MM.yyyy HH:mm")</span>
+                                    </div>
+                                    <p class="text">@comment.CommentText</p>
+                                </div>
+                            }
+                        }
                     </div>
                 </div>
             </article>
@@ -430,27 +459,6 @@
             duration: 1200,
             easing: 'ease-out-cubic',
             once: true
-        });
-
-        document.getElementById('comment-form').addEventListener('submit', function (e) {
-            e.preventDefault();
-            const author = document.getElementById('author').value;
-            const text = document.getElementById('text').value;
-            if (author && text) {
-                const commentsList = document.getElementById('comments-list');
-                const commentDiv = document.createElement('div');
-                commentDiv.className = 'comment';
-                commentDiv.innerHTML = `
-                    <div class="d-flex justify-content-between">
-                        <span class="author">${author}</span>
-                        <span class="date">${new Date().toLocaleString('tr-TR', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' })}</span>
-                    </div>
-                    <p class="text">${text}</p>
-                `;
-                commentsList.prepend(commentDiv);
-                commentsList.querySelector('.text-muted')?.remove();
-                document.getElementById('comment-form').reset();
-            }
         });
     </script>
 }

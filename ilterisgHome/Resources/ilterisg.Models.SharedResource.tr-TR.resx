@@ -859,7 +859,34 @@
     <value>Yazıyı Düzenle</value>
   </data>
   <data name="EnterImageUrlOrUpload" xml:space="preserve">
-    <value>EnterImageUrlOrUpload</value>
+    <value>Gorsel URL girin veya gorsel yukleyin</value>
+  </data>
+  <data name="BlogCreateTooltipTitle" xml:space="preserve">
+    <value>Yaz&#305;n&#305;n ana ba&#351;l&#305;&#287;&#305;d&#305;r. Liste ve detay sayfas&#305;nda g&#246;r&#252;n&#252;r.</value>
+  </data>
+  <data name="BlogCreateTooltipContent" xml:space="preserve">
+    <value>Blog i&#231;eri&#287;inin tamam&#305;d&#305;r. Bo&#351; b&#305;rak&#305;lamaz.</value>
+  </data>
+  <data name="BlogCreateTooltipFeaturedImage" xml:space="preserve">
+    <value>&#214;ne &#231;&#305;kan g&#246;rselin adresi burada tutulur. URL girebilir veya dosya y&#252;kleyebilirsiniz.</value>
+  </data>
+  <data name="BlogCreateTooltipSummary" xml:space="preserve">
+    <value>K&#305;sa &#246;zet kartlarda ve arama sonucunda kullan&#305;l&#305;r.</value>
+  </data>
+  <data name="BlogCreateTooltipMetaTitle" xml:space="preserve">
+    <value>Google sonu&#231; ba&#351;l&#305;&#287;&#305;nda g&#246;r&#252;n&#252;r. &#214;nerilen uzunluk 50-70 karakterdir.</value>
+  </data>
+  <data name="BlogCreateTooltipMetaDescription" xml:space="preserve">
+    <value>Google sonu&#231; a&#231;&#305;klama sat&#305;r&#305;nda g&#246;r&#252;n&#252;r. &#214;nerilen uzunluk 120-160 karakterdir.</value>
+  </data>
+  <data name="BlogCreateTooltipMetaKeywords" xml:space="preserve">
+    <value>Bu alan keywords meta etiketine yaz&#305;l&#305;r. Kelimeleri bo&#351;luk veya virg&#252;l ile ekleyin.</value>
+  </data>
+  <data name="BlogCreateTooltipSlug" xml:space="preserve">
+    <value>URL sonundaki okunur b&#246;l&#252;md&#252;r. Bo&#351; b&#305;rak&#305;rsan&#305;z sistem otomatik &#252;retir.</value>
+  </data>
+  <data name="BlogCreateTooltipPublish" xml:space="preserve">
+    <value>&#304;&#351;aretliyse yaz&#305; hemen yay&#305;nda olur. &#304;&#351;aretli de&#287;ilse taslak olarak kal&#305;r.</value>
   </data>
   <data name="EnterPostSummary" xml:space="preserve">
     <value>Yazınızın kısa özetini girin</value>
@@ -1087,6 +1114,84 @@
     <value>Blog Menü</value>
   </data>
   <data name="BlogLayoutAdd" xml:space="preserve">
-    <value>Blog Layout Ekle</value>
+    <value>Blog Yazısı Ekle</value>
+  </data>
+  <data name="UserManagementMenu" xml:space="preserve">
+    <value>Kullan&#305;c&#305; Y&#246;netimi</value>
+  </data>
+  <data name="UserManagementTitle" xml:space="preserve">
+    <value>Kullan&#305;c&#305; Y&#246;netimi</value>
+  </data>
+  <data name="UserManagementHeading" xml:space="preserve">
+    <value>Admin ve Edit&#246;r Hesaplar&#305;</value>
+  </data>
+  <data name="UserManagementDescription" xml:space="preserve">
+    <value>Aktif Admin ve Edit&#246;r kullan&#305;c&#305;lar&#305;n&#305; g&#246;r&#252;nt&#252;leyin, gerekirse edit&#246;r hesaplar&#305;n&#305; silin.</value>
+  </data>
+  <data name="UserManagementStatsActive" xml:space="preserve">
+    <value>Aktif Kullan&#305;c&#305;</value>
+  </data>
+  <data name="UserManagementStatsAdmin" xml:space="preserve">
+    <value>Admin Say&#305;s&#305;</value>
+  </data>
+  <data name="UserManagementStatsEditor" xml:space="preserve">
+    <value>Edit&#246;r Say&#305;s&#305;</value>
+  </data>
+  <data name="UserManagementNoUsers" xml:space="preserve">
+    <value>Admin veya Edit&#246;r kullan&#305;c&#305; bulunamad&#305;.</value>
+  </data>
+  <data name="UserManagementColumnName" xml:space="preserve">
+    <value>Ad Soyad</value>
+  </data>
+  <data name="UserManagementColumnEmail" xml:space="preserve">
+    <value>E-posta</value>
+  </data>
+  <data name="UserManagementColumnRoles" xml:space="preserve">
+    <value>Roller</value>
+  </data>
+  <data name="UserManagementColumnStatus" xml:space="preserve">
+    <value>Durum</value>
+  </data>
+  <data name="UserManagementColumnActions" xml:space="preserve">
+    <value>&#304;&#351;lemler</value>
+  </data>
+  <data name="UserManagementRoleAdmin" xml:space="preserve">
+    <value>Admin</value>
+  </data>
+  <data name="UserManagementRoleEditor" xml:space="preserve">
+    <value>Edit&#246;r</value>
+  </data>
+  <data name="UserManagementStatusActive" xml:space="preserve">
+    <value>Aktif</value>
+  </data>
+  <data name="UserManagementStatusPassive" xml:space="preserve">
+    <value>Pasif</value>
+  </data>
+  <data name="DeleteEditorButton" xml:space="preserve">
+    <value>Edit&#246;r Sil</value>
+  </data>
+  <data name="DeleteEditorConfirm" xml:space="preserve">
+    <value>Bu edit&#246;r hesab&#305;n&#305; silmek istedi&#287;inize emin misiniz?</value>
+  </data>
+  <data name="DeleteEditorSuccess" xml:space="preserve">
+    <value>Edit&#246;r hesab&#305; ba&#351;ar&#305;yla silindi.</value>
+  </data>
+  <data name="DeleteEditorFailed" xml:space="preserve">
+    <value>Edit&#246;r hesab&#305; silinemedi.</value>
+  </data>
+  <data name="CannotDeleteAdminUser" xml:space="preserve">
+    <value>Admin kullan&#305;c&#305;lar bu sayfadan silinemez.</value>
+  </data>
+  <data name="CannotDeleteNonEditor" xml:space="preserve">
+    <value>Bu kullan&#305;c&#305; bir edit&#246;r hesab&#305; de&#287;il.</value>
+  </data>
+  <data name="CannotDeleteCurrentUser" xml:space="preserve">
+    <value>Kendi hesab&#305;n&#305;z&#305; silemezsiniz.</value>
+  </data>
+  <data name="UserNotFound" xml:space="preserve">
+    <value>Kullan&#305;c&#305; bulunamad&#305;.</value>
+  </data>
+  <data name="CannotDeleteEditorWithPosts" xml:space="preserve">
+    <value>Bu edit&#246;r&#252;n blog yaz&#305;lar&#305; oldu&#287;u i&#231;in silinemez.</value>
   </data>
 </root>

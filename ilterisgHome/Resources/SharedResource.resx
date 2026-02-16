@@ -861,6 +861,33 @@
   <data name="EnterImageUrlOrUpload" xml:space="preserve">
     <value>Enter image URL or upload</value>
   </data>
+  <data name="BlogCreateTooltipTitle" xml:space="preserve">
+    <value>Main title of the post. Visible in list and detail pages.</value>
+  </data>
+  <data name="BlogCreateTooltipContent" xml:space="preserve">
+    <value>Full body of the blog post. Cannot be empty.</value>
+  </data>
+  <data name="BlogCreateTooltipFeaturedImage" xml:space="preserve">
+    <value>Stores featured image URL. You can enter a URL or upload a file.</value>
+  </data>
+  <data name="BlogCreateTooltipSummary" xml:space="preserve">
+    <value>Short summary used on cards and search results.</value>
+  </data>
+  <data name="BlogCreateTooltipMetaTitle" xml:space="preserve">
+    <value>Appears as Google result title. Recommended length is 50-70 characters.</value>
+  </data>
+  <data name="BlogCreateTooltipMetaDescription" xml:space="preserve">
+    <value>Appears as Google result description line. Recommended length is 120-160 characters.</value>
+  </data>
+  <data name="BlogCreateTooltipMetaKeywords" xml:space="preserve">
+    <value>Written to the keywords meta tag. Add terms with space or comma.</value>
+  </data>
+  <data name="BlogCreateTooltipSlug" xml:space="preserve">
+    <value>Readable part at the end of URL. If empty, the system generates it automatically.</value>
+  </data>
+  <data name="BlogCreateTooltipPublish" xml:space="preserve">
+    <value>If checked, the post is published immediately. If not checked, it remains draft.</value>
+  </data>
   <data name="EnterPostSummary" xml:space="preserve">
     <value>Yazınızın kısa özetini girin</value>
   </data>
@@ -1087,6 +1114,6 @@
     <value>Blog Menü</value>
   </data>
   <data name="BlogLayoutAdd" xml:space="preserve">
-    <value>Blog Layout Ekle</value>
+    <value>Blog Yazısı Ekle</value>
   </data>
 </root>

@@ -1,13 +1,20 @@
 @model ilterisg.Models.BlogPost
 @inject Microsoft.Extensions.Localization.IStringLocalizer<SharedResource> Localizer
+@using System.Text.Json
 @{
     var isEdit = (Model?.Id ?? 0) != 0;
     Layout = "~/Views/Shared/_BlogLayout.cshtml";
     ViewData["Title"] = isEdit ? Localizer["EditPost"] : Localizer["NewBlogPost"];
+    var imageUrlPlaceholder = Localizer["EnterImageUrlOrUpload"].Value;
+    if (string.Equals(imageUrlPlaceholder, "EnterImageUrlOrUpload", StringComparison.Ordinal))
+    {
+        imageUrlPlaceholder = "Gorsel URL girin veya gorsel yukleyin";
+    }
+
+    var quillPlaceholder = Localizer["WriteContentHere"].Value;
 }
 
 @section Styles {
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -52,6 +59,23 @@
         .form-label {
             font-weight: 500;
             color: var(--text-dark);
+        }
+
+        .form-label-wrap {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .field-help {
+            color: var(--text-muted);
+            cursor: help;
+            font-size: 0.9rem;
+            line-height: 1;
+        }
+
+        .field-help:hover {
+            color: var(--primary);
         }
 
         .form-control, .form-check-input {
@@ -322,23 +346,41 @@
                 <input type="hidden" asp-for="Id" />
             }
             <div class="mb-4" data-aos="fade-up" data-aos-delay="100">
-                <label asp-for="Title" class="form-label">@Localizer["Title"]</label>
+                <label asp-for="Title" class="form-label form-label-wrap">
+                    @Localizer["Title"]
+                    <i class="fas fa-circle-info field-help"
+                       data-bs-toggle="tooltip"
+                       data-bs-placement="top"
+                       title="@Localizer["BlogCreateTooltipTitle"]"></i>
+                </label>
                 <input asp-for="Title" class="form-control" placeholder="@Localizer["EnterPostTitle"]" />
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
             <div class="mb-4" data-aos="fade-up" data-aos-delay="200">
-                <label asp-for="Content" class="form-label">@Localizer["Content"]</label>
+                <label asp-for="Content" class="form-label form-label-wrap">
+                    @Localizer["Content"]
+                    <i class="fas fa-circle-info field-help"
+                       data-bs-toggle="tooltip"
+                       data-bs-placement="top"
+                       title="@Localizer["BlogCreateTooltipContent"]"></i>
+                </label>
                 <input type="hidden" asp-for="Content" id="Content" />
                 <div id="quillEditor"></div>
                 <span asp-validation-for="Content" class="text-danger"></span>
             </div>
             <div class="mb-4" data-aos="fade-up" data-aos-delay="300">
-                <label asp-for="ImageUrl" class="form-label">@Localizer["FeaturedImage"]</label>
+                <label asp-for="ImageUrl" class="form-label form-label-wrap">
+                    @Localizer["FeaturedImage"]
+                    <i class="fas fa-circle-info field-help"
+                       data-bs-toggle="tooltip"
+                       data-bs-placement="top"
+                       title="@Localizer["BlogCreateTooltipFeaturedImage"]"></i>
+                </label>
                 <div class="drag-drop" id="dragDrop">
                     <p>@Localizer["DragOrClickToUpload"]</p>
                     <input type="file" id="imageInput" accept="image/*" style="display: none;" />
                 </div>
-                <input asp-for="ImageUrl" id="ImageUrl" class="form-control" placeholder="@Localizer["EnterImageUrlOrUpload"]" />
+                <input asp-for="ImageUrl" id="ImageUrl" class="form-control" placeholder="@imageUrlPlaceholder" />
                 <span asp-validation-for="ImageUrl" class="text-danger"></span>
                 @if (!string.IsNullOrEmpty(Model?.ImageUrl))
                 {
@@ -349,22 +391,46 @@
                 }
             </div>
             <div class="mb-4" data-aos="fade-up" data-aos-delay="400">
-                <label asp-for="Summary" class="form-label">@Localizer["Summary"]</label>
+                <label asp-for="Summary" class="form-label form-label-wrap">
+                    @Localizer["Summary"]
+                    <i class="fas fa-circle-info field-help"
+                       data-bs-toggle="tooltip"
+                       data-bs-placement="top"
+                       title="@Localizer["BlogCreateTooltipSummary"]"></i>
+                </label>
                 <textarea asp-for="Summary" class="form-control" rows="3" placeholder="@Localizer["EnterPostSummary"]"></textarea>
                 <span asp-validation-for="Summary" class="text-danger"></span>
             </div>
             <div class="mb-4" data-aos="fade-up" data-aos-delay="450">
-                <label asp-for="MetaTitle" class="form-label">SEO Başlık (max 70)</label>
-                <input asp-for="MetaTitle" class="form-control" placeholder="Google için başlık" />
+                <label asp-for="MetaTitle" class="form-label form-label-wrap">
+                    SEO Baslik (max 70)
+                    <i class="fas fa-circle-info field-help"
+                       data-bs-toggle="tooltip"
+                       data-bs-placement="top"
+                       title="@Localizer["BlogCreateTooltipMetaTitle"]"></i>
+                </label>
+                <input asp-for="MetaTitle" class="form-control" placeholder="Google i&#231;in ba&#351;l&#305;k" />
                 <span asp-validation-for="MetaTitle" class="text-danger"></span>
             </div>
             <div class="mb-4" data-aos="fade-up" data-aos-delay="500">
-                <label asp-for="MetaDescription" class="form-label">SEO Açıklama (max 160)</label>
-                <textarea asp-for="MetaDescription" class="form-control" rows="2" placeholder="Google arama açıklaması"></textarea>
+                <label asp-for="MetaDescription" class="form-label form-label-wrap">
+                    SEO Aciklama (max 160)
+                    <i class="fas fa-circle-info field-help"
+                       data-bs-toggle="tooltip"
+                       data-bs-placement="top"
+                       title="@Localizer["BlogCreateTooltipMetaDescription"]"></i>
+                </label>
+                <textarea asp-for="MetaDescription" class="form-control" rows="2" placeholder="Google arama a&#231;&#305;klamas&#305;"></textarea>
                 <span asp-validation-for="MetaDescription" class="text-danger"></span>
             </div>
             <div class="mb-4" data-aos="fade-up" data-aos-delay="550">
-                <label asp-for="MetaKeywords" class="form-label">SEO Anahtar Kelimeler</label>
+                <label asp-for="MetaKeywords" class="form-label form-label-wrap">
+                    SEO Anahtar Kelimeler
+                    <i class="fas fa-circle-info field-help"
+                       data-bs-toggle="tooltip"
+                       data-bs-placement="top"
+                       title="@Localizer["BlogCreateTooltipMetaKeywords"]"></i>
+                </label>
                 <input type="hidden" asp-for="MetaKeywords" id="metaKeywordsHidden" />
                 <div class="meta-keywords-input-wrap">
                     <div id="metaKeywordsTags" class="meta-keywords-tags"></div>
@@ -376,7 +442,13 @@
                 <span asp-validation-for="MetaKeywords" class="text-danger"></span>
             </div>
             <div class="mb-4" data-aos="fade-up" data-aos-delay="575">
-                <label asp-for="Slug" class="form-label">SEO URL Slug</label>
+                <label asp-for="Slug" class="form-label form-label-wrap">
+                    SEO URL Slug
+                    <i class="fas fa-circle-info field-help"
+                       data-bs-toggle="tooltip"
+                       data-bs-placement="top"
+                       title="@Localizer["BlogCreateTooltipSlug"]"></i>
+                </label>
                 <input asp-for="Slug" class="form-control" placeholder="ornek-blog-yazisi" />
                 <span asp-validation-for="Slug" class="text-danger"></span>
             </div>
@@ -387,7 +459,13 @@
             </div>
             <div class="form-check mb-4" data-aos="fade-up" data-aos-delay="600">
                 <input asp-for="IsPublished" class="form-check-input" />
-                <label asp-for="IsPublished" class="form-label">@Localizer["Publish"]</label>
+                <label asp-for="IsPublished" class="form-label form-label-wrap">
+                    @Localizer["Publish"]
+                    <i class="fas fa-circle-info field-help"
+                       data-bs-toggle="tooltip"
+                       data-bs-placement="top"
+                       title="@Localizer["BlogCreateTooltipPublish"]"></i>
+                </label>
             </div>
             <div class="preview-toggle" data-aos="fade-up" data-aos-delay="700">
                 <i class="fas fa-eye fa-icon"></i> @Localizer["PreviewContent"]
@@ -405,7 +483,6 @@
     </div>
 
     @section Scripts {
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
     @await Html.PartialAsync("_ValidationScriptsPartial")
@@ -414,6 +491,10 @@
             AOS.init({
                 duration: 800,
                 once: true
+            });
+
+            document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach((el) => {
+                new bootstrap.Tooltip(el);
             });
 
             const toolbarOptions = {
@@ -428,7 +509,7 @@
 
             const quill = new Quill('#quillEditor', {
                 theme: 'snow',
-                placeholder: '@Localizer["WriteContentHere"]',
+                placeholder: @Html.Raw(JsonSerializer.Serialize(quillPlaceholder)),
                 modules: {
                     toolbar: toolbarOptions
                 }
@@ -578,7 +659,7 @@
                         updateImagePreview(result.location);
                     })
                     .catch(error => {
-                        console.error('Görsel yüklenemedi:', error);
+                        console.error('Gorsel yuklenemedi:', error);
                         alert('@Localizer["ImageUploadError"]');
                     });
             }
@@ -659,6 +740,3 @@
         });
         </script>
 }
-
-
-

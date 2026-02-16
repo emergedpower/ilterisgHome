@@ -13,6 +13,7 @@ namespace ilterisg.Data
         }
 
         public DbSet<BlogPost> BlogPosts => Set<BlogPost>();
+        public DbSet<BlogComment> BlogComments => Set<BlogComment>();
         public DbSet<FeaturedContent> FeaturedContents => Set<FeaturedContent>();
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -28,6 +29,7 @@ namespace ilterisg.Data
             builder.Entity<IdentityUserToken<string>>().ToTable("aspnetusertokens");
 
             builder.Entity<BlogPost>().ToTable("blogposts");
+            builder.Entity<BlogComment>().ToTable("blogcomments");
             builder.Entity<FeaturedContent>().ToTable("featuredcontents");
 
             builder.Entity<BlogPost>()
@@ -35,6 +37,23 @@ namespace ilterisg.Data
                 .WithMany()
                 .HasForeignKey(p => p.AuthorUserId)
                 .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Entity<BlogComment>()
+                .HasOne<BlogPost>()
+                .WithMany()
+                .HasForeignKey(c => c.BlogPostId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            builder.Entity<BlogComment>()
+                .Property(c => c.AuthorName)
+                .HasMaxLength(120);
+
+            builder.Entity<BlogComment>()
+                .Property(c => c.CommentText)
+                .HasMaxLength(2000);
+
+            builder.Entity<BlogComment>()
+                .HasIndex(c => c.BlogPostId);
 
             builder.Entity<BlogPost>()
                 .Property(p => p.MetaTitle)

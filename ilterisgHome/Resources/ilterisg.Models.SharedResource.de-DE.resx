@@ -861,6 +861,33 @@
   <data name="EnterImageUrlOrUpload" xml:space="preserve">
     <value>Bild-URL eingeben oder hochladen</value>
   </data>
+  <data name="BlogCreateTooltipTitle" xml:space="preserve">
+    <value>Haupttitel des Beitrags. Auf Listen- und Detailseiten sichtbar.</value>
+  </data>
+  <data name="BlogCreateTooltipContent" xml:space="preserve">
+    <value>Vollständiger Inhalt des Blogbeitrags. Darf nicht leer sein.</value>
+  </data>
+  <data name="BlogCreateTooltipFeaturedImage" xml:space="preserve">
+    <value>Speichert die URL des Beitragsbildes. Sie können eine URL eingeben oder eine Datei hochladen.</value>
+  </data>
+  <data name="BlogCreateTooltipSummary" xml:space="preserve">
+    <value>Kurze Zusammenfassung für Karten und Suchergebnisse.</value>
+  </data>
+  <data name="BlogCreateTooltipMetaTitle" xml:space="preserve">
+    <value>Erscheint als Google-Ergebnistitel. Empfohlene Länge: 50-70 Zeichen.</value>
+  </data>
+  <data name="BlogCreateTooltipMetaDescription" xml:space="preserve">
+    <value>Erscheint als Google-Ergebnisbeschreibung. Empfohlene Länge: 120-160 Zeichen.</value>
+  </data>
+  <data name="BlogCreateTooltipMetaKeywords" xml:space="preserve">
+    <value>Wird in das Keywords-Meta-Tag geschrieben. Begriffe mit Leerzeichen oder Komma hinzufügen.</value>
+  </data>
+  <data name="BlogCreateTooltipSlug" xml:space="preserve">
+    <value>Lesbarer Teil am Ende der URL. Wenn leer, wird er automatisch erzeugt.</value>
+  </data>
+  <data name="BlogCreateTooltipPublish" xml:space="preserve">
+    <value>Wenn aktiviert, wird der Beitrag sofort veröffentlicht. Sonst bleibt er als Entwurf.</value>
+  </data>
   <data name="EnterPostSummary" xml:space="preserve">
     <value>Geben Sie eine kurze Zusammenfassung Ihres Beitrags ein</value>
   </data>
@@ -1087,6 +1114,84 @@
     <value>Blog-Menü</value>
   </data>
   <data name="BlogLayoutAdd" xml:space="preserve">
-    <value>Blog-Layout hinzufügen</value>
+    <value>Blogbeitrag hinzuf&#252;gen</value>
+  </data>
+  <data name="UserManagementMenu" xml:space="preserve">
+    <value>Benutzerverwaltung</value>
+  </data>
+  <data name="UserManagementTitle" xml:space="preserve">
+    <value>Benutzerverwaltung</value>
+  </data>
+  <data name="UserManagementHeading" xml:space="preserve">
+    <value>Admin- und Editor-Konten</value>
+  </data>
+  <data name="UserManagementDescription" xml:space="preserve">
+    <value>Zeigen Sie aktive Admin- und Editor-Benutzer an und l&#246;schen Sie bei Bedarf Editor-Konten.</value>
+  </data>
+  <data name="UserManagementStatsActive" xml:space="preserve">
+    <value>Aktive Benutzer</value>
+  </data>
+  <data name="UserManagementStatsAdmin" xml:space="preserve">
+    <value>Anzahl Admins</value>
+  </data>
+  <data name="UserManagementStatsEditor" xml:space="preserve">
+    <value>Anzahl Editoren</value>
+  </data>
+  <data name="UserManagementNoUsers" xml:space="preserve">
+    <value>Keine Admin- oder Editor-Benutzer gefunden.</value>
+  </data>
+  <data name="UserManagementColumnName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="UserManagementColumnEmail" xml:space="preserve">
+    <value>E-Mail</value>
+  </data>
+  <data name="UserManagementColumnRoles" xml:space="preserve">
+    <value>Rollen</value>
+  </data>
+  <data name="UserManagementColumnStatus" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="UserManagementColumnActions" xml:space="preserve">
+    <value>Aktionen</value>
+  </data>
+  <data name="UserManagementRoleAdmin" xml:space="preserve">
+    <value>Admin</value>
+  </data>
+  <data name="UserManagementRoleEditor" xml:space="preserve">
+    <value>Editor</value>
+  </data>
+  <data name="UserManagementStatusActive" xml:space="preserve">
+    <value>Aktiv</value>
+  </data>
+  <data name="UserManagementStatusPassive" xml:space="preserve">
+    <value>Inaktiv</value>
+  </data>
+  <data name="DeleteEditorButton" xml:space="preserve">
+    <value>Editor l&#246;schen</value>
+  </data>
+  <data name="DeleteEditorConfirm" xml:space="preserve">
+    <value>M&#246;chten Sie dieses Editor-Konto wirklich l&#246;schen?</value>
+  </data>
+  <data name="DeleteEditorSuccess" xml:space="preserve">
+    <value>Editor-Konto erfolgreich gel&#246;scht.</value>
+  </data>
+  <data name="DeleteEditorFailed" xml:space="preserve">
+    <value>Das Editor-Konto konnte nicht gel&#246;scht werden.</value>
+  </data>
+  <data name="CannotDeleteAdminUser" xml:space="preserve">
+    <value>Admin-Benutzer k&#246;nnen auf dieser Seite nicht gel&#246;scht werden.</value>
+  </data>
+  <data name="CannotDeleteNonEditor" xml:space="preserve">
+    <value>Dieser Benutzer ist kein Editor-Konto.</value>
+  </data>
+  <data name="CannotDeleteCurrentUser" xml:space="preserve">
+    <value>Sie k&#246;nnen Ihr eigenes Konto nicht l&#246;schen.</value>
+  </data>
+  <data name="UserNotFound" xml:space="preserve">
+    <value>Benutzer nicht gefunden.</value>
+  </data>
+  <data name="CannotDeleteEditorWithPosts" xml:space="preserve">
+    <value>Dieser Editor kann nicht gel&#246;scht werden, weil Blogbeitr&#228;ge vorhanden sind.</value>
   </data>
 </root>

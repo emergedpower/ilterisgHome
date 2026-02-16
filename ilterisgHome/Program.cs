@@ -301,6 +301,29 @@ static async Task ApplySchemaUpdatesAsync(AppDbContext context, ILogger logger)
     await EnsureColumnAsync(context, logger, "blogposts", "MetaDescription", "varchar(160) NULL");
     await EnsureColumnAsync(context, logger, "blogposts", "MetaKeywords", "varchar(300) NULL");
     await EnsureColumnAsync(context, logger, "blogposts", "Slug", "varchar(220) NULL");
+    await EnsureBlogCommentsTableAsync(context, logger);
+}
+
+static async Task EnsureBlogCommentsTableAsync(AppDbContext context, ILogger logger)
+{
+    try
+    {
+        await context.Database.ExecuteSqlRawAsync(@"
+CREATE TABLE IF NOT EXISTS `blogcomments` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `BlogPostId` int NOT NULL,
+  `AuthorName` varchar(120) NOT NULL,
+  `CommentText` varchar(2000) NOT NULL,
+  `CreatedAt` datetime(6) NOT NULL,
+  PRIMARY KEY (`Id`),
+  KEY `IX_blogcomments_BlogPostId` (`BlogPostId`),
+  CONSTRAINT `FK_blogcomments_blogposts_BlogPostId` FOREIGN KEY (`BlogPostId`) REFERENCES `blogposts` (`Id`) ON DELETE CASCADE
+) CHARACTER SET=utf8mb4;");
+    }
+    catch (Exception ex)
+    {
+        logger.LogWarning(ex, "blogcomments tablosu olusturulamadi.");
+    }
 }
 
 static async Task EnsureColumnAsync(

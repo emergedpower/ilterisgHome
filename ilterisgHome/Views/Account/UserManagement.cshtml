@@ -1,0 +1,174 @@
+@model ilterisg.Models.ViewModels.AdminUsersViewModel
+@inject Microsoft.Extensions.Localization.IStringLocalizer<SharedResource> Localizer
+@{
+    Layout = "_BlogLayout";
+    ViewData["Title"] = Localizer["UserManagementTitle"];
+}
+
+@section Styles {
+    <style>
+        .management-page {
+            max-width: 1180px;
+            padding-top: 28px;
+            padding-bottom: 28px;
+        }
+
+        .management-page .card {
+            border: 0;
+            border-radius: 14px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .management-page h1 {
+            font-weight: 700;
+            color: #1f2937;
+        }
+
+        .management-page .text-muted {
+            color: #6b7280 !important;
+        }
+
+        .management-page .badge.bg-primary {
+            background-color: #00c4b4 !important;
+        }
+
+        .management-page .btn-outline-danger {
+            border-radius: 999px;
+            font-weight: 600;
+            padding-inline: 0.9rem;
+        }
+    </style>
+}
+
+<div class="container management-page">
+    <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+        <div>
+            <h1 class="h4 mb-1">@Localizer["UserManagementHeading"]</h1>
+            <p class="text-muted mb-0">@Localizer["UserManagementDescription"]</p>
+        </div>
+    </div>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+    }
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+    }
+
+    <div class="row g-3 mb-4">
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body">
+                    <div class="text-muted small">@Localizer["UserManagementStatsActive"]</div>
+                    <div class="fs-4 fw-semibold">@Model.ActiveCount</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body">
+                    <div class="text-muted small">@Localizer["UserManagementStatsAdmin"]</div>
+                    <div class="fs-4 fw-semibold">@Model.AdminCount</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body">
+                    <div class="text-muted small">@Localizer["UserManagementStatsEditor"]</div>
+                    <div class="fs-4 fw-semibold">@Model.EditorCount</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @if (!Model.Users.Any())
+    {
+        <div class="alert alert-info">@Localizer["UserManagementNoUsers"]</div>
+    }
+    else
+    {
+        <div class="card border-0 shadow-sm">
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th>@Localizer["UserManagementColumnName"]</th>
+                                <th>@Localizer["UserManagementColumnEmail"]</th>
+                                <th>@Localizer["UserManagementColumnRoles"]</th>
+                                <th>@Localizer["UserManagementColumnStatus"]</th>
+                                <th class="text-end">@Localizer["UserManagementColumnActions"]</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var user in Model.Users)
+                            {
+                                <tr>
+                                    <td>@user.FullName</td>
+                                    <td>@user.Email</td>
+                                    <td>
+                                        @if (user.IsAdmin)
+                                        {
+                                            <span class="badge bg-primary me-1">@Localizer["UserManagementRoleAdmin"]</span>
+                                        }
+                                        @if (user.IsEditor)
+                                        {
+                                            <span class="badge bg-info text-dark">@Localizer["UserManagementRoleEditor"]</span>
+                                        }
+                                    </td>
+                                    <td>
+                                        @if (user.IsActive)
+                                        {
+                                            <span class="badge bg-success">@Localizer["UserManagementStatusActive"]</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge bg-secondary">@Localizer["UserManagementStatusPassive"]</span>
+                                        }
+                                    </td>
+                                    <td class="text-end">
+                                        @if (user.CanDeleteEditor)
+                                        {
+                                            <form asp-controller="Account"
+                                                  asp-action="DeleteEditor"
+                                                  method="post"
+                                                  class="d-inline delete-editor-form"
+                                                  data-confirm="@Localizer["DeleteEditorConfirm"]">
+                                                @Html.AntiForgeryToken()
+                                                <input type="hidden" name="id" value="@user.Id" />
+                                                <button type="submit" class="btn btn-sm btn-outline-danger">
+                                                    @Localizer["DeleteEditorButton"]
+                                                </button>
+                                            </form>
+                                        }
+                                        else
+                                        {
+                                            <span class="text-muted">-</span>
+                                        }
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <script>
+        document.querySelectorAll('.delete-editor-form').forEach((form) => {
+            form.addEventListener('submit', (event) => {
+                const message = form.getAttribute('data-confirm') || 'Are you sure?';
+                if (!confirm(message)) {
+                    event.preventDefault();
+                }
+            });
+        });
+    </script>
+}

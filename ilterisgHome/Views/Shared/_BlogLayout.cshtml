@@ -25,6 +25,8 @@
                        && string.Equals(routeAction, "Create", StringComparison.OrdinalIgnoreCase);
     var isRegisterEditor = string.Equals(routeController, "Account", StringComparison.OrdinalIgnoreCase)
                            && string.Equals(routeAction, "RegisterEditor", StringComparison.OrdinalIgnoreCase);
+    var isUserManagement = string.Equals(routeController, "Account", StringComparison.OrdinalIgnoreCase)
+                           && string.Equals(routeAction, "UserManagement", StringComparison.OrdinalIgnoreCase);
     var isLogin = string.Equals(routeController, "Account", StringComparison.OrdinalIgnoreCase)
                   && string.Equals(routeAction, "Login", StringComparison.OrdinalIgnoreCase);
     var isHome = string.Equals(routeController, "Home", StringComparison.OrdinalIgnoreCase)
@@ -57,6 +59,7 @@
 
     <link rel="shortcut icon" href="~/assets/images/favicon.ico" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <link href="~/assets/css/app.min.css" rel="stylesheet" />
     <link href="~/assets/css/icons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
@@ -72,6 +75,7 @@
             margin: 0;
             min-height: 100vh;
             position: relative;
+            font-family: 'Inter', sans-serif;
         }
 
         #layout-wrapper {
@@ -337,6 +341,12 @@
                                 <a asp-controller="Account" asp-action="RegisterEditor" class="waves-effect @(isRegisterEditor ? "active" : null)">
                                     <i class="fas fa-user-plus"></i>
                                     <span>@Localizer["AddEditor"]</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a asp-controller="Account" asp-action="UserManagement" class="waves-effect @(isUserManagement ? "active" : null)">
+                                    <i class="fas fa-users-cog"></i>
+                                    <span>@Localizer["UserManagementMenu"]</span>
                                 </a>
                             </li>
                         }

@@ -861,6 +861,33 @@
   <data name="EnterImageUrlOrUpload" xml:space="preserve">
     <value>Bild-URL eingeben oder hochladen</value>
   </data>
+  <data name="BlogCreateTooltipTitle" xml:space="preserve">
+    <value>Haupttitel des Beitrags. Auf Listen- und Detailseiten sichtbar.</value>
+  </data>
+  <data name="BlogCreateTooltipContent" xml:space="preserve">
+    <value>Vollständiger Inhalt des Blogbeitrags. Darf nicht leer sein.</value>
+  </data>
+  <data name="BlogCreateTooltipFeaturedImage" xml:space="preserve">
+    <value>Speichert die URL des Beitragsbildes. Sie können eine URL eingeben oder eine Datei hochladen.</value>
+  </data>
+  <data name="BlogCreateTooltipSummary" xml:space="preserve">
+    <value>Kurze Zusammenfassung für Karten und Suchergebnisse.</value>
+  </data>
+  <data name="BlogCreateTooltipMetaTitle" xml:space="preserve">
+    <value>Erscheint als Google-Ergebnistitel. Empfohlene Länge: 50-70 Zeichen.</value>
+  </data>
+  <data name="BlogCreateTooltipMetaDescription" xml:space="preserve">
+    <value>Erscheint als Google-Ergebnisbeschreibung. Empfohlene Länge: 120-160 Zeichen.</value>
+  </data>
+  <data name="BlogCreateTooltipMetaKeywords" xml:space="preserve">
+    <value>Wird in das Keywords-Meta-Tag geschrieben. Begriffe mit Leerzeichen oder Komma hinzufügen.</value>
+  </data>
+  <data name="BlogCreateTooltipSlug" xml:space="preserve">
+    <value>Lesbarer Teil am Ende der URL. Wenn leer, wird er automatisch erzeugt.</value>
+  </data>
+  <data name="BlogCreateTooltipPublish" xml:space="preserve">
+    <value>Wenn aktiviert, wird der Beitrag sofort veröffentlicht. Sonst bleibt er als Entwurf.</value>
+  </data>
   <data name="EnterPostSummary" xml:space="preserve">
     <value>Geben Sie eine kurze Zusammenfassung Ihres Beitrags ein</value>
   </data>
@@ -1087,6 +1114,6 @@
     <value>Blog-Menü</value>
   </data>
   <data name="BlogLayoutAdd" xml:space="preserve">
-    <value>Blog-Layout hinzufügen</value>
+    <value>Blogbeitrag hinzufügen</value>
   </data>
 </root>

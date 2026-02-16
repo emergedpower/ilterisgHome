@@ -319,6 +319,54 @@ namespace ilterisg.Controllers
         }
 
         [AllowAnonymous]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AddComment(int blogPostId, string authorName, string commentText)
+        {
+            var post = await _context.BlogPosts
+                .Where(p => p.Id == blogPostId && p.IsPublished)
+                .Select(p => new { p.Id, p.Slug })
+                .FirstOrDefaultAsync();
+
+            if (post == null)
+            {
+                return NotFound();
+            }
+
+            var normalizedAuthor = (authorName ?? string.Empty).Trim();
+            var normalizedComment = (commentText ?? string.Empty).Trim();
+
+            if (string.IsNullOrWhiteSpace(normalizedAuthor) || string.IsNullOrWhiteSpace(normalizedComment))
+            {
+                var invalidInputUrl = Url.RouteUrl("blog_details", new { id = post.Id, slug = post.Slug });
+                return Redirect($"{invalidInputUrl}#comments");
+            }
+
+            if (normalizedAuthor.Length > 120)
+            {
+                normalizedAuthor = normalizedAuthor[..120];
+            }
+
+            if (normalizedComment.Length > 2000)
+            {
+                normalizedComment = normalizedComment[..2000];
+            }
+
+            _context.BlogComments.Add(new BlogComment
+            {
+                BlogPostId = post.Id,
+                AuthorName = normalizedAuthor,
+                CommentText = normalizedComment,
+                CreatedAt = DateTime.UtcNow
+            });
+
+            await _context.SaveChangesAsync();
+
+            var detailsUrl = Url.RouteUrl("blog_details", new { id = post.Id, slug = post.Slug });
+            return Redirect($"{detailsUrl}#comments");
+        }
+
+        [AllowAnonymous]
         [HttpGet]
         public async Task<IActionResult> Details(int id, string? slug = null)
         {
@@ -390,6 +438,10 @@ namespace ilterisg.Controllers
             ViewBag.LatestPosts = latestPosts;
             ViewBag.RecommendedPosts = recommendedPosts;
             ViewBag.PopularPosts = popularPosts;
+            ViewBag.Comments = await _context.BlogComments
+                .Where(c => c.BlogPostId == post.Id)
+                .OrderByDescending(c => c.CreatedAt)
+                .ToListAsync();
 
             ViewData["MetaTitle"] = string.IsNullOrWhiteSpace(post.MetaTitle) ? post.Title : post.MetaTitle;
             ViewData["MetaDescription"] = string.IsNullOrWhiteSpace(post.MetaDescription) ? post.Summary : post.MetaDescription;
