@@ -6,9 +6,8 @@ using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Options;
-using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
-using System.Globalization;
 using System.Data;
+using System.Globalization;
 using System.Security.Authentication;
 using System.Threading.RateLimiting;
 
@@ -28,14 +27,9 @@ if (string.IsNullOrWhiteSpace(connectionString))
 }
 
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseMySql(
+    options.UseSqlite(
         connectionString,
-        ServerVersion.AutoDetect(connectionString),
-        mysqlOptions =>
-        {
-            mysqlOptions.MigrationsHistoryTable("__efmigrationshistory");
-            mysqlOptions.SchemaBehavior(MySqlSchemaBehavior.Ignore);
-        }));
+        sqliteOptions => sqliteOptions.MigrationsHistoryTable("__efmigrationshistory")));
 
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
 {
@@ -230,8 +224,8 @@ static async Task SeedIdentityAndSchemaAsync(WebApplication app)
     var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
     var userManager = scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
 
-    context.Database.EnsureCreated();
-    await ApplySchemaUpdatesAsync(context, logger);
+    await BaselineInitialSqliteMigrationIfNeededAsync(context, logger);
+    //await context.Database.MigrateAsync();
 
     var roles = new[] { "Admin", "Editor" };
     foreach (var role in roles)
@@ -255,6 +249,87 @@ static async Task SeedIdentityAndSchemaAsync(WebApplication app)
 
     await EnsureUserAsync(userManager, logger, adminEmail, adminPassword, "Admin");
     await EnsureUserAsync(userManager, logger, editorEmail, editorPassword, "Editor");
+}
+
+static async Task BaselineInitialSqliteMigrationIfNeededAsync(AppDbContext context, ILogger logger)
+{
+    if (!context.Database.IsSqlite())
+    {
+        return;
+    }
+
+    var allMigrations = context.Database.GetMigrations().ToArray();
+    if (allMigrations.Length == 0)
+    {
+        return;
+    }
+
+    var initialMigration = allMigrations[0];
+    var pendingMigrations = (await context.Database.GetPendingMigrationsAsync()).ToHashSet(StringComparer.OrdinalIgnoreCase);
+    if (!pendingMigrations.Contains(initialMigration))
+    {
+        return;
+    }
+
+    var identityTablesExist = await SqliteTableExistsAsync(context, "aspnetroles")
+        && await SqliteTableExistsAsync(context, "aspnetusers");
+
+    if (!identityTablesExist)
+    {
+        return;
+    }
+
+    await context.Database.ExecuteSqlRawAsync("""
+        CREATE TABLE IF NOT EXISTS "__efmigrationshistory" (
+            "MigrationId" TEXT NOT NULL CONSTRAINT "PK___efmigrationshistory" PRIMARY KEY,
+            "ProductVersion" TEXT NOT NULL
+        );
+        """);
+
+    const string efProductVersion = "8.0.18";
+    var insertedRowCount = await context.Database.ExecuteSqlInterpolatedAsync($"""
+        INSERT OR IGNORE INTO "__efmigrationshistory" ("MigrationId", "ProductVersion")
+        VALUES ({initialMigration}, {efProductVersion});
+        """);
+
+    if (insertedRowCount > 0)
+    {
+        logger.LogWarning(
+            "Legacy SQLite schema detected. Initial migration {MigrationId} was marked as applied to prevent duplicate table creation.",
+            initialMigration);
+    }
+}
+
+static async Task<bool> SqliteTableExistsAsync(AppDbContext context, string tableName)
+{
+    var connection = context.Database.GetDbConnection();
+    var shouldCloseConnection = connection.State != ConnectionState.Open;
+
+    if (shouldCloseConnection)
+    {
+        await connection.OpenAsync();
+    }
+
+    try
+    {
+        await using var command = connection.CreateCommand();
+        command.CommandText = "SELECT 1 FROM sqlite_master WHERE type = 'table' AND name = $name LIMIT 1;";
+
+        var tableNameParameter = command.CreateParameter();
+        tableNameParameter.ParameterName = "$name";
+        tableNameParameter.Value = tableName;
+        command.Parameters.Add(tableNameParameter);
+
+        var queryResult = await command.ExecuteScalarAsync();
+        return queryResult != null && queryResult != DBNull.Value;
+    }
+    finally
+    {
+        if (shouldCloseConnection)
+        {
+            await connection.CloseAsync();
+        }
+    }
 }
 
 static async Task EnsureUserAsync(
@@ -295,96 +370,5 @@ static async Task EnsureUserAsync(
     if (!await userManager.IsInRoleAsync(user, role))
     {
         await userManager.AddToRoleAsync(user, role);
-    }
-}
-
-static async Task ApplySchemaUpdatesAsync(AppDbContext context, ILogger logger)
-{
-    await EnsureColumnAsync(context, logger, "aspnetusers", "FirstName", "varchar(100) NULL");
-    await EnsureColumnAsync(context, logger, "aspnetusers", "LastName", "varchar(100) NULL");
-    await EnsureColumnAsync(context, logger, "blogposts", "MetaTitle", "varchar(70) NULL");
-    await EnsureColumnAsync(context, logger, "blogposts", "MetaDescription", "varchar(160) NULL");
-    await EnsureColumnAsync(context, logger, "blogposts", "MetaKeywords", "varchar(300) NULL");
-    await EnsureColumnAsync(context, logger, "blogposts", "Slug", "varchar(220) NULL");
-    await EnsureBlogCommentsTableAsync(context, logger);
-}
-
-static async Task EnsureBlogCommentsTableAsync(AppDbContext context, ILogger logger)
-{
-    try
-    {
-        await context.Database.ExecuteSqlRawAsync(@"
-CREATE TABLE IF NOT EXISTS `blogcomments` (
-  `Id` int NOT NULL AUTO_INCREMENT,
-  `BlogPostId` int NOT NULL,
-  `AuthorName` varchar(120) NOT NULL,
-  `CommentText` varchar(2000) NOT NULL,
-  `CreatedAt` datetime(6) NOT NULL,
-  PRIMARY KEY (`Id`),
-  KEY `IX_blogcomments_BlogPostId` (`BlogPostId`),
-  CONSTRAINT `FK_blogcomments_blogposts_BlogPostId` FOREIGN KEY (`BlogPostId`) REFERENCES `blogposts` (`Id`) ON DELETE CASCADE
-) CHARACTER SET=utf8mb4;");
-    }
-    catch (Exception ex)
-    {
-        logger.LogWarning(ex, "blogcomments tablosu olusturulamadi.");
-    }
-}
-
-static async Task EnsureColumnAsync(
-    AppDbContext context,
-    ILogger logger,
-    string table,
-    string column,
-    string definition)
-{
-    var connection = context.Database.GetDbConnection();
-    var shouldClose = connection.State != ConnectionState.Open;
-    if (shouldClose)
-    {
-        await connection.OpenAsync();
-    }
-
-    try
-    {
-        using var checkCommand = connection.CreateCommand();
-        checkCommand.CommandText = @"
-SELECT COUNT(*)
-FROM INFORMATION_SCHEMA.COLUMNS
-WHERE TABLE_SCHEMA = DATABASE()
-  AND TABLE_NAME = @table
-  AND COLUMN_NAME = @column;";
-
-        var tableParam = checkCommand.CreateParameter();
-        tableParam.ParameterName = "@table";
-        tableParam.Value = table;
-        checkCommand.Parameters.Add(tableParam);
-
-        var columnParam = checkCommand.CreateParameter();
-        columnParam.ParameterName = "@column";
-        columnParam.Value = column;
-        checkCommand.Parameters.Add(columnParam);
-
-        var result = await checkCommand.ExecuteScalarAsync();
-        var exists = Convert.ToInt32(result) > 0;
-
-        if (!exists)
-        {
-            using var alterCommand = connection.CreateCommand();
-            alterCommand.CommandText = $"ALTER TABLE `{table}` ADD COLUMN `{column}` {definition};";
-            await alterCommand.ExecuteNonQueryAsync();
-            logger.LogInformation("Kolon eklendi: {Table}.{Column}", table, column);
-        }
-    }
-    catch (Exception ex)
-    {
-        logger.LogWarning(ex, "Kolon kontrolu/guncellemesi basarisiz: {Table}.{Column}", table, column);
-    }
-    finally
-    {
-        if (shouldClose)
-        {
-            await connection.CloseAsync();
-        }
     }
 }

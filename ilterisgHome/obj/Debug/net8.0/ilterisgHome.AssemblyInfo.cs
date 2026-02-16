@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ilterisgHome")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e5c5efa9dc0272295e24d484c63e9f797e5284df")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e3730cf49272d1e77bec6025628396e3c72f5ac6")]
 [assembly: System.Reflection.AssemblyProductAttribute("ilterisgHome")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ilterisgHome")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
