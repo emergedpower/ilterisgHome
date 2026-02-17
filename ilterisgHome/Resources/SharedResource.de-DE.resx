@@ -522,6 +522,9 @@
   <data name="PoweredBy" xml:space="preserve">
     <value>Unterstützt von </value>
   </data>
+  <data name="DevelopedBy" xml:space="preserve">
+    <value>Entwickelt von Fezar Software. Alle Rechte vorbehalten.</value>
+  </data>
   <data name="PriceInfo" xml:space="preserve">
     <value>Die Geb�hr wird dem K�ufer w�hrend des Kaufprozesses klar mitgeteilt und als Gesamtbetrag unter Einbeziehung aller Steuern pr�sentiert.</value>
   </data>

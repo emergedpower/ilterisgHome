@@ -522,6 +522,9 @@
   <data name="PoweredBy" xml:space="preserve">
     <value>Powered by </value>
   </data>
+  <data name="DevelopedBy" xml:space="preserve">
+    <value>Fezar Yaz&#305;l&#305;m taraf&#305;ndan geli&#351;tirilmi&#351;tir. T&#252;m haklar&#305; sakl&#305;d&#305;r.</value>
+  </data>
   <data name="PriceInfo" xml:space="preserve">
     <value>Ücret, satın alma işlemi sırasında Alıcı’ya açıkça bildirilir ve tüm vergiler dahil edilerek toplam tutar olarak sunulur.</value>
   </data>

@@ -31,9 +31,8 @@
 @section Styles {
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <link href="~/lib/aos/dist/aos.css" rel="stylesheet" asp-append-version="true" />
+    <link rel="stylesheet" type="text/css" href="~/lib/slick/slick/slick.css" asp-append-version="true" />
     <style>
         :root {
             --primary: #2A9D8F;
@@ -643,30 +642,36 @@
                 <!-- Yayın Akışı -->
                 <div>
                     <h4 class="mb-4" data-aos="fade-right" data-aos-delay="0">@Localizer["PostStream"]</h4>
-                    @if (!others.Any())
-                    {
-                        <p class="text-muted">@Localizer["NoBlogPostsYet"]</p>
-                    }
-                    else
-                    {
-                        var postIndex = 0;
-                        @foreach (var post in others)
+                    <div id="post-stream-list">
+                        @if (!others.Any())
                         {
-                            var aosClass = postIndex < 2 ? "blog-post-card initial-post" : "blog-post-card";
-                            var aosDelay = postIndex < 2 ? (postIndex * 100).ToString() : "50";
-                            var aosOffset = postIndex < 2 ? "0" : "50";
-                            <div class="@aosClass" data-aos="fade-up" data-aos-delay="@aosDelay" data-aos-offset="@aosOffset">
-                                <img src="@post.ImageUrl" alt="@post.Title" />
-                                <div class="card-body">
-                                    <h5 class="mt-0">@post.Title</h5>
-                                    <small class="text-muted">@post.CreatedAt.ToString("dd MMMM yyyy")</small>
-                                    <p>@StripHtmlAndMedia(post.Content)</p>
-                                    <a asp-action="Details" asp-route-id="@post.Id" asp-route-slug="@post.Slug" class="btn btn-continue">@Localizer["ReadMore"]</a>
-                                </div>
-                            </div>
-                            postIndex++;
+                            <p class="text-muted">@Localizer["NoBlogPostsYet"]</p>
                         }
-                    }
+                        else
+                        {
+                            var postIndex = 0;
+                            @foreach (var post in others)
+                            {
+                                var aosClass = postIndex < 2 ? "blog-post-card initial-post" : "blog-post-card";
+                                var aosDelay = postIndex < 2 ? (postIndex * 100).ToString() : "50";
+                                var aosOffset = postIndex < 2 ? "0" : "50";
+                                <div class="@aosClass" data-aos="fade-up" data-aos-delay="@aosDelay" data-aos-offset="@aosOffset">
+                                    <img src="@post.ImageUrl" alt="@post.Title" />
+                                    <div class="card-body">
+                                        <h5 class="mt-0">@post.Title</h5>
+                                        <small class="text-muted">@post.CreatedAt.ToString("dd MMMM yyyy")</small>
+                                        <p>@StripHtmlAndMedia(post.Content)</p>
+                                        <a asp-action="Details" asp-route-id="@post.Id" asp-route-slug="@post.Slug" class="btn btn-continue">@Localizer["ReadMore"]</a>
+                                    </div>
+                                </div>
+                                postIndex++;
+                            }
+                        }
+                    </div>
+                    <div id="load-more-loader" class="text-center my-3 d-none">
+                        <span class="text-muted">Yukleniyor...</span>
+                    </div>
+                    <div id="load-more-sentinel" style="height: 1px;"></div>
                 </div>
             </div>
 
@@ -736,8 +741,8 @@
 </div>
 
 @section Scripts {
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="~/lib/aos/dist/aos.js" asp-append-version="true"></script>
+    <script src="~/lib/slick/slick/slick.min.js" asp-append-version="true"></script>
     <script>
         AOS.init({
             duration: 600, // Animasyon süresini kısalttık, daha hızlı
@@ -750,6 +755,121 @@
             // Slider için resim yükleme kontrolü
             const images = $('.featured-slider img');
             let imagesLoaded = 0;
+            const streamList = document.getElementById('post-stream-list');
+            const loadMoreSentinel = document.getElementById('load-more-sentinel');
+            const loadMoreLoader = document.getElementById('load-more-loader');
+            const pageSize = 3;
+            let nextPage = 2;
+            let isLoadingMore = false;
+            let hasMorePosts = @((others.Count >= 3).ToString().ToLowerInvariant());
+            const moreUrl = '@Url.Action("More", "Blog")';
+            const detailsUrl = '@Url.Action("Details", "Blog")';
+            const readMoreText = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Localizer["ReadMore"].Value));
+
+            function formatDate(value) {
+                const dt = new Date(value);
+                if (Number.isNaN(dt.getTime())) {
+                    return '';
+                }
+
+                return dt.toLocaleDateString('tr-TR', { day: '2-digit', month: 'long', year: 'numeric' });
+            }
+
+            function buildDetailsUrl(item) {
+                const params = new URLSearchParams({ id: item.id });
+                if (item.slug) {
+                    params.set('slug', item.slug);
+                }
+                return `${detailsUrl}?${params.toString()}`;
+            }
+
+            function buildPostCard(item) {
+                const card = document.createElement('div');
+                card.className = 'blog-post-card';
+                card.setAttribute('data-aos', 'fade-up');
+                card.setAttribute('data-aos-delay', '50');
+                card.setAttribute('data-aos-offset', '50');
+
+                if (item.imageUrl) {
+                    const image = document.createElement('img');
+                    image.src = item.imageUrl;
+                    image.alt = item.title || '';
+                    card.appendChild(image);
+                }
+
+                const body = document.createElement('div');
+                body.className = 'card-body';
+
+                const title = document.createElement('h5');
+                title.className = 'mt-0';
+                title.textContent = item.title || '';
+
+                const date = document.createElement('small');
+                date.className = 'text-muted';
+                date.textContent = formatDate(item.createdAt);
+
+                const summary = document.createElement('p');
+                summary.textContent = (item.summary || '').trim();
+
+                const link = document.createElement('a');
+                link.className = 'btn btn-continue';
+                link.href = buildDetailsUrl(item);
+                link.textContent = readMoreText;
+
+                body.appendChild(title);
+                body.appendChild(date);
+                body.appendChild(summary);
+                body.appendChild(link);
+                card.appendChild(body);
+
+                return card;
+            }
+
+            async function loadMorePosts() {
+                if (!hasMorePosts || isLoadingMore || !streamList) {
+                    return;
+                }
+
+                isLoadingMore = true;
+                if (loadMoreLoader) {
+                    loadMoreLoader.classList.remove('d-none');
+                }
+
+                try {
+                    const response = await fetch(`${moreUrl}?page=${nextPage}&pageSize=${pageSize}`, {
+                        headers: { 'X-Requested-With': 'XMLHttpRequest' }
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`Load more failed: ${response.status}`);
+                    }
+
+                    const payload = await response.json();
+                    const items = Array.isArray(payload.items) ? payload.items : [];
+
+                    items.forEach((item) => {
+                        streamList.appendChild(buildPostCard(item));
+                    });
+
+                    nextPage += 1;
+                    hasMorePosts = Boolean(payload.hasMore);
+
+                    if (window.AOS && items.length > 0) {
+                        AOS.refreshHard();
+                    }
+
+                    if (!hasMorePosts && loadMoreSentinel) {
+                        loadMoreSentinel.remove();
+                    }
+                } catch (error) {
+                    console.error('Load more error:', error);
+                } finally {
+                    isLoadingMore = false;
+                    if (loadMoreLoader) {
+                        loadMoreLoader.classList.add('d-none');
+                    }
+                }
+            }
 
             function initSlider() {
                 $('.featured-slider').slick({
@@ -796,6 +916,35 @@
             }
 
             console.log('Slider başlatıldı. popularPosts sayısı: ' + @(popularPosts.Count));
+
+            if (loadMoreSentinel && hasMorePosts) {
+                if ('IntersectionObserver' in window) {
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach((entry) => {
+                            if (entry.isIntersecting) {
+                                loadMorePosts();
+                            }
+                        });
+                    }, {
+                        root: null,
+                        rootMargin: '200px 0px 200px 0px',
+                        threshold: 0
+                    });
+
+                    observer.observe(loadMoreSentinel);
+                } else {
+                    $(window).on('scroll', function () {
+                        if (!hasMorePosts || isLoadingMore) {
+                            return;
+                        }
+
+                        const nearBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 250;
+                        if (nearBottom) {
+                            loadMorePosts();
+                        }
+                    });
+                }
+            }
         });
     </script>
 }

@@ -59,9 +59,12 @@
             position: relative;
         }
 
+        .site-container {
+            width: 100%;
+        }
+
         .main-content {
             padding: 20px;
-            min-height: calc(100vh - 160px);
             margin-top: 80px;
         }
 
@@ -72,27 +75,62 @@
             padding: 0 15px;
         }
 
-        .footer {
-            background-color: #f8f9fa;
-            padding: 20px 0;
+        .custom-footer {
+            background: linear-gradient(90deg, #d8dce0 0%, #012f51 100%);
+            color: #ffffff;
+            padding: 12px 0;
             text-align: center;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
+            position: static !important;
             width: 100%;
-            z-index: 998;
-            font-size: 0.9rem;
-            color: #6c757d;
+            margin-top: 28px;
+            font-size: 14px;
+            border-top: 2px solid;
+            border-image: linear-gradient(90deg, #d8dce0 0%, #012f51 100%) 1;
         }
 
-        .footer a {
-            color: #2A9D8F;
+        .custom-footer .container-fluid {
+            max-width: none;
+            width: 100%;
+        }
+
+        .custom-footer .row {
+            display: flex !important;
+            flex-wrap: wrap;
+            width: 100% !important;
+            margin: 0 !important;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .custom-footer .col-12 {
+            width: 100%;
+            max-width: 100%;
+            flex: 0 0 100%;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .custom-footer [class*="col-"] {
+            text-align: center !important;
+        }
+
+        .custom-footer p {
+            margin: 0;
+            font-weight: 300;
+            color: #ffffff !important;
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+            text-align: center !important;
+        }
+
+        .custom-footer a {
+            color: #ffffff;
             text-decoration: none;
         }
 
-        .footer a:hover {
+        .custom-footer a:hover {
             text-decoration: underline;
+            color: #ffffff;
         }
     </style>
 </head>
@@ -186,11 +224,14 @@
             </div>
         </div>
 
-        <footer class="footer">
+        <footer class="custom-footer py-2">
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12">
-                        &copy; @DateTime.UtcNow.Year @Localizer["AppName"] | @Localizer["PoweredBy"] @Localizer["AppName"]
+                <div class="row align-items-center">
+                    <div class="col-12 text-center">
+                        <p class="mb-0">
+                            &copy; <script>document.write(new Date().getFullYear())</script> @Localizer["AppName"] |
+                            @Localizer["DevelopedBy"]
+                        </p>
                     </div>
                 </div>
             </div>

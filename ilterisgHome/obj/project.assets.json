@@ -2995,23 +2995,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\umut3\\.nuget\\packages\\": {},
+    "C:\\Users\\DELL.DESKTOP-PJDKMQ3\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\umut3\\Desktop\\ilterisgHome\\ilterisgHome\\ilterisgHome.csproj",
+      "projectUniqueName": "C:\\Users\\DELL.DESKTOP-PJDKMQ3\\Desktop\\ilterisgHome\\ilterisgHome\\ilterisgHome.csproj",
       "projectName": "ilterisgHome",
-      "projectPath": "C:\\Users\\umut3\\Desktop\\ilterisgHome\\ilterisgHome\\ilterisgHome.csproj",
-      "packagesPath": "C:\\Users\\umut3\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\umut3\\Desktop\\ilterisgHome\\ilterisgHome\\obj\\",
+      "projectPath": "C:\\Users\\DELL.DESKTOP-PJDKMQ3\\Desktop\\ilterisgHome\\ilterisgHome\\ilterisgHome.csproj",
+      "packagesPath": "C:\\Users\\DELL.DESKTOP-PJDKMQ3\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\DELL.DESKTOP-PJDKMQ3\\Desktop\\ilterisgHome\\ilterisgHome\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\umut3\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\DELL.DESKTOP-PJDKMQ3\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3039,7 +3039,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.300"
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0": {
@@ -3091,7 +3091,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
   },

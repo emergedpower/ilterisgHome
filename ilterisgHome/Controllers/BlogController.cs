@@ -27,11 +27,14 @@ namespace ilterisg.Controllers
         public async Task<IActionResult> Index()
         {
             var posts = await _context.BlogPosts
+                .AsNoTracking()
                 .Where(p => p.IsPublished)
                 .OrderByDescending(p => p.CreatedAt)
+                .Take(3)
                 .ToListAsync();
 
             var latestPosts = await _context.FeaturedContents
+                .AsNoTracking()
                 .Where(fc => fc.Section == "LatestPosts")
                 .Include(fc => fc.BlogPost)
                 .OrderBy(fc => fc.DisplayOrder)
@@ -39,6 +42,7 @@ namespace ilterisg.Controllers
                 .ToListAsync();
 
             var recommendedPosts = await _context.FeaturedContents
+                .AsNoTracking()
                 .Where(fc => fc.Section == "RecommendedPosts")
                 .Include(fc => fc.BlogPost)
                 .OrderBy(fc => fc.DisplayOrder)
@@ -46,6 +50,7 @@ namespace ilterisg.Controllers
                 .ToListAsync();
 
             var popularPosts = await _context.FeaturedContents
+                .AsNoTracking()
                 .Where(fc => fc.Section == "PopularPosts")
                 .Include(fc => fc.BlogPost)
                 .OrderBy(fc => fc.DisplayOrder)
@@ -55,6 +60,7 @@ namespace ilterisg.Controllers
             if (!latestPosts.Any())
             {
                 latestPosts = await _context.BlogPosts
+                    .AsNoTracking()
                     .Where(p => p.IsPublished)
                     .OrderByDescending(p => p.CreatedAt)
                     .Take(3)
@@ -64,6 +70,7 @@ namespace ilterisg.Controllers
             if (!recommendedPosts.Any())
             {
                 recommendedPosts = await _context.BlogPosts
+                    .AsNoTracking()
                     .Where(p => p.IsPublished)
                     .OrderByDescending(p => p.ViewCount)
                     .Take(3)
@@ -73,6 +80,7 @@ namespace ilterisg.Controllers
             if (!popularPosts.Any())
             {
                 popularPosts = await _context.BlogPosts
+                    .AsNoTracking()
                     .Where(p => p.IsPublished)
                     .OrderByDescending(p => p.ViewCount)
                     .Take(10)
@@ -89,6 +97,47 @@ namespace ilterisg.Controllers
             ViewData["CanonicalUrl"] = Url.Action(nameof(Index), "Blog", null, Request.Scheme);
 
             return View(posts);
+        }
+
+        [AllowAnonymous]
+        [HttpGet]
+        public async Task<IActionResult> More(int page = 2, int pageSize = 3)
+        {
+            if (page < 1)
+            {
+                page = 1;
+            }
+
+            if (pageSize < 1)
+            {
+                pageSize = 3;
+            }
+
+            if (pageSize > 20)
+            {
+                pageSize = 20;
+            }
+
+            var skip = (page - 1) * pageSize;
+
+            var items = await _context.BlogPosts
+                .AsNoTracking()
+                .Where(p => p.IsPublished)
+                .OrderByDescending(p => p.CreatedAt)
+                .Skip(skip)
+                .Take(pageSize)
+                .Select(p => new
+                {
+                    id = p.Id,
+                    title = p.Title,
+                    slug = p.Slug,
+                    createdAt = p.CreatedAt,
+                    imageUrl = p.ImageUrl,
+                    summary = p.Summary
+                })
+                .ToListAsync();
+
+            return Json(new { items, hasMore = items.Count == pageSize });
         }
 
         [Authorize(Roles = "Admin,Editor")]

@@ -522,6 +522,9 @@
   <data name="PoweredBy" xml:space="preserve">
     <value>Powered by </value>
   </data>
+  <data name="DevelopedBy" xml:space="preserve">
+    <value>Developed by Fezar Software. All rights reserved.</value>
+  </data>
   <data name="PriceInfo" xml:space="preserve">
     <value>The fee is clearly notified to the Buyer during the purchase process and presented as the total amount including all taxes.</value>
   </data>
