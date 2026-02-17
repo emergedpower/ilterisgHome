@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "47n9Gx4A2Pk=",
+  "dgSpecHash": "Zc+gqg2gBRc=",
   "success": true,
   "projectFilePath": "C:\\Users\\DELL.DESKTOP-PJDKMQ3\\Desktop\\ilterisgHome\\ilterisgHome\\ilterisgHome.csproj",
   "expectedPackageFiles": [
@@ -42,6 +42,7 @@
     "C:\\Users\\DELL.DESKTOP-PJDKMQ3\\.nuget\\packages\\mimekit\\4.14.0\\mimekit.4.14.0.nupkg.sha512",
     "C:\\Users\\DELL.DESKTOP-PJDKMQ3\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
     "C:\\Users\\DELL.DESKTOP-PJDKMQ3\\.nuget\\packages\\serilog\\4.3.0\\serilog.4.3.0.nupkg.sha512",
+    "C:\\Users\\DELL.DESKTOP-PJDKMQ3\\.nuget\\packages\\sixlabors.imagesharp\\3.1.12\\sixlabors.imagesharp.3.1.12.nupkg.sha512",
     "C:\\Users\\DELL.DESKTOP-PJDKMQ3\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.1.6\\sqlitepclraw.bundle_e_sqlite3.2.1.6.nupkg.sha512",
     "C:\\Users\\DELL.DESKTOP-PJDKMQ3\\.nuget\\packages\\sqlitepclraw.core\\2.1.6\\sqlitepclraw.core.2.1.6.nupkg.sha512",
     "C:\\Users\\DELL.DESKTOP-PJDKMQ3\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.1.6\\sqlitepclraw.lib.e_sqlite3.2.1.6.nupkg.sha512",

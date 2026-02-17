@@ -535,3 +535,4 @@ C:\Users\DELL.DESKTOP-PJDKMQ3\Desktop\ilterisgHome\ilterisgHOme\obj\Debug\net8.0
 C:\Users\DELL.DESKTOP-PJDKMQ3\Desktop\ilterisgHome\ilterisgHOme\obj\Debug\net8.0\ilterisgHome.genruntimeconfig.cache
 C:\Users\DELL.DESKTOP-PJDKMQ3\Desktop\ilterisgHome\ilterisgHOme\obj\Debug\net8.0\ref\ilterisgHome.dll
 C:\Users\DELL.DESKTOP-PJDKMQ3\Desktop\ilterisgHome\ilterisgHome\bin\Debug\net8.0\libman.json
+C:\Users\DELL.DESKTOP-PJDKMQ3\Desktop\ilterisgHome\ilterisgHome\bin\Debug\net8.0\SixLabors.ImageSharp.dll

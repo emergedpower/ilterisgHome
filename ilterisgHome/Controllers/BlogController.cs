@@ -5,6 +5,9 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.Formats.Webp;
+using SixLabors.ImageSharp.Processing;
 using System.Globalization;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -13,6 +16,15 @@ namespace ilterisg.Controllers
 {
     public class BlogController : Controller
     {
+        private const int MaxUploadImageWidth = 1600;
+        private const int MaxUploadImageHeight = 900;
+        private const int MaxUploadBytes = 40 * 1024 * 1024;
+        private const int UploadWebpQuality = 72;
+        private static readonly HashSet<string> AllowedImageExtensions = new(StringComparer.OrdinalIgnoreCase)
+        {
+            ".jpg", ".jpeg", ".png", ".webp"
+        };
+
         private readonly AppDbContext _context;
         private readonly UserManager<ApplicationUser> _userManager;
 
@@ -350,18 +362,58 @@ namespace ilterisg.Controllers
                 return BadRequest("Dosya gecersiz.");
             }
 
+            if (file.Length > MaxUploadBytes)
+            {
+                return BadRequest("Dosya boyutu cok buyuk.");
+            }
+
+            var ext = Path.GetExtension(file.FileName);
+            if (string.IsNullOrWhiteSpace(ext) || !AllowedImageExtensions.Contains(ext))
+            {
+                return BadRequest("Desteklenmeyen dosya formati.");
+            }
+
             const string folderName = "Uploads";
             var webRoot = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
             var uploadsFolder = Path.Combine(webRoot, folderName);
             Directory.CreateDirectory(uploadsFolder);
 
-            var ext = Path.GetExtension(file.FileName);
-            var uniqueName = $"{Guid.NewGuid():N}{ext}";
+            var uniqueName = $"{Guid.NewGuid():N}.webp";
             var filePath = Path.Combine(uploadsFolder, uniqueName);
 
-            await using (var stream = new FileStream(filePath, FileMode.Create, FileAccess.Write, FileShare.None))
+            try
             {
-                await file.CopyToAsync(stream);
+                await using var inputStream = file.OpenReadStream();
+                using var image = await Image.LoadAsync(inputStream);
+
+                image.Mutate(x =>
+                {
+                    x.AutoOrient();
+                    if (image.Width > MaxUploadImageWidth || image.Height > MaxUploadImageHeight)
+                    {
+                        x.Resize(new ResizeOptions
+                        {
+                            Mode = ResizeMode.Max,
+                            Size = new Size(MaxUploadImageWidth, MaxUploadImageHeight)
+                        });
+                    }
+                });
+
+                await using var outputStream = new FileStream(filePath, FileMode.Create, FileAccess.Write, FileShare.None);
+                var encoder = new WebpEncoder
+                {
+                    FileFormat = WebpFileFormatType.Lossy,
+                    Quality = UploadWebpQuality
+                };
+                await image.SaveAsync(outputStream, encoder);
+            }
+            catch (UnknownImageFormatException)
+            {
+                return BadRequest("Gecerli bir gorsel dosyasi yukleyin.");
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Gorsel islenirken hata olustu.");
             }
 
             var imageUrl = Url.Content($"~/{folderName}/{uniqueName}");

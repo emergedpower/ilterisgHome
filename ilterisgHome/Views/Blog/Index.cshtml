@@ -623,11 +623,31 @@
                 @if (popularPosts.Any())
                 {
                     <div class="featured-slider">
-                        @foreach (var post in popularPosts)
+                        @for (var i = 0; i < popularPosts.Count; i++)
                         {
+                            var post = popularPosts[i];
+                            var isFirstSlide = i == 0;
                             <div class="featured-card">
                                 <div class="card bg-dark text-white">
-                                    <img src="@post.ImageUrl" class="card-img" alt="@post.Title" />
+                                    @if (isFirstSlide)
+                                    {
+                                        <img src="@post.ImageUrl"
+                                             data-lazy="@post.ImageUrl"
+                                             class="card-img"
+                                             alt="@post.Title"
+                                             loading="eager"
+                                             decoding="async"
+                                             fetchpriority="high" />
+                                    }
+                                    else
+                                    {
+                                        <img data-lazy="@post.ImageUrl"
+                                             class="card-img"
+                                             alt="@post.Title"
+                                             loading="lazy"
+                                             decoding="async"
+                                             fetchpriority="low" />
+                                    }
                                     <div class="card-img-overlay">
                                         <h3 class="card-title">@post.Title</h3>
                                         <p class="card-text">@StripHtmlAndMedia(post.Content)</p>
@@ -656,7 +676,11 @@
                                 var aosDelay = postIndex < 2 ? (postIndex * 100).ToString() : "50";
                                 var aosOffset = postIndex < 2 ? "0" : "50";
                                 <div class="@aosClass" data-aos="fade-up" data-aos-delay="@aosDelay" data-aos-offset="@aosOffset">
-                                    <img src="@post.ImageUrl" alt="@post.Title" />
+                                    <img src="@post.ImageUrl"
+                                         alt="@post.Title"
+                                         loading="lazy"
+                                         decoding="async"
+                                         fetchpriority="low" />
                                     <div class="card-body">
                                         <h5 class="mt-0">@post.Title</h5>
                                         <small class="text-muted">@post.CreatedAt.ToString("dd MMMM yyyy")</small>
@@ -686,7 +710,11 @@
                             <li class="list-group-item">
                                 @if (!string.IsNullOrEmpty(post.ImageUrl))
                                 {
-                                    <img src="@post.ImageUrl" alt="@post.Title" />
+                                    <img src="@post.ImageUrl"
+                                         alt="@post.Title"
+                                         loading="lazy"
+                                         decoding="async"
+                                         fetchpriority="low" />
                                 }
                                 <a asp-action="Details" asp-route-id="@post.Id" asp-route-slug="@post.Slug">@post.Title</a>
                             </li>
@@ -703,7 +731,11 @@
                             <li class="list-group-item">
                                 @if (!string.IsNullOrEmpty(post.ImageUrl))
                                 {
-                                    <img src="@post.ImageUrl" alt="@post.Title" />
+                                    <img src="@post.ImageUrl"
+                                         alt="@post.Title"
+                                         loading="lazy"
+                                         decoding="async"
+                                         fetchpriority="low" />
                                 }
                                 <a asp-action="Details" asp-route-id="@post.Id" asp-route-slug="@post.Slug">@post.Title</a>
                             </li>
@@ -752,9 +784,6 @@
         });
 
         $(document).ready(function () {
-            // Slider için resim yükleme kontrolü
-            const images = $('.featured-slider img');
-            let imagesLoaded = 0;
             const streamList = document.getElementById('post-stream-list');
             const loadMoreSentinel = document.getElementById('load-more-sentinel');
             const loadMoreLoader = document.getElementById('load-more-loader');
@@ -794,6 +823,9 @@
                     const image = document.createElement('img');
                     image.src = item.imageUrl;
                     image.alt = item.title || '';
+                    image.loading = 'lazy';
+                    image.decoding = 'async';
+                    image.fetchPriority = 'low';
                     card.appendChild(image);
                 }
 
@@ -875,6 +907,7 @@
                 $('.featured-slider').slick({
                     slidesToShow: 1,
                     slidesToScroll: 1,
+                    lazyLoad: 'ondemand',
                     autoplay: true,
                     autoplaySpeed: 5000,
                     arrows: true,
@@ -899,20 +932,11 @@
                 });
             }
 
-            if (images.length === 0) {
+            if ($('.featured-slider').length > 0) {
                 initSlider();
-            } else {
-                images.each(function () {
-                    const img = new Image();
-                    img.src = $(this).attr('src');
-                    img.onload = img.onerror = function () {
-                        imagesLoaded++;
-                        if (imagesLoaded === images.length) {
-                            initSlider();
-                            AOS.refresh(); // Slider yüklendiğinde AOS'u yenile
-                        }
-                    };
-                });
+                if (window.AOS) {
+                    AOS.refresh();
+                }
             }
 
             console.log('Slider başlatıldı. popularPosts sayısı: ' + @(popularPosts.Count));
